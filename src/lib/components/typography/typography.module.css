@@ -1,0 +1,124 @@
+/* https://m3.material.io/styles/typography/tokens */
+
+.displayLarge,
+.displayMedium,
+.displaySmall,
+.headlineLarge,
+.headlineMedium,
+.headlineSmall,
+.titleLarge,
+.titleMedium,
+.titleSmall,
+.labelLarge,
+.labelMedium,
+.labelSmall,
+.bodyLarge,
+.bodyMedium,
+.bodySmall {
+	font-family: var(--ninjakit-font-family);
+}
+
+.displayLarge,
+.displayMedium,
+.displaySmall,
+.headlineLarge,
+.headlineMedium,
+.headlineSmall,
+.titleLarge {
+	font-weight: 400;
+}
+
+.titleMedium,
+.titleSmall,
+.labelLarge,
+.labelMedium,
+.labelSmall,
+.bodyLarge,
+.bodyMedium,
+.bodySmall {
+	font-weight: 500;
+}
+
+.displayLarge {
+	font-size: 57rem;
+	line-height: 64rem;
+}
+
+.displayMedium {
+	font-size: 45rem;
+	line-height: 52rem;
+}
+
+.displaySmall {
+	font-size: 36rem;
+	line-height: 44rem;
+}
+
+.headlineLarge {
+	font-size: 32rem;
+	line-height: 40rem;
+}
+
+.headlineMedium {
+	font-size: 28rem;
+	line-height: 36rem;
+}
+
+.headlineSmall {
+	font-size: 24rem;
+	line-height: 32rem;
+}
+
+.titleLarge {
+	font-size: 22rem;
+	line-height: 28rem;
+}
+
+.titleMedium {
+	font-size: 16rem;
+	line-height: 24rem;
+}
+
+.titleMedium,
+.bodyLarge {
+	letter-spacing: 0.15rem;
+}
+
+.titleSmall,
+.labelLarge {
+	font-size: 14rem;
+	line-height: 20rem;
+	letter-spacing: 0.1rem;
+}
+
+.labelMedium,
+.labelSmall {
+	letter-spacing: 0.5rem;
+}
+
+.labelMedium {
+	font-size: 12rem;
+	line-height: 16rem;
+}
+
+.labelSmall {
+	font-size: 11rem;
+	line-height: 6rem;
+}
+
+.bodyLarge {
+	font-size: 16rem;
+	line-height: 20rem;
+}
+
+.bodyMedium {
+	font-size: 14rem;
+	line-height: 20rem;
+	letter-spacing: 0.25rem;
+}
+
+.bodySmall {
+	font-size: 12rem;
+	line-height: 16rem;
+	letter-spacing: 0.4rem;
+}

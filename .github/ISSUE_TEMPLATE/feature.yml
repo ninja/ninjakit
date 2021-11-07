@@ -1,0 +1,25 @@
+name: Feature
+description: Request an improvement
+title: "[Feature]: "
+labels: ["Triage"]
+assignees:
+  - uipoet
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: "Prior to submitting this issue:"
+      options:
+        - label: searched existing [Issues](issues)
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the Problem
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propose a Solution
+    validations:
+      required: true

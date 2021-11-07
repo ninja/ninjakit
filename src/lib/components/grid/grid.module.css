@@ -1,0 +1,226 @@
+.article,
+.aside,
+.grid,
+.header,
+.nav,
+.navLink,
+.navIndicator,
+.navLabel {
+	composes: nk from global;
+}
+
+.article,
+.nav {
+	border-left-color: transparent;
+	overflow-y: auto;
+	scrollbar-gutter: auto;
+	scrollbar-width: thin;
+	transition: border-color 300ms;
+}
+
+.article:hover,
+.nav:hover {
+	border-left-color: var(--nk-color-secondary);
+}
+
+.article::-webkit-scrollbar,
+.nav::-webkit-scrollbar {
+	height: 8rem;
+	width: 8rem;
+}
+
+.article::-webkit-scrollbar-thumb,
+.nav::-webkit-scrollbar-thumb {
+	border-radius: 4rem;
+	border-left-color: inherit;
+	border-left-style: solid;
+	border-left-width: 8rem;
+	position: absolute;
+	right: 0;
+}
+
+.article {
+	background-color: var(--nk-color-surface);
+	display: grid;
+	gap: 8rem;
+	grid-area: article;
+	grid-template-areas: "main" "aside";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	padding: 8rem;
+}
+
+.article > aside {
+	grid-area: aside;
+}
+
+.article > main {
+	grid-area: main;
+}
+
+.button {
+	bottom: 96rem;
+	position: fixed;
+	right: 16rem;
+}
+
+.header {
+	align-items: center;
+	display: flex;
+	gap: 8rem;
+	grid-area: header;
+	padding: 16rem;
+}
+
+.grid {
+	bottom: 0;
+	display: grid;
+	grid-template-areas: "header" "article" "nav";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	left: 0;
+	min-width: 320rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.nav {
+	display: flex;
+	gap: 8rem;
+	grid-area: nav;
+	justify-content: center;
+}
+
+.navIndicator {
+	align-items: center;
+	border-radius: 16rem;
+	display: flex;
+	height: 32rem;
+	justify-content: center;
+	width: 64rem;
+}
+
+.navIndicator svg {
+	box-sizing: border-box;
+	color: var(--nk-color-on-surface-variant);
+	font-size: 24rem;
+}
+
+.navLabel {
+	color: var(--nk-color-on-surface-variant);
+	composes: labelMedium from "../typography/typography.module.css";
+}
+
+.navLink {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	padding-bottom: 16rem;
+	padding-left: 16rem;
+	padding-right: 16rem;
+	padding-top: 12rem;
+	text-decoration: unset;
+	transition-property: background-color;
+	transition-duration: 200ms;
+	transition-timing-function: linear;
+}
+
+a.navLink:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+a.navLink:focus-visible {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+a.navLink:active {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+span.navLink .navIndicator {
+	background-color: var(--nk-color-secondary-container);
+}
+
+span.navLink .navLabel {
+	color: var(--nk-color-on-surface);
+}
+
+span.navLink svg {
+	color: var(--nk-color-on-secondary-container);
+}
+
+@media screen and (min-width: 600px) {
+	.article {
+		background-color: var(--nk-color-surface);
+		gap: unset;
+		grid-template-areas: "main aside";
+		grid-template-columns: 1fr auto;
+		grid-template-rows: 1fr;
+		padding: unset;
+	}
+
+	.article > aside,
+	.article > main {
+		padding: 8rem;
+		border-left-color: transparent;
+		overflow-y: auto;
+		scrollbar-gutter: auto;
+		scrollbar-width: thin;
+		transition: border-color 300ms;
+	}
+
+	.article > aside {
+		width: 256rem;
+	}
+
+	.article > aside:hover,
+	.article > main:hover {
+		border-left-color: var(--nk-color-secondary);
+	}
+
+	.article > aside::-webkit-scrollbar,
+	.article > main::-webkit-scrollbar {
+		height: 8rem;
+		width: 8rem;
+	}
+
+	.article > aside::-webkit-scrollbar-thumb,
+	.article > main::-webkit-scrollbar-thumb {
+		border-radius: 4rem;
+		border-left-color: inherit;
+		border-left-style: solid;
+		border-left-width: 8rem;
+		position: absolute;
+		right: 0;
+	}
+
+	.button {
+		bottom: unset;
+		position: unset;
+		right: unset;
+	}
+
+	.header,
+	.nav {
+		background-color: var(--nk-color-surface);
+	}
+
+	.grid {
+		grid-template-areas: "header header header" "nav article aside";
+		grid-template-columns: auto 1fr auto;
+		grid-template-rows: auto 1fr;
+	}
+
+	.nav {
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: start;
+	}
+
+	.navLink {
+		width: 100%;
+	}
+}

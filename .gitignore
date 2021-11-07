@@ -1,0 +1,8 @@
+.cache
+.env
+.eslintcache
+.npm
+*.tgz
+dist
+node_modules
+pages

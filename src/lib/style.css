@@ -1,0 +1,313 @@
+/* https://m3.material.io/styles/color/the-color-system/tokens */
+/* https://material-foundation.github.io/material-theme-builder/ */
+
+:root {
+	--nk-hue-error: 0deg;
+	--nk-hue-nuetral: 20deg;
+	--nk-hue-nuetral-variant: 20deg;
+	--nk-hue-primary: 215deg;
+	--nk-hue-secondary: 215deg;
+	--nk-hue-tertiary: 0deg;
+	--nk-saturation-error: 80%;
+	--nk-saturation-neutral: 10%;
+	--nk-saturation-neutral-variant: 20%;
+	--nk-saturation-primary: 80%;
+	--nk-saturation-secondary: 20%;
+	--nk-saturation-tertiary: 20%;
+	--nk-color-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		40%
+	);
+	--nk-color-primary-container: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		90%
+	);
+	--nk-color-secondary: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		40%
+	);
+	--nk-color-secondary-container: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		90%
+	);
+	--nk-color-tertiary: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		40%
+	);
+	--nk-color-tertiary-container: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		90%
+	);
+	--nk-color-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		95%
+	);
+	--nk-color-surface-variant: hsl(
+		var(--nk-hue-nuetral-variant),
+		var(--nk-saturation-neutral-variant),
+		90%
+	);
+	--nk-color-background: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		99%
+	);
+	--nk-color-error: hsl(var(--nk-hue-error), var(--nk-saturation-error), 40%);
+	--nk-color-error-container: hsl(
+		var(--nk-hue-error),
+		var(--nk-saturation-error),
+		90%
+	);
+	--nk-color-on-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		100%
+	);
+	--nk-color-on-primary-container: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		10%
+	);
+	--nk-color-on-secondary: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		100%
+	);
+	--nk-color-on-secondary-container: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		10%
+	);
+	--nk-color-on-tertiary: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		100%
+	);
+	--nk-color-on-tertiary-container: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		10%
+	);
+	--nk-color-on-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		10%
+	);
+	--nk-color-on-surface-variant: hsl(
+		var(--nk-hue-nuetral-variant),
+		var(--nk-saturation-neutral-variant),
+		30%
+	);
+	--nk-color-on-error: hsl(
+		var(--nk-hue-error),
+		var(--nk-saturation-error),
+		100%
+	);
+	--nk-color-on-error-container: hsl(
+		var(--nk-hue-error),
+		var(--nk-saturation-error),
+		10%
+	);
+	--nk-color-on-background: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		10%
+	);
+	--nk-color-outline: hsl(
+		var(--nk-hue-nuetral-variant),
+		var(--nk-saturation-neutral-variant),
+		50%
+	);
+	--nk-color-shadow: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		0%
+	);
+	--nk-color-inverse-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		20%
+	);
+	--nk-color-inverse-on-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		95%
+	);
+	--nk-color-inverse-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		80%
+	);
+	--nk-font-family: roboto, system-ui, sans-serif;
+	--nk-shadow: 0 2rem 8rem -6rem var(--nk-color-shadow);
+	background-color: var(--nk-color-background);
+	color: var(--nk-color-on-background);
+	color-scheme: light dark;
+	font-family: var(--nk-font-family);
+	font-size: 6.25%; /* 1rem == 1px (resolution independent) */
+	font-weight: 400;
+}
+
+body {
+	display: contents;
+}
+
+.nk {
+	appearance: unset;
+	background-color: unset;
+	border-color: unset;
+	border-style: unset;
+	border-width: unset;
+	box-sizing: border-box;
+	color: unset;
+	font-family: var(--nk-font-family);
+	line-height: 1em;
+	outline-color: unset;
+	outline-offset: unset;
+	outline-style: unset;
+	outline-width: unset;
+	padding: unset;
+	margin: unset;
+	transition-property: background-color;
+	transition-property: color;
+	transition-duration: 300ms;
+	transition-timing-function: linear;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--nk-color-primary: hsl(
+			var(--nk-hue-primary),
+			var(--nk-saturation-primary),
+			80%
+		);
+		--nk-color-primary-container: hsl(
+			var(--nk-hue-primary),
+			var(--nk-saturation-primary),
+			30%
+		);
+		--nk-color-secondary: hsl(
+			var(--nk-hue-secondary),
+			var(--nk-saturation-secondary),
+			80%
+		);
+		--nk-color-secondary-container: hsl(
+			var(--nk-hue-secondary),
+			var(--nk-saturation-secondary),
+			12%
+		);
+		--nk-color-tertiary: hsl(
+			var(--nk-hue-tertiary),
+			var(--nk-saturation-tertiary),
+			80%
+		);
+		--nk-color-tertiary-container: hsl(
+			var(--nk-hue-tertiary),
+			var(--nk-saturation-tertiary),
+			30%
+		);
+		--nk-color-surface: hsl(
+			var(--nk-hue-nuetral),
+			var(--nk-saturation-neutral),
+			10%
+		);
+		--nk-color-surface-variant: hsl(
+			var(--nk-hue-nuetral-variant),
+			var(--nk-saturation-neutral-variant),
+			12%
+		);
+		--nk-color-background: hsl(
+			var(--nk-hue-nuetral),
+			var(--nk-saturation-neutral),
+			12%
+		);
+		--nk-color-error: hsl(var(--nk-hue-error), var(--nk-saturation-error), 80%);
+		--nk-color-error-container: hsl(
+			var(--nk-hue-error),
+			var(--nk-saturation-error),
+			30%
+		);
+		--nk-color-on-primary: hsl(
+			var(--nk-hue-primary),
+			var(--nk-saturation-primary),
+			20%
+		);
+		--nk-color-on-primary-container: hsl(
+			var(--nk-hue-primary),
+			var(--nk-saturation-primary),
+			90%
+		);
+		--nk-color-on-secondary: hsl(
+			var(--nk-hue-secondary),
+			var(--nk-saturation-secondary),
+			20%
+		);
+		--nk-color-on-secondary-container: hsl(
+			var(--nk-hue-secondary),
+			var(--nk-saturation-secondary),
+			90%
+		);
+		--nk-color-on-tertiary: hsl(
+			var(--nk-hue-tertiary),
+			var(--nk-saturation-tertiary),
+			20%
+		);
+		--nk-color-on-tertiary-container: hsl(
+			var(--nk-hue-tertiary),
+			var(--nk-saturation-tertiary),
+			90%
+		);
+		--nk-color-on-surface: hsl(
+			var(--nk-hue-nuetral),
+			var(--nk-saturation-neutral),
+			90%
+		);
+		--nk-color-on-surface-variant: hsl(
+			var(--nk-hue-nuetral-variant),
+			var(--nk-saturation-neutral-variant),
+			80%
+		);
+		--nk-color-on-error: hsl(
+			var(--nk-hue-error),
+			var(--nk-saturation-error),
+			20%
+		);
+		--nk-color-on-error-container: hsl(
+			var(--nk-hue-error),
+			var(--nk-saturation-error),
+			80%
+		);
+		--nk-color-on-background: hsl(
+			var(--nk-hue-nuetral),
+			var(--nk-saturation-neutral),
+			90%
+		);
+		--nk-color-outline: hsl(
+			var(--nk-hue-nuetral-variant),
+			var(--nk-saturation-neutral-variant),
+			60%
+		);
+		--nk-color-inverse-surface: hsl(
+			var(--nk-hue-nuetral),
+			var(--nk-saturation-neutral),
+			90%
+		);
+		--nk-color-inverse-on-surface: hsl(
+			var(--nk-hue-nuetral),
+			var(--nk-saturation-neutral),
+			20%
+		);
+		--nk-color-inverse-primary: hsl(
+			var(--nk-hue-primary),
+			var(--nk-saturation-primary),
+			40%
+		);
+	}
+}

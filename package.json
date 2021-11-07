@@ -1,0 +1,78 @@
+{
+	"devDependencies": {
+		"@commitlint/cli": "15.0.0",
+		"@commitlint/config-conventional": "15.0.0",
+		"@playwright/test": "1.16.3",
+		"@fontsource/roboto": "4.5.1",
+		"@types/node": "16.11.7",
+		"@types/react": "17.0.35",
+		"@types/react-dom": "17.0.11",
+		"@typescript-eslint/eslint-plugin": "5.4.0",
+		"@typescript-eslint/parser": "5.4.0",
+		"@vitejs/plugin-react": "1.0.9",
+		"eslint": "8.2.0",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-import": "2.25.3",
+		"eslint-plugin-jsx-a11y": "6.5.1",
+		"eslint-plugin-prettier": "4.0.0",
+		"eslint-plugin-react": "7.27.0",
+		"eslint-plugin-react-hooks": "4.3.0",
+		"eslint-plugin-simple-import-sort": "7.0.0",
+		"husky": "7.0.4",
+		"lint-staged": "12.0.2",
+		"npm-run-all": "4.1.5",
+		"prettier": "2.4.1",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-icons": "4.3.1",
+		"standard-version": "9.3.2",
+		"typescript": "4.5.2",
+		"typescript-plugin-css-modules": "3.4.0",
+		"vite": "2.6.14"
+	},
+	"engines": {
+		"node": ">=14",
+		"npm": ">=7"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/ninjakit.es.js",
+			"require": "./dist/ninjakit.umd.js"
+		},
+		"./style.css": "./dist/style.css"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "./dist/ninjakit.umd.js",
+	"module": "./dist/ninjakit.es.js",
+	"name": "ninjakit",
+	"peerDependencies": {
+		"react": ">=17",
+		"react-dom": ">=17"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ninja/ninjakit.git"
+	},
+	"sideEffects": false,
+	"scripts": {
+		"build": "run-p build:**",
+		"build:scripts": "vite build",
+		"build:types": "tsc --emitDeclarationOnly --project src/lib",
+		"check": "run-p check:**",
+		"check:config": "prettier --check .",
+		"check:scripts": "eslint --ext .ts,.tsx .",
+		"check:types": "tsc --noEmit",
+		"fix": "run-s fix:scripts fix:config",
+		"fix:config": "prettier --write .",
+		"fix:scripts": "eslint --ext .ts,.tsx --fix .",
+		"release:version": "standard-version",
+		"release:push": "git push --follow-tags origin master",
+		"start:development": "vite",
+		"start:production": "vite build && vite preview",
+		"test": "playwright test"
+	},
+	"types": "dist/index.d.ts",
+	"version": "1.0.0"
+}
