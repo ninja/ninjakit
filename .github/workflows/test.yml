@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  pull_request:
+    branches: [master, next]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: Install Node.js Dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Check Files
+        run: npm run check
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Playwright Dependencies
+        run: npx playwright install && npx playwright install-deps
+
+      - name: Test
+        run: npm test

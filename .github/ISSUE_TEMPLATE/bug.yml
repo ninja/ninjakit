@@ -1,0 +1,57 @@
+name: Bug
+description: Report a problem
+title: "[Bug]: "
+labels: ["Triage"]
+assignees:
+  - uipoet
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: "Prior to submitting this issue:"
+      options:
+        - label: searched existing [Issues](issues)
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the Problem
+      description: expected vs. actual expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: system
+    attributes:
+      label: Environment
+      description: 'Output of: `npx envinfo --system --binaries --npmPackages "ninjakit,react,react-dom"`'
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Web Browsers
+      multiple: true
+      options:
+        - Chrome (desktop)
+        - Safari (desktop)
+        - Firefox (desktop)
+        - Chrome (mobile)
+        - Safari (mobile)
+        - other
+  - type: dropdown
+    id: operating-systems
+    attributes:
+      label: Operating Systems
+      multiple: true
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Android
+        - iOS
+        - other
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Output of any relevant log messages. Automatically formatted, no need for backticks.
+      render: shell

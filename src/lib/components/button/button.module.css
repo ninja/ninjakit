@@ -1,0 +1,140 @@
+.filled,
+.floating,
+.state,
+.text {
+	composes: nk from global;
+}
+
+.filled,
+.filled .state,
+.text,
+.text .state {
+	border-radius: 20rem;
+	height: 40rem;
+}
+
+.floating,
+.floating .state {
+	border-radius: 16rem;
+	height: 56rem;
+	min-width: 56rem;
+}
+
+.filled {
+	background-color: var(--nk-color-primary);
+	color: var(--nk-color-on-primary);
+}
+
+.floating {
+	background-color: var(--nk-color-primary-container);
+	box-shadow: var(--nk-shadow);
+	color: var(--nk-color-on-primary-container);
+	margin: 8rem;
+}
+
+.text .state {
+	color: var(--nk-color-primary);
+}
+
+.filled .state,
+.floating .state,
+.text .state {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+}
+
+.filled.children:not(.icon) .state,
+.text.children:not(.icon) .state {
+	padding-left: 24rem;
+	padding-right: 24rem;
+}
+
+.floating.children:not(.icon) .state {
+	padding-left: 16rem;
+	padding-right: 16rem;
+}
+
+.filled.icon:not(.children) .state,
+.text.icon:not(.children) .state {
+	width: 40rem;
+}
+
+.filled.children.icon .state,
+.floating.children.icon .state,
+.text.children.icon .state {
+	gap: 8rem;
+}
+
+.filled.children.icon .state,
+.text.children.icon .state {
+	padding-left: 16rem;
+	padding-right: 24rem;
+}
+
+.floating.children.icon .state {
+	padding-left: 12rem;
+	padding-right: 16rem;
+}
+
+.state {
+	transition-duration: 300ms;
+	transition-property: background-color;
+	transition-timing-function: linear;
+}
+
+.filled:hover .state {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filled:focus-visible .state {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filled:active .state {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.floating:hover .state {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.floating:focus-visible .state {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.floating:active .state {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.text:hover .state {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.text:focus-visible .state {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.text:active .state {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.filled svg,
+.text svg {
+	height: 18rem;
+	width: 18rem;
+}
+
+.floating svg {
+	height: 24rem;
+	width: 24rem;
+}
+
+@media screen and (min-width: 600px) {
+	.floating,
+	.floating .state {
+		border-radius: 12rem;
+		height: 40rem;
+	}
+}
