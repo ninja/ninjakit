@@ -1,0 +1,41 @@
+.elevated,
+.filled,
+.outlined {
+	border-radius: 12rem;
+	box-shadow: var(--nk-shadow);
+	composes: nk from global;
+	display: flex;
+	flex-direction: column;
+	gap: 8rem;
+	padding: 12rem 16rem;
+}
+
+.elevated h1,
+.elevated h2,
+.filled h1,
+.filled h2,
+.outlined h1,
+.outlined h2 {
+	margin: 0;
+}
+
+.elevated > section,
+.filled > section,
+.outlined > section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8rem;
+}
+
+.elevated,
+.outlined {
+	background-color: var(--nk-color-surface);
+}
+
+.filled {
+	background-color: var(--nk-color-surface-variant);
+}
+
+.outlined {
+	border: 1rem solid var(--nk-color-outline);
+}

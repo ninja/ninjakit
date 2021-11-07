@@ -1,0 +1,55 @@
+name: Publish
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - name: Install Node.js Dependencies
+        run: npm ci --ignore-scripts
+      - name: Install Playwright Browsers
+        run: npx playwright install
+      - name: Install Playwright Browser Dependencies
+        run: npx playwright install-deps
+      - name: Test
+        run: npm test
+      - name: Check for updated version
+        id: version
+        uses: EndBug/version-check@v2
+        with:
+          diff-search: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Scripts
+        if: steps.version.outputs.changed == 'true'
+        run: npm run build:scripts
+      - name: Build Types
+        if: steps.version.outputs.changed == 'true'
+        run: npm run build:types
+      - name: Publish to npm
+        if: steps.version.outputs.changed == 'true'
+        run: npm publish --dry-run --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/setup-node@v2
+        if: steps.version.outputs.changed == 'true'
+        with:
+          registry-url: https://npm.pkg.github.com
+      - name: Publish to GitHub
+        if: steps.version.outputs.changed == 'true'
+        run: npm publish --dry-run --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
