@@ -27,6 +27,7 @@
 		"import/no-duplicates": "warn",
 		"import/order": "off",
 		"prettier/prettier": "warn",
+		"react/prop-types": "off",
 		"react/react-in-jsx-scope": "off",
 		"simple-import-sort/exports": "warn",
 		"simple-import-sort/imports": "warn",

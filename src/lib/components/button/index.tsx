@@ -1,21 +1,31 @@
-import { ButtonHTMLAttributes, FunctionComponent, ReactElement } from "react";
+import {
+	ButtonHTMLAttributes,
+	forwardRef,
+	PropsWithChildren,
+	ReactElement,
+} from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./button.module.css";
 
-export const Button: FunctionComponent<
-	ButtonHTMLAttributes<HTMLButtonElement> & {
-		icon?: ReactElement;
-		kind?: "filled" | "floating" | "text";
-	}
-> = ({
-	children,
-	className: classNameOverride,
-	icon,
-	kind = "filled",
-	type = "button",
-	...props
-}) => {
+export const Button = forwardRef<
+	HTMLButtonElement,
+	ButtonHTMLAttributes<HTMLButtonElement> &
+		PropsWithChildren<{
+			icon?: ReactElement;
+			kind?: "filled" | "floating" | "text";
+		}>
+>(function Button(
+	{
+		children,
+		className: classNameOverride,
+		icon,
+		kind = "filled",
+		type = "button",
+		...props
+	},
+	ref
+) {
 	const className = [
 		styles[kind],
 		typography.labelLarge,
@@ -25,11 +35,11 @@ export const Button: FunctionComponent<
 	].join(" ");
 
 	return (
-		<button className={className} type={type} {...props}>
+		<button className={className} type={type} {...props} ref={ref}>
 			<div className={styles.state}>
 				{icon}
 				<span>{children}</span>
 			</div>
 		</button>
 	);
-};
+});
