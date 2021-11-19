@@ -44,6 +44,7 @@
 	"files": [
 		"dist"
 	],
+	"license": "Apache-2.0",
 	"main": "./dist/ninjakit.umd.js",
 	"module": "./dist/ninjakit.es.js",
 	"name": "ninjakit",
