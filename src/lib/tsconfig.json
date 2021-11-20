@@ -19,5 +19,5 @@
 		"useDefineForClassFields": true
 	},
 	"exclude": ["**/*.test.*"],
-	"include": ["../vite-env.d.ts", "**/*"]
+	"include": ["../vite-env.d.ts", "**/*", "../public/color-scheme.ts"]
 }

@@ -39,6 +39,7 @@
 			"import": "./dist/ninjakit.es.js",
 			"require": "./dist/ninjakit.umd.js"
 		},
+		"./color-scheme.js": "./dist/color-scheme.js",
 		"./style.css": "./dist/style.css"
 	},
 	"files": [
@@ -60,6 +61,7 @@
 	"scripts": {
 		"build": "run-p build:**",
 		"build:scripts": "vite build",
+		"build:color-scheme": "tsc src/lib/color-scheme.ts --outDir dist",
 		"build:types": "tsc --emitDeclarationOnly --project src/lib",
 		"check": "run-p check:**",
 		"check:config": "prettier --check .",
@@ -68,8 +70,7 @@
 		"fix": "run-s fix:scripts fix:config",
 		"fix:config": "prettier --write .",
 		"fix:scripts": "eslint --ext .ts,.tsx --fix .",
-		"start:development": "vite",
-		"start:production": "vite build && vite preview",
+		"start": "vite",
 		"test": "playwright test"
 	},
 	"types": "dist/index.d.ts",

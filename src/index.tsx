@@ -7,11 +7,13 @@ import {
 	GridHeader,
 	GridNav,
 	GridNavLink,
+	useColorScheme,
 } from "ninjakit";
 import { StrictMode, useState } from "react";
 import ReactDOM from "react-dom";
 import {
 	MdAdd,
+	MdBrightnessHigh,
 	MdClear,
 	MdEdit,
 	MdHome,
@@ -22,6 +24,7 @@ import {
 } from "react-icons/md";
 
 function App() {
+	const { colorScheme, setColorScheme } = useColorScheme();
 	const [count, setCount] = useState(0);
 
 	return (
@@ -54,6 +57,17 @@ function App() {
 			<GridHeader>
 				<Button icon={<MdMenu />} kind="text" />
 				Header
+				<MdBrightnessHigh />
+				<select
+					onChange={(event) =>
+						setColorScheme(event.target.value as "light" | "dark" | "system")
+					}
+					value={colorScheme}
+				>
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
+					<option value="system">System default</option>
+				</select>
 			</GridHeader>
 			<GridArticle>
 				<main>
@@ -92,5 +106,5 @@ ReactDOM.render(
 	<StrictMode>
 		<App />
 	</StrictMode>,
-	document.getElementById("root")
+	document.getElementById("main")
 );
