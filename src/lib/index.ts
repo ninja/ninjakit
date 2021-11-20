@@ -14,3 +14,4 @@ export {
 	GridNavLink,
 } from "./components/grid";
 export { Typography } from "./components/typography";
+export { useColorScheme } from "./hooks/color-scheme";

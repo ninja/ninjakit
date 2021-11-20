@@ -182,132 +182,133 @@ body {
 }
 
 @media screen and (prefers-color-scheme: dark) {
-	:root {
-		--nk-color-primary: hsl(
-			var(--nk-hue-primary),
-			var(--nk-saturation-primary),
-			80%
-		);
-		--nk-color-primary-container: hsl(
-			var(--nk-hue-primary),
-			var(--nk-saturation-primary),
-			30%
-		);
-		--nk-color-secondary: hsl(
-			var(--nk-hue-secondary),
-			var(--nk-saturation-secondary),
-			80%
-		);
-		--nk-color-secondary-container: hsl(
-			var(--nk-hue-secondary),
-			var(--nk-saturation-secondary),
-			12%
-		);
-		--nk-color-tertiary: hsl(
-			var(--nk-hue-tertiary),
-			var(--nk-saturation-tertiary),
-			80%
-		);
-		--nk-color-tertiary-container: hsl(
-			var(--nk-hue-tertiary),
-			var(--nk-saturation-tertiary),
-			30%
-		);
-		--nk-color-surface: hsl(
-			var(--nk-hue-nuetral),
-			var(--nk-saturation-neutral),
-			10%
-		);
-		--nk-color-surface-variant: hsl(
-			var(--nk-hue-nuetral-variant),
-			var(--nk-saturation-neutral-variant),
-			12%
-		);
-		--nk-color-background: hsl(
-			var(--nk-hue-nuetral),
-			var(--nk-saturation-neutral),
-			12%
-		);
-		--nk-color-error: hsl(var(--nk-hue-error), var(--nk-saturation-error), 80%);
-		--nk-color-error-container: hsl(
-			var(--nk-hue-error),
-			var(--nk-saturation-error),
-			30%
-		);
-		--nk-color-on-primary: hsl(
-			var(--nk-hue-primary),
-			var(--nk-saturation-primary),
-			20%
-		);
-		--nk-color-on-primary-container: hsl(
-			var(--nk-hue-primary),
-			var(--nk-saturation-primary),
-			90%
-		);
-		--nk-color-on-secondary: hsl(
-			var(--nk-hue-secondary),
-			var(--nk-saturation-secondary),
-			20%
-		);
-		--nk-color-on-secondary-container: hsl(
-			var(--nk-hue-secondary),
-			var(--nk-saturation-secondary),
-			90%
-		);
-		--nk-color-on-tertiary: hsl(
-			var(--nk-hue-tertiary),
-			var(--nk-saturation-tertiary),
-			20%
-		);
-		--nk-color-on-tertiary-container: hsl(
-			var(--nk-hue-tertiary),
-			var(--nk-saturation-tertiary),
-			90%
-		);
-		--nk-color-on-surface: hsl(
-			var(--nk-hue-nuetral),
-			var(--nk-saturation-neutral),
-			90%
-		);
-		--nk-color-on-surface-variant: hsl(
-			var(--nk-hue-nuetral-variant),
-			var(--nk-saturation-neutral-variant),
-			80%
-		);
-		--nk-color-on-error: hsl(
-			var(--nk-hue-error),
-			var(--nk-saturation-error),
-			20%
-		);
-		--nk-color-on-error-container: hsl(
-			var(--nk-hue-error),
-			var(--nk-saturation-error),
-			80%
-		);
-		--nk-color-on-background: hsl(
-			var(--nk-hue-nuetral),
-			var(--nk-saturation-neutral),
-			90%
-		);
-		--nk-color-outline: hsl(
-			var(--nk-hue-nuetral-variant),
-			var(--nk-saturation-neutral-variant),
-			60%
-		);
-		--nk-color-inverse-surface: hsl(
-			var(--nk-hue-nuetral),
-			var(--nk-saturation-neutral),
-			90%
-		);
-		--nk-color-inverse-on-surface: hsl(
-			var(--nk-hue-nuetral),
-			var(--nk-saturation-neutral),
-			20%
-		);
-		--nk-color-inverse-primary: hsl(
-			var(--nk-hue-primary),
-			var(--nk-saturation-primary),
-			40%
-		);
-	}
+}
+
+:root.dark {
+	--nk-color-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		80%
+	);
+	--nk-color-primary-container: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		30%
+	);
+	--nk-color-secondary: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		80%
+	);
+	--nk-color-secondary-container: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		12%
+	);
+	--nk-color-tertiary: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		80%
+	);
+	--nk-color-tertiary-container: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		30%
+	);
+	--nk-color-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		10%
+	);
+	--nk-color-surface-variant: hsl(
+		var(--nk-hue-nuetral-variant),
+		var(--nk-saturation-neutral-variant),
+		12%
+	);
+	--nk-color-background: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		12%
+	);
+	--nk-color-error: hsl(var(--nk-hue-error), var(--nk-saturation-error), 80%);
+	--nk-color-error-container: hsl(
+		var(--nk-hue-error),
+		var(--nk-saturation-error),
+		30%
+	);
+	--nk-color-on-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		20%
+	);
+	--nk-color-on-primary-container: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		90%
+	);
+	--nk-color-on-secondary: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		20%
+	);
+	--nk-color-on-secondary-container: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		90%
+	);
+	--nk-color-on-tertiary: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		20%
+	);
+	--nk-color-on-tertiary-container: hsl(
+		var(--nk-hue-tertiary),
+		var(--nk-saturation-tertiary),
+		90%
+	);
+	--nk-color-on-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		90%
+	);
+	--nk-color-on-surface-variant: hsl(
+		var(--nk-hue-nuetral-variant),
+		var(--nk-saturation-neutral-variant),
+		80%
+	);
+	--nk-color-on-error: hsl(
+		var(--nk-hue-error),
+		var(--nk-saturation-error),
+		20%
+	);
+	--nk-color-on-error-container: hsl(
+		var(--nk-hue-error),
+		var(--nk-saturation-error),
+		80%
+	);
+	--nk-color-on-background: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		90%
+	);
+	--nk-color-outline: hsl(
+		var(--nk-hue-nuetral-variant),
+		var(--nk-saturation-neutral-variant),
+		60%
+	);
+	--nk-color-inverse-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		90%
+	);
+	--nk-color-inverse-on-surface: hsl(
+		var(--nk-hue-nuetral),
+		var(--nk-saturation-neutral),
+		20%
+	);
+	--nk-color-inverse-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		40%
+	);
 }
