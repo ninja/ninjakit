@@ -82,6 +82,7 @@
 	transition-duration: 300ms;
 	transition-property: background-color;
 	transition-timing-function: linear;
+	white-space: nowrap;
 }
 
 .filled:hover .state {
