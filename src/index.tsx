@@ -4,6 +4,7 @@ import {
 	Grid,
 	GridArticle,
 	GridButton,
+	GridFill,
 	GridHeader,
 	GridNav,
 	GridNavLink,
@@ -13,7 +14,6 @@ import { StrictMode, useState } from "react";
 import ReactDOM from "react-dom";
 import {
 	MdAdd,
-	MdBrightnessHigh,
 	MdClear,
 	MdEdit,
 	MdHome,
@@ -56,17 +56,17 @@ function App() {
 			</GridNav>
 			<GridHeader>
 				<Button icon={<MdMenu />} kind="text" />
-				Header
-				<MdBrightnessHigh />
+				Ninja Kit
+				<GridFill />
 				<select
 					onChange={(event) =>
 						setColorScheme(event.target.value as "light" | "dark" | "system")
 					}
 					value={colorScheme}
 				>
-					<option value="light">Light</option>
-					<option value="dark">Dark</option>
-					<option value="system">System default</option>
+					<option value="light">Theme: Light</option>
+					<option value="dark">Theme: Dark</option>
+					<option value="system">Theme: System default</option>
 				</select>
 			</GridHeader>
 			<GridArticle>

@@ -6,6 +6,13 @@
 }
 
 .filled,
+.floating,
+.text {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.filled,
 .filled .state,
 .text,
 .text .state {
@@ -40,7 +47,6 @@
 .floating .state,
 .text .state {
 	align-items: center;
-	cursor: pointer;
 	display: flex;
 	justify-content: center;
 }

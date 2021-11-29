@@ -1,5 +1,6 @@
 .article,
 .aside,
+.fill,
 .grid,
 .header,
 .nav,
@@ -62,6 +63,10 @@
 	bottom: 96rem;
 	position: fixed;
 	right: 16rem;
+}
+
+.fill {
+	flex-grow: 2;
 }
 
 .header {
