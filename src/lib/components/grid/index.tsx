@@ -39,6 +39,12 @@ export const GridButton: FunctionComponent<
 	</Button>
 );
 
+export const GridFill: FunctionComponent = ({ children, ...props }) => (
+	<div className={styles.fill} {...props}>
+		{children}
+	</div>
+);
+
 export const GridHeader: FunctionComponent = ({ children, ...props }) => {
 	const className = [styles.header, typography.bodyMedium].join(" ");
 

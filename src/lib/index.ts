@@ -7,6 +7,7 @@ export {
 	GridArticle,
 	GridAside,
 	GridButton,
+	GridFill,
 	GridHeader,
 	GridNav,
 	GridNavLink,
