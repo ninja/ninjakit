@@ -1,3 +1,4 @@
+import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { defineConfig, UserConfig } from "vite";
@@ -9,7 +10,6 @@ export default defineConfig(({ mode }) => {
 			emptyOutDir: true,
 			outDir: resolve(__dirname, "dist"),
 		},
-		plugins: [react()],
 		resolve: { alias: { ninjakit: resolve(__dirname, "src/lib") } },
 	};
 
@@ -33,9 +33,18 @@ export default defineConfig(({ mode }) => {
 					generateScopedName: "ninjakit-[folder]-[local]-[contentHash]",
 				},
 			},
+			plugins: [react()],
 			root: resolve(__dirname, "src/lib"),
 		};
 	}
 
-	return { ...config, root: resolve(__dirname, "src") };
+	return {
+		...config,
+		plugins: [
+			react(),
+			legacy({ targets: ["defaults", "iOS 12", "not IE 11"] }),
+		],
+		root: resolve(__dirname, "src"),
+		server: { host: "0.0.0.0" },
+	};
 });
