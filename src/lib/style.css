@@ -146,17 +146,13 @@
 		80%
 	);
 	--nk-font-family: roboto, system-ui, sans-serif;
-	--nk-shadow: 0 2rem 8rem -6rem var(--nk-color-shadow);
+	--nk-shadow: 0 0.2rem 0.8rem -0.6rem var(--nk-color-shadow);
 	background-color: var(--nk-color-background);
 	color: var(--nk-color-on-background);
 	color-scheme: light dark;
 	font-family: var(--nk-font-family);
-	font-size: 6.25%; /* 1rem == 1px (resolution independent) */
+	font-size: 62.5%; /* 1rem == 10px (resolution independent) */
 	font-weight: 400;
-}
-
-body {
-	display: contents;
 }
 
 .nk {
@@ -168,6 +164,7 @@ body {
 	box-sizing: border-box;
 	color: unset;
 	font-family: var(--nk-font-family);
+	font-size: inherit;
 	line-height: 1em;
 	outline-color: unset;
 	outline-offset: unset;
@@ -179,9 +176,6 @@ body {
 	transition-property: color;
 	transition-duration: 300ms;
 	transition-timing-function: linear;
-}
-
-@media screen and (prefers-color-scheme: dark) {
 }
 
 :root.dark {

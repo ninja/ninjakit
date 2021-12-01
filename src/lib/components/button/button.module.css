@@ -16,15 +16,15 @@
 .filled .state,
 .text,
 .text .state {
-	border-radius: 20rem;
-	height: 40rem;
+	border-radius: 2rem;
+	height: 4rem;
 }
 
 .floating,
 .floating .state {
-	border-radius: 16rem;
-	height: 56rem;
-	min-width: 56rem;
+	border-radius: 1.6rem;
+	height: 5.6rem;
+	min-width: 5.6rem;
 }
 
 .filled {
@@ -36,7 +36,7 @@
 	background-color: var(--nk-color-primary-container);
 	box-shadow: var(--nk-shadow);
 	color: var(--nk-color-on-primary-container);
-	margin: 8rem;
+	margin: 0.8rem;
 }
 
 .text .state {
@@ -53,35 +53,35 @@
 
 .filled.children:not(.icon) .state,
 .text.children:not(.icon) .state {
-	padding-left: 24rem;
-	padding-right: 24rem;
+	padding-left: 2.4rem;
+	padding-right: 2.4rem;
 }
 
 .floating.children:not(.icon) .state {
-	padding-left: 16rem;
-	padding-right: 16rem;
+	padding-left: 1.6rem;
+	padding-right: 1.6rem;
 }
 
 .filled.icon:not(.children) .state,
 .text.icon:not(.children) .state {
-	width: 40rem;
+	width: 4rem;
 }
 
 .filled.children.icon .state,
 .floating.children.icon .state,
 .text.children.icon .state {
-	gap: 8rem;
+	gap: 0.8rem;
 }
 
 .filled.children.icon .state,
 .text.children.icon .state {
-	padding-left: 16rem;
-	padding-right: 24rem;
+	padding-left: 1.6rem;
+	padding-right: 2.4rem;
 }
 
 .floating.children.icon .state {
-	padding-left: 12rem;
-	padding-right: 16rem;
+	padding-left: 1.2rem;
+	padding-right: 1.6rem;
 }
 
 .state {
@@ -129,19 +129,19 @@
 
 .filled svg,
 .text svg {
-	height: 18rem;
-	width: 18rem;
+	height: 1.8rem;
+	width: 1.8rem;
 }
 
 .floating svg {
-	height: 24rem;
-	width: 24rem;
+	height: 2.4rem;
+	width: 2.4rem;
 }
 
 @media screen and (min-width: 600px) {
 	.floating,
 	.floating .state {
-		border-radius: 12rem;
-		height: 40rem;
+		border-radius: 1.2rem;
+		height: 4rem;
 	}
 }

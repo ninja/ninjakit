@@ -1,5 +1,8 @@
-const localColorScheme = localStorage.getItem("prefersColorScheme");
-const systemColorScheme = matchMedia("(prefers-color-scheme: dark)")
+const localColorScheme = localStorage.getItem("prefersColorScheme") as
+	| "light"
+	| "dark"
+	| null;
+const systemColorScheme = matchMedia("(prefers-color-scheme: dark)").matches
 	? "dark"
 	: "light";
 const colorScheme = localColorScheme || systemColorScheme;

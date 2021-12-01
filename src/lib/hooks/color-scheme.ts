@@ -25,6 +25,7 @@ export function useColorScheme() {
 
 		if (colorScheme === "system") {
 			const systemColorScheme = matchMedia("(prefers-color-scheme: dark)")
+				.matches
 				? "dark"
 				: "light";
 

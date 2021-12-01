@@ -4,4 +4,5 @@
 .npm
 *.tgz
 dist
+ninjakit.dev
 node_modules
