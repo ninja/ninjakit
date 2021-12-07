@@ -1,7 +1,8 @@
 .card {
 	--x: 50%;
 	--y: 50%;
-	background-image: linear-gradient(90deg, black, transparent), url("/dojo.png");
+	background-image: linear-gradient(90deg, black, transparent),
+		url("/dojo.webp");
 	background-position: var(--x) var(--y);
 	background-repeat: no-repeat;
 	border: 2px solid black;
