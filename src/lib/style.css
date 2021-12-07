@@ -154,35 +154,11 @@
 	font-size: 62.5%; /* 1rem == 10px (resolution independent) */
 	font-weight: 400;
 }
-
-.nk {
-	appearance: unset;
-	background-color: unset;
-	border-color: unset;
-	border-style: unset;
-	border-width: unset;
-	box-sizing: border-box;
-	color: unset;
-	font-family: var(--nk-font-family);
-	font-size: inherit;
-	line-height: 1em;
-	outline-color: unset;
-	outline-offset: unset;
-	outline-style: unset;
-	outline-width: unset;
-	padding: unset;
-	margin: unset;
-	transition-property: background-color;
-	transition-property: color;
-	transition-duration: 300ms;
-	transition-timing-function: linear;
-}
-
 :root.dark {
 	--nk-color-primary: hsl(
 		var(--nk-hue-primary),
 		var(--nk-saturation-primary),
-		80%
+		60%
 	);
 	--nk-color-primary-container: hsl(
 		var(--nk-hue-primary),
@@ -305,4 +281,33 @@
 		var(--nk-saturation-primary),
 		40%
 	);
+}
+
+.nk,
+.nk::before,
+.nk::after {
+	box-sizing: border-box;
+}
+
+.nk {
+	appearance: unset;
+	background-color: unset;
+	border-color: unset;
+	border-style: unset;
+	border-width: unset;
+	color: unset;
+	font-family: var(--nk-font-family);
+	font-size: inherit;
+	line-height: 1em;
+	outline-color: unset;
+	outline-offset: unset;
+	outline-style: unset;
+	outline-width: unset;
+	padding: unset;
+	margin: unset;
+	text-decoration: unset;
+	transition-property: background-color;
+	transition-property: color;
+	transition-duration: 300ms;
+	transition-timing-function: linear;
 }

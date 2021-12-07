@@ -1,0 +1,66 @@
+.card {
+	--x: 50%;
+	--y: 50%;
+	background-image: linear-gradient(90deg, black, transparent), url("/dojo.png");
+	background-position: var(--x) var(--y);
+	background-repeat: no-repeat;
+	border: 2px solid black;
+	height: 48rem;
+	max-width: 100rem;
+	position: relative;
+	transition-property: background-position;
+	transition-duration: 300ms;
+}
+
+.card > section {
+	align-items: flex-start;
+	background-color: rgba(0, 0, 0, 0.25);
+	border-radius: 1.2rem;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	left: 0;
+	padding: 4rem;
+	position: absolute;
+	top: 0;
+}
+
+.card > section > h1,
+.card > section > h2 {
+	transition-duration: 300ms;
+	transition-property: font-size;
+}
+
+.card > section > h1 {
+	font-size: 8rem;
+}
+
+.card > section > h2 {
+	align-items: center;
+	display: flex;
+	font-size: 1.2rem;
+	font-weight: 400;
+	gap: 0.8rem;
+	line-height: 1em;
+}
+
+.ninja {
+	filter: drop-shadow(-2rem 0 1rem rgb(0 0 0 / 0.6));
+	left: 1rem;
+	margin: 0 auto;
+	max-width: 60rem;
+	position: absolute;
+	right: 1rem;
+	top: 6rem;
+}
+
+@media screen and (min-width: 600px) {
+	.card > section > h1 {
+		font-size: 10rem;
+	}
+
+	.card > section > h2 {
+		font-size: 1.6rem;
+	}
+}

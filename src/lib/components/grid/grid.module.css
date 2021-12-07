@@ -3,10 +3,7 @@
 .fill,
 .grid,
 .header,
-.nav,
-.navLink,
-.navIndicator,
-.navLabel {
+.nav {
 	composes: nk from global;
 }
 
@@ -49,6 +46,7 @@
 	grid-template-columns: 1fr;
 	grid-template-rows: auto auto;
 	padding: 0.8rem;
+	position: relative;
 }
 
 .article > aside {
@@ -72,9 +70,8 @@
 .header {
 	align-items: center;
 	display: flex;
-	gap: 0.8rem;
 	grid-area: header;
-	padding: 1.6rem;
+	padding: 0.4rem;
 }
 
 .grid {
@@ -96,32 +93,14 @@
 	justify-content: center;
 }
 
-.navIndicator {
-	align-items: center;
-	border-radius: 1.6rem;
-	display: flex;
-	height: 3.2rem;
-	justify-content: center;
-	width: 6.4rem;
-}
-
-.navIndicator svg {
-	box-sizing: border-box;
+.nav > a {
 	color: var(--nk-color-on-surface-variant);
-	font-size: 2.4rem;
-}
-
-.navLabel {
-	color: var(--nk-color-on-surface-variant);
-	composes: labelMedium from "../typography/typography.module.css";
-}
-
-.navLink {
 	align-items: center;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
+	outline: none;
 	padding-bottom: 1.6rem;
 	padding-left: 1.6rem;
 	padding-right: 1.6rem;
@@ -132,28 +111,43 @@
 	transition-timing-function: linear;
 }
 
-a.navLink:hover {
+.nav > a:hover {
 	background-color: rgba(0, 0, 0, 0.05);
 }
 
-a.navLink:focus-visible {
+.nav > a:focus-visible {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-a.navLink:active {
+.nav > a:active {
 	background-color: rgba(0, 0, 0, 0.15);
 }
 
-span.navLink .navIndicator {
+.nav > a > span:first-child {
+	align-items: center;
+	border-radius: 1.6rem;
+	display: flex;
+	height: 3.2rem;
+	justify-content: center;
+	width: 6.4rem;
+}
+
+.nav > a > span:first-child > svg {
+	box-sizing: border-box;
+	color: var(--nk-color-on-surface-variant);
+	font-size: 2.4rem;
+}
+
+.nav > a[aria-current="page"] > span:first-child {
 	background-color: var(--nk-color-secondary-container);
 }
 
-span.navLink .navLabel {
-	color: var(--nk-color-on-surface);
+.nav > a[aria-current="page"] > span:first-child > svg {
+	color: var(--nk-color-on-secondary-container);
 }
 
-span.navLink svg {
-	color: var(--nk-color-on-secondary-container);
+.nav > [aria-current="page"] > span:last-child {
+	color: var(--nk-color-on-surface);
 }
 
 @media screen and (min-width: 600px) {
@@ -177,7 +171,7 @@ span.navLink svg {
 	}
 
 	.article > aside {
-		width: 25.6rem;
+		max-width: 32rem;
 	}
 
 	.article > aside:hover,
@@ -224,7 +218,7 @@ span.navLink svg {
 		justify-content: start;
 	}
 
-	.navLink {
+	.nav a {
 		width: 100%;
 	}
 }

@@ -1,0 +1,10 @@
+.ninjaKit {
+	font-size: 1.8rem;
+	font-weight: 400;
+	line-height: 1em;
+}
+
+.ninjaKit > strong {
+	color: #c00;
+	font-weight: 500;
+}
