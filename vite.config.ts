@@ -49,7 +49,7 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			react(),
 			mdx({ format: "mdx" }),
-			legacy({ targets: ["defaults", "iOS 12", "not IE"] }),
+			legacy({ targets: ["defaults", "iOS 12", "not IE 11"] }),
 		],
 		root: resolve(__dirname, "src/docs"),
 		server: { host: "0.0.0.0" },
