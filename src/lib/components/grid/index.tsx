@@ -1,11 +1,12 @@
 import {
+	AnchorHTMLAttributes,
 	ButtonHTMLAttributes,
 	FunctionComponent,
-	LinkHTMLAttributes,
 	ReactElement,
 } from "react";
 
 import { Button } from "../button";
+import { ButtonAnchor } from "../button/anchor";
 import typography from "../typography/typography.module.css";
 import styles from "./grid.module.css";
 
@@ -39,6 +40,19 @@ export const GridButton: FunctionComponent<
 	</Button>
 );
 
+export const GridButtonAnchor: FunctionComponent<
+	AnchorHTMLAttributes<HTMLAnchorElement> & { icon: ReactElement }
+> = ({ children, icon, ...props }) => (
+	<ButtonAnchor
+		className={styles.button}
+		icon={icon}
+		kind="floating"
+		{...props}
+	>
+		{children}
+	</ButtonAnchor>
+);
+
 export const GridFill: FunctionComponent = ({ children, ...props }) => (
 	<div className={styles.fill} {...props}>
 		{children}
@@ -60,27 +74,3 @@ export const GridNav: FunctionComponent = ({ children, ...props }) => (
 		{children}
 	</nav>
 );
-
-export const GridNavLink: FunctionComponent<
-	LinkHTMLAttributes<HTMLAnchorElement> & {
-		active?: boolean;
-		icon: ReactElement;
-		iconActive: ReactElement;
-	}
-> = ({ children, active = false, href, icon, iconActive, ...props }) => {
-	if (active) {
-		return (
-			<span aria-current={active} className={styles.navLink} {...props}>
-				<div className={styles.navIndicator}>{iconActive}</div>
-				<div className={styles.navLabel}>{children}</div>
-			</span>
-		);
-	}
-
-	return (
-		<a className={styles.navLink} href={href} {...props}>
-			<div className={styles.navIndicator}>{icon}</div>
-			<div className={styles.navLabel}>{children}</div>
-		</a>
-	);
-};

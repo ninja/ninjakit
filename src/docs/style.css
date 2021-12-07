@@ -1,0 +1,41 @@
+:root {
+	--nk-hue-error: 0deg;
+	--nk-hue-nuetral: 0deg;
+	--nk-hue-nuetral-variant: 0deg;
+	--nk-hue-primary: 0deg;
+	--nk-hue-secondary: 0deg;
+	--nk-hue-tertiary: 0deg;
+	--nk-saturation-error: 100%;
+	--nk-saturation-neutral: 0%;
+	--nk-saturation-neutral-variant: 0%;
+	--nk-saturation-primary: 100%;
+	--nk-saturation-secondary: 0%;
+	--nk-saturation-tertiary: 100%;
+	--nk-color-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		0%
+	);
+	--nk-color-secondary: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		20%
+	);
+}
+
+:root.dark {
+	--nk-color-primary: hsl(
+		var(--nk-hue-primary),
+		var(--nk-saturation-primary),
+		100%
+	);
+	--nk-color-secondary: hsl(
+		var(--nk-hue-secondary),
+		var(--nk-saturation-secondary),
+		20%
+	);
+}
+
+body {
+	font-size: 1.2rem;
+}

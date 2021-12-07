@@ -1,17 +1,30 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, HTMLAttributes } from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./card.module.css";
 
-export const Card: FunctionComponent<{
-	kind?: "elevated" | "filled" | "outlined";
-	subhead?: string;
-	title?: string;
-}> = ({ children, kind = "filled", subhead, title, ...props }) => {
-	const className = [styles[kind], typography.bodyMedium].join(" ");
+export const Card: FunctionComponent<
+	HTMLAttributes<HTMLDivElement> & {
+		kind?: "elevated" | "filled" | "outlined";
+		subhead?: string;
+		title?: string;
+	}
+> = ({
+	children,
+	className: classNameOverride,
+	kind = "filled",
+	subhead,
+	title,
+	...props
+}) => {
+	const className = [
+		styles[kind],
+		typography.bodyMedium,
+		classNameOverride,
+	].join(" ");
 
 	return (
-		<section className={className} {...props}>
+		<div className={className} {...props}>
 			{(title || subhead) && (
 				<header>
 					{title && <h1 className={typography.titleMedium}>{title}</h1>}
@@ -19,6 +32,6 @@ export const Card: FunctionComponent<{
 				</header>
 			)}
 			{children}
-		</section>
+		</div>
 	);
 };

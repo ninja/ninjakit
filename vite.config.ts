@@ -1,3 +1,4 @@
+import mdx from "@mdx-js/rollup";
 import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
@@ -10,7 +11,12 @@ export default defineConfig(({ mode }) => {
 			emptyOutDir: true,
 			outDir: resolve(__dirname, "dist"),
 		},
-		resolve: { alias: { ninjakit: resolve(__dirname, "src/lib") } },
+		resolve: {
+			alias: {
+				ninjakit: resolve(__dirname, "src/lib"),
+				"react/jsx-runtime": "react/jsx-runtime.js",
+			},
+		},
 	};
 
 	if (mode === "lib") {
@@ -42,9 +48,10 @@ export default defineConfig(({ mode }) => {
 		...config,
 		plugins: [
 			react(),
-			legacy({ targets: ["defaults", "iOS 12", "not IE 11"] }),
+			mdx({ format: "mdx" }),
+			legacy({ targets: ["defaults", "iOS 12", "not IE"] }),
 		],
-		root: resolve(__dirname, "src"),
+		root: resolve(__dirname, "src/docs"),
 		server: { host: "0.0.0.0" },
 	};
 });

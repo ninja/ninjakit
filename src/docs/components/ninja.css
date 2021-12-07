@@ -1,0 +1,558 @@
+.a {
+	fill: url(#a);
+	filter: url(#dc);
+}
+.b {
+	fill: url(#b);
+}
+.c {
+	fill: url(#c);
+}
+.d {
+	fill: url(#d);
+}
+.e {
+	fill: url(#e);
+}
+.f {
+	opacity: 0.2;
+}
+.g {
+	mask: url(#f);
+}
+.h {
+	fill: url(#h);
+}
+.i {
+	fill: url(#i);
+}
+.j {
+	opacity: 0.48;
+}
+.k {
+	mask: url(#j);
+}
+.l {
+	fill: url(#l);
+}
+.m {
+	mask: url(#m);
+}
+.n {
+	mask: url(#o);
+}
+.o {
+	mask: url(#q);
+}
+.p {
+	fill: url(#s);
+}
+.q {
+	fill: url(#t);
+}
+.r {
+	mask: url(#u);
+}
+.s {
+	mask: url(#w);
+}
+.t {
+	fill: url(#y);
+}
+.u {
+	fill: url(#z);
+}
+.v {
+	mask: url(#aa);
+}
+.w {
+	mask: url(#ac);
+}
+.x {
+	mask: url(#ae);
+}
+.y {
+	fill: url(#ag);
+}
+.z {
+	mask: url(#ah);
+}
+.aa {
+	mask: url(#aj);
+}
+.ab {
+	fill: #cbae8d;
+}
+.ac {
+	opacity: 0.55;
+}
+.ad,
+.af,
+.cc {
+	fill: #fff;
+}
+.ae {
+	fill: #4f2a06;
+}
+.af {
+	opacity: 0.51;
+}
+.ag {
+	mask: url(#al);
+}
+.ah {
+	mask: url(#an);
+}
+.ai {
+	fill: url(#ap);
+}
+.aj {
+	mask: url(#aq);
+}
+.ak {
+	mask: url(#as);
+}
+.al {
+	fill: url(#au);
+}
+.am {
+	mask: url(#av);
+}
+.an {
+	opacity: 0.22;
+}
+.ao {
+	mask: url(#ax);
+}
+.ap {
+	mask: url(#az);
+}
+.aq {
+	mask: url(#bb);
+}
+.ar {
+	fill: url(#bd);
+}
+.as {
+	mask: url(#be);
+}
+.at {
+	fill: url(#bg);
+}
+.au {
+	mask: url(#bh);
+}
+.av {
+	fill: url(#bj);
+}
+.aw {
+	mask: url(#bk);
+}
+.ax {
+	fill: url(#bm);
+}
+.ay {
+	fill: url(#bn);
+}
+.az {
+	mask: url(#bo);
+}
+.ba {
+	mask: url(#bq);
+}
+.bb {
+	fill: url(#bs);
+}
+.bc {
+	fill: url(#bt);
+}
+.bd {
+	fill: url(#bu);
+}
+.be {
+	fill: url(#bv);
+}
+.bf {
+	fill: url(#bw);
+}
+.bg {
+	fill: url(#bx);
+}
+.bh {
+	mask: url(#by);
+}
+.bi {
+	fill: url(#ca);
+}
+.bj {
+	mask: url(#cb);
+}
+.bk {
+	mask: url(#cd);
+}
+.bl {
+	mask: url(#cf);
+}
+.bm {
+	mask: url(#ch);
+}
+.bn {
+	fill: #8c7861;
+}
+.bo {
+	fill: url(#cj);
+}
+.bp {
+	mask: url(#ck);
+}
+.bq {
+	fill: url(#cm);
+}
+.br {
+	mask: url(#cn);
+}
+.bs {
+	mask: url(#cp);
+}
+.bt {
+	fill: url(#cr);
+}
+.bu {
+	mask: url(#cs);
+}
+.bv {
+	fill: url(#cu);
+}
+.bw {
+	mask: url(#cv);
+}
+.bx {
+	fill: url(#cx);
+}
+.by {
+	fill: url(#cy);
+}
+.bz {
+	fill: url(#cz);
+}
+.ca {
+	fill: url(#da);
+}
+.cb {
+	mask: url(#db);
+}
+.cc {
+	opacity: 0.69;
+}
+.cd {
+	mask: url(#dd);
+}
+.ce {
+	mask: url(#df);
+}
+.cf {
+	mask: url(#dh);
+}
+.cg {
+	mask: url(#dj);
+}
+.ch {
+	mask: url(#dl);
+}
+.ci {
+	fill: url(#dn);
+}
+.cj {
+	fill: url(#do);
+}
+.ck {
+	mask: url(#dp);
+}
+.cl {
+	mask: url(#dr);
+}
+.cm {
+	mask: url(#dt);
+}
+.cn {
+	mask: url(#dv);
+}
+.co {
+	mask: url(#dx);
+}
+.cp {
+	mask: url(#dz);
+}
+.cq {
+	mask: url(#eb);
+}
+.cr {
+	mask: url(#ed);
+}
+.cs {
+	mask: url(#ef);
+}
+.ct {
+	fill: url(#ei);
+}
+.cu {
+	mask: url(#ej);
+}
+.cv {
+	mask: url(#el);
+}
+.cw {
+	mask: url(#en);
+}
+.cx {
+	opacity: 0.46;
+}
+.cy {
+	mask: url(#eq);
+}
+.cz {
+	mask: url(#es);
+}
+.da {
+	mask: url(#eu);
+}
+.db {
+	mask: url(#ew);
+}
+.dc {
+	mask: url(#ey);
+}
+.dd {
+	mask: url(#fa);
+}
+.de {
+	mask: url(#fc);
+}
+.df {
+	mask: url(#fe);
+}
+.dg {
+	mask: url(#fg);
+}
+.dh {
+	mask: url(#fi);
+}
+.di {
+	mask: url(#fk);
+}
+.dj {
+	mask: url(#fm);
+}
+.dk {
+	mask: url(#fo);
+}
+.dl {
+	mask: url(#fq);
+}
+.dm {
+	mask: url(#fs);
+}
+.dn {
+	opacity: 0.31;
+}
+.do {
+	filter: url(#ft);
+}
+.dp {
+	filter: url(#fr);
+}
+.dq {
+	filter: url(#fp);
+}
+.dr {
+	filter: url(#fn);
+}
+.ds {
+	filter: url(#fl);
+}
+.dt {
+	filter: url(#fj);
+}
+.du {
+	filter: url(#fh);
+}
+.dv {
+	filter: url(#ff);
+}
+.dw {
+	filter: url(#fd);
+}
+.dx {
+	filter: url(#fb);
+}
+.dy {
+	filter: url(#ez);
+}
+.dz {
+	filter: url(#ex);
+}
+.ea {
+	filter: url(#ev);
+}
+.eb {
+	filter: url(#et);
+}
+.ec {
+	filter: url(#er);
+}
+.ed {
+	filter: url(#eo);
+}
+.ee {
+	filter: url(#em);
+}
+.ef {
+	filter: url(#ek);
+}
+.eg {
+	filter: url(#eg);
+}
+.eh {
+	filter: url(#ee);
+}
+.ei {
+	filter: url(#ec);
+}
+.ej {
+	filter: url(#ea);
+}
+.ek {
+	filter: url(#dy);
+}
+.el {
+	filter: url(#dw);
+}
+.em {
+	filter: url(#du);
+}
+.en {
+	filter: url(#ds);
+}
+.eo {
+	filter: url(#dq);
+}
+.ep {
+	filter: url(#dm);
+}
+.eq {
+	filter: url(#dk);
+}
+.er {
+	filter: url(#di);
+}
+.es {
+	filter: url(#dg);
+}
+.et {
+	filter: url(#de);
+}
+.eu {
+	filter: url(#cw);
+}
+.ev {
+	filter: url(#ct);
+}
+.ew {
+	filter: url(#cq);
+}
+.ex {
+	filter: url(#co);
+}
+.ey {
+	filter: url(#cl);
+}
+.ez {
+	filter: url(#ci);
+}
+.fa {
+	filter: url(#cg);
+}
+.fb {
+	filter: url(#ce);
+}
+.fc {
+	filter: url(#cc);
+}
+.fd {
+	filter: url(#bz);
+}
+.fe {
+	filter: url(#br);
+}
+.ff {
+	filter: url(#bp);
+}
+.fg {
+	filter: url(#bl);
+}
+.fh {
+	filter: url(#bi);
+}
+.fi {
+	filter: url(#bf);
+}
+.fj {
+	filter: url(#bc);
+}
+.fk {
+	filter: url(#ba);
+}
+.fl {
+	filter: url(#ay);
+}
+.fm {
+	filter: url(#aw);
+}
+.fn {
+	filter: url(#at);
+}
+.fo {
+	filter: url(#ar);
+}
+.fp {
+	filter: url(#ao);
+}
+.fq {
+	filter: url(#am);
+}
+.fr {
+	filter: url(#ak);
+}
+.fs {
+	filter: url(#ai);
+}
+.ft {
+	filter: url(#af);
+}
+.fu {
+	filter: url(#ad);
+}
+.fv {
+	filter: url(#ab);
+}
+.fw {
+	filter: url(#x);
+}
+.fx {
+	filter: url(#v);
+}
+.fy {
+	filter: url(#r);
+}
+.fz {
+	filter: url(#p);
+}
+.ga {
+	filter: url(#n);
+}
+.gb {
+	filter: url(#k);
+}
+.gc {
+	filter: url(#g);
+}
