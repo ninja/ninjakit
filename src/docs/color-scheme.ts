@@ -1,1 +1,0 @@
-import "ninjakit/color-scheme";
