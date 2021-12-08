@@ -46,6 +46,15 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		...config,
+		build: {
+			...config.build,
+			rollupOptions: {
+				input: {
+					main: resolve(__dirname, "src/docs/index.html"),
+					404: resolve(__dirname, "src/docs/404.html"),
+				},
+			},
+		},
 		plugins: [
 			react(),
 			mdx({ format: "mdx" }),
