@@ -1,6 +1,3 @@
-import "ninjakit/style.css";
-import "./style.css";
-
 import {
 	Button,
 	ButtonAnchor,
