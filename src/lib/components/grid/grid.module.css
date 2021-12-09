@@ -54,10 +54,12 @@
 }
 
 .article > footer {
-	align-items: flex-end;
+	align-items: center;
+	align-self: flex-end;
 	display: flex;
+	gap: 0.8rem;
 	justify-content: flex-end;
-	padding: 0.4rem;
+	padding: 0.4rem 1.6rem;
 }
 
 .article > main {
@@ -77,8 +79,9 @@
 .header {
 	align-items: center;
 	display: flex;
+	gap: 0.8rem;
 	grid-area: header;
-	padding: 0.4rem;
+	padding: 0.4rem 1.6rem;
 }
 
 .grid {
