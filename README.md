@@ -1,10 +1,7 @@
-# Ninja Kit
+# [ninjaKit](https://ninjakit.dev)
 
-[Apache 2.0 License](LICENSE.md) | [Security Policy](SECURITY.md) | [Code of Conduct](CODE_OF_CONDUCT.md)
+**Material** designed **React** components
 
-## WSL2 LAN access:
+<img src="https://ninjakit.dev/icon.svg" height="256" />
 
-```powershell
-netsh advfirewall firewall add rule name="Allowing LAN connections" dir=in action=allow protocol=TCP localport=3000
-netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=3000 connectaddress=<ip addr> connectport=3000
-```
+![ninjakit version](https://img.shields.io/npm/v/ninjakit) ![react version](https://img.shields.io/npm/dependency-version/ninjakit/peer/react) ![node version](https://img.shields.io/node/v/ninjakit) ![license](https://img.shields.io/github/license/ninja/ninjakit)
