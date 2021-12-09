@@ -1,5 +1,4 @@
 import {
-	Button,
 	ButtonAnchor,
 	Grid,
 	GridArticle,
@@ -12,7 +11,7 @@ import ReactDOM from "react-dom";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
 import { MdSettings } from "react-icons/md";
-import { SiGithub, SiNpm } from "react-icons/si";
+import { SiGithub, SiNetlify, SiNpm } from "react-icons/si";
 import {
 	BrowserRouter,
 	NavLink,
@@ -35,9 +34,9 @@ function App() {
 		<Grid>
 			<GridHeader>
 				{!home && (
-					<Button icon={<Icon />} kind="text">
+					<ButtonAnchor href="/" icon={<Icon />} kind="text">
 						<Logo />
-					</Button>
+					</ButtonAnchor>
 				)}
 				<GridFill />
 				<ButtonAnchor
@@ -86,6 +85,18 @@ function App() {
 					<Route element={<Dojo />} path="/" />
 					<Route element={<Settings />} path="settings" />
 				</Routes>
+				{!home && (
+					<footer>
+						<ButtonAnchor
+							href="https://www.netlify.com"
+							icon={<SiNetlify />}
+							kind="text"
+						>
+							<div>deploys by</div>
+							<div>netlify</div>
+						</ButtonAnchor>
+					</footer>
+				)}
 			</GridArticle>
 		</Grid>
 	);

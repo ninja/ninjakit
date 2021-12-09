@@ -31,14 +31,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Build ninjakit.dev
-        run: npx vite build
-
-      - name: Deploy ninjakit.dev
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: master
-          folder: dist
-          repository-name: ninja/ninja.github.io
-          token: ${{ secrets.PAGES_TOKEN }}
