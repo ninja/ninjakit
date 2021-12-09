@@ -53,6 +53,13 @@
 	grid-area: aside;
 }
 
+.article > footer {
+	align-items: flex-end;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0.4rem;
+}
+
 .article > main {
 	grid-area: main;
 }
