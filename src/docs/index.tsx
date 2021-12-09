@@ -89,7 +89,12 @@ function App() {
 				<div />
 				<footer>
 					<span>&copy; copyright {year} Jamie Hoover</span>
-					<ButtonAnchor kind="text">Apache 2.0 licensed</ButtonAnchor>
+					<ButtonAnchor
+						href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
+						kind="text"
+					>
+						Apache 2.0 licensed
+					</ButtonAnchor>
 					{!home && (
 						<ButtonAnchor
 							href="https://www.netlify.com"
