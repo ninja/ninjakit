@@ -12,13 +12,6 @@
 		"paths": {
 			"ninjakit": ["./src/lib"]
 		},
-		"plugins": [
-			// Plugins only work in VSCode, not via the cli via `tsc`. This is why `namedExports` are disabled.
-			{
-				"name": "typescript-plugin-css-modules",
-				"options": { "namedExports": false }
-			}
-		],
 		"resolveJsonModule": true,
 		"skipLibCheck": false,
 		"strict": true,
