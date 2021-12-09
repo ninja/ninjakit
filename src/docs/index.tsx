@@ -29,6 +29,7 @@ import { Settings } from "./pages/settings";
 function App() {
 	const resolved = useResolvedPath("/");
 	const home = useMatch({ end: true, path: resolved.pathname });
+	const year = new Date().getFullYear();
 
 	return (
 		<Grid>
@@ -44,14 +45,14 @@ function App() {
 					icon={<SiNpm />}
 					kind="text"
 				>
-					Package
+					package
 				</ButtonAnchor>
 				<ButtonAnchor
 					href="https://github.com/ninja/ninjakit"
 					icon={<SiGithub />}
 					kind="text"
 				>
-					Repository
+					repository
 				</ButtonAnchor>
 			</GridHeader>
 			<GridNav>
@@ -85,18 +86,20 @@ function App() {
 					<Route element={<Dojo />} path="/" />
 					<Route element={<Settings />} path="settings" />
 				</Routes>
-				{!home && (
-					<footer>
+				<div />
+				<footer>
+					<span>&copy; copyright {year} Jamie Hoover</span>
+					<ButtonAnchor kind="text">Apache 2.0 licensed</ButtonAnchor>
+					{!home && (
 						<ButtonAnchor
 							href="https://www.netlify.com"
 							icon={<SiNetlify />}
 							kind="text"
 						>
-							<div>deploys by</div>
-							<div>netlify</div>
+							deploys by netlify
 						</ButtonAnchor>
-					</footer>
-				)}
+					)}
+				</footer>
 			</GridArticle>
 		</Grid>
 	);
