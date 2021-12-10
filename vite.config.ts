@@ -64,9 +64,20 @@ export default defineConfig(({ mode }) => {
 							type: "image/png",
 						},
 						{
-							purpose: "any maskable",
 							sizes: "512x512",
 							src: "icon-512x512.png",
+							type: "image/png",
+						},
+						{
+							purpose: "maskable",
+							sizes: "512x512",
+							src: "icon-monochrome-512x512.png",
+							type: "image/png",
+						},
+						{
+							purpose: "monochrome",
+							sizes: "512x512",
+							src: "icon-monochrome-512x512.png",
 							type: "image/png",
 						},
 					],
