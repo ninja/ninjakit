@@ -23,6 +23,7 @@ import {
 
 import { Icon } from "./components/icon";
 import { Logo } from "./components/logo";
+import { ReloadPrompt } from "./components/reload-prompt";
 import { Dojo } from "./pages/dojo";
 import { Settings } from "./pages/settings";
 
@@ -115,6 +116,7 @@ ReactDOM.render(
 		<BrowserRouter>
 			<App />
 		</BrowserRouter>
+		<ReloadPrompt />
 	</StrictMode>,
-	document.getElementById("main")
+	document.getElementById("app")
 );

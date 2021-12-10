@@ -3,6 +3,7 @@ import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { defineConfig, UserConfig } from "vite";
+import { VitePWA as pwa } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -49,6 +50,32 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			react(),
 			mdx({ format: "mdx" }),
+			pwa({
+				base: "/",
+				filename: "worker.js",
+				includeAssets: "icon.svg",
+				manifest: {
+					background_color: "#1a1a1a",
+					description: "Material designed React components",
+					icons: [
+						{
+							sizes: "192x192",
+							src: "icon-192x192.png",
+							type: "image/png",
+						},
+						{
+							purpose: "any maskable",
+							sizes: "512x512",
+							src: "icon-512x512.png",
+							type: "image/png",
+						},
+					],
+					name: "ninjaKit",
+					short_name: "ninjaKit",
+					theme_color: "#1a1a1a",
+				},
+				registerType: "prompt",
+			}),
 			legacy({ targets: ["defaults", "iOS 12", "not IE 11"] }),
 		],
 		root: resolve(__dirname, "src/docs"),
