@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"outDir": "./dist"
+	},
+	"exclude": ["**/*.test.*"],
+	"extends": "./tsconfig.json",
+	"include": ["./vite.d.ts", "./src/lib"]
+}

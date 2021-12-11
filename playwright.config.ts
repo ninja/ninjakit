@@ -25,11 +25,15 @@ const config: PlaywrightTestConfig = {
 			use: devices["iPhone 13"],
 		},
 	],
-	webServer: {
-		command: "vite",
-		port: 3000,
-		reuseExistingServer: !process.env.CI,
-	},
+	testDir: "./src/docs",
+	testMatch: "**/*.test.ts",
+	webServer: process.env.CI
+		? {
+				command: "vite preview",
+				port: 5000,
+				reuseExistingServer: false,
+		  }
+		: { command: "vite", port: 3000, reuseExistingServer: true },
 };
 
 export default config;

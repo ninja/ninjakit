@@ -26,11 +26,17 @@ jobs:
       - name: Check Files
         run: npm run check
 
-      - name: Build
+      - name: Build Library
         run: npm run build
+
+      - name: Unit Test
+        run: npm run test:unit
+
+      - name: Build Website
+        run: npx vite build
 
       - name: Install Playwright Dependencies
         run: npx playwright install && npx playwright install-deps
 
-      - name: Test
-        run: npm test
+      - name: Integration Test
+        run: npm run test:integration
