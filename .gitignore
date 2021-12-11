@@ -3,6 +3,7 @@
 .eslintcache
 .npm
 *.tgz
+coverage
 dist
 ninjakit.dev
 node_modules

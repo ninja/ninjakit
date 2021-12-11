@@ -89,7 +89,7 @@ function App() {
 				</Routes>
 				<div />
 				<footer>
-					<span>&copy; copyright {year} Jamie Hoover</span>
+					<span>&copy; {year} Jamie Hoover</span>
 					<ButtonAnchor
 						href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
 						kind="text"
