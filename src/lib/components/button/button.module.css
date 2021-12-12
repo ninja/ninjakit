@@ -48,6 +48,7 @@
 .text .state {
 	align-items: center;
 	display: flex;
+	gap: 0.6rem;
 	justify-content: center;
 }
 
@@ -65,12 +66,6 @@
 .filled.icon:not(.children) .state,
 .text.icon:not(.children) .state {
 	width: 4rem;
-}
-
-.filled.children.icon .state,
-.floating.children.icon .state,
-.text.children.icon .state {
-	gap: 0.8rem;
 }
 
 .filled.children.icon .state,
