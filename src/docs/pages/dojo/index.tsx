@@ -49,8 +49,8 @@ export const Dojo: FunctionComponent = () => {
 
 	return (
 		<Card
+			appearance="elevated"
 			className={styles.card}
-			kind="elevated"
 			onMouseLeave={handleMouseLeave}
 			onMouseMove={handleMouseMove}
 		>

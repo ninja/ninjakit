@@ -1,45 +1,51 @@
 import {
 	ButtonHTMLAttributes,
+	Children,
 	forwardRef,
 	PropsWithChildren,
-	ReactElement,
 } from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./button.module.css";
 
+export interface ButtonProps {
+	/** @see https://m3.material.io/components/all-buttons */
+	appearance?:
+		| "text"
+		| "outlined"
+		| "elevated"
+		| "tonal"
+		| "filled"
+		| "floating-small"
+		| "floating"
+		| "floating-large";
+}
+
 export const Button = forwardRef<
 	HTMLButtonElement,
-	ButtonHTMLAttributes<HTMLButtonElement> &
-		PropsWithChildren<{
-			icon?: ReactElement;
-			kind?: "filled" | "floating" | "text";
-		}>
+	ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren<ButtonProps>
 >(function Button(
 	{
+		appearance = "filled",
 		children,
-		className: classNameOverride,
-		icon,
-		kind = "filled",
+		className: override,
 		type = "button",
 		...props
 	},
 	ref
 ) {
 	const className = [
-		styles[kind],
+		styles.button,
+		styles[appearance],
 		typography.labelLarge,
 		children && styles.children,
-		icon && styles.icon,
-		classNameOverride,
+		Children.count(children) > 1 && styles.icon,
+		override,
 	].join(" ");
 
 	return (
-		<button className={className} type={type} {...props} ref={ref}>
-			<div className={styles.state}>
-				{icon}
-				<span>{children}</span>
-			</div>
+		<button className={className} ref={ref} type={type} {...props}>
+			{children}
 		</button>
 	);
 });

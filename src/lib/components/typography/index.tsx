@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import styles from "./typography.module.css";
 
 export const Typography: FunctionComponent<{
-	kind:
+	appearance:
 		| "displayLarge"
 		| "displayMedium"
 		| "displaySmall"
@@ -20,9 +20,9 @@ export const Typography: FunctionComponent<{
 		| "bodyLarge"
 		| "bodyMedium"
 		| "bodySmall";
-}> = ({ children, kind = "bodyMedium", ...props }) => {
+}> = ({ children, appearance = "bodyMedium", ...props }) => {
 	return (
-		<span className={styles[kind]} {...props}>
+		<span className={styles[appearance]} {...props}>
 			{children}
 		</span>
 	);

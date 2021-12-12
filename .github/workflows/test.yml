@@ -26,11 +26,11 @@ jobs:
       - name: Check Files
         run: npm run check
 
+      - name: Unit Test
+        run: npm test
+
       - name: Build Library
         run: npm run build
-
-      - name: Unit Test
-        run: npm run test:unit
 
       - name: Build Website
         run: npx vite build

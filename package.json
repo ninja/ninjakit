@@ -7,7 +7,6 @@
 		"@commitlint/config-conventional": "15.0.0",
 		"@playwright/test": "1.17.1",
 		"@fontsource/roboto": "4.5.1",
-		"@mdx-js/rollup": "2.0.0-rc.1",
 		"@sentry/react": "6.16.1",
 		"@sentry/tracing": "6.16.1",
 		"@testing-library/jest-dom": "5.16.1",
@@ -19,7 +18,6 @@
 		"@types/react-dom": "17.0.11",
 		"@typescript-eslint/eslint-plugin": "5.7.0",
 		"@typescript-eslint/parser": "5.7.0",
-		"@vitejs/plugin-legacy": "1.6.4",
 		"@vitejs/plugin-react": "1.1.3",
 		"esbuild-runner": "2.2.1",
 		"eslint": "8.4.1",
@@ -55,7 +53,7 @@
 			"import": "./dist/ninjakit.es.js",
 			"require": "./dist/ninjakit.umd.js"
 		},
-		"./color-scheme.js": "./dist/color-scheme.js",
+		"./color-scheme": "./dist/color-scheme.js",
 		"./style.css": "./dist/style.css"
 	},
 	"files": [
@@ -85,6 +83,7 @@
 	"module": "./dist/ninjakit.es.js",
 	"name": "ninjakit",
 	"peerDependencies": {
+		"@fontsource/roboto": ">=4",
 		"react": ">=17",
 		"react-dom": ">=17"
 	},
@@ -105,11 +104,11 @@
 		"fix": "run-s fix:scripts fix:config",
 		"fix:config": "prettier --write .",
 		"fix:scripts": "eslint --ext .ts,.tsx --fix .",
-		"start:development": "vite",
+		"start": "vite",
 		"start:production": "vite build && vite preview",
+		"test": "jest",
 		"test:coverage": "jest --coverage",
-		"test:integration": "playwright test",
-		"test:unit": "jest"
+		"test:integration": "playwright test"
 	},
 	"type": "module",
 	"types": "dist/index.d.ts",

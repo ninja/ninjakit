@@ -45,7 +45,6 @@
 	grid-template-areas: "main" "aside";
 	grid-template-columns: 1fr;
 	grid-template-rows: auto auto;
-	padding: 0.8rem;
 	position: relative;
 }
 
@@ -63,13 +62,10 @@
 }
 
 .article > main {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
 	grid-area: main;
-}
-
-.button {
-	bottom: 9.6rem;
-	position: fixed;
-	right: 1.6rem;
 }
 
 .fill {
@@ -203,12 +199,6 @@
 		border-left-width: 0.8rem;
 		position: absolute;
 		right: 0;
-	}
-
-	.button {
-		bottom: unset;
-		position: unset;
-		right: unset;
 	}
 
 	.header,

@@ -1,6 +1,4 @@
-.elevated,
-.filled,
-.outlined {
+.card {
 	border-radius: 1.2rem;
 	box-shadow: var(--nk-shadow);
 	composes: nk from global;
@@ -10,18 +8,12 @@
 	padding: 1.2rem 1.6rem;
 }
 
-.elevated h1,
-.elevated h2,
-.filled h1,
-.filled h2,
-.outlined h1,
-.outlined h2 {
+.card h1,
+.card h2 {
 	margin: 0;
 }
 
-.elevated > section,
-.filled > section,
-.outlined > section {
+.card > section {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;

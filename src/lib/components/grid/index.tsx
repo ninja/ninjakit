@@ -1,12 +1,5 @@
-import {
-	AnchorHTMLAttributes,
-	ButtonHTMLAttributes,
-	FunctionComponent,
-	ReactElement,
-} from "react";
+import { FunctionComponent } from "react";
 
-import { Button } from "../button";
-import { ButtonAnchor } from "../button/anchor";
 import typography from "../typography/typography.module.css";
 import styles from "./grid.module.css";
 
@@ -30,27 +23,6 @@ export const GridAside: FunctionComponent = ({ children, ...props }) => (
 	<aside className={[styles.aside, typography.bodyMedium].join(" ")} {...props}>
 		{children}
 	</aside>
-);
-
-export const GridButton: FunctionComponent<
-	ButtonHTMLAttributes<HTMLButtonElement> & { icon: ReactElement }
-> = ({ children, icon, ...props }) => (
-	<Button className={styles.button} icon={icon} kind="floating" {...props}>
-		{children}
-	</Button>
-);
-
-export const GridButtonAnchor: FunctionComponent<
-	AnchorHTMLAttributes<HTMLAnchorElement> & { icon: ReactElement }
-> = ({ children, icon, ...props }) => (
-	<ButtonAnchor
-		className={styles.button}
-		icon={icon}
-		kind="floating"
-		{...props}
-	>
-		{children}
-	</ButtonAnchor>
 );
 
 export const GridFill: FunctionComponent = ({ children, ...props }) => (
