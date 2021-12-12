@@ -4,6 +4,7 @@ import {
 	PropsWithChildren,
 	ReactElement,
 } from "react";
+import { CgExternal } from "react-icons/cg";
 
 import typography from "../typography/typography.module.css";
 import styles from "./button.module.css";
@@ -16,7 +17,14 @@ export const ButtonAnchor = forwardRef<
 			kind?: "filled" | "floating" | "text";
 		}>
 >(function ButtonLink(
-	{ children, className: classNameOverride, icon, kind = "filled", ...props },
+	{
+		children,
+		className: classNameOverride,
+		icon,
+		kind = "filled",
+		target,
+		...props
+	},
 	ref
 ) {
 	const className = [
@@ -28,10 +36,11 @@ export const ButtonAnchor = forwardRef<
 	].join(" ");
 
 	return (
-		<a className={className} {...props} ref={ref}>
+		<a className={className} ref={ref} target={target} {...props}>
 			<div className={styles.state}>
 				{icon}
 				<span>{children}</span>
+				{target === "_blank" && <CgExternal />}
 			</div>
 		</a>
 	);

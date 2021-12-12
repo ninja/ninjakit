@@ -1,3 +1,5 @@
+import { init } from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
 import {
 	ButtonAnchor,
 	Grid,
@@ -45,6 +47,7 @@ function App() {
 					href="https://www.npmjs.com/package/ninjakit"
 					icon={<SiNpm />}
 					kind="text"
+					target="_blank"
 				>
 					package
 				</ButtonAnchor>
@@ -52,6 +55,7 @@ function App() {
 					href="https://github.com/ninja/ninjakit"
 					icon={<SiGithub />}
 					kind="text"
+					target="_blank"
 				>
 					repository
 				</ButtonAnchor>
@@ -90,17 +94,20 @@ function App() {
 				<div />
 				<footer>
 					<span>&copy; {year} Jamie Hoover</span>
-					<ButtonAnchor
-						href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
-						kind="text"
-					>
-						Apache 2.0 licensed
-					</ButtonAnchor>
-					{!home && (
+					{home ? (
+						<ButtonAnchor
+							href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
+							kind="text"
+							target="_blank"
+						>
+							Apache 2.0 licensed
+						</ButtonAnchor>
+					) : (
 						<ButtonAnchor
 							href="https://www.netlify.com"
 							icon={<SiNetlify />}
 							kind="text"
+							target="_blank"
 						>
 							deploys by netlify
 						</ButtonAnchor>
@@ -109,6 +116,14 @@ function App() {
 			</GridArticle>
 		</Grid>
 	);
+}
+
+if (process.env.SENTRY_DSN) {
+	init({
+		dsn: process.env.SENTRY_DSN,
+		integrations: [new BrowserTracing()],
+		tracesSampleRate: 1.0,
+	});
 }
 
 ReactDOM.render(
