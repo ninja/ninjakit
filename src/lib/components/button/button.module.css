@@ -1,27 +1,37 @@
-.filled,
-.floating,
-.state,
-.text {
+.button {
 	composes: nk from global;
-}
-
-.filled,
-.floating,
-.text {
 	cursor: pointer;
+	align-items: center;
+	display: flex;
+	gap: 0.6rem;
+	justify-content: center;
+	position: relative;
+	white-space: nowrap;
 	-webkit-tap-highlight-color: transparent;
 }
 
+.text:after {
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition-duration: 300ms;
+	transition-property: background-color;
+	transition-timing-function: linear;
+}
+
 .filled,
-.filled .state,
+.filled:after,
 .text,
-.text .state {
+.text:after {
 	border-radius: 2rem;
 	height: 4rem;
 }
 
 .floating,
-.floating .state {
+.floating:after {
 	border-radius: 1.6rem;
 	height: 5.6rem;
 	min-width: 5.6rem;
@@ -39,86 +49,70 @@
 	margin: 0.8rem;
 }
 
-.text .state {
+.text {
 	color: var(--nk-color-primary);
 }
 
-.filled .state,
-.floating .state,
-.text .state {
-	align-items: center;
-	display: flex;
-	gap: 0.6rem;
-	justify-content: center;
-}
-
-.filled.children:not(.icon) .state,
-.text.children:not(.icon) .state {
+.filled.children:not(.icon),
+.text.children:not(.icon) {
 	padding-left: 2.4rem;
 	padding-right: 2.4rem;
 }
 
-.floating.children:not(.icon) .state {
+.floating.children:not(.icon) {
 	padding-left: 1.6rem;
 	padding-right: 1.6rem;
 }
 
-.filled.icon:not(.children) .state,
-.text.icon:not(.children) .state {
+.filled.icon:not(.children),
+.text.icon:not(.children) {
 	width: 4rem;
 }
 
-.filled.children.icon .state,
-.text.children.icon .state {
+.filled.children.icon,
+.text.children.icon {
 	padding-left: 1.6rem;
 	padding-right: 2.4rem;
 }
 
-.floating.children.icon .state {
+.floating.children.icon {
 	padding-left: 1.2rem;
 	padding-right: 1.6rem;
 }
 
-.state {
-	transition-duration: 300ms;
-	transition-property: background-color;
-	transition-timing-function: linear;
-	white-space: nowrap;
-}
-
-.filled:hover .state {
+.filled:hover:after {
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
-.filled:focus-visible .state {
+.filled:focus-visible:after {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.filled:active .state {
+.filled:active:after {
 	background-color: rgba(255, 255, 255, 0.3);
 }
 
-.floating:hover .state {
+.floating:hover:after {
 	background-color: rgba(0, 0, 0, 0.05);
 }
 
-.floating:focus-visible .state {
+.floating:focus-visible:after {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-.floating:active .state {
+.floating:active:after {
 	background-color: rgba(0, 0, 0, 0.15);
 }
 
-.text:hover .state {
+.text:hover:after {
 	background-color: rgba(0, 0, 0, 0.05);
 }
 
-.text:focus-visible .state {
+.text:focus-visible:after {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-.text:active .state {
+.text:active:after {
 	background-color: rgba(0, 0, 0, 0.15);
 }
 

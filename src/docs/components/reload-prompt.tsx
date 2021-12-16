@@ -25,16 +25,16 @@ export function ReloadPrompt() {
 
 	return (
 		<Card
+			appearance="filled"
 			className={styles.dialog}
-			kind="filled"
-			title="New Content Available"
 			subhead="Reload to update"
+			title="New Content Available"
 		>
 			<section>
-				<Button kind="text" onClick={() => setNeedRefresh(false)}>
+				<Button appearance="text" onClick={() => setNeedRefresh(false)}>
 					Close
 				</Button>
-				<Button kind="filled" onClick={() => updateServiceWorker(true)}>
+				<Button appearance="filled" onClick={() => updateServiceWorker(true)}>
 					Reload
 				</Button>
 			</section>

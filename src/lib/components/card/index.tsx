@@ -5,20 +5,21 @@ import styles from "./card.module.css";
 
 export const Card: FunctionComponent<
 	HTMLAttributes<HTMLDivElement> & {
-		kind?: "elevated" | "filled" | "outlined";
+		appearance?: "elevated" | "filled" | "outlined";
 		subhead?: string;
 		title?: string;
 	}
 > = ({
 	children,
 	className: classNameOverride,
-	kind = "filled",
+	appearance = "filled",
 	subhead,
 	title,
 	...props
 }) => {
 	const className = [
-		styles[kind],
+		styles.card,
+		styles[appearance],
 		typography.bodyMedium,
 		classNameOverride,
 	].join(" ");

@@ -2,7 +2,6 @@ import type { Config } from "@jest/types";
 
 const config: Config.InitialOptions = {
 	collectCoverageFrom: ["<rootDir>/src/lib/**/*.ts?(x)"],
-	displayName: "Unit Tests",
 	moduleNameMapper: {
 		"^.+\\.css$": "identity-obj-proxy",
 		"^ninjakit(.*)$": "<rootDir>/src/lib$1",

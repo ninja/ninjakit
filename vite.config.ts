@@ -1,5 +1,3 @@
-import mdx from "@mdx-js/rollup";
-import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { defineConfig, UserConfig } from "vite";
@@ -49,7 +47,6 @@ export default defineConfig(({ mode }) => {
 		...config,
 		plugins: [
 			react(),
-			mdx({ format: "mdx" }),
 			pwa({
 				base: "/",
 				filename: "worker.js",
@@ -87,7 +84,6 @@ export default defineConfig(({ mode }) => {
 				},
 				registerType: "prompt",
 			}),
-			legacy({ targets: ["defaults", "iOS 12", "not IE 11"] }),
 		],
 		root: resolve(__dirname, "src/docs"),
 		server: { host: "0.0.0.0" },

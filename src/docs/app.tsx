@@ -9,7 +9,7 @@ import {
 	GridNav,
 } from "ninjakit";
 import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
 import { MdSettings } from "react-icons/md";
@@ -26,6 +26,7 @@ import {
 import { Icon } from "./components/icon";
 import { Logo } from "./components/logo";
 import { ReloadPrompt } from "./components/reload-prompt";
+import { Components } from "./pages/components";
 import { Dojo } from "./pages/dojo";
 import { Settings } from "./pages/settings";
 
@@ -38,25 +39,26 @@ function App() {
 		<Grid>
 			<GridHeader>
 				{!home && (
-					<ButtonAnchor href="/" icon={<Icon />} kind="text">
+					<ButtonAnchor appearance="text" href="/">
+						<Icon />
 						<Logo />
 					</ButtonAnchor>
 				)}
 				<GridFill />
 				<ButtonAnchor
+					appearance="text"
 					href="https://www.npmjs.com/package/ninjakit"
-					icon={<SiNpm />}
-					kind="text"
 					target="_blank"
 				>
+					<SiNpm />
 					package
 				</ButtonAnchor>
 				<ButtonAnchor
+					appearance="text"
 					href="https://github.com/ninja/ninjakit"
-					icon={<SiGithub />}
-					kind="text"
 					target="_blank"
 				>
+					<SiGithub />
 					repository
 				</ButtonAnchor>
 			</GridHeader>
@@ -87,28 +89,31 @@ function App() {
 				</NavLink>
 			</GridNav>
 			<GridArticle>
-				<Routes>
-					<Route element={<Dojo />} path="/" />
-					<Route element={<Settings />} path="settings" />
-				</Routes>
+				<main>
+					<Routes>
+						<Route element={<Dojo />} path="/" />
+						<Route element={<Components />} path="components" />
+						<Route element={<Settings />} path="settings" />
+					</Routes>
+				</main>
 				<div />
 				<footer>
 					<span>&copy; {year} Jamie Hoover</span>
 					{home ? (
 						<ButtonAnchor
+							appearance="text"
 							href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
-							kind="text"
 							target="_blank"
 						>
 							Apache 2.0 licensed
 						</ButtonAnchor>
 					) : (
 						<ButtonAnchor
+							appearance="text"
 							href="https://www.netlify.com"
-							icon={<SiNetlify />}
-							kind="text"
 							target="_blank"
 						>
+							<SiNetlify />
 							deploys by netlify
 						</ButtonAnchor>
 					)}
@@ -118,15 +123,15 @@ function App() {
 	);
 }
 
-if (process.env.SENTRY_DSN) {
+if (typeof import.meta.env.SENTRY_DSN === "string") {
 	init({
-		dsn: process.env.SENTRY_DSN,
+		dsn: import.meta.env.SENTRY_DSN,
 		integrations: [new BrowserTracing()],
 		tracesSampleRate: 1.0,
 	});
 }
 
-ReactDOM.render(
+render(
 	<StrictMode>
 		<BrowserRouter>
 			<App />

@@ -1,47 +1,35 @@
 import {
 	AnchorHTMLAttributes,
+	Children,
 	forwardRef,
 	PropsWithChildren,
-	ReactElement,
 } from "react";
 import { CgExternal } from "react-icons/cg";
 
 import typography from "../typography/typography.module.css";
+import type { ButtonProps } from "./";
 import styles from "./button.module.css";
 
 export const ButtonAnchor = forwardRef<
 	HTMLAnchorElement,
-	AnchorHTMLAttributes<HTMLAnchorElement> &
-		PropsWithChildren<{
-			icon?: ReactElement;
-			kind?: "filled" | "floating" | "text";
-		}>
+	AnchorHTMLAttributes<HTMLAnchorElement> & PropsWithChildren<ButtonProps>
 >(function ButtonLink(
-	{
-		children,
-		className: classNameOverride,
-		icon,
-		kind = "filled",
-		target,
-		...props
-	},
+	{ appearance = "filled", children, className: override, target, ...props },
 	ref
 ) {
 	const className = [
-		styles[kind],
+		styles.button,
+		styles[appearance],
 		typography.labelLarge,
 		children && styles.children,
-		icon && styles.icon,
-		classNameOverride,
+		Children.count(children) > 1 && styles.icon,
+		override,
 	].join(" ");
 
 	return (
 		<a className={className} ref={ref} target={target} {...props}>
-			<div className={styles.state}>
-				{icon}
-				<span>{children}</span>
-				{target === "_blank" && <CgExternal />}
-			</div>
+			{children}
+			{target === "_blank" && <CgExternal />}
 		</a>
 	);
 });
