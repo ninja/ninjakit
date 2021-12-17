@@ -28,6 +28,7 @@ import { Logo } from "./components/logo";
 import { ReloadPrompt } from "./components/reload-prompt";
 import { Components } from "./pages/components";
 import { Dojo } from "./pages/dojo";
+import { Hooks } from "./pages/hooks";
 import { Settings } from "./pages/settings";
 
 function App() {
@@ -93,6 +94,7 @@ function App() {
 					<Routes>
 						<Route element={<Dojo />} path="/" />
 						<Route element={<Components />} path="components" />
+						<Route element={<Hooks />} path="hooks" />
 						<Route element={<Settings />} path="settings" />
 					</Routes>
 				</main>
