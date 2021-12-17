@@ -1,30 +1,16 @@
-import {
-	AnchorHTMLAttributes,
-	Children,
-	forwardRef,
-	PropsWithChildren,
-} from "react";
+import { AnchorHTMLAttributes, forwardRef } from "react";
 import { CgExternal } from "react-icons/cg";
 
-import typography from "../typography/typography.module.css";
-import type { ButtonProps } from "./";
-import styles from "./button.module.css";
+import { ButtonProps, useClassName } from ".";
 
 export const ButtonAnchor = forwardRef<
 	HTMLAnchorElement,
-	AnchorHTMLAttributes<HTMLAnchorElement> & PropsWithChildren<ButtonProps>
->(function ButtonLink(
-	{ appearance = "filled", children, className: override, target, ...props },
+	AnchorHTMLAttributes<HTMLAnchorElement> & ButtonProps
+>(function (
+	{ appearance, children, className: override, target, ...props },
 	ref
 ) {
-	const className = [
-		styles.button,
-		styles[appearance],
-		typography.labelLarge,
-		children && styles.children,
-		Children.count(children) > 1 && styles.icon,
-		override,
-	].join(" ");
+	const className = useClassName({ appearance, children, override });
 
 	return (
 		<a className={className} ref={ref} target={target} {...props}>
@@ -33,3 +19,5 @@ export const ButtonAnchor = forwardRef<
 		</a>
 	);
 });
+
+ButtonAnchor.displayName = "ButtonAnchor";
