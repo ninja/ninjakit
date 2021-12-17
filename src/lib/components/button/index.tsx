@@ -1,40 +1,33 @@
-import {
-	ButtonHTMLAttributes,
-	Children,
-	forwardRef,
-	PropsWithChildren,
-} from "react";
+import { Children, PropsWithChildren, ReactNode } from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./button.module.css";
 
-export interface ButtonProps {
-	/** @see https://m3.material.io/components/all-buttons */
-	appearance?:
-		| "text"
-		| "outlined"
-		| "elevated"
-		| "tonal"
-		| "filled"
-		| "floating-small"
-		| "floating"
-		| "floating-large";
-}
+type Appearance =
+	| "text"
+	| "outlined"
+	| "elevated"
+	| "tonal"
+	| "filled"
+	| "floating-small"
+	| "floating"
+	| "floating-large";
 
-export const Button = forwardRef<
-	HTMLButtonElement,
-	ButtonHTMLAttributes<HTMLButtonElement> & PropsWithChildren<ButtonProps>
->(function Button(
-	{
-		appearance = "filled",
-		children,
-		className: override,
-		type = "button",
-		...props
-	},
-	ref
-) {
-	const className = [
+export type ButtonProps = PropsWithChildren<{
+	/** @see https://m3.material.io/components/all-buttons */
+	appearance?: Appearance;
+}>;
+
+export function useClassName({
+	appearance = "filled",
+	children,
+	override,
+}: {
+	appearance?: Appearance;
+	children: ReactNode;
+	override?: string;
+}): string | undefined {
+	return [
 		styles.button,
 		styles[appearance],
 		typography.labelLarge,
@@ -42,10 +35,7 @@ export const Button = forwardRef<
 		Children.count(children) > 1 && styles.icon,
 		override,
 	].join(" ");
+}
 
-	return (
-		<button className={className} ref={ref} type={type} {...props}>
-			{children}
-		</button>
-	);
-});
+export { ButtonAnchor } from "./anchor";
+export { Button } from "./button";
