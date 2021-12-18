@@ -4,7 +4,7 @@
 		"declarationMap": true,
 		"outDir": "./dist"
 	},
-	"exclude": ["**/*.test.*"],
+	"exclude": ["./src/lib/head", "**/*.test.*"],
 	"extends": "./tsconfig.json",
 	"include": ["./vite.d.ts", "./src/lib"]
 }

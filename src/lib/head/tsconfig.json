@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"isolatedModules": false,
+		"outDir": "../../../dist"
+	},
+	"exclude": [],
+	"extends": "../../../tsconfig.json",
+	"include": ["**/*.ts"]
+}

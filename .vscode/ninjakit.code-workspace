@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "ninjaKit",
+			"path": ".."
+		},
+		{
+			"name": "examples",
+			"path": "../../ninjakit-examples"
+		}
+	],
+	"remoteAuthority": "wsl+Ubuntu",
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"build": true,
+			"coverage": true,
+			"dist": true,
+			"node_modules": true
+		}
+	}
+}
