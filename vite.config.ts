@@ -85,6 +85,15 @@ export default defineConfig(({ mode }) => {
 				registerType: "prompt",
 			}),
 		],
+		resolve: {
+			alias: {
+				"ninjakit/color-scheme": resolve(
+					__dirname,
+					"src/lib/head/color-scheme"
+				),
+				...config.resolve.alias,
+			},
+		},
 		root: resolve(__dirname, "src/docs"),
 		server: { host: "0.0.0.0" },
 	};
