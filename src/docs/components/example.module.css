@@ -1,5 +1,6 @@
 .iframe {
 	border: none;
 	border-radius: 1.2rem;
+	flex-grow: 1;
 	min-height: 50vh;
 }
