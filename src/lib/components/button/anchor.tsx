@@ -3,7 +3,7 @@ import { CgExternal } from "react-icons/cg";
 
 import { ButtonProps, useClassName } from ".";
 
-export const ButtonAnchor = forwardRef<
+export const AnchorButton = forwardRef<
 	HTMLAnchorElement,
 	AnchorHTMLAttributes<HTMLAnchorElement> & ButtonProps
 >(function (
@@ -20,4 +20,4 @@ export const ButtonAnchor = forwardRef<
 	);
 });
 
-ButtonAnchor.displayName = "ButtonAnchor";
+AnchorButton.displayName = "AnchorButton";

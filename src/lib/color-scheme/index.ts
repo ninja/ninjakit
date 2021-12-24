@@ -14,3 +14,5 @@ const metaElement = document.querySelector(
 ) as HTMLMetaElement;
 
 if (metaElement) metaElement.content = colorScheme;
+
+export {};

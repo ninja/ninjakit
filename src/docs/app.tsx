@@ -1,18 +1,20 @@
 import { init } from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
 import {
-	ButtonAnchor,
-	Grid,
-	GridArticle,
-	GridFill,
-	GridHeader,
-	GridNav,
+	AnchorButton,
+	Article,
+	Aside,
+	FloatingActionButton,
+	Footer,
+	Header,
+	Main,
+	Nav,
 } from "ninjakit";
 import { StrictMode } from "react";
 import { render } from "react-dom";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
-import { MdSettings } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 import { SiGithub, SiNetlify, SiNpm } from "react-icons/si";
 import {
 	BrowserRouter,
@@ -26,102 +28,103 @@ import {
 import { Icon } from "./components/icon";
 import { Logo } from "./components/logo";
 import { ReloadPrompt } from "./components/reload-prompt";
-import { Components } from "./pages/components";
-import { Dojo } from "./pages/dojo";
-import { Hooks } from "./pages/hooks";
-import { Settings } from "./pages/settings";
+import { ColorScheme, Examples } from "./pages/examples";
+import { Overview } from "./pages/overview";
+import { Sandbox } from "./pages/sandbox";
 
 function App() {
-	const resolved = useResolvedPath("/");
-	const home = useMatch({ end: true, path: resolved.pathname });
+	const home = useMatch({ end: true, path: useResolvedPath("/").pathname });
+	const examples = useMatch({
+		end: true,
+		path: useResolvedPath("/examples").pathname,
+	});
 	const year = new Date().getFullYear();
 
 	return (
-		<Grid>
-			<GridHeader>
-				{!home && (
-					<ButtonAnchor appearance="text" href="/">
+		<Main>
+			<Header>
+				{home ? (
+					<section />
+				) : (
+					<AnchorButton appearance="text" href="/">
 						<Icon />
 						<Logo />
-					</ButtonAnchor>
+					</AnchorButton>
 				)}
-				<GridFill />
-				<ButtonAnchor
-					appearance="text"
-					href="https://www.npmjs.com/package/ninjakit"
-					target="_blank"
-				>
-					<SiNpm />
-					package
-				</ButtonAnchor>
-				<ButtonAnchor
-					appearance="text"
-					href="https://github.com/ninja/ninjakit"
-					target="_blank"
-				>
-					<SiGithub />
-					repository
-				</ButtonAnchor>
-			</GridHeader>
-			<GridNav>
+				<section>
+					<AnchorButton
+						appearance="text"
+						href="https://www.npmjs.com/package/ninjakit"
+						target="_blank"
+					>
+						<SiNpm />
+						npm
+					</AnchorButton>
+					<AnchorButton
+						appearance="text"
+						href="https://github.com/ninja/ninjakit"
+						target="_blank"
+					>
+						<SiGithub />
+						git
+					</AnchorButton>
+				</section>
+			</Header>
+			<Nav>
 				<NavLink to="/">
-					<span>
-						<FaToriiGate />
-					</span>
-					<span>Home</span>
+					<FaToriiGate />
+					Overview
 				</NavLink>
-				<NavLink to="/components">
-					<span>
-						<GiKatana />
-					</span>
-					<span>Components</span>
+				<NavLink to="/examples">
+					<GiKatana />
+					Examples
 				</NavLink>
-				<NavLink to="/hooks">
-					<span>
-						<GiStarShuriken />
-					</span>
-					<span>Hooks</span>
+				<NavLink to="/sandbox">
+					<GiStarShuriken />
+					Sandbox
 				</NavLink>
-				<NavLink to="/settings">
-					<span>
-						<MdSettings />
-					</span>
-					<span>Settings</span>
-				</NavLink>
-			</GridNav>
-			<GridArticle>
-				<main>
+			</Nav>
+			<Article>
+				<Article>
 					<Routes>
-						<Route element={<Dojo />} path="/" />
-						<Route element={<Components />} path="components" />
-						<Route element={<Hooks />} path="hooks" />
-						<Route element={<Settings />} path="settings" />
+						<Route element={<Overview />} path="/" />
+						<Route element={<Examples />} path="examples" />
+						<Route element={<Sandbox />} path="sandbox" />
 					</Routes>
-				</main>
-				<div />
-				<footer>
-					<span>&copy; {year} Jamie Hoover</span>
-					{home ? (
-						<ButtonAnchor
-							appearance="text"
-							href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
-							target="_blank"
-						>
-							Apache 2.0 licensed
-						</ButtonAnchor>
-					) : (
-						<ButtonAnchor
-							appearance="text"
-							href="https://www.netlify.com"
-							target="_blank"
-						>
-							<SiNetlify />
-							deploys by netlify
-						</ButtonAnchor>
+					<Footer>
+						<section>&copy; {year} Jamie Hoover</section>
+						{home ? (
+							<AnchorButton
+								appearance="text"
+								href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
+								target="_blank"
+							>
+								Apache 2.0 licensed
+							</AnchorButton>
+						) : (
+							<AnchorButton
+								appearance="text"
+								href="https://www.netlify.com"
+								target="_blank"
+							>
+								<SiNetlify />
+								deploys by netlify
+							</AnchorButton>
+						)}
+					</Footer>
+					{examples && (
+						<FloatingActionButton>
+							<MdEdit />
+						</FloatingActionButton>
 					)}
-				</footer>
-			</GridArticle>
-		</Grid>
+				</Article>
+				{examples && (
+					<Aside>
+						<ColorScheme />
+					</Aside>
+				)}
+			</Article>
+		</Main>
 	);
 }
 

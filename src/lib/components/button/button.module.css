@@ -7,130 +7,124 @@
 	justify-content: center;
 	position: relative;
 	white-space: nowrap;
+	width: fit-content;
 	-webkit-tap-highlight-color: transparent;
 }
 
-.text:after {
-	bottom: 0;
+.button::before {
 	content: "";
-	left: 0;
+	inset: 0;
+	opacity: 0;
 	position: absolute;
-	right: 0;
-	top: 0;
-	transition-duration: 300ms;
-	transition-property: background-color;
-	transition-timing-function: linear;
+	transition: 300ms opacity ease-in-out;
 }
 
-.filled,
-.filled:after,
-.text,
-.text:after {
+.elevated {
+	box-shadow: var(--md-shadow);
+	margin: 0 0.2rem;
+}
+
+.button,
+.button::after,
+.button::before {
 	border-radius: 2rem;
 	height: 4rem;
 }
 
-.floating,
-.floating:after {
-	border-radius: 1.6rem;
-	height: 5.6rem;
-	min-width: 5.6rem;
+.elevated::before {
+	background-color: var(--md-color-primary);
 }
 
-.filled {
-	background-color: var(--nk-color-primary);
-	color: var(--nk-color-on-primary);
+.filled::before {
+	background-color: var(--md-color-on-primary);
 }
 
-.floating {
-	background-color: var(--nk-color-primary-container);
-	box-shadow: var(--nk-shadow);
-	color: var(--nk-color-on-primary-container);
-	margin: 0.8rem;
+.outlined::after {
+	border: 0.1rem solid var(--md-color-outline);
+	content: "";
+	inset: 0;
+	position: absolute;
 }
 
-.text {
-	color: var(--nk-color-primary);
+.outlined::before {
+	background-color: var(--md-color-primary);
 }
 
-.filled.children:not(.icon),
-.text.children:not(.icon) {
+.text::before {
+	background-color: var(--md-color-primary);
+}
+
+.button.children:not(.icon) {
 	padding-left: 2.4rem;
 	padding-right: 2.4rem;
 }
 
-.floating.children:not(.icon) {
-	padding-left: 1.6rem;
-	padding-right: 1.6rem;
-}
-
-.filled.icon:not(.children),
-.text.icon:not(.children) {
+.button.icon:not(.children) {
 	width: 4rem;
 }
 
-.filled.children.icon,
-.text.children.icon {
+.button.children.icon {
 	padding-left: 1.6rem;
 	padding-right: 2.4rem;
 }
 
-.floating.children.icon {
-	padding-left: 1.2rem;
-	padding-right: 1.6rem;
+.elevated {
+	background-color: var(--md-color-surface);
+	color: var(--md-color-primary);
 }
 
-.filled:hover:after {
-	background-color: rgba(255, 255, 255, 0.1);
+.filled {
+	background-color: var(--md-color-primary);
+	color: var(--md-color-on-primary);
 }
 
-.filled:focus-visible:after {
-	background-color: rgba(255, 255, 255, 0.2);
+.outlined {
+	color: var(--md-color-primary);
 }
 
-.filled:active:after {
-	background-color: rgba(255, 255, 255, 0.3);
+.text {
+	color: var(--md-color-primary);
 }
 
-.floating:hover:after {
-	background-color: rgba(0, 0, 0, 0.05);
+.button:hover::before {
+	opacity: 0.08;
 }
 
-.floating:focus-visible:after {
-	background-color: rgba(0, 0, 0, 0.1);
+.button:active::before,
+.button:focus-visible::before {
+	opacity: 0.12;
 }
 
-.floating:active:after {
-	background-color: rgba(0, 0, 0, 0.15);
+.button:disabled {
+	background: unset;
+	box-shadow: unset;
+	color: var(--md-color-on-surface);
+	cursor: unset;
+	opacity: 0.38;
 }
 
-.text:hover:after {
-	background-color: rgba(0, 0, 0, 0.05);
+.button:disabled::before {
+	background: none;
 }
 
-.text:focus-visible:after {
-	background-color: rgba(0, 0, 0, 0.1);
+.elevated:disabled::before,
+.filled:disabled::before {
+	background-color: var(--md-color-on-surface);
+	opacity: 0.12;
 }
 
-.text:active:after {
-	background-color: rgba(0, 0, 0, 0.15);
+.outlined:disabled {
+	border: 0.1rem solid var(--md-color-on-surface);
+	color: var(--md-color-on-surface);
+	opacity: 0.38;
 }
 
-.filled svg,
-.text svg {
+.outlined:disabled::after {
+	border: 0.1rem solid var(--md-color-on-surface);
+	opacity: 0.12;
+}
+
+.button > svg {
 	height: 1.8rem;
 	width: 1.8rem;
-}
-
-.floating svg {
-	height: 2.4rem;
-	width: 2.4rem;
-}
-
-@media screen and (min-width: 600px) {
-	.floating,
-	.floating .state {
-		border-radius: 1.2rem;
-		height: 4rem;
-	}
 }

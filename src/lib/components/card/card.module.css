@@ -1,6 +1,5 @@
 .card {
 	border-radius: 1.2rem;
-	box-shadow: var(--nk-shadow);
 	composes: nk from global;
 	display: flex;
 	flex-direction: column;
@@ -29,13 +28,17 @@
 
 .elevated,
 .outlined {
-	background-color: var(--nk-color-surface);
+	background-color: var(--md-color-surface);
+}
+
+.elevated {
+	box-shadow: var(--md-shadow);
 }
 
 .filled {
-	background-color: var(--nk-color-surface-variant);
+	background-color: var(--md-color-surface-variant);
 }
 
 .outlined {
-	border: 0.1rem solid var(--nk-color-outline);
+	border: 0.1rem solid var(--md-color-outline);
 }

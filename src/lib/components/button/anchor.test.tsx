@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
-import { ButtonAnchor } from "ninjakit";
+import { AnchorButton } from "ninjakit";
 
 describe("button anchor", () => {
 	test("default", () => {
-		render(<ButtonAnchor href="#">test</ButtonAnchor>);
+		render(<AnchorButton href="#">test</AnchorButton>);
 
-		const $buttonAnchor = screen.getByRole("link", {
+		const $AnchorButton = screen.getByRole("link", {
 			name: "test",
 		});
 
-		expect($buttonAnchor).toHaveClass("filled labelLarge children");
+		expect($AnchorButton).toHaveClass("filled labelLarge children");
 	});
 });

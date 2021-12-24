@@ -2,4 +2,4 @@ import { FunctionComponent } from "react";
 
 import { Example } from "../../components/example";
 
-export const Components: FunctionComponent = () => <Example module="button" />;
+export const Sandbox: FunctionComponent = () => <Example module="button" />;

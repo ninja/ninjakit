@@ -11,7 +11,7 @@ import { Logo } from "../../components/logo";
 import { Ninja } from "../../components/ninja";
 import styles from "./dojo.module.css";
 
-export const Dojo: FunctionComponent = () => {
+export const Overview: FunctionComponent = () => {
 	const [wait, setWait] = useState(false);
 
 	const handleMouseMove: MouseEventHandler<HTMLDivElement> = useCallback(

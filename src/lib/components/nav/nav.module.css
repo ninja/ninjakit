@@ -1,0 +1,142 @@
+.nav {
+	border-left-color: transparent;
+	composes: nk from global;
+	display: flex;
+	gap: 0.8rem;
+	grid-area: nav;
+	justify-content: center;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	scrollbar-gutter: auto;
+	scrollbar-width: thin;
+	transition: 300ms border-color;
+}
+
+.nav::before {
+	background-color: var(--md-color-surface-variant);
+	content: "";
+	inset: 0;
+	opacity: 0.38;
+	position: absolute;
+	transition: 300ms background-color ease-in-out;
+}
+
+.nav:hover {
+	border-left-color: var(--md-color-secondary);
+}
+
+.nav::-webkit-scrollbar {
+	height: 0.8rem;
+	width: 0.8rem;
+}
+
+.nav::-webkit-scrollbar-thumb {
+	border-radius: 0.4rem;
+	border-left-color: inherit;
+	border-left-style: solid;
+	border-left-width: 0.8rem;
+	position: absolute;
+	right: 0;
+}
+
+.nav > a {
+	color: var(--md-color-on-surface);
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	flex-basis: 8rem;
+	flex-grow: 1;
+	flex-shrink: 0;
+	gap: 0.6rem;
+	outline: none;
+	padding-bottom: 1.6rem;
+	padding-left: 1.6rem;
+	padding-right: 1.6rem;
+	padding-top: 1.2rem;
+	position: relative;
+	text-decoration: unset;
+	transition-property: background-color;
+	transition-property: color;
+	transition-duration: 200ms;
+	transition-timing-function: linear;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.nav > a::before {
+	background-color: var(--md-color-on-surface);
+	box-sizing: border-box;
+	content: "";
+	opacity: 0;
+	inset: 0;
+	position: absolute;
+	transition: 300ms opacity ease-in-out;
+	z-index: 0;
+}
+
+.nav > a:hover::before {
+	opacity: 0.08;
+}
+
+.nav > a:active::before,
+.nav > a:focus-visible::before {
+	opacity: 0.12;
+}
+
+.nav > a[aria-current="page"]::after {
+	align-items: center;
+	background-color: var(--md-color-secondary-container);
+	border-radius: 1.6rem;
+	box-sizing: border-box;
+	content: "";
+	display: flex;
+	height: 3.2rem;
+	justify-content: center;
+	position: absolute;
+	top: 1.2rem;
+	width: 6.4rem;
+	z-index: 0;
+}
+
+.nav > a > svg {
+	box-sizing: border-box;
+	fill: var(--md-color-on-secondary-container);
+	height: 2.4rem;
+	margin: 0.4rem 0;
+	width: 2.4rem;
+	z-index: 1;
+}
+
+.nav > a[aria-current="page"] svg {
+	fill: var(--md-color-on-surface);
+}
+
+@media screen and (min-width: 600px) {
+	.nav {
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: start;
+	}
+
+	.nav::before {
+		background-color: unset;
+		content: unset;
+		inset: unset;
+		opacity: unset;
+		position: unset;
+	}
+
+	.nav.filled::before {
+		background-color: var(--md-color-surface-variant);
+		content: "";
+		inset: 0;
+		opacity: 0.38;
+		position: absolute;
+	}
+
+	.nav > a {
+		flex-grow: 0;
+		width: 100%;
+	}
+}
