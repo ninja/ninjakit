@@ -1,9 +1,9 @@
 import { Children, PropsWithChildren, ReactNode } from "react";
 
 import typography from "../typography/typography.module.css";
-import styles from "./button.module.css";
+import styles from "./floating-action-button.module.css";
 
-type Appearance = "text" | "outlined" | "elevated" | "tonal" | "filled";
+type Appearance = "small" | "large";
 
 export type ButtonProps = PropsWithChildren<{
 	/** @see https://m3.material.io/components/all-buttons */
@@ -11,18 +11,17 @@ export type ButtonProps = PropsWithChildren<{
 }>;
 
 export function useClassName({
-	appearance = "filled",
+	appearance,
 	children,
 	override,
 }: {
-	action?: boolean;
 	appearance?: Appearance;
 	children: ReactNode;
 	override?: string;
 }): string | undefined {
 	return [
 		styles.button,
-		styles[appearance],
+		appearance && styles[appearance],
 		typography.labelLarge,
 		children && styles.children,
 		Children.count(children) > 1 && styles.icon,
@@ -30,5 +29,4 @@ export function useClassName({
 	].join(" ");
 }
 
-export { AnchorButton } from "./anchor";
-export { Button } from "./button";
+export { FloatingActionButton } from "./floating-action-button";

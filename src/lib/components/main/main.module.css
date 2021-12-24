@@ -1,0 +1,17 @@
+.main {
+	composes: nk from global;
+	display: grid;
+	grid-template-areas: "header" "article" "nav";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	inset: 0;
+	position: absolute;
+}
+
+@media screen and (min-width: 600px) {
+	.main {
+		grid-template-areas: "header header" "nav article";
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto 1fr;
+	}
+}

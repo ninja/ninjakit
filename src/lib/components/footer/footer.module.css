@@ -1,0 +1,14 @@
+.footer {
+	align-items: center;
+	composes: nk from global;
+	display: flex;
+	gap: 0.8rem;
+	justify-content: space-between;
+	padding: 0.8rem;
+}
+
+.footer > section {
+	align-items: center;
+	display: flex;
+	gap: 0.8rem;
+}

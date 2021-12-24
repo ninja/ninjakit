@@ -1,0 +1,25 @@
+.header {
+	align-items: center;
+	composes: nk from global;
+	display: flex;
+	gap: 0.8rem;
+	grid-area: header;
+	justify-content: space-between;
+	padding: 0.4rem;
+	position: relative;
+}
+
+.header.filled::before {
+	background-color: var(--md-color-surface-variant);
+	content: "";
+	inset: 0;
+	opacity: 0.38;
+	position: absolute;
+	transition: 300ms background-color ease-in-out;
+}
+
+.header > section {
+	align-items: center;
+	display: flex;
+	gap: 0.8rem;
+}

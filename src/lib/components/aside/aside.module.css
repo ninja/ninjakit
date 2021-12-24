@@ -1,0 +1,49 @@
+.aside {
+	composes: nk from global;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+	grid-area: aside;
+}
+
+.aside > section {
+	margin: 0 0.8rem;
+}
+
+.aside > section:first-child {
+	margin-top: 0.8rem;
+}
+
+.aside > section:last-child {
+	margin-bottom: 0.8rem;
+}
+
+@media screen and (min-width: 600px) {
+	.aside {
+		border-left-color: transparent;
+		max-width: 32rem;
+		overflow-y: auto;
+		position: relative;
+		scrollbar-gutter: auto;
+		scrollbar-width: thin;
+		transition: border-color 300ms;
+	}
+
+	.aside:hover {
+		border-left-color: var(--md-color-secondary);
+	}
+
+	.aside::-webkit-scrollbar {
+		height: 0.8rem;
+		width: 0.8rem;
+	}
+
+	.aside::-webkit-scrollbar-thumb {
+		border-radius: 0.4rem;
+		border-left-color: inherit;
+		border-left-style: solid;
+		border-left-width: 0.8rem;
+		position: absolute;
+		right: 0;
+	}
+}

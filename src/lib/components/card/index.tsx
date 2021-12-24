@@ -25,7 +25,7 @@ export const Card: FunctionComponent<
 	].join(" ");
 
 	return (
-		<div className={className} {...props}>
+		<section className={className} {...props}>
 			{(title || subhead) && (
 				<header>
 					{title && <h1 className={typography.titleMedium}>{title}</h1>}
@@ -33,6 +33,6 @@ export const Card: FunctionComponent<
 				</header>
 			)}
 			{children}
-		</div>
+		</section>
 	);
 };

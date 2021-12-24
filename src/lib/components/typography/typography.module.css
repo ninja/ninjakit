@@ -15,7 +15,7 @@
 .bodyLarge,
 .bodyMedium,
 .bodySmall {
-	font-family: var(--ninjakit-font-family);
+	font-family: var(--md-font-family);
 }
 
 .displayLarge,

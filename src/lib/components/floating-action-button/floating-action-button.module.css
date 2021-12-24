@@ -1,0 +1,88 @@
+.button {
+	align-items: center;
+	align-self: flex-end;
+	background-color: var(--md-color-primary-container);
+	box-shadow: var(--md-shadow);
+	bottom: 9.8rem;
+	color: var(--md-color-on-primary-container);
+	composes: nk from global;
+	cursor: pointer;
+	display: flex;
+	gap: 0.6rem;
+	justify-content: center;
+	margin-right: 1.8rem;
+	overflow: hidden;
+	position: fixed;
+	white-space: nowrap;
+	width: fit-content;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.button::before {
+	background-color: var(--md-color-on-primary-container);
+	content: "";
+	inset: 0;
+	opacity: 0;
+	position: absolute;
+	transition: 300ms opacity ease-in-out;
+}
+
+.button,
+.button::before {
+	border-radius: 1.6rem;
+	height: 5.6rem;
+	min-width: 5.6rem;
+}
+
+.button.children:not(.icon) {
+	padding-left: 1.6rem;
+	padding-right: 1.6rem;
+}
+
+.button.children.icon {
+	padding-left: 1.2rem;
+	padding-right: 1.6rem;
+}
+
+.button:hover::before {
+	opacity: 0.08;
+}
+
+.button:active::before,
+.button:focus-visible::before {
+	opacity: 0.12;
+}
+
+.button:active::before {
+	border-radius: 50%;
+	bottom: -2.4rem;
+	height: 6.4rem;
+	left: unset;
+	right: -1.2rem;
+	top: unset;
+	width: 6.4rem;
+}
+
+.button > svg {
+	height: 2.4rem;
+	width: 2.4rem;
+}
+
+.small,
+.large {
+	transform-origin: bottom right;
+}
+
+.small {
+	transform: scale(0.8);
+}
+
+.large {
+	transform: scale(2);
+}
+
+@media screen and (min-width: 600px) {
+	.button {
+		bottom: 1.8rem;
+	}
+}

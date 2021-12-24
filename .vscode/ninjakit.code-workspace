@@ -15,7 +15,6 @@
 			"**/.git": true,
 			"build": true,
 			"coverage": true,
-			"dist": true,
 			"node_modules": true
 		}
 	}

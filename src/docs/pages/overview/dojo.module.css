@@ -37,6 +37,10 @@
 	font-size: 8rem;
 }
 
+.card > section > h1 > strong {
+	color: #c00;
+}
+
 .card > section > h2 {
 	align-items: center;
 	display: flex;
