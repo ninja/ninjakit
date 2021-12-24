@@ -19,10 +19,11 @@ export type Radio<T> = Omit<
 
 export type RadiosetProps<T> = Omit<
 	JSX.IntrinsicElements["fieldset"],
-	"onChange" | "ref"
+	"onChange" | "name" | "ref"
 > & {
 	defaultValue?: T;
 	label?: string;
+	name: string;
 	onChange?: (value: T) => void;
 	options: (Radio<T> | T)[];
 	ref?: Ref<HTMLInputElement>[];

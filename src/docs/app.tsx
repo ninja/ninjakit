@@ -28,7 +28,7 @@ import {
 import { Icon } from "./components/icon";
 import { Logo } from "./components/logo";
 import { ReloadPrompt } from "./components/reload-prompt";
-import { ColorScheme, Examples } from "./pages/examples";
+import { ColorSchemeExample, Examples } from "./pages/examples";
 import { Overview } from "./pages/overview";
 import { Sandbox } from "./pages/sandbox";
 
@@ -120,7 +120,7 @@ function App() {
 				</Article>
 				{examples && (
 					<Aside>
-						<ColorScheme />
+						<ColorSchemeExample />
 					</Aside>
 				)}
 			</Article>

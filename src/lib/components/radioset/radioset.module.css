@@ -12,7 +12,6 @@
 .radioset > label {
 	align-items: center;
 	display: flex;
-	gap: 0.4rem;
 }
 
 .radioset > label > input[type="radio"] {
@@ -68,6 +67,15 @@
 	transform: scale3d(1, 1, 1);
 }
 
-.radioset > label > input[type="radio"]:checked {
+.radioset > label > input[type="radio"]:disabled {
 	border-color: var(--md-color-on-surface);
+	opacity: 0.38;
+}
+
+.radioset > label > input[type="radio"]:disabled::before {
+	opacity: 0;
+}
+
+.radioset > label > input[type="radio"]:disabled::after {
+	background-color: var(--md-color-on-surface);
 }
