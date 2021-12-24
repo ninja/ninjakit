@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+export type ColorScheme = "dark" | "light" | "system";
+
 const key = "prefersColorScheme";
 
 function getDefaultColorScheme() {
@@ -11,7 +13,7 @@ function getDefaultColorScheme() {
 }
 
 export function useColorScheme() {
-	const [colorScheme, setColorScheme] = useState<"dark" | "light" | "system">(
+	const [colorScheme, setColorScheme] = useState<ColorScheme>(
 		getDefaultColorScheme()
 	);
 
