@@ -11,4 +11,5 @@ export { Main } from "./components/main";
 export { Nav } from "./components/nav";
 export { Radioset } from "./components/radioset";
 export { Typography } from "./components/typography";
+export type { ColorScheme } from "./hooks/color-scheme";
 export { useColorScheme } from "./hooks/color-scheme";
