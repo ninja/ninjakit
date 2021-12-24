@@ -1,35 +1,39 @@
-.article {
+.article,
+.body {
 	composes: nk from global;
+}
+
+.article > section,
+.body > section {
+	margin: 0 0.8rem;
+}
+
+.article > section:first-child,
+.body > section:first-child {
+	margin-top: 0.8rem;
+}
+
+.article > section:last-child,
+.body > section:last-child {
+	margin-bottom: 0.8rem;
+}
+
+.article {
 	display: contents;
 }
 
 .body {
-	composes: nk from global;
-	display: flex;
-	flex-direction: column;
-	row-gap: 0.8rem;
+	display: contents;
 }
 
 .body > footer {
 	display: none;
 }
 
-.body > section {
-	margin: 0 0.8rem;
-}
-
-.body > section:first-child {
-	margin-top: 0.8rem;
-}
-
-.body > section:last-child {
-	margin-bottom: 0.8rem;
-}
-
 @media screen and (min-width: 600px) {
 	.article {
 		display: grid;
-		grid-template-areas: "header header" "body aside";
+		grid-template-areas: "header aside" "body aside";
 		grid-template-columns: 1fr auto;
 		grid-template-rows: auto 1fr;
 		inset: 0;
@@ -41,6 +45,9 @@
 	}
 
 	.body {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.8rem;
 		border-left-color: transparent;
 		grid-area: body;
 		overflow-y: auto;

@@ -1,6 +1,4 @@
-import type { Config } from "@jest/types";
-
-const config: Config.InitialOptions = {
+export default {
 	collectCoverageFrom: ["<rootDir>/src/lib/**/*.ts?(x)"],
 	moduleNameMapper: {
 		"^.+\\.css$": "identity-obj-proxy",
@@ -14,5 +12,3 @@ const config: Config.InitialOptions = {
 		"\\.(ts|tsx)$": "esbuild-runner/jest",
 	},
 };
-
-export default config;

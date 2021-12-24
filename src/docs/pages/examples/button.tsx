@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import { MdThumbUp } from "react-icons/md";
 
 export const ButtonExamples: FunctionComponent = () => (
-	<Card appearance="elevated" title="Button">
+	<Card appearance="elevated" id="button" title="Button">
 		<section>
 			<Button appearance="elevated">Elevated</Button>
 			<Button>Filled</Button>

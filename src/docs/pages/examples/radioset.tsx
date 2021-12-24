@@ -2,17 +2,16 @@ import { Card, Radioset } from "ninjakit";
 import { FunctionComponent } from "react";
 
 export const RadiosetExamples: FunctionComponent = () => (
-	<Card appearance="elevated">
-		<Radioset<"apple" | "banana" | "grapes">
-			defaultValue="banana"
-			label="Choose a fruit:"
+	<Card appearance="elevated" id="radioset" title="RadioSet">
+		<Radioset<"apples" | "bananas" | "grapes">
+			defaultValue="bananas"
+			label="Choose fruit:"
 			name="test"
 			options={[
 				{
-					label: "🍎 Apple",
-					value: "apple",
+					label: "🍎 Apples",
+					value: "apples",
 				},
-				{ disabled: true, label: "🍌 We have no Banana", value: "banana" },
 				{
 					children: (
 						<span>
@@ -22,6 +21,7 @@ export const RadiosetExamples: FunctionComponent = () => (
 					label: "Grapes",
 					value: "grapes",
 				},
+				{ disabled: true, label: "🍌 Bananas", value: "bananas" },
 			]}
 		/>
 	</Card>

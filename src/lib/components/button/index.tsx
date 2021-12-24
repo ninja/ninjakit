@@ -11,13 +11,13 @@ export type ButtonProps = PropsWithChildren<{
 }>;
 
 export function useClassName({
-	appearance = "filled",
+	appearance,
 	children,
 	override,
 	target,
 }: {
-	action?: boolean;
-	appearance?: Appearance;
+	anchor?: boolean;
+	appearance: Appearance;
 	children: ReactNode;
 	override?: string;
 	target?: string;

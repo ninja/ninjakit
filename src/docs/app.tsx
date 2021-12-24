@@ -4,6 +4,7 @@ import {
 	AnchorButton,
 	Article,
 	Aside,
+	Card,
 	FloatingActionButton,
 	Footer,
 	Header,
@@ -14,7 +15,7 @@ import { StrictMode } from "react";
 import { render } from "react-dom";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
-import { MdEdit } from "react-icons/md";
+import { MdEdit, MdLink } from "react-icons/md";
 import { SiGithub, SiNetlify, SiNpm } from "react-icons/si";
 import {
 	BrowserRouter,
@@ -126,6 +127,30 @@ function App() {
 							</AnchorButton>
 						)}
 					</Footer>
+				}
+				header={
+					examples && (
+						<Card appearance="outlined">
+							<section>
+								<AnchorButton href="#button">
+									<MdLink />
+									Button
+								</AnchorButton>
+								<AnchorButton href="#anchor-button">
+									<MdLink />
+									AnchorButton
+								</AnchorButton>
+								<AnchorButton href="#text-input">
+									<MdLink />
+									TextInput
+								</AnchorButton>
+								<AnchorButton href="#radioset">
+									<MdLink />
+									RadioSet
+								</AnchorButton>
+							</section>
+						</Card>
+					)
 				}
 			>
 				<Routes>

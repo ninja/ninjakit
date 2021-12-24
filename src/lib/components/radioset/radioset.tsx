@@ -1,4 +1,5 @@
 import { Radio, RadiosetProps, useClassName } from ".";
+import styles from "./radioset.module.css";
 
 /** @see https://material.io/components/radio-buttons */
 export const Radioset = <T extends string>({
@@ -19,16 +20,20 @@ export const Radioset = <T extends string>({
 			{label && <legend>{label}</legend>}
 			{children}
 			{options.map((option, index) => {
-				const { children, label, value, ...props }: Radio<T> =
+				const { children, disabled, label, value, ...props }: Radio<T> =
 					typeof option === "string" ? { value: option } : option;
 
 				return (
-					<label className="nk" key={`${name}-${value}-${index}`}>
+					<label
+						className={disabled ? `nk ${styles.disabled}` : "nk"}
+						key={`${name}-${value}-${index}`}
+					>
 						<input
 							{...props}
 							className="nk"
 							defaultChecked={value === defaultValue}
 							defaultValue={value}
+							disabled={disabled}
 							name={name}
 							onChange={() => handleChange && handleChange(value)}
 							ref={ref && ref[index]}
