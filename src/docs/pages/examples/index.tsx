@@ -12,4 +12,4 @@ export const Examples: FunctionComponent = () => (
 	</>
 );
 
-export { ColorScheme } from "./color-scheme";
+export { ColorSchemeExample } from "./color-scheme";
