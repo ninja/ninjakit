@@ -12,6 +12,7 @@
 .radioset > label {
 	align-items: center;
 	display: flex;
+	flex-wrap: nowrap;
 }
 
 .radioset > label > input[type="radio"] {

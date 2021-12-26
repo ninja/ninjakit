@@ -54,7 +54,7 @@
 	background-color: var(--md-color-primary);
 }
 
-.button.children:not(.icon) {
+.button.children {
 	padding-left: 2.4rem;
 	padding-right: 2.4rem;
 }
@@ -63,9 +63,12 @@
 	width: 4rem;
 }
 
-.button.children.icon {
+.button.icon {
 	padding-left: 1.6rem;
-	padding-right: 2.4rem;
+}
+
+.button.external {
+	padding-right: 1.6rem;
 }
 
 .elevated {
