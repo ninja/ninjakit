@@ -41,56 +41,70 @@ function App() {
 	const year = new Date().getFullYear();
 
 	return (
-		<Main>
-			<Header>
-				{home ? (
-					<section />
-				) : (
-					<AnchorButton appearance="text" href="/">
-						<Icon />
-						<Logo />
-					</AnchorButton>
-				)}
-				<section>
-					<AnchorButton
-						appearance="text"
-						href="https://www.npmjs.com/package/ninjakit"
-						target="_blank"
-					>
-						<SiNpm />
-						npm
-					</AnchorButton>
-					<AnchorButton
-						appearance="text"
-						href="https://github.com/ninja/ninjakit"
-						target="_blank"
-					>
-						<SiGithub />
-						git
-					</AnchorButton>
-				</section>
-			</Header>
-			<Nav>
-				<NavLink to="/">
-					<FaToriiGate />
-					Overview
-				</NavLink>
-				<NavLink to="/examples">
-					<GiKatana />
-					Examples
-				</NavLink>
-				<NavLink to="/sandbox">
-					<GiStarShuriken />
-					Sandbox
-				</NavLink>
-			</Nav>
-			<Article>
-				<Article>
-					<Routes>
-						<Route element={<Overview />} path="/" />
-						<Route element={<Examples />} path="examples" />
-						<Route element={<Sandbox />} path="sandbox" />
-					</Routes>
+		<Main
+			header={
+				<Header>
+					{home ? (
+						<section />
+					) : (
+						<AnchorButton appearance="text" href="/">
+							<Icon />
+							<Logo />
+						</AnchorButton>
+					)}
+					<section>
+						<AnchorButton
+							appearance="text"
+							href="https://www.npmjs.com/package/ninjakit"
+							target="_blank"
+						>
+							<SiNpm />
+							npm
+						</AnchorButton>
+						<AnchorButton
+							appearance="text"
+							href="https://github.com/ninja/ninjakit"
+							target="_blank"
+						>
+							<SiGithub />
+							git
+						</AnchorButton>
+					</section>
+				</Header>
+			}
+			navigation={
+				<Nav>
+					<NavLink to="/">
+						<FaToriiGate />
+						Overview
+					</NavLink>
+					<NavLink to="/examples">
+						<GiKatana />
+						Examples
+					</NavLink>
+					<NavLink to="/sandbox">
+						<GiStarShuriken />
+						Sandbox
+					</NavLink>
+				</Nav>
+			}
+		>
+			<Article
+				aside={
+					examples && (
+						<Aside>
+							<ColorSchemeExample />
+						</Aside>
+					)
+				}
+				floatingActionButton={
+					examples && (
+						<FloatingActionButton>
+							<MdEdit />
+						</FloatingActionButton>
+					)
+				}
+				footer={
 					<Footer>
 						<section>&copy; {year} Jamie Hoover</section>
 						{home ? (
@@ -112,17 +126,13 @@ function App() {
 							</AnchorButton>
 						)}
 					</Footer>
-					{examples && (
-						<FloatingActionButton>
-							<MdEdit />
-						</FloatingActionButton>
-					)}
-				</Article>
-				{examples && (
-					<Aside>
-						<ColorSchemeExample />
-					</Aside>
-				)}
+				}
+			>
+				<Routes>
+					<Route element={<Overview />} path="/" />
+					<Route element={<Examples />} path="examples" />
+					<Route element={<Sandbox />} path="sandbox" />
+				</Routes>
 			</Article>
 		</Main>
 	);

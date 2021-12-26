@@ -10,7 +10,7 @@ export const AnchorButton = forwardRef<
 	{ appearance, children, className: override, target, ...props },
 	ref
 ) {
-	const className = useClassName({ appearance, children, override });
+	const className = useClassName({ appearance, children, override, target });
 
 	return (
 		<a className={className} ref={ref} target={target} {...props}>

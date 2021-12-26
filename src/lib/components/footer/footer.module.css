@@ -3,6 +3,7 @@
 	composes: nk from global;
 	display: flex;
 	gap: 0.8rem;
+	grid-area: footer;
 	justify-content: space-between;
 	padding: 0.8rem;
 }

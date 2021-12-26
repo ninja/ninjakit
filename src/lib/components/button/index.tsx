@@ -14,11 +14,13 @@ export function useClassName({
 	appearance = "filled",
 	children,
 	override,
+	target,
 }: {
 	action?: boolean;
 	appearance?: Appearance;
 	children: ReactNode;
 	override?: string;
+	target?: string;
 }): string | undefined {
 	return [
 		styles.button,
@@ -26,6 +28,7 @@ export function useClassName({
 		typography.labelLarge,
 		children && styles.children,
 		Children.count(children) > 1 && styles.icon,
+		target === "_blank" && styles.external,
 		override,
 	].join(" ");
 }

@@ -1,85 +1,65 @@
 .article {
-	border-left-color: transparent;
 	composes: nk from global;
-	display: grid;
-	grid-template-areas: "header" "article" "aside" "footer";
-	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto auto;
-	grid-area: article;
-	overflow-y: auto;
-	position: relative;
-	scrollbar-gutter: auto;
-	scrollbar-width: thin;
-	transition: border-color 300ms;
+	display: contents;
 }
 
-.article:hover {
-	border-left-color: var(--md-color-secondary);
-}
-
-.article::-webkit-scrollbar {
-	height: 0.8rem;
-	width: 0.8rem;
-}
-
-.article::-webkit-scrollbar-thumb {
-	border-radius: 0.4rem;
-	border-left-color: inherit;
-	border-left-style: solid;
-	border-left-width: 0.8rem;
-	position: absolute;
-	right: 0;
-}
-
-.article > article,
-.article > section {
+.body {
+	composes: nk from global;
 	display: flex;
-	gap: 0.8rem;
-}
-
-.article > article {
 	flex-direction: column;
-	grid-area: article;
-	overflow-y: unset;
+	row-gap: 0.8rem;
 }
 
-.article > section {
+.body > footer {
+	display: none;
+}
+
+.body > section {
 	margin: 0 0.8rem;
 }
 
-.article > section:first-child {
+.body > section:first-child {
 	margin-top: 0.8rem;
 }
 
-.article > section:last-child {
+.body > section:last-child {
 	margin-bottom: 0.8rem;
 }
 
 @media screen and (min-width: 600px) {
 	.article {
-		border-left-color: transparent;
-		gap: unset;
-		grid-template-areas: "header header" "article aside" "footer footer";
+		display: grid;
+		grid-template-areas: "header header" "body aside";
 		grid-template-columns: 1fr auto;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto 1fr;
+		inset: 0;
+		position: absolute;
+	}
+
+	.article > footer {
+		display: none;
+	}
+
+	.body {
+		border-left-color: transparent;
+		grid-area: body;
 		overflow-y: auto;
-		padding: 0.8rem;
-		padding: unset;
+		position: relative;
 		scrollbar-gutter: auto;
 		scrollbar-width: thin;
 		transition: border-color 300ms;
 	}
 
-	.article:hover {
+	.body:hover {
 		border-left-color: var(--md-color-secondary);
 	}
 
-	.article::-webkit-scrollbar {
+	.body::-webkit-scrollbar {
 		height: 0.8rem;
 		width: 0.8rem;
 	}
 
-	.article::-webkit-scrollbar-thumb {
+	.body::-webkit-scrollbar-thumb {
 		border-radius: 0.4rem;
 		border-left-color: inherit;
 		border-left-style: solid;
@@ -88,7 +68,7 @@
 		right: 0;
 	}
 
-	.article > article {
-		overflow-y: auto;
+	.body > footer {
+		display: flex;
 	}
 }

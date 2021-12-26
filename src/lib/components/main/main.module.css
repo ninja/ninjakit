@@ -1,16 +1,47 @@
 .main {
 	composes: nk from global;
 	display: grid;
-	grid-template-areas: "header" "article" "nav";
+	grid-template-areas: "header" "body" "nav";
 	grid-template-columns: 1fr;
 	grid-template-rows: auto 1fr auto;
 	inset: 0;
 	position: absolute;
 }
 
+.body {
+	border-left-color: transparent;
+	composes: nk from global;
+	display: flex;
+	flex-direction: column;
+	grid-area: body;
+	overflow-y: auto;
+	position: relative;
+	scrollbar-gutter: auto;
+	scrollbar-width: thin;
+	transition: border-color 300ms;
+}
+
+.body:hover {
+	border-left-color: var(--md-color-secondary);
+}
+
+.body::-webkit-scrollbar {
+	height: 0.8rem;
+	width: 0.8rem;
+}
+
+.body::-webkit-scrollbar-thumb {
+	border-radius: 0.4rem;
+	border-left-color: inherit;
+	border-left-style: solid;
+	border-left-width: 0.8rem;
+	position: absolute;
+	right: 0;
+}
+
 @media screen and (min-width: 600px) {
 	.main {
-		grid-template-areas: "header header" "nav article";
+		grid-template-areas: "header header" "nav body";
 		grid-template-columns: auto 1fr;
 		grid-template-rows: auto 1fr;
 	}
