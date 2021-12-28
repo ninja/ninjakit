@@ -21,6 +21,7 @@
 
 .card > section {
 	align-items: center;
+	background-color: inherit;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.4rem;

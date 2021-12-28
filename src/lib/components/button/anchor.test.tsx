@@ -9,6 +9,6 @@ describe("button anchor", () => {
 			name: "test",
 		});
 
-		expect($AnchorButton).toHaveClass("filled labelLarge children");
+		expect($AnchorButton).toHaveClass("button labelLarge children");
 	});
 });

@@ -68,8 +68,15 @@
 	transform: scale3d(1, 1, 1);
 }
 
+.radioset > label.disabled {
+	color: var(--md-color-on-surface);
+	cursor: default;
+	opacity: 0.38;
+}
+
 .radioset > label > input[type="radio"]:disabled {
 	border-color: var(--md-color-on-surface);
+	cursor: default;
 	opacity: 0.38;
 }
 

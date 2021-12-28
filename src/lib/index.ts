@@ -7,6 +7,7 @@ export { Card } from "./components/card";
 export { FloatingActionButton } from "./components/floating-action-button";
 export { Footer } from "./components/footer";
 export { Header } from "./components/header";
+export { TextInput } from "./components/input";
 export { Main } from "./components/main";
 export { Nav } from "./components/nav";
 export { Radioset } from "./components/radioset";

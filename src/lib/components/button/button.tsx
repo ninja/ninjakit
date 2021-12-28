@@ -6,7 +6,13 @@ export const Button = forwardRef<
 	HTMLButtonElement,
 	ButtonHTMLAttributes<HTMLButtonElement> & ButtonProps
 >(function (
-	{ appearance, children, className: override, type = "button", ...props },
+	{
+		appearance = "filled",
+		children,
+		className: override,
+		type = "button",
+		...props
+	},
 	ref
 ) {
 	const className = useClassName({ appearance, children, override });

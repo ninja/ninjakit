@@ -1,0 +1,171 @@
+.button,
+.container,
+.error,
+.input,
+.label {
+	composes: nk from global;
+}
+
+.container {
+	align-items: center;
+	align-self: flex-start;
+	background-color: inherit;
+	caret-color: var(--md-color-primary);
+	color: var(--md-color-on-surface);
+	cursor: text;
+	display: flex;
+	height: 4.8rem;
+	position: relative;
+	transition: border-color border-width 300ms ease-in-out;
+}
+
+.container.filled,
+.container.filled::before {
+	border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.container.filled {
+	box-shadow: 0 0.1rem 0 0 var(--md-color-outline);
+}
+
+.container.filled::before {
+	background-color: var(--md-color-on-surface);
+	content: "";
+	inset: 0;
+	opacity: 0.12;
+	position: absolute;
+}
+
+.container.filled:focus-within,
+.container.filled:hover {
+	box-shadow: 0 0.2rem 0 0 var(--md-color-outline);
+}
+
+.container.filled:focus-within {
+	box-shadow: 0 0.2rem 0 0 var(--md-color-primary);
+}
+
+.container.filled.error {
+	box-shadow: 0 0.2rem 0 0 var(--md-color-error);
+}
+
+.container.filled:focus-within::before {
+	opacity: 0.08;
+}
+
+.container.outlined {
+	border-radius: 0.4rem;
+	box-shadow: 0 0 0 0.1rem var(--md-color-outline);
+	margin: 0.8rem 0.1rem 0.1rem 0.1rem;
+}
+
+.container.outlined:focus-within,
+.container.outlined:hover {
+	box-shadow: 0 0 0 0.2rem var(--md-color-outline);
+}
+
+.container.outlined:focus-within {
+	box-shadow: 0 0 0 0.2rem var(--md-color-primary);
+}
+
+.container.outlined.error {
+	box-shadow: 0 0 0 0.2rem var(--md-color-error);
+}
+
+.container.error {
+	caret-color: var(--md-color-error);
+	margin-bottom: 2rem;
+}
+
+.container > .error {
+	bottom: -2rem;
+	color: var(--md-color-error);
+	font-size: 1.1rem;
+	left: 1.6rem;
+	position: absolute;
+}
+
+.input {
+	flex-grow: 1;
+	font-size: 1.4rem;
+	height: 3.4rem;
+	padding: 0 1.6rem;
+	position: relative;
+}
+
+.container.filled > .input {
+	align-self: flex-end;
+}
+
+.input:placeholder-shown + .label {
+	color: var(--md-color-outline);
+}
+
+.input::placeholder {
+	opacity: 0;
+}
+
+.label {
+	color: var(--md-color-outline);
+	font-size: 1.4rem;
+	left: 1.6rem;
+	position: absolute;
+	transform: translate3d(0, 0, 0);
+	transition: font-size, left, transform 150ms ease;
+	user-select: none;
+}
+
+.container.leadingIcon > .input {
+	padding-left: 0.4rem;
+}
+
+.container.leadingIcon > .label {
+	left: 4.2rem;
+}
+
+.input:focus-within + .label,
+.input:not(:placeholder-shown) + .label {
+	font-size: 1.1rem;
+}
+
+.input:focus-within + .label {
+	color: var(--md-color-primary);
+}
+
+.container.filled > .input:focus-within + .label,
+.container.filled > .input:not(:placeholder-shown) + .label {
+	transform: translate3d(0, -1rem, 0);
+}
+
+.container.outlined > .input:focus-within + .label,
+.container.outlined > .input:not(:placeholder-shown) + .label {
+	background-color: inherit;
+	left: 0.8rem;
+	padding: 0 0.4rem;
+	transform: translate3d(0, -2.4rem, 0);
+}
+
+.container svg {
+	fill: var(--md-color-outline);
+	height: 1.8rem;
+	width: 1.8rem;
+}
+
+.container > svg {
+	margin-left: 1.6rem;
+}
+
+.container > .button {
+	cursor: pointer;
+	height: 4.8rem;
+	padding-right: 1.6rem;
+	position: relative;
+}
+
+.container > .button:focus-visible > svg {
+	fill: var(--md-color-primary);
+}
+
+.container.error > .label {
+	color: var(--md-color-error);
+}

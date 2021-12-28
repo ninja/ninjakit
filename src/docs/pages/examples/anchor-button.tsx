@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import { MdThumbUp } from "react-icons/md";
 
 export const AnchorButtonExamples: FunctionComponent = () => (
-	<Card appearance="elevated" title="AnchorButton">
+	<Card appearance="elevated" id="anchor-button" title="AnchorButton">
 		<section>
 			<AnchorButton appearance="elevated" href="#">
 				Elevated

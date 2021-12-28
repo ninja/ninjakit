@@ -7,10 +7,15 @@ export const AnchorButton = forwardRef<
 	HTMLAnchorElement,
 	AnchorHTMLAttributes<HTMLAnchorElement> & ButtonProps
 >(function (
-	{ appearance, children, className: override, target, ...props },
+	{ appearance = "text", children, className: override, target, ...props },
 	ref
 ) {
-	const className = useClassName({ appearance, children, override, target });
+	const className = useClassName({
+		appearance,
+		children,
+		override,
+		target,
+	});
 
 	return (
 		<a className={className} ref={ref} target={target} {...props}>
