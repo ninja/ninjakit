@@ -4,7 +4,7 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "16.0.0",
-		"@commitlint/config-conventional": "15.0.0",
+		"@commitlint/config-conventional": "16.0.0",
 		"@playwright/test": "1.17.1",
 		"@fontsource/roboto": "4.5.1",
 		"@sentry/react": "6.16.1",
