@@ -5,7 +5,7 @@ import styles from "./input.module.css";
 
 type Appearance = "filled" | "outlined";
 
-export type InputProps = JSX.IntrinsicElements["input"] & {
+export type InputProps = {
 	/** @see https://material.io/design/components/text-fields.html */
 	appearance?: Appearance;
 	error?: true | string;

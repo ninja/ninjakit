@@ -144,6 +144,14 @@ function App() {
 									<MdLink />
 									TextInput
 								</AnchorButton>
+								<AnchorButton href="#button-menu">
+									<MdLink />
+									ButtonMenu
+								</AnchorButton>
+								<AnchorButton href="#input-menu">
+									<MdLink />
+									InputMenu
+								</AnchorButton>
 								<AnchorButton href="#radioset">
 									<MdLink />
 									RadioSet

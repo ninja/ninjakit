@@ -7,19 +7,18 @@ export const ButtonExamples: FunctionComponent = () => (
 		<section>
 			<Button appearance="elevated">Elevated</Button>
 			<Button>Filled</Button>
-			<Button>
-				<MdThumbUp /> With Icon
-			</Button>
+			<Button leadingIcon={<MdThumbUp />}>With Icon</Button>
 			<Button appearance="outlined">Outlined</Button>
 			<Button appearance="text">Text</Button>
+			<Button appearance="text" leadingIcon={<MdThumbUp />} />
 		</section>
 		<section>
 			<Button appearance="elevated" disabled>
 				Elevated
 			</Button>
 			<Button disabled>Filled</Button>
-			<Button disabled>
-				<MdThumbUp /> With Icon
+			<Button disabled leadingIcon={<MdThumbUp />}>
+				With Icon
 			</Button>
 			<Button appearance="outlined" disabled>
 				Outlined

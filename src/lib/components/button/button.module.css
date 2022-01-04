@@ -1,7 +1,7 @@
 .button {
+	align-items: center;
 	composes: nk from global;
 	cursor: pointer;
-	align-items: center;
 	display: flex;
 	gap: 0.6rem;
 	justify-content: center;
@@ -9,6 +9,13 @@
 	white-space: nowrap;
 	width: fit-content;
 	-webkit-tap-highlight-color: transparent;
+}
+
+.button,
+.button::after,
+.button::before {
+	border-radius: 2rem;
+	height: 4rem;
 }
 
 .button::before {
@@ -22,13 +29,6 @@
 .elevated {
 	box-shadow: var(--md-shadow);
 	margin: 0 0.2rem;
-}
-
-.button,
-.button::after,
-.button::before {
-	border-radius: 2rem;
-	height: 4rem;
 }
 
 .elevated::before {
@@ -55,19 +55,18 @@
 }
 
 .button.children {
-	padding-left: 2.4rem;
-	padding-right: 2.4rem;
+	padding: 0 2.4rem;
 }
 
-.button.icon:not(.children) {
-	width: 4rem;
+.button.leadingIcon:not(.button.trailingIcon) {
+	padding: 0 1.6rem;
 }
 
-.button.icon {
+.button.leadingIcon {
 	padding-left: 1.6rem;
 }
 
-.button.external {
+.button.trailingIcon {
 	padding-right: 1.6rem;
 }
 

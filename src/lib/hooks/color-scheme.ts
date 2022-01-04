@@ -1,6 +1,5 @@
+import type { ColorScheme } from "ninjakit";
 import { useEffect, useState } from "react";
-
-export type ColorScheme = "dark" | "light" | "system";
 
 const key = "prefersColorScheme";
 

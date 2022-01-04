@@ -9,8 +9,8 @@ export const AnchorButtonExamples: FunctionComponent = () => (
 				Elevated
 			</AnchorButton>
 			<AnchorButton href="#">Filled</AnchorButton>
-			<AnchorButton href="#">
-				<MdThumbUp /> With Icon
+			<AnchorButton href="#" leadingIcon={<MdThumbUp />}>
+				With Icon
 			</AnchorButton>
 			<AnchorButton href="#" target="_blank">
 				With External Target

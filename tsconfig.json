@@ -18,6 +18,6 @@
 		"target": "ESNext",
 		"useDefineForClassFields": true
 	},
-	"exclude": ["./src/lib/head", "./src/docs/worker.ts"],
+	"exclude": ["./src/docs/worker.ts"],
 	"include": ["./vite.d.ts", "./src"]
 }
