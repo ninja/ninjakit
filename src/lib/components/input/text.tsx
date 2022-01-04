@@ -1,16 +1,19 @@
-import { forwardRef, InputHTMLAttributes } from "react";
+import { useRandomId } from "ninjakit";
+import { forwardRef } from "react";
 
 import { InputProps, useClassName } from ".";
 import styles from "./input.module.css";
 
 export const TextInput = forwardRef<
 	HTMLInputElement,
-	InputHTMLAttributes<HTMLInputElement> & InputProps
+	JSX.IntrinsicElements["input"] & InputProps
 >(function (
 	{
 		appearance,
+		"aria-expanded": ariaExpanded,
 		className: override,
 		error,
+		id,
 		label,
 		leadingIcon,
 		onClickTrailingIcon: handleClick,
@@ -20,15 +23,21 @@ export const TextInput = forwardRef<
 	},
 	ref
 ) {
+	const randomId = useRandomId();
 	const className = useClassName({ appearance, error, leadingIcon, override });
 
 	return (
-		<label className={className}>
+		<label
+			aria-expanded={ariaExpanded}
+			className={className}
+			htmlFor={id || randomId}
+		>
 			{leadingIcon}
 			<input
 				{...props}
 				aria-label={label}
 				className={styles.input}
+				id={id || randomId}
 				placeholder={label}
 				ref={ref}
 				type={type}
