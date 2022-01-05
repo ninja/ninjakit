@@ -1,8 +1,6 @@
-import { MenuItem, useRandomId } from "ninjakit";
+import { MenuItem } from "ninjakit";
 
 export const useMenuItems = () => {
-	const randomId = useRandomId();
-
 	return [
 		{ label: "Item One", value: "item-one" },
 		{ label: "Item Two", value: "item-two" },
@@ -15,11 +13,11 @@ export const useMenuItems = () => {
 		{ label: "Item Eight", value: "item-eight" },
 		{ label: "Item Nine", value: "item-nine" },
 		{ label: "Item Ten", value: "item-ten" },
-	].map(({ disabled, label, separator, value }) => {
+	].map(({ disabled, label, separator, value }, index) => {
 		return (
 			<MenuItem
 				disabled={disabled}
-				key={`${randomId}-${value}`}
+				key={`${value}-${index}`}
 				separator={separator}
 				value={value}
 			>

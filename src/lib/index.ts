@@ -14,6 +14,5 @@ export { Nav } from "./components/nav";
 export { Radioset } from "./components/radioset";
 export { Typography } from "./components/typography";
 export { useColorScheme } from "./hooks/color-scheme";
-export { useRandomId } from "./hooks/random-id";
 
 export type ColorScheme = "dark" | "light" | "system";

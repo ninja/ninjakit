@@ -1,4 +1,3 @@
-import { useRandomId } from "ninjakit";
 import { forwardRef } from "react";
 
 import { InputProps, useClassName } from ".";
@@ -23,21 +22,16 @@ export const TextInput = forwardRef<
 	},
 	ref
 ) {
-	const randomId = useRandomId();
 	const className = useClassName({ appearance, error, leadingIcon, override });
 
 	return (
-		<label
-			aria-expanded={ariaExpanded}
-			className={className}
-			htmlFor={id || randomId}
-		>
+		<label aria-expanded={ariaExpanded} className={className} htmlFor={id}>
 			{leadingIcon}
 			<input
 				{...props}
 				aria-label={label}
 				className={styles.input}
-				id={id || randomId}
+				id={id}
 				placeholder={label}
 				ref={ref}
 				type={type}
