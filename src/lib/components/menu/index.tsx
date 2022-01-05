@@ -1,4 +1,3 @@
-import { useRandomId } from "ninjakit";
 import {
 	FormEventHandler,
 	KeyboardEventHandler,
@@ -23,7 +22,6 @@ export function useMenu({
 	onChange?: FormEventHandler<HTMLElement>;
 	override?: string;
 }) {
-	const id = useRandomId();
 	const className = [
 		styles.menu,
 		input ? styles.input : undefined,
@@ -105,7 +103,6 @@ export function useMenu({
 		handleKeyDownMenu,
 		handleKeyDownMenuItem,
 		expanded,
-		id,
 	};
 }
 

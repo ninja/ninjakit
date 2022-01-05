@@ -12,7 +12,10 @@ export const ButtonMenu = forwardRef<
 	HTMLButtonElement,
 	Omit<JSX.IntrinsicElements["button"], "value"> &
 		ButtonProps & { children: ReactElement<MenuItemProps>[] }
->(function ({ children, className: override, label, onChange, ...props }, ref) {
+>(function (
+	{ children, className: override, id, label, onChange, ...props },
+	ref
+) {
 	const {
 		className,
 		expanded,
@@ -22,7 +25,6 @@ export const ButtonMenu = forwardRef<
 		handleKeyDownControl,
 		handleKeyDownMenu,
 		handleKeyDownMenuItem,
-		id,
 	} = useMenu({
 		onChange,
 		override,

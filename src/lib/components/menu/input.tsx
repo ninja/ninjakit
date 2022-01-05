@@ -13,7 +13,7 @@ export const InputMenu = forwardRef<
 	JSX.IntrinsicElements["input"] &
 		InputProps & { children: ReactElement<MenuItemProps>[] }
 >(function (
-	{ children, className: override, onChange, readOnly = true, ...props },
+	{ children, className: override, id, onChange, readOnly = true, ...props },
 	ref
 ) {
 	const {
@@ -26,7 +26,6 @@ export const InputMenu = forwardRef<
 		handleKeyDownControl,
 		handleKeyDownMenu,
 		handleKeyDownMenuItem,
-		id,
 	} = useMenu({ input: true, onChange, override });
 
 	const menuItems = mapMenuItems({
