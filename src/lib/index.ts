@@ -4,6 +4,7 @@ export { Article } from "./components/article";
 export { Aside } from "./components/aside";
 export { AnchorButton, Button } from "./components/button";
 export { Card } from "./components/card";
+export { Checkbox } from "./components/checkbox";
 export { FloatingActionButton } from "./components/floating-action-button";
 export { Footer } from "./components/footer";
 export { Header } from "./components/header";
