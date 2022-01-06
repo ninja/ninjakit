@@ -4,13 +4,12 @@ import styles from "./main.module.css";
 
 export const Main: FunctionComponent<{
 	aside?: ReactNode;
-	footer?: ReactNode;
 	header?: ReactNode;
 	navigation?: ReactNode;
 }> = ({ children, header, navigation, ...props }) => (
 	<main className={styles.main} {...props}>
-		{header}
-		{navigation}
+		<>{header}</>
+		<>{navigation}</>
 		<div className={styles.body} role="presentation">
 			{children}
 		</div>

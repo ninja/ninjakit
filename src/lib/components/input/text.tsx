@@ -26,7 +26,7 @@ export const TextInput = forwardRef<
 
 	return (
 		<label aria-expanded={ariaExpanded} className={className} htmlFor={id}>
-			{leadingIcon}
+			<>{leadingIcon}</>
 			<input
 				{...props}
 				aria-label={label}
