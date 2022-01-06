@@ -13,14 +13,14 @@ export const Article: FunctionComponent<{
 
 	return (
 		<article className={className} {...props}>
-			{header}
+			<>{header}</>
 			<div className={styles.body} role="presentation">
-				{children}
-				{footer /* 600px and up */}
-				{floatingActionButton}
+				<>{children}</>
+				<>{footer /* 600px and up */}</>
+				<>{floatingActionButton}</>
 			</div>
-			{aside}
-			{footer /* < 600px */}
+			<>{aside}</>
+			<>{footer /* < 600px */}</>
 		</article>
 	);
 };
