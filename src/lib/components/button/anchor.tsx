@@ -31,10 +31,10 @@ export const AnchorButton = forwardRef<
 
 	return (
 		<a className={className} ref={ref} target={target} {...props}>
-			{leadingIcon}
+			<>{leadingIcon}</>
 			{label}
 			{children}
-			{trailingIcon}
+			<>{trailingIcon}</>
 		</a>
 	);
 });

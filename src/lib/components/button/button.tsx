@@ -29,10 +29,10 @@ export const Button = forwardRef<
 
 	return (
 		<button className={className} ref={ref} type={type} {...props}>
-			{leadingIcon}
+			<>{leadingIcon}</>
 			{label}
 			{children}
-			{trailingIcon}
+			<>{trailingIcon}</>
 		</button>
 	);
 });
