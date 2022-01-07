@@ -55,6 +55,7 @@
 		},
 		"./color-scheme": "./dist/color-scheme/index.js",
 		"./color-scheme/default.css": "./dist/color-scheme/default.css",
+		"./color-scheme/enterprise.css": "./dist/color-scheme/enterprise.css",
 		"./style.css": "./dist/style.css"
 	},
 	"files": [
