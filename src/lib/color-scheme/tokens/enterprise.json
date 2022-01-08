@@ -1,18 +1,18 @@
 {
 	"dsp_spec_version": "0.0.1",
 	"last_updated_by": "Material",
-	"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+	"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 	"entities": [
 		{
 			"class": "token",
 			"type": "color",
 			"id": "md.sys.color.primary.light",
 			"name": "md.sys.color.primary.light",
-			"value": "#2a5ea7",
+			"value": "#0f61a4",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "primary", "light", "color"]
 		},
 		{
@@ -24,7 +24,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-primary", "light", "color"]
 		},
 		{
@@ -32,11 +32,11 @@
 			"type": "color",
 			"id": "md.sys.color.primary-container.light",
 			"name": "md.sys.color.primary-container.light",
-			"value": "#d5e3ff",
+			"value": "#d1e4ff",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "primary-container", "light", "color"]
 		},
 		{
@@ -44,11 +44,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-primary-container.light",
 			"name": "md.sys.color.on-primary-container.light",
-			"value": "#001b3f",
+			"value": "#001c38",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-primary-container", "light", "color"]
 		},
 		{
@@ -56,11 +56,11 @@
 			"type": "color",
 			"id": "md.sys.color.secondary.light",
 			"name": "md.sys.color.secondary.light",
-			"value": "#1460a4",
+			"value": "#006689",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "secondary", "light", "color"]
 		},
 		{
@@ -72,7 +72,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-secondary", "light", "color"]
 		},
 		{
@@ -80,11 +80,11 @@
 			"type": "color",
 			"id": "md.sys.color.secondary-container.light",
 			"name": "md.sys.color.secondary-container.light",
-			"value": "#d2e4ff",
+			"value": "#bfe8ff",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "secondary-container", "light", "color"]
 		},
 		{
@@ -92,11 +92,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-secondary-container.light",
 			"name": "md.sys.color.on-secondary-container.light",
-			"value": "#001c39",
+			"value": "#001e2b",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-secondary-container", "light", "color"]
 		},
 		{
@@ -104,11 +104,11 @@
 			"type": "color",
 			"id": "md.sys.color.tertiary.light",
 			"name": "md.sys.color.tertiary.light",
-			"value": "#895100",
+			"value": "#006a6b",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "tertiary", "light", "color"]
 		},
 		{
@@ -120,7 +120,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-tertiary", "light", "color"]
 		},
 		{
@@ -128,11 +128,11 @@
 			"type": "color",
 			"id": "md.sys.color.tertiary-container.light",
 			"name": "md.sys.color.tertiary-container.light",
-			"value": "#ffdcb8",
+			"value": "#6ff7f8",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "tertiary-container", "light", "color"]
 		},
 		{
@@ -140,11 +140,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-tertiary-container.light",
 			"name": "md.sys.color.on-tertiary-container.light",
-			"value": "#2c1600",
+			"value": "#002021",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-tertiary-container", "light", "color"]
 		},
 		{
@@ -156,7 +156,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "error", "light", "color"]
 		},
 		{
@@ -168,7 +168,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "error-container", "light", "color"]
 		},
 		{
@@ -180,7 +180,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-error", "light", "color"]
 		},
 		{
@@ -192,7 +192,7 @@
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-error-container", "light", "color"]
 		},
 		{
@@ -200,11 +200,11 @@
 			"type": "color",
 			"id": "md.sys.color.background.light",
 			"name": "md.sys.color.background.light",
-			"value": "#fdfbff",
+			"value": "#fafdfa",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "background", "light", "color"]
 		},
 		{
@@ -212,11 +212,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-background.light",
 			"name": "md.sys.color.on-background.light",
-			"value": "#1a1b1f",
+			"value": "#191c1b",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-background", "light", "color"]
 		},
 		{
@@ -224,11 +224,11 @@
 			"type": "color",
 			"id": "md.sys.color.surface.light",
 			"name": "md.sys.color.surface.light",
-			"value": "#fdfbff",
+			"value": "#fafdfa",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "surface", "light", "color"]
 		},
 		{
@@ -236,11 +236,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-surface.light",
 			"name": "md.sys.color.on-surface.light",
-			"value": "#1a1b1f",
+			"value": "#191c1b",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-surface", "light", "color"]
 		},
 		{
@@ -248,11 +248,11 @@
 			"type": "color",
 			"id": "md.sys.color.surface-variant.light",
 			"name": "md.sys.color.surface-variant.light",
-			"value": "#e0e2ec",
+			"value": "#dfe2eb",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "surface-variant", "light", "color"]
 		},
 		{
@@ -260,11 +260,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-surface-variant.light",
 			"name": "md.sys.color.on-surface-variant.light",
-			"value": "#44474f",
+			"value": "#43474e",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-surface-variant", "light", "color"]
 		},
 		{
@@ -272,11 +272,11 @@
 			"type": "color",
 			"id": "md.sys.color.outline.light",
 			"name": "md.sys.color.outline.light",
-			"value": "#74777f",
+			"value": "#73777f",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "outline", "light", "color"]
 		},
 		{
@@ -284,11 +284,11 @@
 			"type": "color",
 			"id": "md.sys.color.inverse-on-surface.light",
 			"name": "md.sys.color.inverse-on-surface.light",
-			"value": "#f2f0f4",
+			"value": "#eff2ef",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "inverse-on-surface", "light", "color"]
 		},
 		{
@@ -296,11 +296,11 @@
 			"type": "color",
 			"id": "md.sys.color.inverse-surface.light",
 			"name": "md.sys.color.inverse-surface.light",
-			"value": "#2f3033",
+			"value": "#2d312f",
 			"description": "",
 			"category_id": "sys.color.light",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "inverse-surface", "light", "color"]
 		},
 		{
@@ -308,11 +308,11 @@
 			"type": "color",
 			"id": "md.sys.color.primary.dark",
 			"name": "md.sys.color.primary.dark",
-			"value": "#a8c7ff",
+			"value": "#9fc9ff",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "primary", "dark", "color"]
 		},
 		{
@@ -320,11 +320,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-primary.dark",
 			"name": "md.sys.color.on-primary.dark",
-			"value": "#002f66",
+			"value": "#00325b",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-primary", "dark", "color"]
 		},
 		{
@@ -332,11 +332,11 @@
 			"type": "color",
 			"id": "md.sys.color.primary-container.dark",
 			"name": "md.sys.color.primary-container.dark",
-			"value": "#00458d",
+			"value": "#004881",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "primary-container", "dark", "color"]
 		},
 		{
@@ -344,11 +344,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-primary-container.dark",
 			"name": "md.sys.color.on-primary-container.dark",
-			"value": "#d5e3ff",
+			"value": "#d1e4ff",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-primary-container", "dark", "color"]
 		},
 		{
@@ -356,11 +356,11 @@
 			"type": "color",
 			"id": "md.sys.color.secondary.dark",
 			"name": "md.sys.color.secondary.dark",
-			"value": "#a0c9ff",
+			"value": "#71d1ff",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "secondary", "dark", "color"]
 		},
 		{
@@ -368,11 +368,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-secondary.dark",
 			"name": "md.sys.color.on-secondary.dark",
-			"value": "#00315d",
+			"value": "#003549",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-secondary", "dark", "color"]
 		},
 		{
@@ -380,11 +380,11 @@
 			"type": "color",
 			"id": "md.sys.color.secondary-container.dark",
 			"name": "md.sys.color.secondary-container.dark",
-			"value": "#004883",
+			"value": "#004d68",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "secondary-container", "dark", "color"]
 		},
 		{
@@ -392,11 +392,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-secondary-container.dark",
 			"name": "md.sys.color.on-secondary-container.dark",
-			"value": "#d2e4ff",
+			"value": "#bfe8ff",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-secondary-container", "dark", "color"]
 		},
 		{
@@ -404,11 +404,11 @@
 			"type": "color",
 			"id": "md.sys.color.tertiary.dark",
 			"name": "md.sys.color.tertiary.dark",
-			"value": "#ffb866",
+			"value": "#4ddadb",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "tertiary", "dark", "color"]
 		},
 		{
@@ -416,11 +416,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-tertiary.dark",
 			"name": "md.sys.color.on-tertiary.dark",
-			"value": "#492900",
+			"value": "#003738",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-tertiary", "dark", "color"]
 		},
 		{
@@ -428,11 +428,11 @@
 			"type": "color",
 			"id": "md.sys.color.tertiary-container.dark",
 			"name": "md.sys.color.tertiary-container.dark",
-			"value": "#683c00",
+			"value": "#004f50",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "tertiary-container", "dark", "color"]
 		},
 		{
@@ -440,11 +440,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-tertiary-container.dark",
 			"name": "md.sys.color.on-tertiary-container.dark",
-			"value": "#ffdcb8",
+			"value": "#6ff7f8",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-tertiary-container", "dark", "color"]
 		},
 		{
@@ -456,7 +456,7 @@
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "error", "dark", "color"]
 		},
 		{
@@ -468,7 +468,7 @@
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "error-container", "dark", "color"]
 		},
 		{
@@ -480,7 +480,7 @@
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-error", "dark", "color"]
 		},
 		{
@@ -492,7 +492,7 @@
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-error-container", "dark", "color"]
 		},
 		{
@@ -500,11 +500,11 @@
 			"type": "color",
 			"id": "md.sys.color.background.dark",
 			"name": "md.sys.color.background.dark",
-			"value": "#1a1b1f",
+			"value": "#191c1b",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "background", "dark", "color"]
 		},
 		{
@@ -512,11 +512,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-background.dark",
 			"name": "md.sys.color.on-background.dark",
-			"value": "#e3e2e6",
+			"value": "#e0e3e0",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-background", "dark", "color"]
 		},
 		{
@@ -524,11 +524,11 @@
 			"type": "color",
 			"id": "md.sys.color.surface.dark",
 			"name": "md.sys.color.surface.dark",
-			"value": "#1a1b1f",
+			"value": "#191c1b",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "surface", "dark", "color"]
 		},
 		{
@@ -536,11 +536,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-surface.dark",
 			"name": "md.sys.color.on-surface.dark",
-			"value": "#e3e2e6",
+			"value": "#e0e3e0",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-surface", "dark", "color"]
 		},
 		{
@@ -548,11 +548,11 @@
 			"type": "color",
 			"id": "md.sys.color.surface-variant.dark",
 			"name": "md.sys.color.surface-variant.dark",
-			"value": "#44474f",
+			"value": "#43474e",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "surface-variant", "dark", "color"]
 		},
 		{
@@ -560,11 +560,11 @@
 			"type": "color",
 			"id": "md.sys.color.on-surface-variant.dark",
 			"name": "md.sys.color.on-surface-variant.dark",
-			"value": "#c4c6cf",
+			"value": "#c3c6cf",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-surface-variant", "dark", "color"]
 		},
 		{
@@ -572,11 +572,11 @@
 			"type": "color",
 			"id": "md.sys.color.outline.dark",
 			"name": "md.sys.color.outline.dark",
-			"value": "#8d9099",
+			"value": "#8d9199",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "outline", "dark", "color"]
 		},
 		{
@@ -584,11 +584,11 @@
 			"type": "color",
 			"id": "md.sys.color.inverse-on-surface.dark",
 			"name": "md.sys.color.inverse-on-surface.dark",
-			"value": "#1a1b1f",
+			"value": "#191c1b",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "inverse-on-surface", "dark", "color"]
 		},
 		{
@@ -596,11 +596,11 @@
 			"type": "color",
 			"id": "md.sys.color.inverse-surface.dark",
 			"name": "md.sys.color.inverse-surface.dark",
-			"value": "#e3e2e6",
+			"value": "#e0e3e0",
 			"description": "",
 			"category_id": "sys.color.dark",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "inverse-surface", "dark", "color"]
 		},
 		{
@@ -612,7 +612,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "primary", "alias"]
 		},
 		{
@@ -624,7 +624,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-primary", "alias"]
 		},
 		{
@@ -636,7 +636,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "primary-container", "alias"]
 		},
 		{
@@ -648,7 +648,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-primary-container", "alias"]
 		},
 		{
@@ -660,7 +660,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "secondary", "alias"]
 		},
 		{
@@ -672,7 +672,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-secondary", "alias"]
 		},
 		{
@@ -684,7 +684,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "secondary-container", "alias"]
 		},
 		{
@@ -696,7 +696,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-secondary-container", "alias"]
 		},
 		{
@@ -708,7 +708,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "tertiary", "alias"]
 		},
 		{
@@ -720,7 +720,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-tertiary", "alias"]
 		},
 		{
@@ -732,7 +732,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "tertiary-container", "alias"]
 		},
 		{
@@ -744,7 +744,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-tertiary-container", "alias"]
 		},
 		{
@@ -756,7 +756,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "error", "alias"]
 		},
 		{
@@ -768,7 +768,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "error-container", "alias"]
 		},
 		{
@@ -780,7 +780,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-error", "alias"]
 		},
 		{
@@ -792,7 +792,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-error-container", "alias"]
 		},
 		{
@@ -804,7 +804,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "background", "alias"]
 		},
 		{
@@ -816,7 +816,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-background", "alias"]
 		},
 		{
@@ -828,7 +828,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "surface", "alias"]
 		},
 		{
@@ -840,7 +840,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-surface", "alias"]
 		},
 		{
@@ -852,7 +852,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "surface-variant", "alias"]
 		},
 		{
@@ -864,7 +864,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "on-surface-variant", "alias"]
 		},
 		{
@@ -876,7 +876,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "outline", "alias"]
 		},
 		{
@@ -888,7 +888,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "inverse-on-surface", "alias"]
 		},
 		{
@@ -900,7 +900,7 @@
 			"description": "",
 			"category_id": "sys.color",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "sys", "color", "inverse-surface", "alias"]
 		},
 		{
@@ -912,7 +912,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary100", "color"]
 		},
 		{
@@ -924,7 +924,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary99", "color"]
 		},
 		{
@@ -932,11 +932,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary95",
 			"name": "md.ref.palette.primary95",
-			"value": "#ebf0ff",
+			"value": "#e9f1ff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary95", "color"]
 		},
 		{
@@ -944,11 +944,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary90",
 			"name": "md.ref.palette.primary90",
-			"value": "#d5e3ff",
+			"value": "#d1e4ff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary90", "color"]
 		},
 		{
@@ -956,11 +956,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary80",
 			"name": "md.ref.palette.primary80",
-			"value": "#a8c7ff",
+			"value": "#9fc9ff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary80", "color"]
 		},
 		{
@@ -968,11 +968,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary70",
 			"name": "md.ref.palette.primary70",
-			"value": "#7eacfa",
+			"value": "#71aff8",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary70", "color"]
 		},
 		{
@@ -980,11 +980,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary60",
 			"name": "md.ref.palette.primary60",
-			"value": "#6291de",
+			"value": "#5594db",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary60", "color"]
 		},
 		{
@@ -992,11 +992,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary50",
 			"name": "md.ref.palette.primary50",
-			"value": "#4777c2",
+			"value": "#377abf",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary50", "color"]
 		},
 		{
@@ -1004,11 +1004,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary40",
 			"name": "md.ref.palette.primary40",
-			"value": "#2a5ea7",
+			"value": "#0f61a4",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary40", "color"]
 		},
 		{
@@ -1016,11 +1016,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary30",
 			"name": "md.ref.palette.primary30",
-			"value": "#00458d",
+			"value": "#004881",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary30", "color"]
 		},
 		{
@@ -1028,11 +1028,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary20",
 			"name": "md.ref.palette.primary20",
-			"value": "#002f66",
+			"value": "#00325b",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary20", "color"]
 		},
 		{
@@ -1040,11 +1040,11 @@
 			"type": "color",
 			"id": "md.ref.palette.primary10",
 			"name": "md.ref.palette.primary10",
-			"value": "#001b3f",
+			"value": "#001c38",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary10", "color"]
 		},
 		{
@@ -1056,7 +1056,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "primary0", "color"]
 		},
 		{
@@ -1068,7 +1068,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary100", "color"]
 		},
 		{
@@ -1076,11 +1076,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary99",
 			"name": "md.ref.palette.secondary99",
-			"value": "#fdfcff",
+			"value": "#f9fcff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary99", "color"]
 		},
 		{
@@ -1088,11 +1088,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary95",
 			"name": "md.ref.palette.secondary95",
-			"value": "#e9f1ff",
+			"value": "#e0f3ff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary95", "color"]
 		},
 		{
@@ -1100,11 +1100,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary90",
 			"name": "md.ref.palette.secondary90",
-			"value": "#d2e4ff",
+			"value": "#bfe8ff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary90", "color"]
 		},
 		{
@@ -1112,11 +1112,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary80",
 			"name": "md.ref.palette.secondary80",
-			"value": "#a0c9ff",
+			"value": "#71d1ff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary80", "color"]
 		},
 		{
@@ -1124,11 +1124,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary70",
 			"name": "md.ref.palette.secondary70",
-			"value": "#73aef8",
+			"value": "#48b6e7",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary70", "color"]
 		},
 		{
@@ -1136,11 +1136,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary60",
 			"name": "md.ref.palette.secondary60",
-			"value": "#5693db",
+			"value": "#1d9bcb",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary60", "color"]
 		},
 		{
@@ -1148,11 +1148,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary50",
 			"name": "md.ref.palette.secondary50",
-			"value": "#3979bf",
+			"value": "#0080ab",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary50", "color"]
 		},
 		{
@@ -1160,11 +1160,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary40",
 			"name": "md.ref.palette.secondary40",
-			"value": "#1460a4",
+			"value": "#006689",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary40", "color"]
 		},
 		{
@@ -1172,11 +1172,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary30",
 			"name": "md.ref.palette.secondary30",
-			"value": "#004883",
+			"value": "#004d68",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary30", "color"]
 		},
 		{
@@ -1184,11 +1184,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary20",
 			"name": "md.ref.palette.secondary20",
-			"value": "#00315d",
+			"value": "#003549",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary20", "color"]
 		},
 		{
@@ -1196,11 +1196,11 @@
 			"type": "color",
 			"id": "md.ref.palette.secondary10",
 			"name": "md.ref.palette.secondary10",
-			"value": "#001c39",
+			"value": "#001e2b",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary10", "color"]
 		},
 		{
@@ -1212,7 +1212,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "secondary0", "color"]
 		},
 		{
@@ -1224,7 +1224,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary100", "color"]
 		},
 		{
@@ -1232,11 +1232,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary99",
 			"name": "md.ref.palette.tertiary99",
-			"value": "#fcfcfc",
+			"value": "#efffff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary99", "color"]
 		},
 		{
@@ -1244,11 +1244,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary95",
 			"name": "md.ref.palette.tertiary95",
-			"value": "#ffeede",
+			"value": "#a9ffff",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary95", "color"]
 		},
 		{
@@ -1256,11 +1256,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary90",
 			"name": "md.ref.palette.tertiary90",
-			"value": "#ffdcb8",
+			"value": "#6ff7f8",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary90", "color"]
 		},
 		{
@@ -1268,11 +1268,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary80",
 			"name": "md.ref.palette.tertiary80",
-			"value": "#ffb866",
+			"value": "#4ddadb",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary80", "color"]
 		},
 		{
@@ -1280,11 +1280,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary70",
 			"name": "md.ref.palette.tertiary70",
-			"value": "#e99a3b",
+			"value": "#1fbebf",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary70", "color"]
 		},
 		{
@@ -1292,11 +1292,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary60",
 			"name": "md.ref.palette.tertiary60",
-			"value": "#c98021",
+			"value": "#00a1a2",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary60", "color"]
 		},
 		{
@@ -1304,11 +1304,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary50",
 			"name": "md.ref.palette.tertiary50",
-			"value": "#ab6700",
+			"value": "#008586",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary50", "color"]
 		},
 		{
@@ -1316,11 +1316,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary40",
 			"name": "md.ref.palette.tertiary40",
-			"value": "#895100",
+			"value": "#006a6b",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary40", "color"]
 		},
 		{
@@ -1328,11 +1328,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary30",
 			"name": "md.ref.palette.tertiary30",
-			"value": "#683c00",
+			"value": "#004f50",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary30", "color"]
 		},
 		{
@@ -1340,11 +1340,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary20",
 			"name": "md.ref.palette.tertiary20",
-			"value": "#492900",
+			"value": "#003738",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary20", "color"]
 		},
 		{
@@ -1352,11 +1352,11 @@
 			"type": "color",
 			"id": "md.ref.palette.tertiary10",
 			"name": "md.ref.palette.tertiary10",
-			"value": "#2c1600",
+			"value": "#002021",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary10", "color"]
 		},
 		{
@@ -1368,7 +1368,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "tertiary0", "color"]
 		},
 		{
@@ -1380,7 +1380,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral100", "color"]
 		},
 		{
@@ -1388,11 +1388,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral99",
 			"name": "md.ref.palette.neutral99",
-			"value": "#fdfbff",
+			"value": "#fafdfa",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral99", "color"]
 		},
 		{
@@ -1400,11 +1400,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral95",
 			"name": "md.ref.palette.neutral95",
-			"value": "#f2f0f4",
+			"value": "#eff2ef",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral95", "color"]
 		},
 		{
@@ -1412,11 +1412,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral90",
 			"name": "md.ref.palette.neutral90",
-			"value": "#e3e2e6",
+			"value": "#e0e3e0",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral90", "color"]
 		},
 		{
@@ -1424,11 +1424,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral80",
 			"name": "md.ref.palette.neutral80",
-			"value": "#c7c6ca",
+			"value": "#c4c7c4",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral80", "color"]
 		},
 		{
@@ -1436,11 +1436,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral70",
 			"name": "md.ref.palette.neutral70",
-			"value": "#acabaf",
+			"value": "#a9aca9",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral70", "color"]
 		},
 		{
@@ -1448,11 +1448,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral60",
 			"name": "md.ref.palette.neutral60",
-			"value": "#909094",
+			"value": "#8e918f",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral60", "color"]
 		},
 		{
@@ -1460,11 +1460,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral50",
 			"name": "md.ref.palette.neutral50",
-			"value": "#77777a",
+			"value": "#757876",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral50", "color"]
 		},
 		{
@@ -1472,11 +1472,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral40",
 			"name": "md.ref.palette.neutral40",
-			"value": "#5e5e61",
+			"value": "#5c5f5d",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral40", "color"]
 		},
 		{
@@ -1484,11 +1484,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral30",
 			"name": "md.ref.palette.neutral30",
-			"value": "#46474a",
+			"value": "#444846",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral30", "color"]
 		},
 		{
@@ -1496,11 +1496,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral20",
 			"name": "md.ref.palette.neutral20",
-			"value": "#2f3033",
+			"value": "#2d312f",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral20", "color"]
 		},
 		{
@@ -1508,11 +1508,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral10",
 			"name": "md.ref.palette.neutral10",
-			"value": "#1a1b1f",
+			"value": "#191c1b",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral10", "color"]
 		},
 		{
@@ -1524,7 +1524,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral0", "color"]
 		},
 		{
@@ -1536,7 +1536,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant100", "color"]
 		},
 		{
@@ -1548,7 +1548,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant99", "color"]
 		},
 		{
@@ -1556,11 +1556,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant95",
 			"name": "md.ref.palette.neutral-variant95",
-			"value": "#eef0fa",
+			"value": "#eef1fa",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant95", "color"]
 		},
 		{
@@ -1568,11 +1568,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant90",
 			"name": "md.ref.palette.neutral-variant90",
-			"value": "#e0e2ec",
+			"value": "#dfe2eb",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant90", "color"]
 		},
 		{
@@ -1580,11 +1580,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant80",
 			"name": "md.ref.palette.neutral-variant80",
-			"value": "#c4c6cf",
+			"value": "#c3c6cf",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant80", "color"]
 		},
 		{
@@ -1592,11 +1592,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant70",
 			"name": "md.ref.palette.neutral-variant70",
-			"value": "#a9abb4",
+			"value": "#a7abb3",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant70", "color"]
 		},
 		{
@@ -1604,11 +1604,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant60",
 			"name": "md.ref.palette.neutral-variant60",
-			"value": "#8d9099",
+			"value": "#8d9199",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant60", "color"]
 		},
 		{
@@ -1616,11 +1616,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant50",
 			"name": "md.ref.palette.neutral-variant50",
-			"value": "#74777f",
+			"value": "#73777f",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant50", "color"]
 		},
 		{
@@ -1628,11 +1628,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant40",
 			"name": "md.ref.palette.neutral-variant40",
-			"value": "#5b5e66",
+			"value": "#5a5e66",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant40", "color"]
 		},
 		{
@@ -1640,11 +1640,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant30",
 			"name": "md.ref.palette.neutral-variant30",
-			"value": "#44474f",
+			"value": "#43474e",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant30", "color"]
 		},
 		{
@@ -1652,11 +1652,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant20",
 			"name": "md.ref.palette.neutral-variant20",
-			"value": "#2d3038",
+			"value": "#2d3137",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant20", "color"]
 		},
 		{
@@ -1664,11 +1664,11 @@
 			"type": "color",
 			"id": "md.ref.palette.neutral-variant10",
 			"name": "md.ref.palette.neutral-variant10",
-			"value": "#1a1b1f",
+			"value": "#181c22",
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant10", "color"]
 		},
 		{
@@ -1680,7 +1680,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "neutral-variant0", "color"]
 		},
 		{
@@ -1692,7 +1692,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error100", "color"]
 		},
 		{
@@ -1704,7 +1704,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error99", "color"]
 		},
 		{
@@ -1716,7 +1716,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error95", "color"]
 		},
 		{
@@ -1728,7 +1728,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error90", "color"]
 		},
 		{
@@ -1740,7 +1740,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error80", "color"]
 		},
 		{
@@ -1752,7 +1752,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error70", "color"]
 		},
 		{
@@ -1764,7 +1764,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error60", "color"]
 		},
 		{
@@ -1776,7 +1776,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error50", "color"]
 		},
 		{
@@ -1788,7 +1788,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error40", "color"]
 		},
 		{
@@ -1800,7 +1800,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error30", "color"]
 		},
 		{
@@ -1812,7 +1812,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error20", "color"]
 		},
 		{
@@ -1824,7 +1824,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error10", "color"]
 		},
 		{
@@ -1836,7 +1836,7 @@
 			"description": "",
 			"category_id": "ref.palette",
 			"last_updated_by": "Material",
-			"last_updated": "Fri, 07 Jan 2022 00:56:14 GMT",
+			"last_updated": "Sat, 08 Jan 2022 23:38:03 GMT",
 			"tags": ["md", "ref", "palette", "error0", "color"]
 		}
 	],
