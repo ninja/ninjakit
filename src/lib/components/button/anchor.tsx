@@ -1,11 +1,11 @@
-import { forwardRef } from "react";
+import { Children, cloneElement, forwardRef, ReactElement } from "react";
 import { CgExternal } from "react-icons/cg";
 
 import { ButtonProps, useClassName } from ".";
 
 export const AnchorButton = forwardRef<
 	HTMLAnchorElement,
-	JSX.IntrinsicElements["a"] & ButtonProps
+	JSX.IntrinsicElements["a"] & ButtonProps & { mergeWithChild?: boolean }
 >(function (
 	{
 		appearance = "text",
@@ -13,6 +13,7 @@ export const AnchorButton = forwardRef<
 		className: override,
 		label,
 		leadingIcon,
+		mergeWithChild,
 		target,
 		trailingIcon = target === "_blank" && <CgExternal />,
 		...props
@@ -28,6 +29,23 @@ export const AnchorButton = forwardRef<
 		target,
 		trailingIcon,
 	});
+
+	if (mergeWithChild) {
+		const element = Children.only(children) as ReactElement<
+			JSX.IntrinsicElements["a"]
+		>;
+
+		return cloneElement(
+			element,
+			{ className, ref, target, ...props },
+			<>
+				<>{leadingIcon}</>
+				{label}
+				{element.props.children}
+				<>{trailingIcon}</>
+			</>
+		);
+	}
 
 	return (
 		<a className={className} ref={ref} target={target} {...props}>

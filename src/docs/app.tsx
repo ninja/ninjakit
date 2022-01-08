@@ -152,6 +152,10 @@ function App() {
 									<MdLink />
 									InputMenu
 								</AnchorButton>
+								<AnchorButton href="#checkbox">
+									<MdLink />
+									Checkbox
+								</AnchorButton>
 								<AnchorButton href="#radioset">
 									<MdLink />
 									RadioSet
