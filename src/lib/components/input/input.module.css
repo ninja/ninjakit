@@ -29,7 +29,7 @@
 }
 
 .container.filled::before {
-	background-color: var(--md-color-on-surface);
+	background-color: var(--md-color-primary);
 	content: "";
 	inset: 0;
 	opacity: 0.12;
