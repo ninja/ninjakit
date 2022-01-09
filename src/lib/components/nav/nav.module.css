@@ -1,4 +1,5 @@
 .nav {
+	background-color: var(--md-color-surface-variant);
 	border-left-color: transparent;
 	composes: nk from global;
 	display: flex;
@@ -11,15 +12,6 @@
 	scrollbar-gutter: auto;
 	scrollbar-width: thin;
 	transition: 300ms border-color;
-}
-
-.nav::before {
-	background-color: var(--md-color-surface-variant);
-	content: "";
-	inset: 0;
-	opacity: 0.38;
-	position: absolute;
-	transition: 300ms background-color ease-in-out;
 }
 
 .nav:hover {
@@ -41,7 +33,7 @@
 }
 
 .nav > a {
-	color: var(--md-color-on-surface);
+	color: var(--md-color-on-surface-variant);
 	align-items: center;
 	box-sizing: border-box;
 	display: flex;
@@ -65,7 +57,7 @@
 }
 
 .nav > a::before {
-	background-color: var(--md-color-on-surface);
+	background-color: var(--md-color-primary);
 	box-sizing: border-box;
 	content: "";
 	opacity: 0;
@@ -84,55 +76,49 @@
 	opacity: 0.12;
 }
 
-.nav > a[aria-current="page"]::after {
-	align-items: center;
-	background-color: var(--md-color-secondary-container);
-	border-radius: 1.6rem;
-	box-sizing: border-box;
-	content: "";
-	display: flex;
-	height: 3.2rem;
-	justify-content: center;
-	position: absolute;
-	top: 1.2rem;
-	width: 6.4rem;
-	z-index: 0;
-}
-
 .nav > a > svg {
 	box-sizing: border-box;
-	fill: var(--md-color-on-secondary-container);
+	fill: var(--md-color-on-surface-variant);
 	height: 2.4rem;
 	margin: 0.4rem 0;
 	width: 2.4rem;
 	z-index: 1;
 }
 
+.nav > a[aria-current="page"] {
+	color: var(--md-color-on-surface);
+}
+
+.nav > a[aria-current="page"]::after {
+	align-items: center;
+	background-color: var(--md-color-primary);
+	border-radius: 1.6rem;
+	box-sizing: border-box;
+	content: "";
+	display: flex;
+	height: 3.2rem;
+	justify-content: center;
+	opacity: 0.38;
+	position: absolute;
+	top: 1.2rem;
+	width: 6.4rem;
+	z-index: 0;
+}
+
 .nav > a[aria-current="page"] svg {
-	fill: var(--md-color-on-surface);
+	fill: var(--md-color-on-secondary-container);
 }
 
 @media screen and (min-width: 600px) {
 	.nav {
 		align-items: flex-start;
+		background-color: var(--md-color-surface);
 		flex-direction: column;
 		justify-content: start;
 	}
 
-	.nav::before {
-		background-color: unset;
-		content: unset;
-		inset: unset;
-		opacity: unset;
-		position: unset;
-	}
-
-	.nav.filled::before {
+	.nav.filled {
 		background-color: var(--md-color-surface-variant);
-		content: "";
-		inset: 0;
-		opacity: 0.38;
-		position: absolute;
 	}
 
 	.nav > a {
