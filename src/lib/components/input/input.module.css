@@ -132,12 +132,19 @@
 	color: var(--md-color-primary);
 }
 
+.input:-webkit-autofill {
+	transition-delay: 6000s;
+	transition-property: background-color, color;
+}
+
 .container.filled > .input:focus-within + .label,
+.container.filled > .input:-webkit-autofill + .label,
 .container.filled > .input:not(:placeholder-shown) + .label {
 	transform: translate3d(0, -1rem, 0);
 }
 
 .container.outlined > .input:focus-within + .label,
+.container.outlined > .input:-webkit-autofill + .label,
 .container.outlined > .input:not(:placeholder-shown) + .label {
 	background-color: inherit;
 	left: 0.8rem;
