@@ -1,6 +1,6 @@
 .header {
 	align-items: center;
-	background-color: var(--md-color-surface-variant);
+	background-color: var(--md-color-surface);
 	composes: nk from global;
 	display: flex;
 	gap: 0.8rem;
@@ -8,6 +8,10 @@
 	justify-content: space-between;
 	padding: 0.4rem;
 	position: relative;
+}
+
+.header.filled {
+	background-color: var(--md-color-surface-variant);
 }
 
 .header > section {
