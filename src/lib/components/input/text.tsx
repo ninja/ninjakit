@@ -43,6 +43,7 @@ export const TextInput = forwardRef<
 				<button
 					className={styles.button}
 					onClick={() => handleClick && handleClick()}
+					type="button"
 				>
 					{trailingIcon}
 				</button>
