@@ -7,6 +7,7 @@ import { CheckboxExamples } from "./checkbox";
 import { InputMenuExamples } from "./input-menu";
 import { RadiosetExamples } from "./radioset";
 import { TextInputExamples } from "./text-input";
+import { TypographyExamples } from "./typography";
 
 export const Examples: FunctionComponent = () => (
 	<>
@@ -17,6 +18,7 @@ export const Examples: FunctionComponent = () => (
 		<InputMenuExamples />
 		<CheckboxExamples />
 		<RadiosetExamples />
+		<TypographyExamples />
 	</>
 );
 
