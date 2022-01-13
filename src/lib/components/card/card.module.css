@@ -24,7 +24,15 @@
 	background-color: inherit;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.4rem;
+	gap: 1.6rem;
+}
+
+.card > section > section {
+	flex: 2;
+}
+
+.card > section > aside {
+	flex: 1;
 }
 
 .elevated,

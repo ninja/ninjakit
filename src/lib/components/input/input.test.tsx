@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import { Button } from "ninjakit";
+import { TextInput } from "ninjakit";
 
-describe("button", () => {
+describe("text input", () => {
 	test("default", () => {
-		render(<Button>test</Button>);
+		render(<TextInput id="test" label="test" />);
 
-		const $button = screen.getByRole("button", { name: "test" });
+		const $textInput = screen.getByRole("textbox", { name: "test" });
 
-		expect($button).toHaveClass("filled labelLarge children");
+		expect($textInput).toHaveClass("input");
 	});
 });
