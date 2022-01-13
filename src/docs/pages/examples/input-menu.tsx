@@ -10,6 +10,7 @@ export const InputMenuExamples: FunctionComponent = () => {
 		<Card appearance="elevated" id="menu" title="InputMenu">
 			<section>
 				<InputMenu
+					id="input-menu-elevated"
 					label="Filled"
 					onChange={({ currentTarget: { value } }) =>
 						console.info("InputMenu", { value })
@@ -19,6 +20,7 @@ export const InputMenuExamples: FunctionComponent = () => {
 				</InputMenu>
 				<InputMenu
 					appearance="outlined"
+					id="input-menu-outlined"
 					label="Outlined"
 					onChange={({ currentTarget: { value } }) =>
 						console.info("InputMenu", { value })

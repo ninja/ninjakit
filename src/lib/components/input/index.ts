@@ -8,8 +8,10 @@ type Appearance = "filled" | "outlined";
 export type InputProps = {
 	/** @see https://material.io/design/components/text-fields.html */
 	appearance?: Appearance;
-	error?: true | string;
-	label?: string;
+	error?: boolean | ReactNode;
+	helper?: ReactNode;
+	id: string; // id required by label htmlFor
+	label?: ReactNode;
 	leadingIcon?: ReactNode;
 	onClickTrailingIcon?: () => void;
 	trailingIcon?: ReactNode;
@@ -22,16 +24,16 @@ export function useClassName({
 	override,
 }: {
 	appearance?: Appearance;
-	error?: true | string;
+	error?: boolean | ReactNode;
 	leadingIcon?: ReactNode;
 	override?: string;
 }): string | undefined {
 	return [
 		typography.labelLarge,
-		styles.container,
+		styles.field,
 		styles[appearance],
-		leadingIcon && styles.leadingIcon,
-		error && styles.error,
+		leadingIcon ? styles.leadingIcon : undefined,
+		error ? styles.error : undefined,
 		override,
 	]
 		.join(" ")

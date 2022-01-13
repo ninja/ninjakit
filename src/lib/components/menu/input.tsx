@@ -27,21 +27,22 @@ export const InputMenu = forwardRef<
 		handleKeyDownMenu,
 		handleKeyDownMenuItem,
 	} = useMenu({ input: true, onChange, override });
-
 	const menuItems = mapMenuItems({
 		children,
 		handleClickMenuItem,
 		handleKeyDownMenuItem,
 	});
+	const menuId = `${id}-menu`;
 
 	return (
 		<div className={styles.container} role="presentation">
 			<TextInput
 				{...props}
-				aria-controls={id}
+				aria-controls={menuId}
 				aria-expanded={expanded}
 				aria-haspopup="menu"
 				className={styles.control}
+				id={id}
 				onClickTrailingIcon={handleClickControl}
 				onFocus={handleFocusControl}
 				onKeyDown={handleKeyDownControl}
@@ -52,7 +53,7 @@ export const InputMenu = forwardRef<
 			{expanded && (
 				<div
 					className={className}
-					id={id}
+					id={menuId}
 					onClick={handleClickMenu}
 					onKeyDown={handleKeyDownMenu}
 					role="menu"

@@ -5,16 +5,19 @@ import styles from "./input.module.css";
 
 export const TextInput = forwardRef<
 	HTMLInputElement,
-	JSX.IntrinsicElements["input"] & InputProps
+	Omit<JSX.IntrinsicElements["input"], "id"> & InputProps
 >(function (
 	{
 		appearance,
 		"aria-expanded": ariaExpanded,
+		"aria-invalid": ariaInvalid,
 		className: override,
 		error,
+		helper,
 		id,
 		label,
 		leadingIcon,
+		name,
 		onClickTrailingIcon: handleClick,
 		trailingIcon,
 		type = "text",
@@ -25,35 +28,43 @@ export const TextInput = forwardRef<
 	const className = useClassName({ appearance, error, leadingIcon, override });
 
 	return (
-		<label aria-expanded={ariaExpanded} className={className} htmlFor={id}>
-			<>{leadingIcon}</>
-			<input
-				{...props}
-				aria-label={label}
-				className={styles.input}
-				id={id}
-				placeholder={label}
-				ref={ref}
-				type={type}
-			/>
-			<div className={styles.label} role="presentation">
-				{label}
+		<div aria-expanded={ariaExpanded} className={className}>
+			<div className={styles.row}>
+				{leadingIcon}
+				<input
+					{...props}
+					aria-invalid={ariaInvalid || typeof error !== "undefined"}
+					className={styles.input}
+					id={id}
+					name={name}
+					placeholder={typeof label === "string" ? label : name || id}
+					ref={ref}
+					type={type}
+				/>
+				<label className={styles.label} htmlFor={id}>
+					{label}
+				</label>
+				{trailingIcon && (
+					<button
+						className={styles.button}
+						onClick={() => handleClick && handleClick()}
+						type="button"
+					>
+						{trailingIcon}
+					</button>
+				)}
 			</div>
-			{trailingIcon && (
-				<button
-					className={styles.button}
-					onClick={() => handleClick && handleClick()}
-					type="button"
-				>
-					{trailingIcon}
-				</button>
-			)}
-			{typeof error === "string" && (
-				<div className={styles.error} role="presentation">
+			{typeof error !== "undefined" && (
+				<div className={styles.errorMessage} role="tooltip">
 					{error}
 				</div>
 			)}
-		</label>
+			{typeof helper !== "undefined" && (
+				<div className={styles.helperMessage} role="tooltip">
+					{helper}
+				</div>
+			)}
+		</div>
 	);
 });
 
