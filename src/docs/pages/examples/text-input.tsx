@@ -1,23 +1,14 @@
-import { Card, Checkbox, Radioset, TextInput } from "ninjakit";
-import { FunctionComponent, useRef, useState } from "react";
+import { Card, TextInput } from "ninjakit";
+import { FunctionComponent, useRef } from "react";
 import { MdCancel, MdFavorite } from "react-icons/md";
+
+import { TextInputState, useTextInputState } from "./text-input-state";
 
 export const TextInputExamples: FunctionComponent = () => {
 	const ref = useRef<HTMLInputElement>(null);
-	const [{ appearance, error, helper, leadingIcon, trailingIcon }, setOptions] =
-		useState<{
-			appearance: "filled" | "outlined";
-			error: boolean;
-			helper: boolean;
-			leadingIcon: boolean;
-			trailingIcon: boolean;
-		}>({
-			appearance: "filled",
-			error: false,
-			helper: false,
-			leadingIcon: false,
-			trailingIcon: false,
-		});
+	const state = useTextInputState();
+	const [{ appearance, error, flex, helper, leadingIcon, trailingIcon }] =
+		state;
 
 	return (
 		<Card appearance="elevated" id="text-input" title="TextInput">
@@ -26,6 +17,7 @@ export const TextInputExamples: FunctionComponent = () => {
 					<TextInput
 						appearance={appearance}
 						error={error && "Error message"}
+						flex={flex}
 						helper={helper ? "Helper message" : undefined}
 						id="text-input-example"
 						label="Label"
@@ -37,47 +29,7 @@ export const TextInputExamples: FunctionComponent = () => {
 						trailingIcon={trailingIcon && <MdCancel />}
 					/>
 				</section>
-				<aside>
-					<Radioset<"filled" | "outlined">
-						defaultValue="filled"
-						label="Appearance"
-						name="appearance"
-						onChange={(appearance) =>
-							setOptions((options) => ({ ...options, appearance }))
-						}
-						options={["filled", "outlined"]}
-					/>
-					<Checkbox
-						label="Leading icon"
-						onClick={() =>
-							setOptions((options) => ({
-								...options,
-								leadingIcon: !leadingIcon,
-							}))
-						}
-					/>
-					<Checkbox
-						label="Trailing icon"
-						onClick={() =>
-							setOptions((options) => ({
-								...options,
-								trailingIcon: !trailingIcon,
-							}))
-						}
-					/>
-					<Checkbox
-						label="Helper message"
-						onClick={() =>
-							setOptions((options) => ({ ...options, helper: !options.helper }))
-						}
-					/>
-					<Checkbox
-						label="Error message"
-						onClick={() =>
-							setOptions((options) => ({ ...options, error: !options.error }))
-						}
-					/>
-				</aside>
+				<TextInputState state={state} />
 			</section>
 		</Card>
 	);
