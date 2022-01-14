@@ -13,6 +13,7 @@ export const TextInput = forwardRef<
 		"aria-invalid": ariaInvalid,
 		className: override,
 		error,
+		flex,
 		helper,
 		id,
 		label,
@@ -25,7 +26,13 @@ export const TextInput = forwardRef<
 	},
 	ref
 ) {
-	const className = useClassName({ appearance, error, leadingIcon, override });
+	const className = useClassName({
+		appearance,
+		error,
+		flex,
+		leadingIcon,
+		override,
+	});
 
 	return (
 		<div aria-expanded={ariaExpanded} className={className}>

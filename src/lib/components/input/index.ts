@@ -9,6 +9,7 @@ export type InputProps = {
 	/** @see https://material.io/design/components/text-fields.html */
 	appearance?: Appearance;
 	error?: boolean | ReactNode;
+	flex?: boolean;
 	helper?: ReactNode;
 	id: string; // id required by label htmlFor
 	label?: ReactNode;
@@ -19,12 +20,14 @@ export type InputProps = {
 
 export function useClassName({
 	appearance = "filled",
+	flex,
 	error,
 	leadingIcon,
 	override,
 }: {
 	appearance?: Appearance;
 	error?: boolean | ReactNode;
+	flex?: boolean;
 	leadingIcon?: ReactNode;
 	override?: string;
 }): string | undefined {
@@ -32,6 +35,7 @@ export function useClassName({
 		typography.labelLarge,
 		styles.field,
 		styles[appearance],
+		flex ? styles.flex : undefined,
 		leadingIcon ? styles.leadingIcon : undefined,
 		error ? styles.error : undefined,
 		override,

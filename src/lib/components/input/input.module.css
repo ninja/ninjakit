@@ -1,7 +1,7 @@
 .button,
-.error,
+.errorMessage,
 .field,
-.helper,
+.helperMessage,
 .input,
 .label,
 .row {
@@ -9,7 +9,6 @@
 }
 
 .field {
-	/* align-self: flex-start; */
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
@@ -24,6 +23,18 @@
 	width: fit-content;
 }
 
+.row svg {
+	fill: var(--md-color-outline);
+	height: 1.8rem;
+	width: 1.8rem;
+}
+
+/* leading icon */
+.row > svg:first-child {
+	left: 1.6rem;
+	position: absolute;
+}
+
 .input {
 	caret-color: var(--md-color-primary);
 	color: var(--md-color-on-surface);
@@ -32,14 +43,6 @@
 	padding: 0 1.6rem;
 	position: relative;
 	transition: border-color border-width 300ms ease-in-out;
-}
-
-.input:placeholder-shown + .label {
-	color: var(--md-color-outline);
-}
-
-.input::placeholder {
-	opacity: 0;
 }
 
 .label {
@@ -53,14 +56,11 @@
 	user-select: none;
 }
 
+/* trailing icon */
 .button {
 	cursor: pointer;
 	position: absolute;
 	right: 1.6rem;
-}
-
-.button:focus-visible > svg {
-	fill: var(--md-color-primary);
 }
 
 .errorMessage,
@@ -77,23 +77,12 @@
 	color: var(--md-color-on-surface);
 }
 
-.row svg {
-	fill: var(--md-color-outline);
-	height: 1.8rem;
-	width: 1.8rem;
+.input:placeholder-shown + .label {
+	color: var(--md-color-outline);
 }
 
-.row > svg:first-child {
-	left: 1.6rem;
-	position: absolute;
-}
-
-.field.leadingIcon > .row > .input {
-	padding-left: 4.2rem;
-}
-
-.field.leadingIcon > .row > .label {
-	left: 4.2rem;
+.input::placeholder {
+	opacity: 0;
 }
 
 .input:focus-within + .label,
@@ -110,12 +99,32 @@
 	transition-property: background-color, color;
 }
 
-.filled > .row::before,
-.filled > .row > .input {
+.button:focus-visible > svg {
+	fill: var(--md-color-primary);
+}
+
+.field.flex > .row {
+	width: unset;
+}
+
+.field.flex > .row > .input {
+	width: 100%;
+}
+
+.field.leadingIcon > .row > .input {
+	padding-left: 4.2rem;
+}
+
+.field.leadingIcon > .row > .label {
+	left: 4.2rem;
+}
+
+.field.filled > .row::before,
+.field.filled > .row > .input {
 	border-radius: 0.4rem 0.4rem 0 0;
 }
 
-.filled > .row::before {
+.field.filled > .row::before {
 	background-color: var(--md-color-primary);
 	content: "";
 	inset: 0;
@@ -123,68 +132,68 @@
 	position: absolute;
 }
 
-.filled > .row > .input {
+.field.filled > .row:focus-within::before {
+	opacity: 0.08;
+}
+
+.field.filled > .row > .input {
 	box-shadow: 0 0.1rem 0 0 var(--md-color-outline);
 	padding-top: 1.6rem;
 }
 
-.filled > .row > .input:hover {
+.field.filled > .row > .input:hover {
 	box-shadow: 0 0.2rem 0 0 var(--md-color-outline);
 }
 
-.filled > .row > .input:focus-within {
+.field.filled > .row > .input:focus-within {
 	box-shadow: 0 0.2rem 0 0 var(--md-color-primary);
 }
 
-.filled.error > .row > .input {
+.field.filled.error > .row > .input {
 	box-shadow: 0 0.2rem 0 0 var(--md-color-error);
 }
 
-.row:focus-within::before {
-	opacity: 0.08;
-}
-
-.filled > .row > .input:focus-within + .label,
-.filled > .row > .input:-webkit-autofill + .label,
-.filled > .row > .input:not(:placeholder-shown) + .label {
+.field.filled > .row > .input:focus-within + .label,
+.field.filled > .row > .input:-webkit-autofill + .label,
+.field.filled > .row > .input:not(:placeholder-shown) + .label {
 	transform: translate3d(0, -1rem, 0);
 }
 
-.outlined > .row,
-.outlined > .row > .label {
+.field.outlined > .row,
+.field.outlined > .row > .label {
 	background-color: var(--md-color-surface);
 }
 
-.outlined > .row > .input {
+.field.outlined > .row > .input {
 	border-radius: 0.4rem;
 	box-shadow: 0 0 0 0.1rem var(--md-color-outline);
 }
 
-.outlined > .row > .input:hover {
+.field.outlined > .row > .input:hover {
 	box-shadow: 0 0 0 0.2rem var(--md-color-outline);
 }
 
-.outlined > .row > .input:focus-within {
+.field.outlined > .row > .input:focus-within {
 	box-shadow: 0 0 0 0.2rem var(--md-color-primary);
 }
 
-.outlined.error > .row > .input {
+.field.outlined.error > .row > .input {
 	box-shadow: 0 0 0 0.2rem var(--md-color-error);
 }
 
-.outlined > .row > .input:focus-within + .label,
-.outlined > .row > .input:-webkit-autofill + .label,
-.outlined > .row > .input:not(:placeholder-shown) + .label {
+.field.outlined > .row > .input:focus-within + .label,
+.field.outlined > .row > .input:-webkit-autofill + .label,
+.field.outlined > .row > .input:not(:placeholder-shown) + .label {
 	left: 0.8rem;
 	padding: 0 0.4rem;
 	transform: translate3d(0, -2.4rem, 0);
 }
 
-.error > .row > .input {
+.field.error > .row > .input {
 	caret-color: var(--md-color-error);
 }
 
-.error > .row > .label {
+.field.error > .row > .label {
 	color: var(--md-color-error);
 }
 
