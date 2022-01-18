@@ -26,9 +26,6 @@ jobs:
       - name: Check Files
         run: npm run check
 
-      - name: Unit Test
-        run: npm test
-
       - name: Build Library
         run: npm run build
 
@@ -38,5 +35,5 @@ jobs:
       - name: Install Playwright Dependencies
         run: npx playwright install && npx playwright install-deps
 
-      - name: Integration Test
-        run: npm run test:integration
+      - name: Test
+        run: npm test

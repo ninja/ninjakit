@@ -6,7 +6,7 @@ import styles from "./input.module.css";
 export const TextInput = forwardRef<
 	HTMLInputElement,
 	Omit<JSX.IntrinsicElements["input"], "id"> & InputProps
->(function (
+>(function TextInput(
 	{
 		appearance,
 		"aria-expanded": ariaExpanded,
@@ -74,5 +74,3 @@ export const TextInput = forwardRef<
 		</div>
 	);
 });
-
-TextInput.displayName = "TextInput";

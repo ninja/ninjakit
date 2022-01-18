@@ -8,7 +8,7 @@ import styles from "./checkbox.module.css";
 export const Checkbox = forwardRef<
 	HTMLInputElement,
 	JSX.IntrinsicElements["input"] & CheckboxProps
->(function (
+>(function Checkbox(
 	{
 		children,
 		className: override,
@@ -54,5 +54,3 @@ export const Checkbox = forwardRef<
 		</label>
 	);
 });
-
-Checkbox.displayName = "Checkbox";

@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import typography from "../typography/typography.module.css";
 import styles from "./button.module.css";
 
-type Appearance = "elevated" | "filled" | "outlined" | "text" | "tonal";
+type Appearance = "elevated" | "filled" | "tonal" | "outlined" | "text";
 
 export type ButtonProps = {
 	/** @see https://m3.material.io/components/all-buttons */

@@ -1,47 +1,53 @@
 import { TextInput } from "ninjakit";
-import { forwardRef, ReactElement } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { InputProps } from "../input";
-import { useMenu } from ".";
-import { MenuItemProps } from "./item";
-import { mapMenuItems } from "./items";
+import { Options, useMenu } from ".";
+import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
-export const InputMenu = forwardRef<
-	HTMLInputElement,
-	JSX.IntrinsicElements["input"] &
-		InputProps & { children: ReactElement<MenuItemProps>[] }
->(function (
-	{ children, className: override, id, onChange, readOnly = true, ...props },
-	ref
+declare module "react" {
+	function forwardRef<T, P>(
+		render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+	): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
+
+export const InputMenu = forwardRef(function InputMenu<T extends string>(
+	{
+		className: override,
+		flex,
+		id,
+		onChange,
+		options,
+		readOnly = true,
+		...props
+	}: Omit<JSX.IntrinsicElements["input"], "onChange"> &
+		InputProps & {
+			onChange: (value: T) => void;
+			options: Options<T>;
+		},
+	ref: ForwardedRef<HTMLInputElement>
 ) {
 	const {
 		className,
 		expanded,
 		handleClickControl,
-		handleClickMenu,
-		handleClickMenuItem,
 		handleFocusControl,
 		handleKeyDownControl,
-		handleKeyDownMenu,
-		handleKeyDownMenuItem,
-	} = useMenu({ input: true, onChange, override });
-	const menuItems = mapMenuItems({
-		children,
-		handleClickMenuItem,
-		handleKeyDownMenuItem,
-	});
-	const menuId = `${id}-menu`;
+		menuId,
+		setExpanded,
+	} = useMenu({ flex, id, input: true, override });
 
 	return (
-		<div className={styles.container} role="presentation">
+		<fieldset className={className}>
 			<TextInput
 				{...props}
 				aria-controls={menuId}
 				aria-expanded={expanded}
 				aria-haspopup="menu"
 				className={styles.control}
+				flex={flex}
 				id={id}
 				onClickTrailingIcon={handleClickControl}
 				onFocus={handleFocusControl}
@@ -51,19 +57,14 @@ export const InputMenu = forwardRef<
 				trailingIcon={expanded ? <MdArrowDropUp /> : <MdArrowDropDown />}
 			/>
 			{expanded && (
-				<div
-					className={className}
-					id={menuId}
-					onClick={handleClickMenu}
-					onKeyDown={handleKeyDownMenu}
-					role="menu"
-					tabIndex={-1}
-				>
-					{menuItems}
-				</div>
+				<Menu
+					input
+					menuId={menuId}
+					onChange={onChange}
+					options={options}
+					setExpanded={setExpanded}
+				/>
 			)}
-		</div>
+		</fieldset>
 	);
 });
-
-InputMenu.displayName = "InputMenu";
