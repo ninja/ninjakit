@@ -1,41 +1,44 @@
-import { Checkbox, Radioset } from "ninjakit";
+import { Checkbox, InputMenu } from "ninjakit";
 import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
 
-type TextInputProps = {
-	appearance: "filled" | "outlined";
+type Appearance = "filled" | "outlined";
+
+type InputMenuProps = {
+	appearance: Appearance;
 	error: boolean;
 	flex: boolean;
 	helper: boolean;
 	leadingIcon: boolean;
-	trailingIcon: boolean;
 };
 
-export function useTextInputState() {
-	return useState<TextInputProps>({
+export function useInputMenuState() {
+	return useState<InputMenuProps>({
 		appearance: "filled",
 		error: false,
 		flex: false,
 		helper: false,
 		leadingIcon: false,
-		trailingIcon: false,
 	});
 }
 
-export const TextInputState: FunctionComponent<{
-	menu?: boolean;
-	state: [TextInputProps, Dispatch<SetStateAction<TextInputProps>>];
-}> = ({ menu, state: [{ appearance }, setState] }) => {
+export const InputMenuState: FunctionComponent<{
+	state: [InputMenuProps, Dispatch<SetStateAction<InputMenuProps>>];
+}> = ({ state: [, setState] }) => {
 	return (
 		<aside>
 			<form>
-				<Radioset<"filled" | "outlined">
-					defaultValue={appearance}
+				<InputMenu<"filled" | "outlined">
+					defaultValue="Filled"
+					id="text-input-appearance"
 					label="Appearance"
 					name="appearance"
 					onChange={(appearance) =>
 						setState((state) => ({ ...state, appearance }))
 					}
-					options={["filled", "outlined"]}
+					options={[
+						{ label: "Filled", value: "filled" },
+						{ label: "Outlined", value: "outlined" },
+					]}
 				/>
 				<Checkbox
 					label="Flexible width"
@@ -55,18 +58,6 @@ export const TextInputState: FunctionComponent<{
 						}))
 					}
 				/>
-				{!menu && (
-					<Checkbox
-						label="Trailing icon"
-						onClick={() =>
-							setState((state) => ({
-								...state,
-								trailingIcon: !state.trailingIcon,
-							}))
-						}
-					/>
-				)}
-
 				<Checkbox
 					label="Helper message"
 					onClick={() =>
@@ -83,3 +74,17 @@ export const TextInputState: FunctionComponent<{
 		</aside>
 	);
 };
+
+export const options = [
+	{ label: "Item One", value: "item-one" },
+	{ label: "Item Two", value: "item-two" },
+	{ label: "Item Three", value: "item-three" },
+	{ separator: true },
+	{ label: "Item Four", value: "item-four" },
+	{ label: "Item Five", value: "item-five" },
+	{ disabled: true, label: "Item Six", value: "item-six" },
+	{ label: "Item Seven", value: "item-seven" },
+	{ label: "Item Eight", value: "item-eight" },
+	{ label: "Item Nine", value: "item-nine" },
+	"Item Ten",
+];

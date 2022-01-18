@@ -1,6 +1,18 @@
-.container {
+.fieldset,
+.menu,
+.option,
+.separator {
+	composes: nk from global;
+}
+
+.fieldset {
 	background-color: inherit;
+	display: inline-block;
 	position: relative;
+}
+
+.fieldset.flex {
+	display: block;
 }
 
 .menu {
@@ -11,6 +23,7 @@
 	composes: nk from global;
 	display: flex;
 	flex-direction: column;
+	margin-top: 0.2rem;
 	min-width: 100%;
 	position: absolute;
 	z-index: 2;
@@ -27,7 +40,7 @@
 	position: fixed;
 }
 
-.menuItem {
+.option {
 	align-items: center;
 	composes: nk from global;
 	cursor: pointer;
@@ -39,20 +52,20 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
-.menuItem.leadingIcon {
+.option.leadingIcon {
 	padding-left: 1.6rem;
 }
 
-.menuItem.trailingIcon {
+.option.trailingIcon {
 	padding-right: 1.6rem;
 }
 
-.menuItem,
-.menuItem::before {
+.option,
+.option::before {
 	height: 4rem;
 }
 
-.menuItem::before {
+.option::before {
 	background-color: var(--md-color-primary);
 	content: "";
 	inset: 0;
@@ -61,38 +74,38 @@
 	transition: 300ms opacity ease-in-out;
 }
 
-.menu:not(.input) > .menuItem:first-child,
-.menu:not(.input) > .menuItem:first-child::before {
+.menu:not(.input) > .option:first-child,
+.menu:not(.input) > .option:first-child::before {
 	border-radius: 0.4rem 0.4rem 0 0;
 }
 
-.menuItem:last-child,
-.menuItem:last-child::before {
+.option:last-child,
+.option:last-child::before {
 	border-radius: 0 0 0.4rem 0.4rem;
 }
 
-.menuItem:hover::before {
+.option:hover::before {
 	opacity: 0.08;
 }
 
-.menuItem:active::before,
-.menuItem:focus-visible::before {
+.option:active::before,
+.option:focus-visible::before {
 	opacity: 0.12;
 }
 
-.menuItem:disabled {
+.option:disabled {
 	background: unset;
 	color: var(--md-color-on-surface);
 	cursor: unset;
 	opacity: 0.38;
 }
 
-.menuItem:disabled::before {
+.option:disabled::before {
 	background: none;
 }
 
-.menuItem.separator {
-	background-color: green;
+.separator {
+	border-top: 0.1rem solid var(--md-color-outline);
 }
 
 .control[aria-expanded="true"] {

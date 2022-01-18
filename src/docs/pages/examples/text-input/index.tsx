@@ -2,7 +2,7 @@ import { Card, TextInput } from "ninjakit";
 import { FunctionComponent, useRef } from "react";
 import { MdCancel, MdFavorite } from "react-icons/md";
 
-import { TextInputState, useTextInputState } from "./text-input-state";
+import { TextInputState, useTextInputState } from "./state";
 
 export const TextInputExamples: FunctionComponent = () => {
 	const ref = useRef<HTMLInputElement>(null);

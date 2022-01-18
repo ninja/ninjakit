@@ -6,7 +6,7 @@ import { ButtonProps, useClassName } from ".";
 export const AnchorButton = forwardRef<
 	HTMLAnchorElement,
 	JSX.IntrinsicElements["a"] & ButtonProps & { mergeWithChild?: boolean }
->(function (
+>(function AnchorButton(
 	{
 		appearance = "text",
 		children,
@@ -56,5 +56,3 @@ export const AnchorButton = forwardRef<
 		</a>
 	);
 });
-
-AnchorButton.displayName = "AnchorButton";

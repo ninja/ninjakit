@@ -13,12 +13,11 @@ export const RadiosetExamples: FunctionComponent = () => (
 					value: "apples",
 				},
 				{
-					children: (
+					label: (
 						<span>
 							🍇 <span>Grapes</span>
 						</span>
 					),
-					label: "Grapes",
 					value: "grapes",
 				},
 				{ disabled: true, label: "🍌 Bananas", value: "bananas" },

@@ -2,12 +2,10 @@ import { Card, InputMenu } from "ninjakit";
 import { FunctionComponent } from "react";
 import { MdFavorite } from "react-icons/md";
 
-import { useMenuItems } from "./menu-items";
-import { TextInputState, useTextInputState } from "./text-input-state";
+import { InputMenuState, options, useInputMenuState } from "./state";
 
 export const InputMenuExamples: FunctionComponent = () => {
-	const menuItems = useMenuItems();
-	const state = useTextInputState();
+	const state = useInputMenuState();
 	const [{ appearance, error, flex, helper, leadingIcon }] = state;
 
 	return (
@@ -22,14 +20,11 @@ export const InputMenuExamples: FunctionComponent = () => {
 						id="input-menu-example"
 						label="Filled"
 						leadingIcon={leadingIcon && <MdFavorite />}
-						onChange={({ currentTarget: { value } }) =>
-							console.info("InputMenu", { value })
-						}
-					>
-						{menuItems}
-					</InputMenu>
+						onChange={(value) => console.info("InputMenu", { value })}
+						options={options}
+					/>
 				</section>
-				<TextInputState menu state={state} />
+				<InputMenuState state={state} />
 			</section>
 		</Card>
 	);

@@ -1,4 +1,4 @@
-import { Ref } from "react";
+import { ReactNode, Ref } from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./radioset.module.css";
@@ -13,7 +13,7 @@ export type Radio<T> = Omit<
 	| "type"
 	| "value"
 > & {
-	label?: string;
+	label?: ReactNode;
 	value: T;
 };
 
@@ -22,7 +22,7 @@ export type RadiosetProps<T> = Omit<
 	"onChange" | "name" | "ref"
 > & {
 	defaultValue?: T;
-	label?: string;
+	label?: ReactNode;
 	name: string;
 	onChange?: (value: T) => void;
 	options: (Radio<T> | T)[];

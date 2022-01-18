@@ -1,70 +1,64 @@
 import { Button } from "ninjakit";
-import { forwardRef, ReactElement } from "react";
+import { ForwardedRef, forwardRef } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { ButtonProps } from "../button";
-import { useMenu } from ".";
-import type { MenuItemProps } from "./item";
-import { mapMenuItems } from "./items";
+import { Options, useMenu } from ".";
+import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
-export const ButtonMenu = forwardRef<
-	HTMLButtonElement,
-	Omit<JSX.IntrinsicElements["button"], "value"> &
-		ButtonProps & { children: ReactElement<MenuItemProps>[] }
->(function (
-	{ children, className: override, id, label, onChange, ...props },
-	ref
+declare module "react" {
+	function forwardRef<T, P>(
+		render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+	): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
+
+export const ButtonMenu = forwardRef(function ButtonMenu<T extends string>(
+	{
+		className: override,
+		id,
+		onChange,
+		options,
+		...props
+	}: Omit<JSX.IntrinsicElements["button"], "id" | "onChange" | "value"> &
+		ButtonProps & {
+			id: string;
+			onChange: (value: T) => void;
+			options: Options<T>;
+		},
+	ref: ForwardedRef<HTMLButtonElement>
 ) {
 	const {
 		className,
 		expanded,
 		handleClickControl,
-		handleClickMenu,
-		handleClickMenuItem,
 		handleKeyDownControl,
-		handleKeyDownMenu,
-		handleKeyDownMenuItem,
-	} = useMenu({
-		onChange,
-		override,
-	});
-
-	const menuItems = mapMenuItems({
-		children,
-		handleClickMenuItem,
-		handleKeyDownMenuItem,
-	});
+		menuId,
+		setExpanded,
+	} = useMenu({ id, override });
 
 	return (
-		<div className={styles.container} role="presentation">
+		<fieldset className={className}>
 			<Button
 				{...props}
-				aria-controls={id}
+				aria-controls={menuId}
 				aria-expanded={expanded}
 				aria-haspopup="menu"
 				className={styles.control}
+				id={id}
 				onClick={handleClickControl}
 				onKeyDown={handleKeyDownControl}
 				ref={ref}
 				trailingIcon={expanded ? <MdArrowDropUp /> : <MdArrowDropDown />}
-			>
-				{label}
-			</Button>
+			/>
 			{expanded && (
-				<div
-					className={className}
-					id={id}
-					onClick={handleClickMenu}
-					onKeyDown={handleKeyDownMenu}
-					role="menu"
-					tabIndex={-1}
-				>
-					{menuItems}
-				</div>
+				<Menu
+					menuId={menuId}
+					onChange={onChange}
+					options={options}
+					setExpanded={setExpanded}
+				/>
 			)}
-		</div>
+		</fieldset>
 	);
 });
-
-ButtonMenu.displayName = "ButtonMenu";

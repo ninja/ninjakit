@@ -10,7 +10,7 @@ export { Footer } from "./components/footer";
 export { Header } from "./components/header";
 export { TextInput } from "./components/input";
 export { Main } from "./components/main";
-export { ButtonMenu, InputMenu, MenuItem } from "./components/menu";
+export { ButtonMenu, InputMenu } from "./components/menu";
 export { Nav } from "./components/nav";
 export { Radioset } from "./components/radioset";
 export { Typography } from "./components/typography";

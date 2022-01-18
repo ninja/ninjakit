@@ -16,7 +16,6 @@
 	white-space: nowrap;
 	width: fit-content;
 	z-index: 1;
-	-webkit-tap-highlight-color: transparent;
 }
 
 .button::before {

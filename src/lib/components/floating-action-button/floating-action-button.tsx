@@ -5,7 +5,7 @@ import { ButtonProps, useClassName } from ".";
 export const FloatingActionButton = forwardRef<
 	HTMLButtonElement,
 	ButtonHTMLAttributes<HTMLButtonElement> & ButtonProps
->(function (
+>(function FloatingActionButton(
 	{ appearance, children, className: override, type = "button", ...props },
 	ref
 ) {
@@ -17,5 +17,3 @@ export const FloatingActionButton = forwardRef<
 		</button>
 	);
 });
-
-FloatingActionButton.displayName = "FloatingActionButton";
