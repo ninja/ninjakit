@@ -1,5 +1,5 @@
 import { Checkbox, InputMenu } from "ninjakit";
-import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type Appearance = "elevated" | "filled" | "tonal" | "outlined" | "text";
 
@@ -17,9 +17,11 @@ export function useButtonMenuState() {
 	});
 }
 
-export const InputMenuState: FunctionComponent<{
+export function InputMenuState({
+	state: [, setState],
+}: {
 	state: [ButtonMenuProps, Dispatch<SetStateAction<ButtonMenuProps>>];
-}> = ({ state: [, setState] }) => {
+}) {
 	return (
 		<aside>
 			<form>
@@ -58,7 +60,7 @@ export const InputMenuState: FunctionComponent<{
 			</form>
 		</aside>
 	);
-};
+}
 
 export const options = [
 	{ label: "Item One", value: "item-one" },

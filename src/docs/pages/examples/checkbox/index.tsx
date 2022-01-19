@@ -1,5 +1,6 @@
 import { Card, Checkbox } from "ninjakit";
 
+import styles from "../examples.module.css";
 import { CheckboxState, useButtonState } from "./state";
 
 export function CheckboxExamples() {
@@ -9,7 +10,7 @@ export function CheckboxExamples() {
 	return (
 		<Card appearance="elevated" id="checkbox" title="Checkbox">
 			<section>
-				<section>
+				<section className={styles.center}>
 					<Checkbox
 						disabled={disabled}
 						indeterminate={indeterminate}

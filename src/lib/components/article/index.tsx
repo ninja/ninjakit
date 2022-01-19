@@ -1,14 +1,21 @@
-import { FunctionComponent, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./article.module.css";
 
-export const Article: FunctionComponent<{
+export function Article({
+	aside,
+	children,
+	floatingActionButton,
+	footer,
+	header,
+	...props
+}: {
 	aside?: ReactNode;
 	footer?: ReactNode;
 	header?: ReactNode;
 	floatingActionButton?: ReactNode;
-}> = ({ aside, children, floatingActionButton, footer, header, ...props }) => {
+} & JSX.IntrinsicElements["article"]) {
 	const className = [styles.article, typography.bodyMedium].join(" ");
 
 	return (
@@ -23,4 +30,4 @@ export const Article: FunctionComponent<{
 			<>{footer /* < 600px */}</>
 		</article>
 	);
-};
+}

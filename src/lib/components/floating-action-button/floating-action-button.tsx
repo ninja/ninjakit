@@ -1,10 +1,10 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { forwardRef } from "react";
 
 import { ButtonProps, useClassName } from ".";
 
 export const FloatingActionButton = forwardRef<
 	HTMLButtonElement,
-	ButtonHTMLAttributes<HTMLButtonElement> & ButtonProps
+	ButtonProps & JSX.IntrinsicElements["button"]
 >(function FloatingActionButton(
 	{ appearance, children, className: override, type = "button", ...props },
 	ref

@@ -1,5 +1,3 @@
-import { FunctionComponent } from "react";
-
 import { AnchorButtonExamples } from "./anchor-button";
 import { ButtonExamples } from "./button";
 import { ButtonMenuExamples } from "./button-menu";
@@ -9,17 +7,19 @@ import { RadiosetExamples } from "./radioset";
 import { TextInputExamples } from "./text-input";
 import { TypographyExamples } from "./typography";
 
-export const Examples: FunctionComponent = () => (
-	<>
-		<ButtonExamples />
-		<AnchorButtonExamples />
-		<TextInputExamples />
-		<ButtonMenuExamples />
-		<InputMenuExamples />
-		<CheckboxExamples />
-		<RadiosetExamples />
-		<TypographyExamples />
-	</>
-);
+export function Examples() {
+	return (
+		<>
+			<ButtonExamples />
+			<AnchorButtonExamples />
+			<TextInputExamples />
+			<ButtonMenuExamples />
+			<InputMenuExamples />
+			<CheckboxExamples />
+			<RadiosetExamples />
+			<TypographyExamples />
+		</>
+	);
+}
 
 export { ColorSchemeExample } from "./color-scheme";

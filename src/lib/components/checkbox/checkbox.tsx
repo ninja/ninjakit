@@ -7,7 +7,7 @@ import styles from "./checkbox.module.css";
 /** @see https://material.io/components/checkbox */
 export const Checkbox = forwardRef<
 	HTMLInputElement,
-	JSX.IntrinsicElements["input"] & CheckboxProps
+	CheckboxProps & JSX.IntrinsicElements["input"]
 >(function Checkbox(
 	{
 		children,

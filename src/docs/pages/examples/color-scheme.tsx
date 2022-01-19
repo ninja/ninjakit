@@ -1,7 +1,6 @@
 import { Card, ColorScheme, Radioset, useColorScheme } from "ninjakit";
-import { FunctionComponent } from "react";
 
-export const ColorSchemeExample: FunctionComponent = () => {
+export function ColorSchemeExample() {
 	const { colorScheme, setColorScheme } = useColorScheme();
 
 	return (
@@ -15,4 +14,4 @@ export const ColorSchemeExample: FunctionComponent = () => {
 			/>
 		</Card>
 	);
-};
+}

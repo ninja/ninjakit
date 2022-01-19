@@ -1,17 +1,17 @@
 import { Button, Card } from "ninjakit";
-import { FunctionComponent } from "react";
 import { MdArrowDropDown, MdThumbUp } from "react-icons/md";
 
+import styles from "../examples.module.css";
 import { ButtonState, useButtonState } from "./state";
 
-export const ButtonExamples: FunctionComponent = () => {
+export function ButtonExamples() {
 	const state = useButtonState();
 	const [{ appearance, disabled, leadingIcon, trailingIcon }] = state;
 
 	return (
 		<Card appearance="elevated" id="button" title="Button">
 			<section>
-				<section>
+				<section className={styles.center}>
 					<Button
 						appearance={appearance}
 						disabled={disabled}
@@ -24,4 +24,4 @@ export const ButtonExamples: FunctionComponent = () => {
 			</section>
 		</Card>
 	);
-};
+}

@@ -1,5 +1,5 @@
 import { Checkbox, InputMenu } from "ninjakit";
-import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type Appearance = "filled" | "outlined";
 
@@ -15,15 +15,17 @@ export function useInputMenuState() {
 	return useState<InputMenuProps>({
 		appearance: "filled",
 		error: false,
-		flex: false,
+		flex: true,
 		helper: false,
 		leadingIcon: false,
 	});
 }
 
-export const InputMenuState: FunctionComponent<{
+export function InputMenuState({
+	state: [{ flex }, setState],
+}: {
 	state: [InputMenuProps, Dispatch<SetStateAction<InputMenuProps>>];
-}> = ({ state: [, setState] }) => {
+}) {
 	return (
 		<aside>
 			<form>
@@ -42,6 +44,7 @@ export const InputMenuState: FunctionComponent<{
 					]}
 				/>
 				<Checkbox
+					defaultChecked={flex}
 					label="Flexible width"
 					onClick={() =>
 						setState((state) => ({
@@ -74,7 +77,7 @@ export const InputMenuState: FunctionComponent<{
 			</form>
 		</aside>
 	);
-};
+}
 
 export const options = [
 	{ label: "Item One", value: "item-one" },

@@ -1,11 +1,11 @@
-import { FunctionComponent } from "react";
-
 import styles from "./logo.module.css";
 
-export const Logo: FunctionComponent<{ className?: string }> = ({
+export function Logo({
 	className: classNameOverride,
 	...props
-}) => {
+}: {
+	className?: string;
+} & JSX.IntrinsicElements["h1"]) {
 	const className = [styles.ninjaKit, classNameOverride].join(" ");
 
 	return (
@@ -13,4 +13,4 @@ export const Logo: FunctionComponent<{ className?: string }> = ({
 			<strong>ninja</strong>Kit
 		</h1>
 	);
-};
+}

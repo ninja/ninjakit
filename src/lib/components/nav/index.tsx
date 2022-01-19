@@ -1,5 +1,3 @@
-import { FunctionComponent } from "react";
-
 import styles from "./nav.module.css";
 
 type Appearance = "filled" | "none";
@@ -8,11 +6,13 @@ const useClassName = (appearance?: Appearance) => {
 	return [styles.nav, appearance === "filled" && styles.filled].join(" ");
 };
 
-export const Nav: FunctionComponent<{ appearance?: Appearance }> = ({
+export function Nav({
 	appearance = "none",
 	children,
 	...props
-}) => {
+}: {
+	appearance?: Appearance;
+} & JSX.IntrinsicElements["nav"]) {
 	const className = useClassName(appearance);
 
 	return (
@@ -20,4 +20,4 @@ export const Nav: FunctionComponent<{ appearance?: Appearance }> = ({
 			{children}
 		</nav>
 	);
-};
+}

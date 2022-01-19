@@ -1,9 +1,10 @@
-import { FunctionComponent } from "react";
-
 import typography from "../typography/typography.module.css";
 import styles from "./footer.module.css";
 
-export const Footer: FunctionComponent = ({ children, ...props }) => {
+export function Footer({
+	children,
+	...props
+}: JSX.IntrinsicElements["footer"]) {
 	const className = [styles.footer, typography.bodyMedium].join(" ");
 
 	return (
@@ -11,4 +12,4 @@ export const Footer: FunctionComponent = ({ children, ...props }) => {
 			{children}
 		</footer>
 	);
-};
+}
