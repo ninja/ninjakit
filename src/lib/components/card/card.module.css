@@ -7,20 +7,13 @@
 	padding: 1.2rem 1.6rem;
 }
 
-.card h1,
-.card h2 {
+.card > header > h1,
+.card > header > h2 {
 	margin: 0;
 }
 
-.card label {
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.4rem;
-}
-
 .card > section {
-	align-items: center;
+	align-items: flex-start;
 	background-color: inherit;
 	display: flex;
 	flex-wrap: wrap;
@@ -28,7 +21,7 @@
 }
 
 .card > section > section {
-	flex: 2;
+	flex: 1;
 }
 
 .card > section > aside {

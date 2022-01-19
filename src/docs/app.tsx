@@ -132,34 +132,46 @@ function App() {
 					examples && (
 						<Card appearance="outlined">
 							<section>
-								<AnchorButton href="#button">
-									<MdLink />
-									Button
-								</AnchorButton>
-								<AnchorButton href="#anchor-button">
-									<MdLink />
-									AnchorButton
-								</AnchorButton>
-								<AnchorButton href="#text-input">
-									<MdLink />
-									TextInput
-								</AnchorButton>
-								<AnchorButton href="#button-menu">
-									<MdLink />
-									ButtonMenu
-								</AnchorButton>
-								<AnchorButton href="#input-menu">
-									<MdLink />
-									InputMenu
-								</AnchorButton>
-								<AnchorButton href="#checkbox">
-									<MdLink />
-									Checkbox
-								</AnchorButton>
-								<AnchorButton href="#radioset">
-									<MdLink />
-									RadioSet
-								</AnchorButton>
+								<AnchorButton
+									href="#button"
+									label="Button"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#anchor-button"
+									label="AnchorButton"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#text-input"
+									label="TextInput"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#button-menu"
+									label="ButtonMenu"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#input-menu"
+									label="InputMenu"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#checkbox"
+									label="Checkbox"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#radioset"
+									label="RadioSet"
+									leadingIcon={<MdLink />}
+								/>
+								<AnchorButton
+									href="#typography"
+									label="Typography"
+									leadingIcon={<MdLink />}
+								/>
 							</section>
 						</Card>
 					)
