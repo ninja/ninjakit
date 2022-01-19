@@ -1,22 +1,18 @@
-import { FunctionComponent, HTMLAttributes } from "react";
-
 import typography from "../typography/typography.module.css";
 import styles from "./card.module.css";
 
-export const Card: FunctionComponent<
-	HTMLAttributes<HTMLDivElement> & {
-		appearance?: "elevated" | "filled" | "outlined";
-		subhead?: string;
-		title?: string;
-	}
-> = ({
+export function Card({
 	children,
 	className: classNameOverride,
 	appearance = "filled",
 	subhead,
 	title,
 	...props
-}) => {
+}: {
+	appearance?: "elevated" | "filled" | "outlined";
+	subhead?: string;
+	title?: string;
+} & JSX.IntrinsicElements["section"]) {
 	const className = [
 		styles.card,
 		styles[appearance],
@@ -35,4 +31,4 @@ export const Card: FunctionComponent<
 			{children}
 		</section>
 	);
-};
+}

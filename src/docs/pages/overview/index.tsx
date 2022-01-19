@@ -1,17 +1,12 @@
 import { Card } from "ninjakit";
-import {
-	FunctionComponent,
-	MouseEventHandler,
-	useCallback,
-	useState,
-} from "react";
+import { MouseEventHandler, useCallback, useState } from "react";
 import { SiMaterialdesign, SiReact } from "react-icons/si";
 
 import { Logo } from "../../components/logo";
 import { Ninja } from "../../components/ninja";
 import styles from "./dojo.module.css";
 
-export const Overview: FunctionComponent = () => {
+export function Overview() {
 	const [wait, setWait] = useState(false);
 
 	const handleMouseMove: MouseEventHandler<HTMLDivElement> = useCallback(
@@ -70,4 +65,4 @@ export const Overview: FunctionComponent = () => {
 			</section>
 		</Card>
 	);
-};
+}

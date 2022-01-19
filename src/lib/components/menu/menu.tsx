@@ -1,4 +1,4 @@
-import { KeyboardEventHandler, MouseEvent, ReactNode } from "react";
+import type { KeyboardEventHandler, MouseEvent, ReactNode } from "react";
 
 import { nextHTMLElementSibling, previousHTMLElementSibling } from "../../util";
 import { Options } from ".";

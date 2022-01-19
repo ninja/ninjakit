@@ -4,7 +4,7 @@ import { ButtonProps, useClassName } from ".";
 
 export const Button = forwardRef<
 	HTMLButtonElement,
-	JSX.IntrinsicElements["button"] & ButtonProps
+	ButtonProps & JSX.IntrinsicElements["button"]
 >(function Button(
 	{
 		appearance = "filled",

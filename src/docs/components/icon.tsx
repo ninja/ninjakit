@@ -1,8 +1,4 @@
-import { FunctionComponent, SVGAttributes } from "react";
-
-export const Icon: FunctionComponent<SVGAttributes<SVGElement>> = ({
-	...props
-}) => {
+export function Icon({ ...props }: JSX.IntrinsicElements["svg"]) {
 	return (
 		<svg
 			fill="currentColor"
@@ -18,4 +14,4 @@ export const Icon: FunctionComponent<SVGAttributes<SVGElement>> = ({
 			<path d="M171.49,91a7,7,0,0,1,2.6.75A21.92,21.92,0,0,1,177.17,80a19.91,19.91,0,0,1-.28-7.71c-.49.21-1,.41-1.44.64a2.88,2.88,0,0,1,.31,1.65,109.57,109.57,0,0,1-4.11,10.26,11.76,11.76,0,0,1,.31,3.37A27.26,27.26,0,0,1,171.49,91Z" />
 		</svg>
 	);
-};
+}

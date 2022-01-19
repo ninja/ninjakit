@@ -1,17 +1,17 @@
 import { ButtonMenu, Card } from "ninjakit";
-import { FunctionComponent } from "react";
 import { MdMenu } from "react-icons/md";
 
+import styles from "../examples.module.css";
 import { InputMenuState, options, useButtonMenuState } from "./state";
 
-export const ButtonMenuExamples: FunctionComponent = () => {
+export function ButtonMenuExamples() {
 	const state = useButtonMenuState();
 	const [{ appearance, disabled, leadingIcon }] = state;
 
 	return (
 		<Card appearance="elevated" id="button-menu" title="ButtonMenu">
 			<section>
-				<section>
+				<section className={styles.center}>
 					<ButtonMenu
 						appearance={appearance}
 						disabled={disabled}
@@ -26,4 +26,4 @@ export const ButtonMenuExamples: FunctionComponent = () => {
 			</section>
 		</Card>
 	);
-};
+}

@@ -2,7 +2,7 @@ import { Radio, RadiosetProps, useClassName } from ".";
 import styles from "./radioset.module.css";
 
 /** @see https://material.io/components/radio-buttons */
-export const Radioset = <T extends string>({
+export function Radioset<T extends string>({
 	children,
 	className: override,
 	defaultValue,
@@ -13,7 +13,7 @@ export const Radioset = <T extends string>({
 	options,
 	ref,
 	...props
-}: RadiosetProps<T>) => {
+}: RadiosetProps<T>) {
 	const className = useClassName(override);
 
 	return (
@@ -46,4 +46,4 @@ export const Radioset = <T extends string>({
 			})}
 		</fieldset>
 	);
-};
+}

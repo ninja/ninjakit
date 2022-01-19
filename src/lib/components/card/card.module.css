@@ -25,6 +25,8 @@
 }
 
 .card > section > aside {
+	border-left: 0.1rem solid var(--md-color-outline);
+	padding-left: 1.6rem;
 	flex: 1;
 }
 
@@ -43,4 +45,10 @@
 
 .outlined {
 	border: 0.1rem solid var(--md-color-outline);
+}
+
+@media screen and (min-width: 600px) {
+	.card > section > section {
+		flex: 2;
+	}
 }

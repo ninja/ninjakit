@@ -1,5 +1,5 @@
 import { Checkbox, InputMenu } from "ninjakit";
-import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type TextInputProps = {
 	appearance: "filled" | "outlined";
@@ -14,16 +14,18 @@ export function useTextInputState() {
 	return useState<TextInputProps>({
 		appearance: "filled",
 		error: false,
-		flex: false,
+		flex: true,
 		helper: false,
 		leadingIcon: false,
 		trailingIcon: false,
 	});
 }
 
-export const TextInputState: FunctionComponent<{
+export function TextInputState({
+	state: [{ flex }, setState],
+}: {
 	state: [TextInputProps, Dispatch<SetStateAction<TextInputProps>>];
-}> = ({ state: [, setState] }) => {
+}) {
 	return (
 		<aside>
 			<form>
@@ -42,6 +44,7 @@ export const TextInputState: FunctionComponent<{
 					]}
 				/>
 				<Checkbox
+					defaultChecked={flex}
 					label="Flexible width"
 					onClick={() =>
 						setState((state) => ({
@@ -83,4 +86,4 @@ export const TextInputState: FunctionComponent<{
 			</form>
 		</aside>
 	);
-};
+}

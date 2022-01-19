@@ -1,18 +1,18 @@
 import { AnchorButton, Card } from "ninjakit";
-import { FunctionComponent } from "react";
 import { MdThumbUp } from "react-icons/md";
 import { Link } from "react-router-dom";
 
+import styles from "../examples.module.css";
 import { ButtonState, useButtonState } from "./state";
 
-export const AnchorButtonExamples: FunctionComponent = () => {
+export function AnchorButtonExamples() {
 	const state = useButtonState();
 	const [{ appearance, external, leadingIcon, reactRouterLink }] = state;
 
 	return (
 		<Card appearance="elevated" id="anchor-button" title="AnchorButton">
 			<section>
-				<section>
+				<section className={styles.center}>
 					<AnchorButton
 						appearance={appearance}
 						href="#"
@@ -28,4 +28,4 @@ export const AnchorButtonExamples: FunctionComponent = () => {
 			</section>
 		</Card>
 	);
-};
+}

@@ -1,17 +1,17 @@
 import { Card, InputMenu } from "ninjakit";
-import { FunctionComponent } from "react";
 import { MdFavorite } from "react-icons/md";
 
+import styles from "../examples.module.css";
 import { InputMenuState, options, useInputMenuState } from "./state";
 
-export const InputMenuExamples: FunctionComponent = () => {
+export function InputMenuExamples() {
 	const state = useInputMenuState();
 	const [{ appearance, error, flex, helper, leadingIcon }] = state;
 
 	return (
 		<Card appearance="elevated" id="input-menu" title="InputMenu">
 			<section>
-				<section>
+				<section className={styles.center}>
 					<InputMenu
 						appearance={appearance}
 						error={error && "Error message"}
@@ -28,4 +28,4 @@ export const InputMenuExamples: FunctionComponent = () => {
 			</section>
 		</Card>
 	);
-};
+}

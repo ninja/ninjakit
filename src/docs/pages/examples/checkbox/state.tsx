@@ -1,5 +1,5 @@
 import { Checkbox } from "ninjakit";
-import { Dispatch, FunctionComponent, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type CheckboxProps = {
 	disabled: boolean;
@@ -15,9 +15,11 @@ export function useButtonState() {
 	});
 }
 
-export const CheckboxState: FunctionComponent<{
+export function CheckboxState({
+	state: [, setState],
+}: {
 	state: [CheckboxProps, Dispatch<SetStateAction<CheckboxProps>>];
-}> = ({ state: [, setState] }) => {
+}) {
 	return (
 		<aside>
 			<form>
@@ -51,4 +53,4 @@ export const CheckboxState: FunctionComponent<{
 			</form>
 		</aside>
 	);
-};
+}

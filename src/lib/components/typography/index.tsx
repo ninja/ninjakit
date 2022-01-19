@@ -1,31 +1,31 @@
-import { FunctionComponent } from "react";
-
 import styles from "./typography.module.css";
 
-export const Typography: FunctionComponent<
-	JSX.IntrinsicElements["span"] & {
-		appearance?:
-			| "displayLarge"
-			| "displayMedium"
-			| "displaySmall"
-			| "bodyMedium"
-			| "headlineLarge"
-			| "headlineMedium"
-			| "headlineSmall"
-			| "titleLarge"
-			| "titleMedium"
-			| "titleSmall"
-			| "labelLarge"
-			| "labelMedium"
-			| "labelSmall"
-			| "bodyLarge"
-			| "bodyMedium"
-			| "bodySmall";
-	}
-> = ({ children, appearance = "bodyMedium", ...props }) => {
+export function Typography({
+	children,
+	appearance = "bodyMedium",
+	...props
+}: JSX.IntrinsicElements["span"] & {
+	appearance?:
+		| "displayLarge"
+		| "displayMedium"
+		| "displaySmall"
+		| "bodyMedium"
+		| "headlineLarge"
+		| "headlineMedium"
+		| "headlineSmall"
+		| "titleLarge"
+		| "titleMedium"
+		| "titleSmall"
+		| "labelLarge"
+		| "labelMedium"
+		| "labelSmall"
+		| "bodyLarge"
+		| "bodyMedium"
+		| "bodySmall";
+}) {
 	return (
 		<span className={styles[appearance]} {...props}>
 			{children}
 		</span>
 	);
-};
+}
