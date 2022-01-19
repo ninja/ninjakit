@@ -25,6 +25,7 @@ export const InputMenuState: FunctionComponent<{
 			<form>
 				<InputMenu<Appearance>
 					defaultValue="Filled"
+					flex
 					id="input-menu-appearance"
 					label="Appearance"
 					name="appearance"

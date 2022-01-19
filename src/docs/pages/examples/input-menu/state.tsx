@@ -29,6 +29,7 @@ export const InputMenuState: FunctionComponent<{
 			<form>
 				<InputMenu<"filled" | "outlined">
 					defaultValue="Filled"
+					flex
 					id="text-input-appearance"
 					label="Appearance"
 					name="appearance"

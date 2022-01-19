@@ -6,6 +6,7 @@ export const Radioset = <T extends string>({
 	children,
 	className: override,
 	defaultValue,
+	disabled: allDisabled,
 	label,
 	name,
 	onChange: handleChange,
@@ -25,7 +26,7 @@ export const Radioset = <T extends string>({
 
 				return (
 					<label
-						className={disabled ? `nk ${styles.disabled}` : "nk"}
+						className={disabled || allDisabled ? `nk ${styles.disabled}` : "nk"}
 						key={`${name}-${value}-${index}`}
 					>
 						<input
@@ -33,7 +34,7 @@ export const Radioset = <T extends string>({
 							className="nk"
 							defaultChecked={value === defaultValue}
 							defaultValue={value}
-							disabled={disabled}
+							disabled={disabled || allDisabled}
 							name={name}
 							onChange={() => handleChange && handleChange(value)}
 							ref={ref && ref[index]}

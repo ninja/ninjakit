@@ -27,6 +27,7 @@ export const ButtonState: FunctionComponent<{
 			<form>
 				<InputMenu<Appearance>
 					defaultValue="Text"
+					flex
 					id="appearance"
 					label="Appearance"
 					onChange={(value) => {

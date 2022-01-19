@@ -9,7 +9,7 @@ export const InputMenuExamples: FunctionComponent = () => {
 	const [{ appearance, error, flex, helper, leadingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="menu" title="InputMenu">
+		<Card appearance="elevated" id="input-menu" title="InputMenu">
 			<section>
 				<section>
 					<InputMenu

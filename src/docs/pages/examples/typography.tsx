@@ -2,7 +2,7 @@ import { Card, Typography } from "ninjakit";
 import { FunctionComponent } from "react";
 
 export const TypographyExamples: FunctionComponent = () => (
-	<Card appearance="elevated" id="button" title="Typography">
+	<Card appearance="elevated" id="typography" title="Typography">
 		<Card appearance="outlined" title="Display">
 			<section>
 				<Typography appearance="displayLarge">Large</Typography>
