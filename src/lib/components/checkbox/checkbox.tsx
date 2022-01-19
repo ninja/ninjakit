@@ -23,7 +23,6 @@ export const Checkbox = forwardRef<
 ) {
 	const className = useClassName({ disabled, override });
 	const checkboxRef = useRef<HTMLInputElement>(null);
-
 	const handleClick: MouseEventHandler<HTMLInputElement> = (event) => {
 		if (onClick) return onClick(event);
 
@@ -35,6 +34,7 @@ export const Checkbox = forwardRef<
 	useEffect(() => {
 		if (checkboxRef.current === null || indeterminate === undefined) return;
 
+		checkboxRef.current.checked = false;
 		checkboxRef.current.indeterminate = indeterminate;
 	}, [indeterminate]);
 

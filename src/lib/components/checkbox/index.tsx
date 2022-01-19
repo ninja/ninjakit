@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
+
 import typography from "../typography/typography.module.css";
 import styles from "./checkbox.module.css";
 
 export type CheckboxProps = JSX.IntrinsicElements["input"] & {
 	indeterminate?: boolean;
-	label?: string;
+	label?: ReactNode;
 };
 
 export function useClassName({
