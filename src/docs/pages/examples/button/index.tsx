@@ -9,12 +9,13 @@ export function ButtonExamples() {
 	const [{ appearance, disabled, leadingIcon, trailingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="button" title="Button">
+		<Card appearance="elevated" id="button-example" title="Button">
 			<section>
 				<section className={styles.center}>
 					<Button
 						appearance={appearance}
 						disabled={disabled}
+						id="button"
 						label="Label"
 						leadingIcon={leadingIcon && <MdThumbUp />}
 						trailingIcon={trailingIcon && <MdArrowDropDown />}

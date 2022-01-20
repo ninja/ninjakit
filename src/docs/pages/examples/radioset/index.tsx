@@ -8,7 +8,7 @@ export function RadiosetExamples() {
 	const [{ disabled }] = state;
 
 	return (
-		<Card appearance="elevated" id="radioset" title="RadioSet">
+		<Card appearance="elevated" id="radioset-example" title="RadioSet">
 			<section>
 				<section className={styles.center}>
 					<Radioset<"item-one" | "item-two" | "item-three">

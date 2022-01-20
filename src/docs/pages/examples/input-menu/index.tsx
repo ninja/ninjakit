@@ -9,7 +9,7 @@ export function InputMenuExamples() {
 	const [{ appearance, error, flex, helper, leadingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="input-menu" title="InputMenu">
+		<Card appearance="elevated" id="input-menu-example" title="InputMenu">
 			<section>
 				<section className={styles.center}>
 					<InputMenu

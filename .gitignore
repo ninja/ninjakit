@@ -5,5 +5,6 @@
 *.tgz
 coverage
 dist
-ninjakit.dev
 node_modules
+playwright-report/
+test-results/

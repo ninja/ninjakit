@@ -42,7 +42,7 @@
 	height: 100%;
 	padding: 0 1.6rem;
 	position: relative;
-	transition: border-color border-width 300ms ease-in-out;
+	transition-property: border-color, border-width;
 }
 
 .label {
@@ -52,7 +52,7 @@
 	left: 1.6rem;
 	position: absolute;
 	transform: translate3d(0, 0, 0);
-	transition: font-size, left, transform 150ms ease;
+	transition-property: font-size, left, transform;
 	user-select: none;
 }
 

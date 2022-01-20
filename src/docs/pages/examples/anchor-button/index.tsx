@@ -10,7 +10,7 @@ export function AnchorButtonExamples() {
 	const [{ appearance, external, leadingIcon, reactRouterLink }] = state;
 
 	return (
-		<Card appearance="elevated" id="anchor-button" title="AnchorButton">
+		<Card appearance="elevated" id="anchor-button-example" title="AnchorButton">
 			<section>
 				<section className={styles.center}>
 					<AnchorButton

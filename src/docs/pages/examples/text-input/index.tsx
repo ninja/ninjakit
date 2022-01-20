@@ -12,7 +12,7 @@ export function TextInputExamples() {
 		state;
 
 	return (
-		<Card appearance="elevated" id="text-input" title="TextInput">
+		<Card appearance="elevated" id="text-input-example" title="TextInput">
 			<section>
 				<section className={styles.center}>
 					<TextInput

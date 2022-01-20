@@ -26,7 +26,7 @@
 		position: relative;
 		scrollbar-gutter: auto;
 		scrollbar-width: thin;
-		transition: border-color 300ms;
+		transition-property: border-left-color;
 	}
 
 	.aside:hover {

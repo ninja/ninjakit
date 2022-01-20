@@ -11,7 +11,7 @@
 	position: relative;
 	scrollbar-gutter: auto;
 	scrollbar-width: thin;
-	transition: 300ms border-color;
+	transition-property: border-color;
 }
 
 .nav:hover {
@@ -49,10 +49,7 @@
 	padding-top: 1.2rem;
 	position: relative;
 	text-decoration: unset;
-	transition-property: background-color;
-	transition-property: color;
-	transition-duration: 200ms;
-	transition-timing-function: linear;
+	transition: var(--nk-transition-duration) background-color, color linear;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -63,7 +60,7 @@
 	opacity: 0;
 	inset: 0;
 	position: absolute;
-	transition: 300ms opacity ease-in-out;
+	transition: var(--nk-transition-duration) opacity linear;
 	z-index: 0;
 }
 

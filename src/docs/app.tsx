@@ -133,42 +133,42 @@ function App() {
 						<Card appearance="outlined">
 							<section>
 								<AnchorButton
-									href="#button"
+									href="#button-example"
 									label="Button"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#anchor-button"
+									href="#anchor-button-example"
 									label="AnchorButton"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#text-input"
+									href="#text-input-example"
 									label="TextInput"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#button-menu"
+									href="#button-menu-example"
 									label="ButtonMenu"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#input-menu"
+									href="#input-menu-example"
 									label="InputMenu"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#checkbox"
+									href="#checkbox-example"
 									label="Checkbox"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#radioset"
+									href="#radioset-example"
 									label="RadioSet"
 									leadingIcon={<MdLink />}
 								/>
 								<AnchorButton
-									href="#typography"
+									href="#typography-example"
 									label="Typography"
 									leadingIcon={<MdLink />}
 								/>
