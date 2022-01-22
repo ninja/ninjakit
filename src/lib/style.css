@@ -4,6 +4,7 @@
 :root {
 	--md-font-family: roboto, system-ui, sans-serif;
 	--md-shadow: 0 0.1rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+	--nk-transition-duration: 200ms;
 	background-color: var(--md-color-background);
 	color: var(--md-color-on-background);
 	color-scheme: light dark;
@@ -35,10 +36,7 @@
 	padding: unset;
 	margin: unset;
 	text-decoration: unset;
-	transition-property: background-color;
-	transition-property: color;
-	transition-duration: 300ms;
-	transition-timing-function: linear;
+	transition: var(--nk-transition-duration) background-color linear;
 	-webkit-tap-highlight-color: transparent;
 }
 

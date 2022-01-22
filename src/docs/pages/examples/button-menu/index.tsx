@@ -9,7 +9,7 @@ export function ButtonMenuExamples() {
 	const [{ appearance, disabled, leadingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="button-menu" title="ButtonMenu">
+		<Card appearance="elevated" id="button-menu-example" title="ButtonMenu">
 			<section>
 				<section className={styles.center}>
 					<ButtonMenu

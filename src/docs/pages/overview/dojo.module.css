@@ -9,8 +9,7 @@
 	height: 48rem;
 	max-width: 100rem;
 	position: relative;
-	transition-property: background-position;
-	transition-duration: 300ms;
+	transition: var(--nk-transition-duration) background-position linear;
 }
 
 .card > section {
@@ -29,8 +28,7 @@
 
 .card > section > h1,
 .card > section > h2 {
-	transition-duration: 300ms;
-	transition-property: font-size;
+	transition-duration: var(--nk-transition-duration) font-size linear;
 }
 
 .card > section > h1 {

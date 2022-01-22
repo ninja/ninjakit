@@ -30,7 +30,7 @@ export function ButtonState({
 				<InputMenu<Appearance>
 					defaultValue="Filled"
 					flex
-					id="appearance"
+					id="button-appearance"
 					label="Appearance"
 					onChange={(value) => {
 						const appearance = value as Appearance;
@@ -46,6 +46,7 @@ export function ButtonState({
 					]}
 				></InputMenu>
 				<Checkbox
+					id="button-leading-icon-checkbox"
 					label="Leading icon"
 					onClick={() =>
 						setState((state) => ({
@@ -55,6 +56,7 @@ export function ButtonState({
 					}
 				/>
 				<Checkbox
+					id="button-trailing-icon-checkbox"
 					label="Trailing icon"
 					onClick={() =>
 						setState((state) => ({
@@ -64,6 +66,7 @@ export function ButtonState({
 					}
 				/>
 				<Checkbox
+					id="button-disabled-checkbox"
 					label="Disabled"
 					onClick={() =>
 						setState((state) => ({

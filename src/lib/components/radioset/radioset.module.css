@@ -47,7 +47,7 @@
 	position: absolute;
 	top: 0.3rem;
 	transform: scale3d(0, 0, 0);
-	transition: 300ms transform ease-in-out;
+	transition: var(--nk-transition-duration) transform linear;
 	width: 1rem;
 }
 

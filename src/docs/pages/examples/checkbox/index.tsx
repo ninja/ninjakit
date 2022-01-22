@@ -8,7 +8,7 @@ export function CheckboxExamples() {
 	const [{ disabled, indeterminate, labelWithJSX }] = state;
 
 	return (
-		<Card appearance="elevated" id="checkbox" title="Checkbox">
+		<Card appearance="elevated" id="checkbox-example" title="Checkbox">
 			<section>
 				<section className={styles.center}>
 					<Checkbox

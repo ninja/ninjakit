@@ -19,5 +19,5 @@
 		"useDefineForClassFields": true
 	},
 	"exclude": ["./src/docs/worker.ts"],
-	"include": ["./vite.d.ts", "./src/**/*"]
+	"include": ["./global.d.ts", "./vite.d.ts", "./src/**/*"]
 }
