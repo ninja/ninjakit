@@ -8,45 +8,83 @@ import {
 type PseudoElement = "::before" | "::after";
 
 expect.extend({
-	async toHaveCSSOpacity(locator: Locator, expected: string) {
-		const value = await locator.evaluate(
-			(element: HTMLElement | SVGElement) => getComputedStyle(element).opacity
-		);
-
-		const actual = value !== "0" ? Number(value).toFixed(2) : value;
-
-		if (actual === expected) return { pass: true };
-
-		return {
-			message: () => `actual: ${actual} expected: ${expected}`,
-			pass: false,
-		};
-	},
-	async toHavePseudoCSS(
+	async toHaveStyle(
 		locator: Locator,
-		pseudoElement: PseudoElement,
 		name: string,
-		expected: string
+		expected: string,
+		pseudoElement?: PseudoElement
 	) {
-		const value = await locator.evaluate(
+		const actual = await locator.evaluate(
 			(
 				element: HTMLElement | SVGElement,
 				{
-					pseudoElement,
+					expected,
 					name,
+					pseudoElement,
 				}: {
-					pseudoElement: PseudoElement;
+					expected: string;
 					name: string;
+					pseudoElement: PseudoElement;
 				}
-			) => getComputedStyle(element, pseudoElement)[name],
+			) => {
+				const computedStyle = getComputedStyle(element, pseudoElement);
+
+				switch (name) {
+					case "borderColor":
+						if (computedStyle.borderColor) return computedStyle.borderColor;
+
+						// Firefox
+						if (
+							computedStyle.borderTopColor ===
+								computedStyle.borderBottomColor &&
+							computedStyle.borderTopColor === computedStyle.borderLeftColor &&
+							computedStyle.borderTopColor === computedStyle.borderRightColor
+						)
+							return computedStyle.borderTopColor;
+
+						break;
+					case "borderRadius":
+						if (computedStyle.borderRadius) return computedStyle.borderRadius;
+
+						// Firefox
+						if (
+							computedStyle.borderTopLeftRadius ===
+								computedStyle.borderTopRightRadius &&
+							computedStyle.borderTopLeftRadius ===
+								computedStyle.borderBottomLeftRadius &&
+							computedStyle.borderTopLeftRadius ===
+								computedStyle.borderBottomRightRadius
+						)
+							return computedStyle.borderTopLeftRadius;
+
+						break;
+					case "inset":
+						if (computedStyle.inset) return computedStyle.inset;
+
+						// Firefox
+						if (
+							computedStyle.top === computedStyle.bottom &&
+							computedStyle.top === computedStyle.left &&
+							computedStyle.top === computedStyle.right
+						)
+							return computedStyle.top;
+
+						break;
+					case "opacity":
+						// Safari
+						return Number(computedStyle.opacity).toFixed(
+							(expected.split(".")[1] || []).length
+						);
+					default:
+						return computedStyle[name];
+				}
+			},
 			{
-				pseudoElement,
+				expected,
 				name,
+				pseudoElement,
 			}
 		);
-
-		const actual =
-			name === "opacity" && value !== "0" ? Number(value).toFixed(2) : value;
 
 		if (actual === expected) return { pass: true };
 

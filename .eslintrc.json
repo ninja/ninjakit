@@ -7,6 +7,7 @@
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:jsx-a11y/recommended",
+		"plugin:playwright/playwright-test",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:prettier/recommended"
@@ -26,6 +27,10 @@
 		"import/newline-after-import": "warn",
 		"import/no-duplicates": "warn",
 		"import/order": "off",
+		"playwright/missing-playwright-await": [
+			"error",
+			{ "customMatchers": ["toHaveCSSOpacity", "toHavePseudoCSS"] }
+		],
 		"prettier/prettier": "warn",
 		"react/jsx-boolean-value": "warn",
 		"react/jsx-handler-names": "warn",

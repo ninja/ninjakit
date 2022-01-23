@@ -19,7 +19,7 @@ export const TextInput = forwardRef<
 		label,
 		leadingIcon,
 		name,
-		onClickTrailingIcon: handleClick,
+		onClickTrailingIcon: handleClickTrailingIcon,
 		trailingIcon,
 		type = "text",
 		...props
@@ -40,7 +40,7 @@ export const TextInput = forwardRef<
 				{leadingIcon}
 				<input
 					{...props}
-					aria-invalid={ariaInvalid || typeof error !== "undefined"}
+					aria-invalid={ariaInvalid || !!error}
 					className={styles.input}
 					id={id}
 					name={name}
@@ -54,7 +54,7 @@ export const TextInput = forwardRef<
 				{trailingIcon && (
 					<button
 						className={styles.button}
-						onClick={() => handleClick && handleClick()}
+						onClick={handleClickTrailingIcon}
 						type="button"
 					>
 						{trailingIcon}

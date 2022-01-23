@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 import typography from "../typography/typography.module.css";
 import styles from "./input.module.css";
@@ -8,13 +8,13 @@ type Appearance = "filled" | "outlined";
 export type InputProps = {
 	/** @see https://material.io/design/components/text-fields.html */
 	appearance?: Appearance;
-	error?: boolean | ReactNode;
+	error?: ReactNode;
 	flex?: boolean;
 	helper?: ReactNode;
 	id: string; // id required by label htmlFor
 	label?: ReactNode;
 	leadingIcon?: ReactNode;
-	onClickTrailingIcon?: () => void;
+	onClickTrailingIcon?: MouseEventHandler<HTMLButtonElement>;
 	trailingIcon?: ReactNode;
 };
 
@@ -26,7 +26,7 @@ export function useClassName({
 	override,
 }: {
 	appearance?: Appearance;
-	error?: boolean | ReactNode;
+	error?: ReactNode;
 	flex?: boolean;
 	leadingIcon?: ReactNode;
 	override?: string;

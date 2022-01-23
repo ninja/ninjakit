@@ -47,13 +47,12 @@
 
 .label {
 	color: var(--md-color-outline);
-	cursor: text;
 	font-size: 1.4rem;
 	left: 1.6rem;
+	pointer-events: none;
 	position: absolute;
 	transform: translate3d(0, 0, 0);
 	transition-property: font-size, left, transform;
-	user-select: none;
 }
 
 /* trailing icon */

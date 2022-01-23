@@ -18,7 +18,7 @@ export function InputMenuExamples() {
 						flex={flex}
 						helper={helper ? "Helper message" : undefined}
 						id="input-menu-example"
-						label="Filled"
+						label="Label"
 						leadingIcon={leadingIcon && <MdFavorite />}
 						onChange={(value) => console.info("InputMenu", { value })}
 						options={options}
