@@ -1,10 +1,9 @@
 declare namespace PlaywrightTest {
 	interface Matchers<R> {
-		toHaveCSSOpacity(expected: string): Promise<R>;
-		toHavePseudoCSS(
-			pseudoElement: "::before" | "::after",
+		toHaveStyle(
 			name: string,
-			expected: string
+			expected: string,
+			pseudoElement?: "::before" | "::after"
 		): Promise<R>;
 	}
 }

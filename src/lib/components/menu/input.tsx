@@ -33,7 +33,6 @@ export const InputMenu = forwardRef(function InputMenu<T extends string>(
 		className,
 		expanded,
 		handleClickControl,
-		handleFocusControl,
 		handleKeyDownControl,
 		menuId,
 		setExpanded,
@@ -49,8 +48,8 @@ export const InputMenu = forwardRef(function InputMenu<T extends string>(
 				className={styles.control}
 				flex={flex}
 				id={id}
+				onClick={handleClickControl}
 				onClickTrailingIcon={handleClickControl}
-				onFocus={handleFocusControl}
 				onKeyDown={handleKeyDownControl}
 				readOnly={readOnly}
 				ref={ref}

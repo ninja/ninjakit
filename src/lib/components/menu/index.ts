@@ -35,23 +35,34 @@ export function useMenu({
 	].join(" ");
 	const [expanded, setExpanded] = useState(false);
 	const handleClickControl = () => setExpanded(!expanded);
-	const handleFocusControl = () => setExpanded(true);
 	const handleKeyDownControl: KeyboardEventHandler = (event) => {
-		if (!expanded) return;
-
 		const element = input
-			? event.currentTarget.parentElement
+			? event.currentTarget.parentElement?.parentElement || null
 			: event.currentTarget;
 
+		if (expanded)
+			switch (event.key) {
+				case " ":
+				case "Enter":
+				case "Escape":
+					event.preventDefault();
+					return setExpanded(false);
+				case "ArrowUp":
+					return event.preventDefault();
+				case "ArrowDown":
+				case "Tab":
+					if (element === null) return;
+					event.preventDefault();
+					return firstHTMLElementChild(element.nextElementSibling)?.focus();
+				default:
+					return;
+			}
+
 		switch (event.key) {
-			case "Escape":
-				return setExpanded(false);
-			case "ArrowDown":
+			case " ":
+			case "Enter":
 				event.preventDefault();
-
-				if (element === null) return;
-
-				return firstHTMLElementChild(element.nextElementSibling)?.focus();
+				return setExpanded(true);
 		}
 	};
 	const menuId = `${id}-menu`;
@@ -60,7 +71,6 @@ export function useMenu({
 		className,
 		expanded,
 		handleClickControl,
-		handleFocusControl,
 		handleKeyDownControl,
 		menuId,
 		setExpanded,

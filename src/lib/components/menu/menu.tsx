@@ -1,4 +1,9 @@
-import type { KeyboardEventHandler, MouseEvent, ReactNode } from "react";
+import type {
+	KeyboardEventHandler,
+	MouseEvent,
+	MouseEventHandler,
+	ReactNode,
+} from "react";
 
 import { nextHTMLElementSibling, previousHTMLElementSibling } from "../../util";
 import { Options } from ".";
@@ -17,7 +22,16 @@ export function Menu<T extends string>({
 	options: Options<T>;
 	setExpanded: (expanded: boolean) => void;
 }) {
-	const handleClickMenu = () => setExpanded(false);
+	const handleClickMenu: MouseEventHandler<HTMLDivElement> = (event) => {
+		const { previousElementSibling } = event.currentTarget;
+		const element = input
+			? (previousElementSibling?.querySelector("input") as HTMLInputElement)
+			: (previousElementSibling as HTMLButtonElement);
+
+		element.focus();
+
+		setExpanded(false);
+	};
 	const handleClickMenuItem = ({
 		event,
 		label,
@@ -38,7 +52,6 @@ export function Menu<T extends string>({
 
 		if (element) {
 			element.value = typeof label === "string" ? label : value;
-			element.focus();
 		}
 	};
 	const handleKeyDownMenu: KeyboardEventHandler = ({ key }) =>
