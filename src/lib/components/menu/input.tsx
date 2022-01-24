@@ -1,5 +1,4 @@
 import { TextInput } from "ninjakit";
-import { ForwardedRef, forwardRef } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { InputProps } from "../input";
@@ -7,35 +6,29 @@ import { Options, useMenu } from ".";
 import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
-declare module "react" {
-	function forwardRef<T, P>(
-		render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
-	): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
-}
-
-export const InputMenu = forwardRef(function InputMenu<T extends string>(
-	{
-		className: override,
-		flex,
-		id,
-		onChange,
-		options,
-		readOnly = true,
-		...props
-	}: Omit<JSX.IntrinsicElements["input"], "onChange"> &
-		InputProps & {
-			onChange: (value: T) => void;
-			options: Options<T>;
-		},
-	ref: ForwardedRef<HTMLInputElement>
-) {
+export function InputMenu<T extends string>({
+	className: override,
+	flex,
+	id,
+	onChange,
+	options,
+	readOnly = true,
+	...props
+}: Omit<JSX.IntrinsicElements["input"], "onChange"> &
+	InputProps & {
+		onChange: (value: T) => void;
+		options: Options<T>;
+	}) {
 	const {
 		className,
 		expanded,
 		handleClickControl,
 		handleKeyDownControl,
 		menuId,
+		refControl,
+		refMenu,
 		setExpanded,
+		style,
 	} = useMenu({ flex, id, input: true, override });
 
 	return (
@@ -52,18 +45,20 @@ export const InputMenu = forwardRef(function InputMenu<T extends string>(
 				onClickTrailingIcon={handleClickControl}
 				onKeyDown={handleKeyDownControl}
 				readOnly={readOnly}
-				ref={ref}
+				ref={refControl}
 				trailingIcon={expanded ? <MdArrowDropUp /> : <MdArrowDropDown />}
 			/>
 			{expanded && (
-				<Menu
+				<Menu<T>
 					input
 					menuId={menuId}
 					onChange={onChange}
 					options={options}
+					ref={refMenu}
 					setExpanded={setExpanded}
+					style={style}
 				/>
 			)}
 		</fieldset>
 	);
-});
+}

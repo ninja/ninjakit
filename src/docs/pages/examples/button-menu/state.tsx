@@ -35,8 +35,11 @@ export function InputMenuState({
 						setState((state) => ({ ...state, appearance }))
 					}
 					options={[
+						{ label: "Elevated", value: "elevated" },
 						{ label: "Filled", value: "filled" },
+						{ label: "Tonal", value: "tonal" },
 						{ label: "Outlined", value: "outlined" },
+						{ label: "Text", value: "text" },
 					]}
 				/>
 				<Checkbox
