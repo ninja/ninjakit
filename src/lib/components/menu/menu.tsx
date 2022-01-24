@@ -1,4 +1,6 @@
-import type {
+import {
+	ForwardedRef,
+	forwardRef,
 	KeyboardEventHandler,
 	MouseEvent,
 	MouseEventHandler,
@@ -9,19 +11,29 @@ import { nextHTMLElementSibling, previousHTMLElementSibling } from "../../util";
 import { Options } from ".";
 import styles from "./menu.module.css";
 
-export function Menu<T extends string>({
-	input,
-	menuId,
-	onChange,
-	options,
-	setExpanded,
-}: {
-	input?: boolean;
-	menuId: string;
-	onChange?: (value: T) => void;
-	options: Options<T>;
-	setExpanded: (expanded: boolean) => void;
-}) {
+declare module "react" {
+	function forwardRef<T, P>(
+		render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+	): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
+}
+
+export const Menu = forwardRef(function Menu<T extends string>(
+	{
+		input,
+		menuId,
+		onChange,
+		options,
+		setExpanded,
+		...props
+	}: {
+		input?: boolean;
+		menuId: string;
+		onChange?: (value: T) => void;
+		options: Options<T>;
+		setExpanded: (expanded: boolean) => void;
+	} & Omit<JSX.IntrinsicElements["div"], "onChange">,
+	ref: ForwardedRef<HTMLDivElement>
+) {
 	const handleClickMenu: MouseEventHandler<HTMLDivElement> = (event) => {
 		const { previousElementSibling } = event.currentTarget;
 		const element = input
@@ -82,10 +94,12 @@ export function Menu<T extends string>({
 
 	return (
 		<div
+			{...props}
 			className={styles.menu}
 			id={menuId}
 			onClick={handleClickMenu}
 			onKeyDown={handleKeyDownMenu}
+			ref={ref}
 			role="menu"
 			tabIndex={-1}
 		>
@@ -126,4 +140,4 @@ export function Menu<T extends string>({
 			})}
 		</div>
 	);
-}
+});

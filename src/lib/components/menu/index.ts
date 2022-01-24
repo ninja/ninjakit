@@ -1,4 +1,10 @@
-import { KeyboardEventHandler, ReactNode, useState } from "react";
+import {
+	flip,
+	getScrollParents,
+	shift,
+	useFloating,
+} from "@floating-ui/react-dom";
+import { KeyboardEventHandler, ReactNode, useEffect, useState } from "react";
 
 import { firstHTMLElementChild } from "../../util";
 import styles from "./menu.module.css";
@@ -34,6 +40,31 @@ export function useMenu({
 		override,
 	].join(" ");
 	const [expanded, setExpanded] = useState(false);
+	const { x, y, reference, floating, refs, strategy, update } = useFloating({
+		middleware: [flip(), shift()],
+	});
+	useEffect(() => {
+		if (!refs.reference.current || !refs.floating.current) {
+			return;
+		}
+
+		const parents = [
+			...getScrollParents(refs.reference.current),
+			...getScrollParents(refs.floating.current),
+		];
+
+		parents.forEach((parent) => {
+			parent.addEventListener("scroll", update);
+			parent.addEventListener("resize", update);
+		});
+
+		return () => {
+			parents.forEach((parent) => {
+				parent.removeEventListener("scroll", update);
+				parent.removeEventListener("resize", update);
+			});
+		};
+	}, [refs.reference, refs.floating, update]);
 	const handleClickControl = () => setExpanded(!expanded);
 	const handleKeyDownControl: KeyboardEventHandler = (event) => {
 		const element = input
@@ -72,7 +103,14 @@ export function useMenu({
 		expanded,
 		handleClickControl,
 		handleKeyDownControl,
+		style: {
+			left: x ?? "",
+			position: strategy,
+			top: y ?? "",
+		},
 		menuId,
+		refControl: reference,
+		refMenu: floating,
 		setExpanded,
 	};
 }

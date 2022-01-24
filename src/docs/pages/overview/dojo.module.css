@@ -28,6 +28,7 @@
 
 .card > section > h1,
 .card > section > h2 {
+	margin: 0;
 	transition-duration: var(--nk-transition-duration) font-size linear;
 }
 
