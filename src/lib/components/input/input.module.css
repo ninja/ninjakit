@@ -38,7 +38,7 @@
 .input {
 	caret-color: var(--md-color-primary);
 	color: var(--md-color-on-surface);
-	font-size: 1.4rem;
+	font-size: 1.6rem; /* mobile Safari auto-zooms anything < 16px */
 	height: 100%;
 	padding: 0 1.6rem;
 	position: relative;
@@ -198,6 +198,6 @@
 
 @media screen and (min-width: 600px) {
 	.input {
-		font-size: 1.6rem; /* mobile Safari auto-zooms anything < 16px */
+		font-size: 1.4rem; /* follow Material 3 spec at desktop width */
 	}
 }
