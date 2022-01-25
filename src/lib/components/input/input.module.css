@@ -102,6 +102,10 @@
 	fill: var(--md-color-primary);
 }
 
+.field.flex {
+	width: 100%;
+}
+
 .field.flex > .row {
 	width: unset;
 }
