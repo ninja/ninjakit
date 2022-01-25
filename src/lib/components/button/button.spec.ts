@@ -5,7 +5,7 @@ import { test } from "../../test";
 test.describe("Button", () => {
 	test.describe("filled appearance", () => {
 		test("default", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await expect(button).toHaveAttribute("type", "button");
 			await expect(button).toHaveText("Label");
@@ -21,7 +21,7 @@ test.describe("Button", () => {
 		});
 
 		test("hover", async ({ page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await button.hover();
 
@@ -29,7 +29,7 @@ test.describe("Button", () => {
 		});
 
 		test("focus", async ({ page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await button.focus();
 
@@ -37,7 +37,7 @@ test.describe("Button", () => {
 		});
 
 		test("disabled", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await page.check("id=button-disabled-checkbox");
 
@@ -54,7 +54,7 @@ test.describe("Button", () => {
 
 	test.describe("elevated appearance", () => {
 		test("default", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await page.click("id=button-appearance");
 			await page.click("id=button-appearance-menu >> button[value=elevated]");
@@ -74,7 +74,7 @@ test.describe("Button", () => {
 
 	test.describe("tonal appearance", () => {
 		test("default", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await page.click("id=button-appearance");
 			await page.click("id=button-appearance-menu >> button[value=tonal]");
@@ -99,7 +99,7 @@ test.describe("Button", () => {
 		});
 
 		test("default", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await expect(button).toHaveCSS("color", colors.primary);
 
@@ -115,7 +115,7 @@ test.describe("Button", () => {
 		});
 
 		test("disabled", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await page.click("id=button-disabled-checkbox");
 
@@ -126,7 +126,7 @@ test.describe("Button", () => {
 
 	test.describe("text appearance", () => {
 		test("default", async ({ colors, page }) => {
-			const button = page.locator("id=button");
+			const button = page.locator("id=button >> button:has-text('Label')");
 
 			await page.click("id=button-appearance");
 			await page.click("id=button-appearance-menu >> button[value=text]");

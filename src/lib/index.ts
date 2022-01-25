@@ -8,7 +8,7 @@ export { Checkbox } from "./components/checkbox";
 export { FloatingActionButton } from "./components/floating-action-button";
 export { Footer } from "./components/footer";
 export { Header } from "./components/header";
-export { TextInput } from "./components/input";
+export { PasswordInput, TextInput } from "./components/input";
 export { Main } from "./components/main";
 export { ButtonMenu, InputMenu } from "./components/menu";
 export { Nav } from "./components/nav";

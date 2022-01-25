@@ -5,7 +5,7 @@ import styles from "./input.module.css";
 
 export const TextInput = forwardRef<
 	HTMLInputElement,
-	Omit<JSX.IntrinsicElements["input"], "id"> & InputProps
+	InputProps & Omit<JSX.IntrinsicElements["input"], "id">
 >(function TextInput(
 	{
 		appearance,
@@ -18,8 +18,8 @@ export const TextInput = forwardRef<
 		id,
 		label,
 		leadingIcon,
-		name,
 		onClickTrailingIcon: handleClickTrailingIcon,
+		placeholder,
 		trailingIcon,
 		type = "text",
 		...props
@@ -32,6 +32,7 @@ export const TextInput = forwardRef<
 		flex,
 		leadingIcon,
 		override,
+		trailingIcon,
 	});
 
 	return (
@@ -43,8 +44,11 @@ export const TextInput = forwardRef<
 					aria-invalid={ariaInvalid || !!error}
 					className={styles.input}
 					id={id}
-					name={name}
-					placeholder={typeof label === "string" ? label : name || id}
+					placeholder={
+						placeholder || typeof label === "string"
+							? (label as string)
+							: undefined
+					}
 					ref={ref}
 					type={type}
 				/>

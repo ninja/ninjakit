@@ -28,7 +28,7 @@ export function InputMenuState({
 				<InputMenu<Appearance>
 					defaultValue="Filled"
 					flex
-					id="input-menu-appearance"
+					id="button-menu-appearance"
 					label="Appearance"
 					name="appearance"
 					onChange={(appearance) =>

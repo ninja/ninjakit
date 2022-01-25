@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import styles from "../examples.module.css";
 import { ButtonState, useButtonState } from "./state";
 
-export function AnchorButtonExamples() {
+export function AnchorButtonExample() {
 	const state = useButtonState();
 	const [{ appearance, external, leadingIcon, reactRouterLink }] = state;
 
 	return (
-		<Card appearance="elevated" id="anchor-button-example" title="AnchorButton">
+		<Card appearance="elevated" id="anchor-button" title="AnchorButton">
 			<section>
 				<section className={styles.center}>
 					<AnchorButton

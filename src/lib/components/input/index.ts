@@ -24,24 +24,28 @@ export function useClassName({
 	error,
 	leadingIcon,
 	override,
+	trailingIcon,
 }: {
 	appearance?: Appearance;
 	error?: ReactNode;
 	flex?: boolean;
 	leadingIcon?: ReactNode;
 	override?: string;
+	trailingIcon?: ReactNode;
 }): string | undefined {
 	return [
-		typography.labelLarge,
-		styles.field,
-		styles[appearance],
+		error ? styles.error : undefined,
 		flex ? styles.flex : undefined,
 		leadingIcon ? styles.leadingIcon : undefined,
-		error ? styles.error : undefined,
 		override,
+		styles.field,
+		styles[appearance],
+		trailingIcon ? styles.trailingIcon : undefined,
+		typography.labelLarge,
 	]
 		.join(" ")
 		.trim();
 }
 
+export { PasswordInput } from "./password";
 export { TextInput } from "./text";

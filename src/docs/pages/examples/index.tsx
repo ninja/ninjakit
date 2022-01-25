@@ -1,22 +1,24 @@
-import { AnchorButtonExamples } from "./anchor-button";
-import { ButtonExamples } from "./button";
-import { ButtonMenuExamples } from "./button-menu";
-import { CheckboxExamples } from "./checkbox";
-import { InputMenuExamples } from "./input-menu";
-import { RadiosetExamples } from "./radioset";
-import { TextInputExamples } from "./text-input";
+import { AnchorButtonExample } from "./anchor-button";
+import { ButtonExample } from "./button";
+import { ButtonMenuExample } from "./button-menu";
+import { CheckboxExample } from "./checkbox";
+import { InputMenuExample } from "./input-menu";
+import { PasswordInputExample } from "./password-input";
+import { RadiosetExample } from "./radioset";
+import { TextInputExample } from "./text-input";
 import { TypographyExamples } from "./typography";
 
 export function Examples() {
 	return (
 		<>
-			<ButtonExamples />
-			<AnchorButtonExamples />
-			<TextInputExamples />
-			<ButtonMenuExamples />
-			<InputMenuExamples />
-			<CheckboxExamples />
-			<RadiosetExamples />
+			<AnchorButtonExample />
+			<ButtonExample />
+			<ButtonMenuExample />
+			<CheckboxExample />
+			<InputMenuExample />
+			<PasswordInputExample />
+			<RadiosetExample />
+			<TextInputExample />
 			<TypographyExamples />
 		</>
 	);

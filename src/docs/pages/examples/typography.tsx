@@ -2,7 +2,7 @@ import { Card, Typography } from "ninjakit";
 
 export function TypographyExamples() {
 	return (
-		<Card appearance="elevated" id="typography-example" title="Typography">
+		<Card appearance="elevated" id="typography" title="Typography">
 			<Card appearance="outlined" title="Display">
 				<Typography appearance="displayLarge">Large</Typography>
 				<Typography appearance="displayMedium">Medium</Typography>

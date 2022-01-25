@@ -1,5 +1,3 @@
-import { init } from "@sentry/react";
-import { BrowserTracing } from "@sentry/tracing";
 import {
 	AnchorButton,
 	Article,
@@ -15,7 +13,7 @@ import { StrictMode } from "react";
 import { render } from "react-dom";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
-import { MdEdit, MdLink } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 import { SiGithub, SiNetlify, SiNpm } from "react-icons/si";
 import {
 	BrowserRouter,
@@ -95,6 +93,17 @@ function App() {
 					examples && (
 						<Aside>
 							<ColorSchemeExample />
+							<Card appearance="filled" title="Contents">
+								<AnchorButton href="#anchor-button" label="AnchorButton" />
+								<AnchorButton href="#button" label="Button" />
+								<AnchorButton href="#button-menu" label="ButtonMenu" />
+								<AnchorButton href="#checkbox" label="Checkbox" />
+								<AnchorButton href="#input-menu" label="InputMenu" />
+								<AnchorButton href="#password-input" label="PasswordInput" />
+								<AnchorButton href="#radioset" label="RadioSet" />
+								<AnchorButton href="#text-input" label="TextInput" />
+								<AnchorButton href="#typography" label="Typography" />
+							</Card>
 						</Aside>
 					)
 				}
@@ -128,54 +137,6 @@ function App() {
 						)}
 					</Footer>
 				}
-				header={
-					examples && (
-						<Card appearance="outlined">
-							<section>
-								<AnchorButton
-									href="#button-example"
-									label="Button"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#anchor-button-example"
-									label="AnchorButton"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#text-input-example"
-									label="TextInput"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#button-menu-example"
-									label="ButtonMenu"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#input-menu-example"
-									label="InputMenu"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#checkbox-example"
-									label="Checkbox"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#radioset-example"
-									label="RadioSet"
-									leadingIcon={<MdLink />}
-								/>
-								<AnchorButton
-									href="#typography-example"
-									label="Typography"
-									leadingIcon={<MdLink />}
-								/>
-							</section>
-						</Card>
-					)
-				}
 			>
 				<Routes>
 					<Route element={<Overview />} path="/" />
@@ -185,14 +146,6 @@ function App() {
 			</Article>
 		</Main>
 	);
-}
-
-if (typeof import.meta.env.SENTRY_DSN === "string") {
-	init({
-		dsn: import.meta.env.SENTRY_DSN,
-		integrations: [new BrowserTracing()],
-		tracesSampleRate: 1.0,
-	});
 }
 
 render(
