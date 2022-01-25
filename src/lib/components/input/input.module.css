@@ -126,10 +126,6 @@
 	padding-right: 4.2rem;
 }
 
-.field.trailingIcon > .row > .label {
-	right: 4.2rem;
-}
-
 .field.filled > .row::before,
 .field.filled > .row > .input {
 	border-radius: 0.4rem 0.4rem 0 0;
