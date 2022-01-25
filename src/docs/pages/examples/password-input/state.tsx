@@ -1,18 +1,16 @@
 import { Checkbox, InputMenu } from "ninjakit";
 import { Dispatch, SetStateAction, useState } from "react";
 
-type Appearance = "filled" | "outlined";
-
-type InputMenuProps = {
-	appearance: Appearance;
+type PasswordInputProps = {
+	appearance: "filled" | "outlined";
 	error: boolean;
 	flex: boolean;
 	helper: boolean;
 	leadingIcon: boolean;
 };
 
-export function useInputMenuState() {
-	return useState<InputMenuProps>({
+export function usePasswordInputState() {
+	return useState<PasswordInputProps>({
 		appearance: "filled",
 		error: false,
 		flex: true,
@@ -21,10 +19,10 @@ export function useInputMenuState() {
 	});
 }
 
-export function InputMenuState({
+export function PasswordInputState({
 	state: [{ flex }, setState],
 }: {
-	state: [InputMenuProps, Dispatch<SetStateAction<InputMenuProps>>];
+	state: [PasswordInputProps, Dispatch<SetStateAction<PasswordInputProps>>];
 }) {
 	return (
 		<aside>
@@ -32,7 +30,7 @@ export function InputMenuState({
 				<InputMenu<"filled" | "outlined">
 					defaultValue="Filled"
 					flex
-					id="input-menu-appearance"
+					id="password-input-appearance"
 					label="Appearance"
 					name="appearance"
 					onChange={(appearance) =>
@@ -78,17 +76,3 @@ export function InputMenuState({
 		</aside>
 	);
 }
-
-export const options = [
-	{ label: "Item One", value: "item-one" },
-	{ label: "Item Two", value: "item-two" },
-	{ label: "Item Three", value: "item-three" },
-	{ separator: true },
-	{ label: "Item Four", value: "item-four" },
-	{ label: "Item Five", value: "item-five" },
-	{ disabled: true, label: "Item Six", value: "item-six" },
-	{ label: "Item Seven", value: "item-seven" },
-	{ label: "Item Eight", value: "item-eight" },
-	{ label: "Item Nine", value: "item-nine" },
-	"Item Ten",
-];

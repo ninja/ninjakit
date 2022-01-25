@@ -3,12 +3,12 @@ import { Card, Radioset } from "ninjakit";
 import styles from "../examples.module.css";
 import { RadiosetState, useRadiosetState } from "./state";
 
-export function RadiosetExamples() {
+export function RadiosetExample() {
 	const state = useRadiosetState();
 	const [{ disabled }] = state;
 
 	return (
-		<Card appearance="elevated" id="radioset-example" title="RadioSet">
+		<Card appearance="elevated" id="radioset" title="RadioSet">
 			<section>
 				<section className={styles.center}>
 					<Radioset<"item-one" | "item-two" | "item-three">

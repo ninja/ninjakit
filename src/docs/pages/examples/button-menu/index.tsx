@@ -4,12 +4,12 @@ import { MdMenu } from "react-icons/md";
 import styles from "../examples.module.css";
 import { InputMenuState, options, useButtonMenuState } from "./state";
 
-export function ButtonMenuExamples() {
+export function ButtonMenuExample() {
 	const state = useButtonMenuState();
 	const [{ appearance, disabled, leadingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="button-menu-example" title="ButtonMenu">
+		<Card appearance="elevated" id="button-menu" title="ButtonMenu">
 			<section>
 				<section className={styles.center}>
 					<ButtonMenu

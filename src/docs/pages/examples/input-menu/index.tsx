@@ -4,12 +4,12 @@ import { MdFavorite } from "react-icons/md";
 import styles from "../examples.module.css";
 import { InputMenuState, options, useInputMenuState } from "./state";
 
-export function InputMenuExamples() {
+export function InputMenuExample() {
 	const state = useInputMenuState();
 	const [{ appearance, error, flex, helper, leadingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="input-menu-example" title="InputMenu">
+		<Card appearance="elevated" id="input-menu" title="InputMenu">
 			<section>
 				<section className={styles.center}>
 					<InputMenu
