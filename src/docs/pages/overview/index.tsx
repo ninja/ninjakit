@@ -1,4 +1,4 @@
-import { Card } from "ninjakit";
+import { AnchorButton, Article, Card, Footer } from "ninjakit";
 import { MouseEventHandler, useCallback, useState } from "react";
 import { SiMaterialdesign, SiReact } from "react-icons/si";
 
@@ -6,7 +6,7 @@ import { Logo } from "../../components/logo";
 import { Ninja } from "../../components/ninja";
 import styles from "./dojo.module.css";
 
-export function Overview() {
+export function Overview({ year }: { year: number }) {
 	const [wait, setWait] = useState(false);
 
 	const handleMouseMove: MouseEventHandler<HTMLDivElement> = useCallback(
@@ -43,26 +43,41 @@ export function Overview() {
 	);
 
 	return (
-		<Card
-			appearance="elevated"
-			className={styles.card}
-			onMouseLeave={handleMouseLeave}
-			onMouseMove={handleMouseMove}
+		<Article
+			footer={
+				<Footer>
+					<section>&copy; {year} Jamie Hoover</section>
+					<AnchorButton
+						appearance="text"
+						href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
+						target="_blank"
+					>
+						Apache 2.0 licensed
+					</AnchorButton>
+				</Footer>
+			}
 		>
-			<Ninja className={styles.ninja} />
-			<section>
-				<Logo />
-				<h2>
-					<SiMaterialdesign />
-					<span>
-						<strong>Material</strong> designed
-					</span>
-					<SiReact />
-					<span>
-						<strong>React</strong> components
-					</span>
-				</h2>
-			</section>
-		</Card>
+			<Card
+				appearance="elevated"
+				className={styles.card}
+				onMouseLeave={handleMouseLeave}
+				onMouseMove={handleMouseMove}
+			>
+				<Ninja className={styles.ninja} />
+				<section>
+					<Logo />
+					<h2>
+						<SiMaterialdesign />
+						<span>
+							<strong>Material</strong> designed
+						</span>
+						<SiReact />
+						<span>
+							<strong>React</strong> components
+						</span>
+					</h2>
+				</section>
+			</Card>
+		</Article>
 	);
 }

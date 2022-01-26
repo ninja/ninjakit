@@ -1,14 +1,15 @@
-import { Card, Radioset } from "ninjakit";
+import { Card, Radioset, useHashRef } from "ninjakit";
 
 import styles from "../examples.module.css";
 import { RadiosetState, useRadiosetState } from "./state";
 
 export function RadiosetExample() {
+	const hashRef = useHashRef({ id: "radioset" });
 	const state = useRadiosetState();
 	const [{ disabled, disabledOption }] = state;
 
 	return (
-		<Card appearance="elevated" id="radioset" title="RadioSet">
+		<Card appearance="elevated" id="radioset" ref={hashRef} title="RadioSet">
 			<section>
 				<section className={styles.center}>
 					<Radioset<"item-one" | "item-two" | "item-three">

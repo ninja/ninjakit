@@ -15,5 +15,7 @@ export { Nav } from "./components/nav";
 export { Radioset } from "./components/radioset";
 export { Typography } from "./components/typography";
 export { useColorScheme } from "./hooks/color-scheme";
+export { useHashRef } from "./hooks/hash-ref";
+export { useIntersectionObserver } from "./hooks/intersection-observer";
 
 export type ColorScheme = "dark" | "light" | "system";

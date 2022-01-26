@@ -1,15 +1,16 @@
-import { Card, InputMenu } from "ninjakit";
+import { Card, InputMenu, useHashRef } from "ninjakit";
 import { MdFavorite } from "react-icons/md";
 
 import styles from "../examples.module.css";
 import { InputMenuState, options, useInputMenuState } from "./state";
 
 export function InputMenuExample() {
+	const hashRef = useHashRef({ id: "input-menu" });
 	const state = useInputMenuState();
 	const [{ appearance, disabled, error, flex, helper, leadingIcon }] = state;
 
 	return (
-		<Card appearance="elevated" id="input-menu" title="InputMenu">
+		<Card appearance="elevated" id="input-menu" ref={hashRef} title="InputMenu">
 			<section>
 				<section className={styles.center}>
 					<InputMenu

@@ -1,18 +1,26 @@
+import { forwardRef } from "react";
+
 import typography from "../typography/typography.module.css";
 import styles from "./card.module.css";
 
-export function Card({
-	children,
-	className: classNameOverride,
-	appearance = "filled",
-	subhead,
-	title,
-	...props
-}: {
-	appearance?: "elevated" | "filled" | "outlined";
-	subhead?: string;
-	title?: string;
-} & JSX.IntrinsicElements["section"]) {
+export const Card = forwardRef<
+	HTMLElement,
+	{
+		appearance?: "elevated" | "filled" | "outlined";
+		subhead?: string;
+		title?: string;
+	} & JSX.IntrinsicElements["section"]
+>(function Card(
+	{
+		children,
+		className: classNameOverride,
+		appearance = "filled",
+		subhead,
+		title,
+		...props
+	},
+	ref
+) {
 	const className = [
 		styles.card,
 		styles[appearance],
@@ -21,7 +29,7 @@ export function Card({
 	].join(" ");
 
 	return (
-		<section className={className} {...props}>
+		<section className={className} ref={ref} {...props}>
 			{(title || subhead) && (
 				<header>
 					{title && <h1 className={typography.titleMedium}>{title}</h1>}
@@ -31,4 +39,4 @@ export function Card({
 			{children}
 		</section>
 	);
-}
+});
