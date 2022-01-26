@@ -1,4 +1,4 @@
-import { Card, TextInput } from "ninjakit";
+import { Card, TextInput, useHashRef } from "ninjakit";
 import { useRef } from "react";
 import { MdCancel, MdFavorite } from "react-icons/md";
 
@@ -6,14 +6,15 @@ import styles from "../examples.module.css";
 import { TextInputState, useTextInputState } from "./state";
 
 export function TextInputExample() {
-	const ref = useRef<HTMLInputElement>(null);
+	const hashRef = useHashRef({ id: "text-input" });
+	const inputRef = useRef<HTMLInputElement>(null);
 	const state = useTextInputState();
 	const [
 		{ appearance, disabled, error, flex, helper, leadingIcon, trailingIcon },
 	] = state;
 
 	return (
-		<Card appearance="elevated" id="text-input" title="TextInput">
+		<Card appearance="elevated" id="text-input" ref={hashRef} title="TextInput">
 			<section>
 				<section className={styles.center}>
 					<form autoComplete="off">
@@ -27,9 +28,9 @@ export function TextInputExample() {
 							label="Label"
 							leadingIcon={leadingIcon && <MdFavorite />}
 							onClickTrailingIcon={() => {
-								if (ref.current) ref.current.value = "";
+								if (inputRef.current) inputRef.current.value = "";
 							}}
-							ref={ref}
+							ref={inputRef}
 							trailingIcon={trailingIcon && <MdCancel />}
 						/>
 					</form>

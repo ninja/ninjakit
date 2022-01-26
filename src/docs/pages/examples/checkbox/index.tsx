@@ -1,14 +1,15 @@
-import { Card, Checkbox } from "ninjakit";
+import { Card, Checkbox, useHashRef } from "ninjakit";
 
 import styles from "../examples.module.css";
 import { CheckboxState, useButtonState } from "./state";
 
 export function CheckboxExample() {
+	const hashRef = useHashRef({ id: "checkbox" });
 	const state = useButtonState();
 	const [{ disabled, indeterminate, labelWithJSX }] = state;
 
 	return (
-		<Card appearance="elevated" id="checkbox" title="Checkbox">
+		<Card appearance="elevated" id="checkbox" ref={hashRef} title="Checkbox">
 			<section>
 				<section className={styles.center}>
 					<Checkbox

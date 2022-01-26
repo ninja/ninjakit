@@ -1,8 +1,15 @@
-import { Card, Typography } from "ninjakit";
+import { Card, Typography, useHashRef } from "ninjakit";
 
 export function TypographyExamples() {
+	const hashRef = useHashRef({ id: "typography" });
+
 	return (
-		<Card appearance="elevated" id="typography" title="Typography">
+		<Card
+			appearance="elevated"
+			id="typography"
+			ref={hashRef}
+			title="Typography"
+		>
 			<Card appearance="outlined" title="Display">
 				<Typography appearance="displayLarge">Large</Typography>
 				<Typography appearance="displayMedium">Medium</Typography>
