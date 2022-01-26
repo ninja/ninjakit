@@ -204,6 +204,18 @@
 	color: var(--md-color-error);
 }
 
+.field.disabled {
+	opacity: 0.38;
+}
+
+.field.filled.disabled > .row > .input {
+	box-shadow: 0 0.1rem 0 0 var(--md-color-outline);
+}
+
+.field.outlined.disabled > .row > .input {
+	box-shadow: 0 0 0 0.1rem var(--md-color-outline);
+}
+
 @media screen and (min-width: 600px) {
 	.input {
 		font-size: 1.4rem; /* follow Material 3 spec at desktop width */

@@ -3,11 +3,13 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 type RadiosetProps = {
 	disabled: boolean;
+	disabledOption: boolean;
 };
 
 export function useRadiosetState() {
 	return useState<RadiosetProps>({
 		disabled: false,
+		disabledOption: false,
 	});
 }
 
@@ -19,6 +21,15 @@ export function RadiosetState({
 	return (
 		<aside>
 			<form>
+				<Checkbox
+					label="Disabled option"
+					onClick={() =>
+						setState((state) => ({
+							...state,
+							disabledOption: !state.disabledOption,
+						}))
+					}
+				/>
 				<Checkbox
 					label="Disabled"
 					onClick={() =>

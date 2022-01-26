@@ -6,7 +6,7 @@ import { InputMenuState, options, useInputMenuState } from "./state";
 
 export function InputMenuExample() {
 	const state = useInputMenuState();
-	const [{ appearance, error, flex, helper, leadingIcon }] = state;
+	const [{ appearance, disabled, error, flex, helper, leadingIcon }] = state;
 
 	return (
 		<Card appearance="elevated" id="input-menu" title="InputMenu">
@@ -14,6 +14,7 @@ export function InputMenuExample() {
 				<section className={styles.center}>
 					<InputMenu
 						appearance={appearance}
+						disabled={disabled}
 						error={error && "Error message"}
 						flex={flex}
 						helper={helper ? "Helper message" : undefined}

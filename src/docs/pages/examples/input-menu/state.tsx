@@ -5,6 +5,7 @@ type Appearance = "filled" | "outlined";
 
 type InputMenuProps = {
 	appearance: Appearance;
+	disabled: boolean;
 	error: boolean;
 	flex: boolean;
 	helper: boolean;
@@ -14,6 +15,7 @@ type InputMenuProps = {
 export function useInputMenuState() {
 	return useState<InputMenuProps>({
 		appearance: "filled",
+		disabled: false,
 		error: false,
 		flex: true,
 		helper: false,
@@ -72,6 +74,12 @@ export function InputMenuState({
 					label="Error message"
 					onClick={() =>
 						setState((state) => ({ ...state, error: !state.error }))
+					}
+				/>
+				<Checkbox
+					label="Disabled"
+					onClick={() =>
+						setState((state) => ({ ...state, disabled: !state.disabled }))
 					}
 				/>
 			</form>

@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 type TextInputProps = {
 	appearance: "filled" | "outlined";
+	disabled: boolean;
 	error: boolean;
 	flex: boolean;
 	helper: boolean;
@@ -13,6 +14,7 @@ type TextInputProps = {
 export function useTextInputState() {
 	return useState<TextInputProps>({
 		appearance: "filled",
+		disabled: false,
 		error: false,
 		flex: true,
 		helper: false,
@@ -81,6 +83,12 @@ export function TextInputState({
 					label="Error message"
 					onClick={() =>
 						setState((state) => ({ ...state, error: !state.error }))
+					}
+				/>
+				<Checkbox
+					label="Disabled"
+					onClick={() =>
+						setState((state) => ({ ...state, disabled: !state.disabled }))
 					}
 				/>
 			</form>

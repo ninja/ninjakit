@@ -12,6 +12,7 @@ export const TextInput = forwardRef<
 		"aria-expanded": ariaExpanded,
 		"aria-invalid": ariaInvalid,
 		className: override,
+		disabled,
 		error,
 		flex,
 		helper,
@@ -28,6 +29,7 @@ export const TextInput = forwardRef<
 ) {
 	const className = useClassName({
 		appearance,
+		disabled,
 		error,
 		flex,
 		leadingIcon,
@@ -43,6 +45,7 @@ export const TextInput = forwardRef<
 					{...props}
 					aria-invalid={ariaInvalid || !!error}
 					className={styles.input}
+					disabled={disabled}
 					id={id}
 					placeholder={
 						placeholder || typeof label === "string"

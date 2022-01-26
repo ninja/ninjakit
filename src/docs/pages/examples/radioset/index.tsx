@@ -5,7 +5,7 @@ import { RadiosetState, useRadiosetState } from "./state";
 
 export function RadiosetExample() {
 	const state = useRadiosetState();
-	const [{ disabled }] = state;
+	const [{ disabled, disabledOption }] = state;
 
 	return (
 		<Card appearance="elevated" id="radioset" title="RadioSet">
@@ -25,7 +25,11 @@ export function RadiosetExample() {
 								label: <span>Item Two</span>,
 								value: "item-two",
 							},
-							{ disabled: true, label: "Item Three", value: "item-three" },
+							{
+								disabled: disabledOption,
+								label: "Item Three",
+								value: "item-three",
+							},
 						]}
 					/>
 				</section>
