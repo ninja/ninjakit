@@ -20,6 +20,7 @@ export type InputProps = {
 
 export function useClassName({
 	appearance = "filled",
+	disabled,
 	flex,
 	error,
 	leadingIcon,
@@ -27,6 +28,7 @@ export function useClassName({
 	trailingIcon,
 }: {
 	appearance?: Appearance;
+	disabled?: boolean;
 	error?: ReactNode;
 	flex?: boolean;
 	leadingIcon?: ReactNode;
@@ -42,6 +44,7 @@ export function useClassName({
 		styles[appearance],
 		trailingIcon ? styles.trailingIcon : undefined,
 		typography.labelLarge,
+		disabled ? styles.disabled : undefined,
 	]
 		.join(" ")
 		.trim();

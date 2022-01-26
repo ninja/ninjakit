@@ -8,8 +8,9 @@ import { TextInputState, useTextInputState } from "./state";
 export function TextInputExample() {
 	const ref = useRef<HTMLInputElement>(null);
 	const state = useTextInputState();
-	const [{ appearance, error, flex, helper, leadingIcon, trailingIcon }] =
-		state;
+	const [
+		{ appearance, disabled, error, flex, helper, leadingIcon, trailingIcon },
+	] = state;
 
 	return (
 		<Card appearance="elevated" id="text-input" title="TextInput">
@@ -18,6 +19,7 @@ export function TextInputExample() {
 					<form autoComplete="off">
 						<TextInput
 							appearance={appearance}
+							disabled={disabled}
 							error={error && "Error message"}
 							flex={flex}
 							helper={helper ? "Helper message" : undefined}

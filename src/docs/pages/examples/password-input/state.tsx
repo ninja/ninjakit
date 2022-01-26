@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 type PasswordInputProps = {
 	appearance: "filled" | "outlined";
+	disabled: boolean;
 	error: boolean;
 	flex: boolean;
 	helper: boolean;
@@ -12,6 +13,7 @@ type PasswordInputProps = {
 export function usePasswordInputState() {
 	return useState<PasswordInputProps>({
 		appearance: "filled",
+		disabled: false,
 		error: false,
 		flex: true,
 		helper: false,
@@ -70,6 +72,12 @@ export function PasswordInputState({
 					label="Error message"
 					onClick={() =>
 						setState((state) => ({ ...state, error: !state.error }))
+					}
+				/>
+				<Checkbox
+					label="Disabled"
+					onClick={() =>
+						setState((state) => ({ ...state, disabled: !state.disabled }))
 					}
 				/>
 			</form>

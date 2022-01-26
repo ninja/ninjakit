@@ -8,7 +8,7 @@ import { PasswordInputState, usePasswordInputState } from "./state";
 export function PasswordInputExample() {
 	const ref = useRef<HTMLInputElement>(null);
 	const state = usePasswordInputState();
-	const [{ appearance, error, flex, helper, leadingIcon }] = state;
+	const [{ appearance, disabled, error, flex, helper, leadingIcon }] = state;
 
 	return (
 		<Card appearance="elevated" id="password-input" title="PasswordInput">
@@ -17,6 +17,7 @@ export function PasswordInputExample() {
 					<form autoComplete="off">
 						<PasswordInput
 							appearance={appearance}
+							disabled={disabled}
 							error={error && "Invalid password"}
 							flex={flex}
 							helper={helper ? "8 characters minimum" : undefined}
