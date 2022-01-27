@@ -1,4 +1,5 @@
 import { Card, Checkbox, useHashRef } from "ninjakit";
+import { MdFavorite } from "react-icons/md";
 
 import styles from "../examples.module.css";
 import { CheckboxState, useButtonState } from "./state";
@@ -19,9 +20,11 @@ export function CheckboxExample() {
 						indeterminate={indeterminate}
 						label={
 							labelWithJSX ? (
-								<span>
-									Label <strong>with node</strong>
-								</span>
+								<>
+									<span>Label </span>
+									<strong>with </strong>
+									<MdFavorite />
+								</>
 							) : (
 								"Label"
 							)

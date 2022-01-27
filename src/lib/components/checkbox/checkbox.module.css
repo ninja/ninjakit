@@ -25,6 +25,13 @@
 	position: relative;
 }
 
+.children {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.4rem;
+}
+
 .check {
 	fill: var(--md-color-on-primary);
 	font-size: 2rem;
