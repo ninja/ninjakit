@@ -21,9 +21,9 @@ export function TextInputExample() {
 						<TextInput
 							appearance={appearance}
 							disabled={disabled}
-							error={error && "Error message"}
+							error={error === true && "Error message"}
 							flex={flex}
-							helper={helper ? "Helper message" : undefined}
+							helper={helper === true ? "Helper message" : undefined}
 							id="text-input-example"
 							label="Label"
 							leadingIcon={leadingIcon && <MdFavorite />}

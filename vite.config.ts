@@ -33,11 +33,6 @@ export default defineConfig(({ mode }) => {
 					output: { globals: { react: "React" } },
 				},
 			},
-			css: {
-				modules: {
-					generateScopedName: "ninjakit-[folder]-[local]-[contentHash]",
-				},
-			},
 			plugins: [react()],
 			root: resolve(__dirname, "src/lib"),
 		};
