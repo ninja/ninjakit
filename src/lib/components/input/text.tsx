@@ -68,12 +68,12 @@ export const TextInput = forwardRef<
 					</button>
 				)}
 			</div>
-			{typeof error !== "undefined" && (
+			{error && (
 				<div className={styles.errorMessage} role="tooltip">
 					{error}
 				</div>
 			)}
-			{typeof helper !== "undefined" && (
+			{helper && (
 				<div className={styles.helperMessage} role="tooltip">
 					{helper}
 				</div>
