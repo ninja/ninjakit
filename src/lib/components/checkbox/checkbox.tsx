@@ -13,6 +13,9 @@ export const Checkbox = forwardRef<
 		children,
 		className: override,
 		disabled,
+		error,
+		helper,
+		id,
 		indeterminate,
 		label,
 		name,
@@ -39,18 +42,31 @@ export const Checkbox = forwardRef<
 	}, [indeterminate]);
 
 	return (
-		<label className={className}>
-			<input
-				{...props}
-				className="nk"
-				disabled={disabled}
-				name={name}
-				onClick={handleClick}
-				ref={ref || checkboxRef}
-				type="checkbox"
-			/>
-			<MdCheck className={styles.check} />
-			{children || label}
-		</label>
+		<div className={className}>
+			<label className={styles.label} htmlFor={id}>
+				<input
+					{...props}
+					className={styles.input}
+					disabled={disabled}
+					id={id}
+					name={name}
+					onClick={handleClick}
+					ref={ref || checkboxRef}
+					type="checkbox"
+				/>
+				<MdCheck className={styles.check} />
+				{children || label}
+			</label>
+			{error && (
+				<div className={styles.errorMessage} role="tooltip">
+					{error}
+				</div>
+			)}
+			{helper && (
+				<div className={styles.helperMessage} role="tooltip">
+					{helper}
+				</div>
+			)}
+		</div>
 	);
 });
