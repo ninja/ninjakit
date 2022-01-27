@@ -18,7 +18,7 @@
 	display: flex;
 	height: 4.8rem;
 	justify-content: space-between;
-	margin-bottom: 0.2rem;
+	margin-bottom: 0.4rem;
 	position: relative;
 	width: fit-content;
 }
@@ -64,7 +64,10 @@
 
 .errorMessage,
 .helperMessage {
-	font-size: 1.1rem;
+	align-items: center;
+	display: flex;
+	font-size: 1.2rem;
+	min-height: 1.6rem;
 	margin-left: 1.6rem;
 	margin-top: 0.4rem;
 }

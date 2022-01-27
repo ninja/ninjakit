@@ -36,7 +36,6 @@ export function useClassName({
 	trailingIcon?: ReactNode;
 }): string | undefined {
 	return [
-		error ? styles.error : undefined,
 		flex ? styles.flex : undefined,
 		leadingIcon ? styles.leadingIcon : undefined,
 		override,
@@ -45,6 +44,7 @@ export function useClassName({
 		trailingIcon ? styles.trailingIcon : undefined,
 		typography.labelLarge,
 		disabled ? styles.disabled : undefined,
+		error ? styles.error : undefined,
 	]
 		.join(" ")
 		.trim();

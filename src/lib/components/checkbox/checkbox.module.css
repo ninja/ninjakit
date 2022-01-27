@@ -1,7 +1,27 @@
-.checkbox {
-	align-items: center;
+.checkbox,
+.check,
+.label,
+.input,
+.errorMessage,
+.helperMessage {
 	composes: nk from global;
+}
+
+.checkbox,
+.input,
+.label {
+	cursor: pointer;
+}
+
+.checkbox {
 	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
 	position: relative;
 }
 
@@ -14,18 +34,7 @@
 	transition: var(--nk-transition-duration) transform linear;
 }
 
-.checkbox,
-.checkbox > input[type="checkbox"] {
-	cursor: pointer;
-}
-
-.checkbox {
-	align-items: center;
-	display: flex;
-	flex-wrap: nowrap;
-}
-
-.checkbox > input[type="checkbox"] {
+.input {
 	appearance: none;
 	border: 0.2rem solid var(--md-color-outline);
 	border-radius: 0.2rem;
@@ -35,7 +44,7 @@
 	width: 2rem;
 }
 
-.checkbox > input[type="checkbox"]::before {
+.input::before {
 	background-color: var(--md-color-on-surface);
 	border-radius: 2rem;
 	content: "";
@@ -48,30 +57,30 @@
 	width: 4rem;
 }
 
-.checkbox > input[type="checkbox"]:hover::before {
+.input:hover::before {
 	opacity: 0.08;
 }
 
-.checkbox > input[type="checkbox"]:active::before,
-.checkbox > input[type="checkbox"]:focus-visible::before {
+.input:active::before,
+.input:focus-visible::before {
 	opacity: 0.12;
 }
 
-.checkbox > input[type="checkbox"]:checked,
-.checkbox > input[type="checkbox"]:indeterminate {
+.input:checked,
+.input:indeterminate {
 	background-color: var(--md-color-primary);
 	border-color: var(--md-color-primary);
 }
 
-.checkbox > input[type="checkbox"]:checked + .check {
+.input:checked + .check {
 	transform: scale3d(1, 1, 1);
 }
 
-.checkbox > input[type="checkbox"]:indeterminate::after {
+.input:indeterminate::after {
 	background-color: var(--md-color-on-primary);
 	content: "";
 	height: 0.2rem;
-	left: 0.25rem;
+	left: 0.3rem;
 	position: absolute;
 	top: 0.7rem;
 	width: 1rem;
@@ -83,12 +92,30 @@
 	opacity: 0.38;
 }
 
-.checkbox > input[type="checkbox"]:disabled {
+.input:disabled {
 	border-color: var(--md-color-on-surface);
 	cursor: default;
 	opacity: 0.38;
 }
 
-.checkbox > input[type="checkbox"]:disabled::before {
+.input:disabled::before {
 	opacity: 0;
+}
+
+.errorMessage,
+.helperMessage {
+	align-items: center;
+	display: flex;
+	font-size: 1.2rem;
+	min-height: 1.6rem;
+	margin-left: 4rem;
+	margin-top: 0.4rem;
+}
+
+.errorMessage {
+	color: var(--md-color-error);
+}
+
+.helperMessage {
+	color: var(--md-color-on-surface);
 }

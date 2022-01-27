@@ -3,20 +3,34 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 type CheckboxProps = {
 	disabled: boolean;
+	error: boolean;
+	helper: boolean;
 	indeterminate: boolean;
 	labelWithJSX: boolean;
 };
 
 export function useButtonState() {
-	return useState<CheckboxProps>({
-		disabled: false,
-		indeterminate: false,
-		labelWithJSX: false,
-	});
+	return useState<CheckboxProps>(
+		import.meta.env.DEV
+			? {
+					disabled: false,
+					error: true,
+					helper: true,
+					indeterminate: true,
+					labelWithJSX: true,
+			  }
+			: {
+					disabled: false,
+					error: false,
+					helper: false,
+					indeterminate: false,
+					labelWithJSX: false,
+			  }
+	);
 }
 
 export function CheckboxState({
-	state: [, setState],
+	state: [{ disabled, error, helper, indeterminate, labelWithJSX }, setState],
 }: {
 	state: [CheckboxProps, Dispatch<SetStateAction<CheckboxProps>>];
 }) {
@@ -24,29 +38,52 @@ export function CheckboxState({
 		<aside>
 			<form>
 				<Checkbox
+					defaultChecked={labelWithJSX}
 					label="Label with JSX"
 					onClick={() =>
 						setState((state) => ({
 							...state,
-							labelWithJSX: !state.labelWithJSX,
+							labelWithJSX: !labelWithJSX,
 						}))
 					}
 				/>
 				<Checkbox
+					defaultChecked={indeterminate}
 					label="Indeterminate"
 					onClick={() =>
 						setState((state) => ({
 							...state,
-							indeterminate: !state.indeterminate,
+							indeterminate: !indeterminate,
 						}))
 					}
 				/>
 				<Checkbox
+					defaultChecked={helper}
+					label="Helper"
+					onClick={() =>
+						setState((state) => ({
+							...state,
+							helper: !helper,
+						}))
+					}
+				/>
+				<Checkbox
+					defaultChecked={error}
+					label="Error"
+					onClick={() =>
+						setState((state) => ({
+							...state,
+							error: !error,
+						}))
+					}
+				/>
+				<Checkbox
+					defaultChecked={disabled}
 					label="Disabled"
 					onClick={() =>
 						setState((state) => ({
 							...state,
-							disabled: !state.disabled,
+							disabled: !disabled,
 						}))
 					}
 				/>

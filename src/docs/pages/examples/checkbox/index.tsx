@@ -6,7 +6,7 @@ import { CheckboxState, useButtonState } from "./state";
 export function CheckboxExample() {
 	const hashRef = useHashRef({ id: "checkbox" });
 	const state = useButtonState();
-	const [{ disabled, indeterminate, labelWithJSX }] = state;
+	const [{ disabled, error, helper, indeterminate, labelWithJSX }] = state;
 
 	return (
 		<Card appearance="elevated" id="checkbox" ref={hashRef} title="Checkbox">
@@ -14,6 +14,8 @@ export function CheckboxExample() {
 				<section className={styles.center}>
 					<Checkbox
 						disabled={disabled}
+						error={error && "Error message"}
+						helper={helper && "Helper message"}
 						indeterminate={indeterminate}
 						label={
 							labelWithJSX ? (
