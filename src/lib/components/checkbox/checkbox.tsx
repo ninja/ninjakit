@@ -55,7 +55,7 @@ export const Checkbox = forwardRef<
 					type="checkbox"
 				/>
 				<MdCheck className={styles.check} />
-				{children || label}
+				<span className={styles.children}>{children || label}</span>
 			</label>
 			{error && (
 				<div className={styles.errorMessage} role="tooltip">
