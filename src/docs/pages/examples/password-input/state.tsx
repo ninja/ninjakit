@@ -8,6 +8,7 @@ type PasswordInputProps = {
 	flex: boolean;
 	helper: boolean;
 	leadingIcon: boolean;
+	passwordRules: boolean;
 };
 
 export function usePasswordInputState() {
@@ -16,13 +17,14 @@ export function usePasswordInputState() {
 		disabled: false,
 		error: false,
 		flex: true,
-		helper: false,
+		helper: true,
 		leadingIcon: false,
+		passwordRules: true,
 	});
 }
 
 export function PasswordInputState({
-	state: [{ flex }, setState],
+	state: [{ flex, helper, passwordRules }, setState],
 }: {
 	state: [PasswordInputProps, Dispatch<SetStateAction<PasswordInputProps>>];
 }) {
@@ -63,6 +65,17 @@ export function PasswordInputState({
 					}
 				/>
 				<Checkbox
+					defaultChecked={passwordRules}
+					label="Password rules"
+					onClick={() =>
+						setState((state) => ({
+							...state,
+							passwordRules: !state.passwordRules,
+						}))
+					}
+				/>
+				<Checkbox
+					defaultChecked={helper}
 					label="Helper message"
 					onClick={() =>
 						setState((state) => ({ ...state, helper: !state.helper }))
