@@ -6,7 +6,7 @@ import styles from "../examples.module.css";
 import { TextInputState, useTextInputState } from "./state";
 
 export function TextInputExample() {
-	const hashRef = useHashRef({ id: "text-input" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "text-input" });
 	const inputRef = useRef<HTMLInputElement>(null);
 	const state = useTextInputState();
 	const [

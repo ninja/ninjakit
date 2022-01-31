@@ -3,18 +3,17 @@
 	composes: nk from global;
 }
 
-.article > section,
-.body > section {
+.body > * {
 	margin: 0 0.8rem;
 }
 
-.article > section:first-child,
-.body > section:first-child {
+.article > *:first-child,
+.body > *:first-child {
 	margin-top: 0.8rem;
 }
 
-.article > section:last-child,
-.body > section:last-child {
+.article > *:last-child,
+.body > *:last-child {
 	margin-bottom: 0.8rem;
 }
 
@@ -23,7 +22,9 @@
 }
 
 .body {
-	display: contents;
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.8rem;
 }
 
 .body > footer {
@@ -45,9 +46,6 @@
 	}
 
 	.body {
-		display: flex;
-		flex-direction: column;
-		row-gap: 0.8rem;
 		border-left-color: transparent;
 		grid-area: body;
 		overflow-y: auto;

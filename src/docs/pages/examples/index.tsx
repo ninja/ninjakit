@@ -16,6 +16,7 @@ import { ButtonExample } from "./button";
 import { ButtonMenuExample } from "./button-menu";
 import { CheckboxExample } from "./checkbox";
 import { ColorSchemeExample } from "./color-scheme";
+import { DialogExample } from "./dialog";
 import { InputMenuExample } from "./input-menu";
 import { PasswordInputExample } from "./password-input";
 import { RadiosetExample } from "./radioset";
@@ -41,6 +42,7 @@ export function Examples({ year }: { year: number }) {
 						<AnchorButton href="#button" label="Button" />
 						<AnchorButton href="#button-menu" label="ButtonMenu" />
 						<AnchorButton href="#checkbox" label="Checkbox" />
+						<AnchorButton href="#dialog" label="Dialog" />
 						<AnchorButton href="#input-menu" label="InputMenu" />
 						<AnchorButton href="#password-input" label="PasswordInput" />
 						<AnchorButton href="#radioset" label="RadioSet" />
@@ -72,6 +74,7 @@ export function Examples({ year }: { year: number }) {
 			<ButtonExample />
 			<ButtonMenuExample />
 			<CheckboxExample />
+			<DialogExample />
 			<InputMenuExample />
 			<PasswordInputExample />
 			<RadiosetExample />

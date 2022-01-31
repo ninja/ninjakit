@@ -21,7 +21,6 @@
 	box-shadow: var(--md-shadow);
 	border-radius: 0.4rem;
 	color: var(--md-color-on-surface);
-	composes: nk from global;
 	display: flex;
 	flex-direction: column;
 	margin-top: 0.2rem;
@@ -43,7 +42,6 @@
 
 .option {
 	align-items: center;
-	composes: nk from global;
 	cursor: pointer;
 	display: flex;
 	gap: 0.6rem;

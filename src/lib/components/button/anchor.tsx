@@ -40,7 +40,7 @@ export const AnchorButton = forwardRef<
 			{ className, ref, target, ...props },
 			<>
 				<>{leadingIcon}</>
-				{label}
+				<>{label}</>
 				{element.props.children}
 				<>{trailingIcon}</>
 			</>

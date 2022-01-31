@@ -6,15 +6,15 @@
 	grid-area: aside;
 }
 
-.aside > section {
+.aside > * {
 	margin: 0 0.8rem;
 }
 
-.aside > section:first-child {
+.aside > *:first-child {
 	margin-top: 0.8rem;
 }
 
-.aside > section:last-child {
+.aside > *:last-child {
 	margin-bottom: 0.8rem;
 }
 

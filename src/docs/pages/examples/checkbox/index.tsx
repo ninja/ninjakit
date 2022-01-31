@@ -2,11 +2,11 @@ import { Card, Checkbox, useHashRef } from "ninjakit";
 import { MdFavorite } from "react-icons/md";
 
 import styles from "../examples.module.css";
-import { CheckboxState, useButtonState } from "./state";
+import { CheckboxState, useCheckboxState } from "./state";
 
 export function CheckboxExample() {
-	const hashRef = useHashRef({ id: "checkbox" });
-	const state = useButtonState();
+	const hashRef = useHashRef<HTMLDivElement>({ id: "checkbox" });
+	const state = useCheckboxState();
 	const [{ disabled, error, helper, indeterminate, labelWithJSX }] = state;
 
 	return (

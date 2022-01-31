@@ -8,7 +8,7 @@ type Appearance = "elevated" | "filled" | "tonal" | "outlined" | "text";
 export type ButtonProps = {
 	/** @see https://m3.material.io/components/all-buttons */
 	appearance?: Appearance;
-	label?: string;
+	label?: ReactNode;
 	leadingIcon?: ReactNode;
 	trailingIcon?: ReactNode;
 };
@@ -25,7 +25,7 @@ export function useClassName({
 	anchor?: boolean;
 	appearance: Appearance;
 	children: ReactNode;
-	label?: string;
+	label?: ReactNode;
 	leadingIcon?: ReactNode;
 	override?: string;
 	target?: string;
