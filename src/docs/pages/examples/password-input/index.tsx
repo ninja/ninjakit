@@ -9,9 +9,7 @@ export function PasswordInputExample() {
 	const hashRef = useHashRef({ id: "password-input" });
 	const inputRef = useRef<HTMLInputElement>(null);
 	const state = usePasswordInputState();
-	const [
-		{ appearance, disabled, error, flex, helper, leadingIcon, passwordRules },
-	] = state;
+	const [{ appearance, disabled, error, flex, helper, leadingIcon }] = state;
 
 	return (
 		<Card
@@ -23,31 +21,18 @@ export function PasswordInputExample() {
 			<section>
 				<section className={styles.center}>
 					<form autoComplete="on">
+						<input autoComplete="username" type="hidden" />
 						<PasswordInput
 							appearance={appearance}
 							autoComplete="new-password"
 							disabled={disabled}
 							error={error && "Invalid password"}
 							flex={flex}
-							helper={
-								helper
-									? "A mix of at least 8 lowercase, uppercase, number and symbol characters."
-									: undefined
-							}
+							helper={helper ? "At least 8 characters." : undefined}
 							id="new-password"
 							label="Password"
 							leadingIcon={leadingIcon && <MdLock />}
-							passwordRules={
-								passwordRules
-									? [
-											["min-length", 8],
-											["required", "digit"],
-											["required", "lower"],
-											["required", "special"],
-											["required", "upper"],
-									  ]
-									: undefined
-							}
+							name="new-password"
 							ref={inputRef}
 						/>
 					</form>
