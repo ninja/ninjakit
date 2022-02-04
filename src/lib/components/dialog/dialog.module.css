@@ -20,9 +20,17 @@
 	display: flex;
 	flex-direction: column;
 	inset: 0;
+	opacity: 0;
 	padding: var(--md-dialog-padding);
 	position: fixed;
+	transform: scale(0.8);
+	transition: all var(--nk-transition-duration) linear;
 	z-index: 1;
+}
+
+.dialog.show {
+	opacity: 1;
+	transform: scale(1);
 }
 
 .header {
@@ -112,15 +120,7 @@
 		max-height: 56rem;
 		max-width: 56rem;
 		min-width: 37.5rem;
-		opacity: 0;
 		position: relative;
-		transform: scale(0.8);
-		transition: all var(--nk-transition-duration) linear;
-	}
-
-	.dialog.show {
-		opacity: 1;
-		transform: scale(1);
 	}
 
 	.row {
