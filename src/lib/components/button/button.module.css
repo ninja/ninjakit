@@ -22,7 +22,7 @@
 	inset: 0;
 	opacity: 0;
 	position: absolute;
-	transition: var(--nk-transition-duration) opacity linear;
+	transition: opacity var(--nk-transition-duration) linear;
 }
 
 .elevated {

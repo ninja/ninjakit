@@ -34,7 +34,7 @@
 	opacity: 0;
 	position: absolute;
 	top: -1.2rem;
-	transition: 300ms opacity ease-in-out;
+	transition: opacity var(--nk-transition-duration) linear;
 	width: 4rem;
 }
 
@@ -47,7 +47,7 @@
 	position: absolute;
 	top: 0.3rem;
 	transform: scale3d(0, 0, 0);
-	transition: var(--nk-transition-duration) transform linear;
+	transition: transform var(--nk-transition-duration) linear;
 	width: 1rem;
 }
 
