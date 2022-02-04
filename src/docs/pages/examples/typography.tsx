@@ -1,7 +1,7 @@
 import { Card, Typography, useHashRef } from "ninjakit";
 
 export function TypographyExamples() {
-	const hashRef = useHashRef({ id: "typography" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "typography" });
 
 	return (
 		<Card
@@ -10,31 +10,36 @@ export function TypographyExamples() {
 			ref={hashRef}
 			title="Typography"
 		>
-			<Card appearance="outlined" title="Display">
-				<Typography appearance="displayLarge">Large</Typography>
-				<Typography appearance="displayMedium">Medium</Typography>
-				<Typography appearance="displaySmall">Small</Typography>
-			</Card>
-			<Card appearance="outlined" title="Headline">
-				<Typography appearance="headlineLarge">Large</Typography>
-				<Typography appearance="headlineMedium">Medium</Typography>
-				<Typography appearance="headlineSmall">Small</Typography>
-			</Card>
-			<Card appearance="outlined" title="Title">
-				<Typography appearance="titleLarge">Large</Typography>
-				<Typography appearance="titleMedium">Medium</Typography>
-				<Typography appearance="titleSmall">Small</Typography>
-			</Card>
-			<Card appearance="outlined" title="Label">
-				<Typography appearance="labelLarge">Large</Typography>
-				<Typography appearance="labelMedium">Medium</Typography>
-				<Typography appearance="labelSmall">Small</Typography>
-			</Card>
-			<Card appearance="outlined" title="Body">
-				<Typography appearance="bodyLarge">Large</Typography>
-				<Typography appearance="bodyMedium">Medium</Typography>
-				<Typography appearance="bodySmall">Small</Typography>
-			</Card>
+			<Typography appearance="displayLarge">Display Large</Typography>
+			<br />
+			<Typography appearance="displayMedium">Display Medium</Typography>
+			<br />
+			<Typography appearance="displaySmall">Display Small</Typography>
+			<br />
+			<Typography appearance="headlineLarge">Headline Large</Typography>
+			<br />
+			<Typography appearance="headlineMedium">Headline Medium</Typography>
+			<br />
+			<Typography appearance="headlineSmall">Headline Small</Typography>
+			<br />
+			<Typography appearance="titleLarge">Title Large</Typography>
+			<br />
+			<Typography appearance="titleMedium">Title Medium</Typography>
+			<br />
+			<Typography appearance="titleSmall">Title Small</Typography>
+			<br />
+			<Typography appearance="labelLarge">Label Large</Typography>
+			<br />
+			<Typography appearance="labelMedium">Label Medium</Typography>
+			<br />
+			<Typography appearance="labelSmall">Label Small</Typography>
+			<br />
+			<Typography appearance="bodyLarge">Body Large</Typography>
+			<br />
+			<Typography appearance="bodyMedium">Body Medium</Typography>
+			<br />
+			<Typography appearance="bodySmall">Body Small</Typography>
+			<br />
 		</Card>
 	);
 }

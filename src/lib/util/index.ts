@@ -1,3 +1,11 @@
+export function classNames(record: Record<string, boolean>) {
+	return Object.entries(record)
+		.filter(([, value]) => value)
+		.map(([key]) => key)
+		.join(" ")
+		.trim();
+}
+
 export function nextHTMLElementSibling(
 	element: Element | null
 ): HTMLElement | null {

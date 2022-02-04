@@ -5,7 +5,7 @@ import styles from "../examples.module.css";
 import { InputMenuState, options, useInputMenuState } from "./state";
 
 export function InputMenuExample() {
-	const hashRef = useHashRef({ id: "input-menu" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "input-menu" });
 	const state = useInputMenuState();
 	const [{ appearance, disabled, error, flex, helper, leadingIcon }] = state;
 

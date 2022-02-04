@@ -1,33 +1,75 @@
-.card {
-	border-radius: 1.2rem;
+.card,
+.header,
+.body,
+.footer {
 	composes: nk from global;
-	display: flex;
-	flex-direction: column;
-	gap: 0.8rem;
-	padding: 1.2rem 1.6rem;
 }
 
-.card > header > h1,
-.card > header > h2 {
+.card {
+	--md-card-padding: 1.6rem;
+	border-radius: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	padding: var(--md-card-padding);
+}
+
+.header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: var(--md-card-padding);
+}
+
+.header h1,
+.header h2 {
 	margin: 0;
 }
 
-.card > section {
+.header > section {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header + .body {
+	border-top: 0.1rem solid var(--md-color-surface-variant);
+}
+
+.body {
+	font-size: 1.4rem;
+	line-height: 2rem;
+	letter-spacing: 0.025rem;
+	padding: var(--md-card-padding) 0;
+}
+
+.body > section {
 	align-items: flex-start;
 	background-color: inherit;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.6rem;
+	padding: 0 1.6rem;
 }
 
-.card > section > section {
+.body > section > section {
 	flex: 1;
 }
 
-.card > section > aside {
-	border-left: 0.1rem solid var(--md-color-outline);
+.body > section > aside {
+	border-left: 0.1rem solid var(--md-color-surface-variant);
 	padding-left: 1.6rem;
 	flex: 1;
+}
+
+.body + .footer {
+	border-top: 0.1rem solid var(--md-color-surface-variant);
+}
+
+.footer {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	padding-top: var(--md-card-padding);
 }
 
 .elevated,
@@ -48,7 +90,7 @@
 }
 
 @media screen and (min-width: 600px) {
-	.card > section > section {
+	.body > section > section {
 		flex: 2;
 	}
 }

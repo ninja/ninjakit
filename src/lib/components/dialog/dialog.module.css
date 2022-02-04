@@ -1,0 +1,140 @@
+.backdrop,
+.close,
+.dialog,
+.header,
+.row,
+.headline,
+.supportingText,
+.body,
+.footer {
+	composes: nk from global;
+}
+
+.backdrop {
+	display: contents;
+}
+
+.dialog {
+	--md-dialog-padding: 2.4rem;
+	background-color: var(--md-color-surface);
+	display: flex;
+	flex-direction: column;
+	inset: 0;
+	padding: var(--md-dialog-padding);
+	position: fixed;
+	z-index: 1;
+}
+
+.header {
+	padding-bottom: 2.4rem;
+}
+
+.icon {
+	display: flex;
+	font-size: 2.4rem;
+	justify-content: center;
+	padding-bottom: 1.6rem;
+}
+
+.row {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 1.6rem;
+}
+
+.headline {
+	align-items: center;
+	display: flex;
+	gap: 1.6rem;
+}
+
+.headline > h1 {
+	margin: 0;
+}
+
+.close {
+	cursor: pointer;
+	height: 2.4rem;
+	width: 2.4rem;
+}
+
+.supportingText {
+	color: var(--md-color-on-surface-variant);
+}
+
+.header + .body {
+	border-top: 0.1rem solid var(--md-color-surface-variant);
+}
+
+.body {
+	padding: var(--md-dialog-padding) 0;
+}
+
+.footer {
+	display: none;
+}
+
+@media screen and (min-width: 600px) {
+	.actions {
+		display: none;
+	}
+
+	.backdrop {
+		align-items: center;
+		display: flex;
+		inset: 0;
+		justify-content: center;
+		position: fixed;
+		z-index: 1;
+	}
+
+	.backdrop::before {
+		background-color: var(--md-color-outline);
+		content: "";
+		inset: 0;
+		opacity: 0;
+		position: absolute;
+		transition: opacity var(--nk-transition-duration) linear;
+	}
+
+	.backdrop.show::before {
+		opacity: 0.38;
+	}
+
+	.close {
+		display: none;
+	}
+
+	.dialog {
+		border-radius: 2.8rem;
+		inset: unset;
+		max-height: 56rem;
+		max-width: 56rem;
+		min-width: 37.5rem;
+		opacity: 0;
+		position: relative;
+		transform: scale(0.8);
+		transition: all var(--nk-transition-duration) linear;
+	}
+
+	.dialog.show {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	.row {
+		justify-content: center;
+	}
+
+	.body + .footer {
+		border-top: 0.1rem solid var(--md-color-surface-variant);
+	}
+
+	.footer {
+		align-items: center;
+		display: flex;
+		justify-content: flex-end;
+		padding-top: var(--md-dialog-padding);
+	}
+}

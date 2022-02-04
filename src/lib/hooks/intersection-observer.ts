@@ -1,12 +1,12 @@
 import { Ref, useEffect, useRef, useState } from "react";
 
-export function useIntersectionObserver({
+export function useIntersectionObserver<T extends HTMLElement>({
 	root = null,
 	rootMargin,
 	threshold = 0,
 }: IntersectionObserverInit = {}) {
 	const [entry, setEntry] = useState<IntersectionObserverEntry>();
-	const [target, setTarget] = useState<HTMLElement>();
+	const [target, setTarget] = useState<T>();
 
 	const intersectionObserver = useRef(
 		new IntersectionObserver(([entry]) => setEntry(entry), {
@@ -26,5 +26,5 @@ export function useIntersectionObserver({
 		return () => current.disconnect();
 	}, [target]);
 
-	return { entry, ref: setTarget as Ref<HTMLElement> };
+	return { entry, ref: setTarget as Ref<T> };
 }

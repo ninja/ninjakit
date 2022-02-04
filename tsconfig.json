@@ -18,6 +18,6 @@
 		"target": "ESNext",
 		"useDefineForClassFields": true
 	},
-	"exclude": ["./src/docs/worker.ts"],
+	"exclude": ["node_modules", "*copy.*", "./src/docs/worker.ts"],
 	"include": ["./playwright.d.ts", "vite.d.ts", "./src/**/*"]
 }

@@ -6,7 +6,7 @@ import styles from "../examples.module.css";
 import { PasswordInputState, usePasswordInputState } from "./state";
 
 export function PasswordInputExample() {
-	const hashRef = useHashRef({ id: "password-input" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "password-input" });
 	const inputRef = useRef<HTMLInputElement>(null);
 	const state = usePasswordInputState();
 	const [{ appearance, disabled, error, flex, helper, leadingIcon }] = state;

@@ -5,7 +5,7 @@ import styles from "../examples.module.css";
 import { ButtonState, useButtonState } from "./state";
 
 export function ButtonExample() {
-	const hashRef = useHashRef({ id: "button" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "button" });
 	const state = useButtonState();
 	const [{ appearance, disabled, leadingIcon, trailingIcon }] = state;
 

@@ -1,14 +1,14 @@
 import { useIntersectionObserver } from "ninjakit";
 import { useEffect } from "react";
 
-export function useHashRef({
+export function useHashRef<T extends HTMLElement>({
 	id,
 	percentageLine = 4,
 }: {
 	id: string;
 	percentageLine?: number;
 }) {
-	const { entry, ref } = useIntersectionObserver({
+	const { entry, ref } = useIntersectionObserver<T>({
 		rootMargin: `${-percentageLine}% 0% ${-(100 - percentageLine)}% 0%`,
 	});
 

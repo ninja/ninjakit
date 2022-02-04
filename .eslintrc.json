@@ -6,13 +6,18 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:jsx-a11y/recommended",
-		"plugin:playwright/playwright-test",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
+		"plugin:jsx-a11y/recommended",
 		"plugin:prettier/recommended"
 	],
 	"ignorePatterns": ["dist/**/*", "node_modules/**/*"],
+	"overrides": [
+		{
+			"extends": ["plugin:playwright/playwright-test"],
+			"files": ["**/?(*.)+(spec|test).ts?(x)"]
+		}
+	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -29,9 +34,12 @@
 		"import/order": "off",
 		"playwright/missing-playwright-await": [
 			"error",
-			{ "customMatchers": ["toHaveCSSOpacity", "toHavePseudoCSS"] }
+			{ "customMatchers": ["toHaveStyle"] }
 		],
+		"object-shorthand": ["warn", "always"],
 		"prettier/prettier": "warn",
+		"react-hooks/exhaustive-deps": "warn",
+		"react-hooks/rules-of-hooks": "warn",
 		"react/jsx-boolean-value": "warn",
 		"react/jsx-handler-names": "warn",
 		"react/jsx-sort-props": "warn",

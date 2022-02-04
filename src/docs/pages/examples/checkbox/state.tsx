@@ -9,7 +9,7 @@ type CheckboxProps = {
 	labelWithJSX: boolean;
 };
 
-export function useButtonState() {
+export function useCheckboxState() {
 	return useState<CheckboxProps>(
 		import.meta.env.DEV
 			? {

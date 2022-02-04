@@ -4,7 +4,7 @@ import styles from "../examples.module.css";
 import { RadiosetState, useRadiosetState } from "./state";
 
 export function RadiosetExample() {
-	const hashRef = useHashRef({ id: "radioset" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "radioset" });
 	const state = useRadiosetState();
 	const [{ disabled, disabledOption }] = state;
 

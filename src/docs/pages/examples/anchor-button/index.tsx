@@ -6,7 +6,7 @@ import styles from "../examples.module.css";
 import { ButtonState, useButtonState } from "./state";
 
 export function AnchorButtonExample() {
-	const hashRef = useHashRef({ id: "anchor-button" });
+	const hashRef = useHashRef<HTMLDivElement>({ id: "anchor-button" });
 	const state = useButtonState();
 	const [{ appearance, external, leadingIcon, reactRouterLink }] = state;
 
