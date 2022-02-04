@@ -9,10 +9,10 @@
 	height: 48rem;
 	max-width: 100rem;
 	position: relative;
-	transition: var(--nk-transition-duration) background-position linear;
+	transition: background-position var(--nk-transition-duration) linear;
 }
 
-.card > section {
+.card section {
 	align-items: flex-start;
 	background-color: rgba(0, 0, 0, 0.25);
 	border-radius: 1.2rem;
@@ -26,21 +26,21 @@
 	top: 0;
 }
 
-.card > section > h1,
-.card > section > h2 {
+.card h1,
+.card h2 {
 	margin: 0;
-	transition-duration: var(--nk-transition-duration) font-size linear;
+	transition: font-size var(--nk-transition-duration) linear;
 }
 
-.card > section > h1 {
+.card h1 {
 	font-size: 8rem;
 }
 
-.card > section > h1 > strong {
+.card h1 > strong {
 	color: #c00;
 }
 
-.card > section > h2 {
+.card h2 {
 	align-items: center;
 	display: flex;
 	font-size: 1.2rem;
@@ -60,11 +60,11 @@
 }
 
 @media screen and (min-width: 600px) {
-	.card > section > h1 {
+	.card h1 {
 		font-size: 10rem;
 	}
 
-	.card > section > h2 {
+	.card h2 {
 		font-size: 1.6rem;
 	}
 }

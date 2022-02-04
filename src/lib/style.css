@@ -36,7 +36,8 @@
 	padding: unset;
 	margin: unset;
 	text-decoration: unset;
-	transition: var(--nk-transition-duration) background-color linear;
+	transition: background-color var(--nk-transition-duration) linear;
+	-webkit-appearance: unset;
 	-webkit-tap-highlight-color: transparent;
 }
 

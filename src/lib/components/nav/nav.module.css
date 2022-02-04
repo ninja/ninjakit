@@ -49,7 +49,7 @@
 	padding-top: 1.2rem;
 	position: relative;
 	text-decoration: unset;
-	transition: var(--nk-transition-duration) background-color, color linear;
+	transition: background-color, color var(--nk-transition-duration) linear;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -60,7 +60,7 @@
 	opacity: 0;
 	inset: 0;
 	position: absolute;
-	transition: var(--nk-transition-duration) opacity linear;
+	transition: opacity var(--nk-transition-duration) linear;
 	z-index: 0;
 }
 
