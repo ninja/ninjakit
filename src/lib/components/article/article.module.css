@@ -1,5 +1,4 @@
-.article,
-.body {
+.article {
 	composes: nk from global;
 }
 
@@ -22,8 +21,10 @@
 }
 
 .body {
+	composes: nk-overflow from global;
 	display: flex;
 	flex-direction: column;
+	overflow: unset;
 	row-gap: 0.8rem;
 }
 
@@ -46,31 +47,9 @@
 	}
 
 	.body {
-		border-left-color: transparent;
 		grid-area: body;
-		overflow-y: auto;
+		overflow: auto;
 		position: relative;
-		scrollbar-gutter: auto;
-		scrollbar-width: thin;
-		transition-property: border-color;
-	}
-
-	.body:hover {
-		border-left-color: var(--md-color-secondary);
-	}
-
-	.body::-webkit-scrollbar {
-		height: 0.8rem;
-		width: 0.8rem;
-	}
-
-	.body::-webkit-scrollbar-thumb {
-		border-radius: 0.4rem;
-		border-left-color: inherit;
-		border-left-style: solid;
-		border-left-width: 0.8rem;
-		position: absolute;
-		right: 0;
 	}
 
 	.body > footer {

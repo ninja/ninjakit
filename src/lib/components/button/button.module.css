@@ -1,6 +1,6 @@
 .button {
-	align-items: center;
 	composes: nk from global;
+	align-items: center;
 	cursor: pointer;
 	display: flex;
 	gap: 0.6rem;
