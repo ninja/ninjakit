@@ -16,6 +16,7 @@ export function Dialog({
 	icon,
 	onClose,
 	open = false,
+	separators = true,
 	supportingText,
 	...props
 }: {
@@ -25,6 +26,7 @@ export function Dialog({
 	icon?: ReactNode;
 	onClose?: () => void;
 	open?: boolean;
+	separators?: boolean;
 	supportingText?: ReactNode;
 } & JSX.IntrinsicElements["div"]) {
 	const { backdropProps, dialogProps, handleClickClose, mount } = useDialog({
@@ -37,7 +39,12 @@ export function Dialog({
 		? createPortal(
 				<div {...backdropProps} role="presentation">
 					<div {...props} {...dialogProps} aria-modal role="dialog">
-						<header className={styles.header}>
+						<header
+							className={classNames({
+								[styles.header]: true,
+								[styles.separator]: separators && !!children,
+							})}
+						>
 							{icon && <section className={styles.icon}>{icon}</section>}
 							<section className={styles.row}>
 								<div className={styles.headline}>
@@ -49,7 +56,9 @@ export function Dialog({
 										<h1 className={typography.headlineSmall}>{headline}</h1>
 									)}
 								</div>
-								{actions && <div className={styles.actions}>{actions}</div>}
+								{actions && (
+									<div className={styles.headerActions}>{actions}</div>
+								)}
 							</section>
 							{supportingText && (
 								<section
@@ -72,13 +81,20 @@ export function Dialog({
 								{children}
 							</div>
 						)}
-						<footer className={styles.footer}>
-							<Button
-								appearance="text"
-								label="Cancel"
-								onClick={handleClickClose}
-							/>
-							{actions}
+						<footer
+							className={classNames({
+								[styles.footer]: true,
+								[styles.separator]: separators && !!children,
+							})}
+						>
+							<div className={styles.footerActions}>
+								<Button
+									appearance="text"
+									label="Cancel"
+									onClick={handleClickClose}
+								/>
+								<>{actions}</>
+							</div>
 						</footer>
 					</div>
 				</div>,

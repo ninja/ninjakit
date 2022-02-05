@@ -6,6 +6,7 @@ type DialogProps = {
 	children: boolean;
 	headline: boolean;
 	icon: boolean;
+	separators: boolean;
 	supportingText: boolean;
 };
 
@@ -17,6 +18,7 @@ export function useDialogState() {
 					children: true,
 					headline: true,
 					icon: true,
+					separators: true,
 					supportingText: true,
 			  }
 			: {
@@ -24,13 +26,17 @@ export function useDialogState() {
 					children: false,
 					headline: true,
 					icon: false,
+					separators: true,
 					supportingText: true,
 			  }
 	);
 }
 
 export function DialogState({
-	state: [{ actions, children, headline, icon, supportingText }, setState],
+	state: [
+		{ actions, children, headline, icon, separators, supportingText },
+		setState,
+	],
 }: {
 	state: [DialogProps, Dispatch<SetStateAction<DialogProps>>];
 }) {
@@ -39,7 +45,7 @@ export function DialogState({
 			<form>
 				<Checkbox
 					defaultChecked={headline}
-					label="Title"
+					label="Headline"
 					onClick={() =>
 						setState((state) => ({
 							...state,
@@ -74,6 +80,16 @@ export function DialogState({
 						setState((state) => ({
 							...state,
 							children: !children,
+						}))
+					}
+				/>
+				<Checkbox
+					defaultChecked={separators}
+					label="Separators"
+					onClick={() =>
+						setState((state) => ({
+							...state,
+							separators: !separators,
 						}))
 					}
 				/>

@@ -1,35 +1,12 @@
 .nav {
+	composes: nk-overflow from global;
 	background-color: var(--md-color-surface-variant);
 	border-left-color: transparent;
-	composes: nk from global;
 	display: flex;
 	gap: 0.8rem;
 	grid-area: nav;
 	justify-content: center;
-	overflow-x: hidden;
-	overflow-y: auto;
 	position: relative;
-	scrollbar-gutter: auto;
-	scrollbar-width: thin;
-	transition-property: border-color;
-}
-
-.nav:hover {
-	border-left-color: var(--md-color-secondary);
-}
-
-.nav::-webkit-scrollbar {
-	height: 0.8rem;
-	width: 0.8rem;
-}
-
-.nav::-webkit-scrollbar-thumb {
-	border-radius: 0.4rem;
-	border-left-color: inherit;
-	border-left-style: solid;
-	border-left-width: 0.8rem;
-	position: absolute;
-	right: 0;
 }
 
 .nav > a {

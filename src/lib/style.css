@@ -36,9 +36,61 @@
 	padding: unset;
 	margin: unset;
 	text-decoration: unset;
-	transition: background-color var(--nk-transition-duration) linear;
+	transition-duration: var(--nk-transition-duration);
+	transition-property: background-color;
+	transition-timing-function: linear;
 	-webkit-appearance: unset;
 	-webkit-tap-highlight-color: transparent;
+}
+
+.nk-overflow {
+	composes: nk from global;
+	border-color: transparent;
+	overflow-x: auto;
+	overflow-y: auto;
+	scrollbar-gutter: auto;
+	scrollbar-width: thin;
+	transition-duration: var(--nk-transition-duration);
+	transition-property: border-color;
+}
+
+.nk-overflow::-webkit-scrollbar {
+	display: block;
+}
+
+.nk-overflow::-webkit-scrollbar:horizontal {
+	height: 0.8rem;
+}
+
+.nk-overflow::-webkit-scrollbar:vertical {
+	width: 0.8rem;
+}
+
+.nk-overflow::-webkit-scrollbar-corner,
+.nk-overflow::-webkit-scrollbar-track,
+.nk-overflow::-webkit-scrollbar-track-piece {
+	display: none;
+}
+
+.nk-overflow::-webkit-scrollbar-thumb {
+	border-radius: 0.4rem;
+}
+
+.nk-overflow::-webkit-scrollbar-thumb:horizontal {
+	border-top-color: inherit;
+	border-top-style: solid;
+	border-top-width: 0.8rem;
+}
+
+.nk-overflow::-webkit-scrollbar-thumb:vertical {
+	border-left-color: inherit;
+	border-left-style: solid;
+	border-left-width: 0.8rem;
+}
+
+.nk-overflow:hover {
+	border-left-color: var(--md-color-primary);
+	border-top-color: var(--md-color-primary);
 }
 
 :root.dark {

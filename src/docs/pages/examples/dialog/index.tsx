@@ -9,7 +9,8 @@ export function DialogExample() {
 	const hashRef = useHashRef<HTMLDivElement>({ id: "dialog" });
 	const state = useDialogState();
 	const [open, setOpen] = useState(false);
-	const [{ actions, children, headline, icon, supportingText }] = state;
+	const [{ actions, children, headline, icon, separators, supportingText }] =
+		state;
 
 	return (
 		<Card appearance="elevated" id="dialog" ref={hashRef} title="Dialog">
@@ -34,6 +35,7 @@ export function DialogExample() {
 						icon={icon && <MdFavorite />}
 						onClose={() => setOpen(false)}
 						open={open}
+						separators={separators}
 						supportingText={supportingText && "Supporting text"}
 					>
 						{children && (

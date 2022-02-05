@@ -1,7 +1,7 @@
 .header {
+	composes: nk from global;
 	align-items: center;
 	background-color: var(--md-color-surface);
-	composes: nk from global;
 	display: flex;
 	gap: 0.8rem;
 	grid-area: header;

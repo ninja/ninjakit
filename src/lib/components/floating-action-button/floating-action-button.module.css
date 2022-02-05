@@ -1,11 +1,11 @@
 .button {
+	composes: nk from global;
 	align-items: center;
 	align-self: flex-end;
 	background-color: var(--md-color-primary-container);
 	box-shadow: var(--md-shadow);
 	bottom: 9.8rem;
 	color: var(--md-color-on-primary-container);
-	composes: nk from global;
 	cursor: pointer;
 	display: flex;
 	gap: 0.6rem;

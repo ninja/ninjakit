@@ -9,34 +9,11 @@
 }
 
 .body {
-	border-left-color: transparent;
-	composes: nk from global;
+	composes: nk-overflow from global;
 	display: flex;
 	flex-direction: column;
 	grid-area: body;
-	overflow-y: auto;
 	position: relative;
-	scrollbar-gutter: auto;
-	scrollbar-width: thin;
-	transition-property: border-color;
-}
-
-.body:hover {
-	border-left-color: var(--md-color-secondary);
-}
-
-.body::-webkit-scrollbar {
-	height: 0.8rem;
-	width: 0.8rem;
-}
-
-.body::-webkit-scrollbar-thumb {
-	border-radius: 0.4rem;
-	border-left-color: inherit;
-	border-left-style: solid;
-	border-left-width: 0.8rem;
-	position: absolute;
-	right: 0;
 }
 
 @media screen and (min-width: 600px) {
