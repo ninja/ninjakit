@@ -1,8 +1,9 @@
-import { AnchorButton, Header, Main, Nav } from "ninjakit";
+import { AnchorButton, Button, Header, Main, Nav } from "ninjakit";
 import { StrictMode } from "react";
 import { render } from "react-dom";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
+import { MdShare } from "react-icons/md";
 import { SiGithub, SiNpm } from "react-icons/si";
 import {
 	BrowserRouter,
@@ -37,6 +38,19 @@ function App() {
 						</AnchorButton>
 					)}
 					<section>
+						{typeof navigator.share !== "undefined" && (
+							<Button
+								appearance="text"
+								leadingIcon={<MdShare />}
+								onClick={() =>
+									navigator.share({
+										text: "Material Design for React",
+										title: "NinjaKit",
+										url: "https://ninjakit.dev",
+									})
+								}
+							/>
+						)}
 						<AnchorButton
 							appearance="text"
 							href="https://www.npmjs.com/package/ninjakit"
