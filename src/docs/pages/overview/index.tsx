@@ -66,16 +66,7 @@ export function Overview({ year }: { year: number }) {
 				<Ninja className={styles.ninja} />
 				<section>
 					<Logo />
-					<h2>
-						<SiMaterialdesign />
-						<span>
-							<strong>Material</strong> designed
-						</span>
-						<SiReact />
-						<span>
-							<strong>React</strong> components
-						</span>
-					</h2>
+					<h2>Material Design for React</h2>
 				</section>
 			</Card>
 		</Article>

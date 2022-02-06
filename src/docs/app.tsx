@@ -44,8 +44,7 @@ function App() {
 								leadingIcon={<MdShare />}
 								onClick={() =>
 									navigator.share({
-										text: "Material Design for React",
-										title: "NinjaKit",
+										text: "ninjaKit - Material Design for React",
 										url: "https://ninjakit.dev",
 									})
 								}
