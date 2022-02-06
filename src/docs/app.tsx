@@ -16,7 +16,7 @@ import {
 
 import { Icon } from "./components/icon";
 import { Logo } from "./components/logo";
-import { ReloadPrompt } from "./components/reload-prompt";
+import { ReloadPrompt } from "./components/refresh-prompt";
 import { Examples } from "./pages/examples";
 import { Overview } from "./pages/overview";
 import { Sandbox } from "./pages/sandbox";
