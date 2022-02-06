@@ -34,9 +34,9 @@ export function useDialog({
 	function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
 		const { currentTarget, key, shiftKey, target } = event;
 
-		if (key === "Escape") setShow(false);
+		if (key === "Escape") return setShow(false);
 		if (shiftKey && key === "Tab" && target === currentTarget) {
-			event.preventDefault();
+			return event.preventDefault();
 		}
 	}
 
@@ -62,27 +62,30 @@ export function useDialog({
 		if (mount) dialogRef.current?.focus();
 	}, [mount]);
 
+	const backdropProps: JSX.IntrinsicElements["div"] = {
+		className: classNames({
+			[styles.backdrop]: true,
+			[styles.show]: show,
+		}),
+		onClick: handleClickClose,
+	};
+
+	const dialogProps: JSX.IntrinsicElements["div"] = {
+		className: classNames({
+			[styles.dialog]: true,
+			[styles.show]: show,
+			className: !!className,
+		}),
+		onClick: handleClickDialog,
+		onKeyDown: handleKeyDown,
+		onTransitionEnd: handleTransitionEnd,
+		ref: dialogRef,
+		tabIndex: 0,
+	};
+
 	return {
-		backdropProps: {
-			className: classNames({
-				[styles.backdrop]: true,
-				[styles.show]: show,
-			}),
-			onClick: handleClickClose,
-			// onTransitionEnd: handleTransitionEndBackdrop,
-		},
-		dialogProps: {
-			className: classNames({
-				[styles.dialog]: true,
-				[styles.show]: show,
-				className: !!className,
-			}),
-			onClick: handleClickDialog,
-			onKeyDown: handleKeyDown,
-			onTransitionEnd: handleTransitionEnd,
-			ref: dialogRef,
-			tabIndex: 0,
-		},
+		backdropProps,
+		dialogProps,
 		handleClickClose,
 		mount,
 	};
