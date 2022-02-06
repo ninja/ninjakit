@@ -1,7 +1,5 @@
-import { Button, Card } from "ninjakit";
+import { Button, Dialog } from "ninjakit";
 import { useRegisterSW } from "virtual:pwa-register/react";
-
-import styles from "./reload-prompt.module.css";
 
 export function ReloadPrompt() {
 	const state: { reloadSW: string } = { reloadSW: "__RELOAD_SW__" };
@@ -21,23 +19,19 @@ export function ReloadPrompt() {
 		onRegisterError: console.error,
 	});
 
-	if (!needRefresh) return null;
-
 	return (
-		<Card
-			appearance="filled"
-			className={styles.dialog}
-			subhead="Reload to update"
-			title="New Content Available"
-		>
-			<section>
-				<Button appearance="text" onClick={() => setNeedRefresh(false)}>
-					Close
-				</Button>
-				<Button appearance="filled" onClick={() => updateServiceWorker(true)}>
-					Reload
-				</Button>
-			</section>
-		</Card>
+		<Dialog
+			actions={
+				<Button
+					appearance="text"
+					label="Refresh"
+					onClick={() => updateServiceWorker(true)}
+				/>
+			}
+			headline="New Content Available"
+			onClose={() => setNeedRefresh(false)}
+			open={needRefresh}
+			separators={false}
+		/>
 	);
 }
