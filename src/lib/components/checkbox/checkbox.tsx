@@ -1,61 +1,28 @@
-import { forwardRef, MouseEventHandler, useEffect, useRef } from "react";
 import { MdCheck } from "react-icons/md";
 
-import { CheckboxProps, useClassName } from ".";
+import { CheckboxProps, useCheckbox } from ".";
 import styles from "./checkbox.module.css";
 
 /** @see https://material.io/components/checkbox */
-export const Checkbox = forwardRef<
-	HTMLInputElement,
-	CheckboxProps & JSX.IntrinsicElements["input"]
->(function Checkbox(
-	{
-		children,
-		className: override,
-		disabled,
+export function Checkbox({
+	children,
+	error,
+	helper,
+	id,
+	label,
+	...props
+}: CheckboxProps) {
+	const { checkboxProps, inputProps } = useCheckbox({
 		error,
-		helper,
-		id,
-		indeterminate,
-		label,
-		name,
-		onClick,
-		...props
-	},
-	ref
-) {
-	const className = useClassName({ disabled, override });
-	const checkboxRef = useRef<HTMLInputElement>(null);
-	const handleClick: MouseEventHandler<HTMLInputElement> = (event) => {
-		if (onClick) return onClick(event);
-
-		if (checkboxRef.current === null) return;
-
-		checkboxRef.current.indeterminate = false;
-	};
-
-	useEffect(() => {
-		if (checkboxRef.current === null || indeterminate === undefined) return;
-
-		checkboxRef.current.checked = false;
-		checkboxRef.current.indeterminate = indeterminate;
-	}, [indeterminate]);
+		...props,
+	});
 
 	return (
-		<div className={className}>
+		<div {...checkboxProps}>
 			<label className={styles.label} htmlFor={id}>
-				<input
-					{...props}
-					className={styles.input}
-					disabled={disabled}
-					id={id}
-					name={name}
-					onClick={handleClick}
-					ref={ref || checkboxRef}
-					type="checkbox"
-				/>
+				<input {...inputProps} {...props} id={id} type="checkbox" />
 				<MdCheck className={styles.check} />
-				<span className={styles.children}>{children || label}</span>
+				<div className={styles.children}>{children || label}</div>
 			</label>
 			{error && (
 				<div className={styles.errorMessage} role="tooltip">
@@ -69,4 +36,4 @@ export const Checkbox = forwardRef<
 			)}
 		</div>
 	);
-});
+}

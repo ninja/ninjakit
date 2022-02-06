@@ -30,6 +30,7 @@
 	display: flex;
 	flex-wrap: nowrap;
 	gap: 0.4rem;
+	white-space: nowrap;
 }
 
 .check {
@@ -45,6 +46,7 @@
 	appearance: none;
 	border: 0.2rem solid var(--md-color-outline);
 	border-radius: 0.2rem;
+	display: block;
 	height: 2rem;
 	margin: 1rem;
 	position: relative;
