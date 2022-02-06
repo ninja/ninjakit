@@ -1,6 +1,6 @@
 # [ninjaKit](https://ninjakit.dev)
 
-**Material** designed **React** components
+Material Design for React
 
 <img src="https://ninjakit.dev/icon.svg" height="256" />
 
