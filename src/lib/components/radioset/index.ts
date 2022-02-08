@@ -1,8 +1,5 @@
 import { ReactNode, Ref } from "react";
 
-import typography from "../typography/typography.module.css";
-import styles from "./radioset.module.css";
-
 export type Radio<T> = Omit<
 	JSX.IntrinsicElements["input"],
 	| "defaultChecked"
@@ -29,9 +26,5 @@ export type RadiosetProps<T> = Omit<
 	ref?: Ref<HTMLInputElement>[];
 	value?: T;
 };
-
-export function useClassName(override?: string): string | undefined {
-	return [typography.labelLarge, styles.radioset, override].join(" ").trim();
-}
 
 export { Radioset } from "./radioset";

@@ -1,5 +1,6 @@
 .radioset {
 	composes: nk from global;
+	composes: nkTypographyLabelLarge from global;
 	display: flex;
 	flex-direction: column;
 }

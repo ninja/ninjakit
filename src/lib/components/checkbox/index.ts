@@ -1,7 +1,6 @@
 import { classNames } from "ninjakit";
 import { MouseEventHandler, ReactNode, useEffect, useRef } from "react";
 
-import typography from "../typography/typography.module.css";
 import styles from "./checkbox.module.css";
 
 export type CheckboxProps = {
@@ -37,11 +36,10 @@ export function useCheckbox({
 
 	const checkboxProps: JSX.IntrinsicElements["div"] = {
 		className: classNames({
-			[typography.labelLarge]: true,
 			[styles.checkbox]: true,
 			[styles.disabled]: !!disabled,
 			[styles.error]: !!error,
-			className: !!className,
+			className,
 		}),
 	};
 

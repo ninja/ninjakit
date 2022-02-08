@@ -7,7 +7,7 @@ import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
 export function InputMenu<T extends string>({
-	className: override,
+	className: classNameOverride,
 	flex,
 	id,
 	onChange,
@@ -29,7 +29,7 @@ export function InputMenu<T extends string>({
 		refMenu,
 		setExpanded,
 		style,
-	} = useMenu({ flex, id, input: true, override });
+	} = useMenu({ classNameOverride, flex, id, input: true });
 
 	return (
 		<fieldset className={className}>

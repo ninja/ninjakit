@@ -7,7 +7,7 @@ import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
 export function ButtonMenu<T extends string>({
-	className: override,
+	className: classNameOverride,
 	id,
 	onChange,
 	options,
@@ -28,7 +28,7 @@ export function ButtonMenu<T extends string>({
 		refMenu,
 		style,
 		setExpanded,
-	} = useMenu({ id, override });
+	} = useMenu({ classNameOverride, id });
 
 	return (
 		<fieldset className={className}>

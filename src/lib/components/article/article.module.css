@@ -1,5 +1,6 @@
 .article {
 	composes: nk from global;
+	composes: nkTypographyBodyMedium from global;
 }
 
 .body > * {
@@ -21,7 +22,7 @@
 }
 
 .body {
-	composes: nk-overflow from global;
+	composes: nkOverflow from global;
 	display: flex;
 	flex-direction: column;
 	overflow: unset;

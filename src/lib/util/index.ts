@@ -1,7 +1,9 @@
-export function classNames(record: Record<string, boolean>) {
+export function classNames(
+	record: Record<string, boolean | string | undefined>
+) {
 	return Object.entries(record)
 		.filter(([, value]) => value)
-		.map(([key]) => key)
+		.map(([key, value]) => (typeof value === "string" ? value : key))
 		.join(" ")
 		.trim();
 }

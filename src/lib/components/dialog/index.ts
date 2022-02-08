@@ -74,7 +74,7 @@ export function useDialog({
 		className: classNames({
 			[styles.dialog]: true,
 			[styles.show]: show,
-			className: !!className,
+			className,
 		}),
 		onClick: handleClickDialog,
 		onKeyDown: handleKeyDown,

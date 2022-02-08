@@ -1,22 +1,26 @@
+import { classNames } from "ninjakit";
+
 import styles from "./nav.module.css";
 
 type Appearance = "filled" | "none";
 
-const useClassName = (appearance?: Appearance) => {
-	return [styles.nav, appearance === "filled" && styles.filled].join(" ");
-};
-
 export function Nav({
 	appearance = "none",
 	children,
+	className,
 	...props
 }: {
 	appearance?: Appearance;
 } & JSX.IntrinsicElements["nav"]) {
-	const className = useClassName(appearance);
-
 	return (
-		<nav className={className} {...props}>
+		<nav
+			className={classNames({
+				[styles.nav]: true,
+				[styles.filled]: appearance === "filled",
+				className,
+			})}
+			{...props}
+		>
 			{children}
 		</nav>
 	);

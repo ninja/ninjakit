@@ -1,5 +1,6 @@
 .button {
 	composes: nk from global;
+	composes: nkTypographyLabelLarge from global;
 	align-items: center;
 	align-self: flex-end;
 	background-color: var(--md-color-primary-container);

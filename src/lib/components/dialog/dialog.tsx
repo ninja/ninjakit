@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { MdClose } from "react-icons/md";
 
-import typography from "../typography/typography.module.css";
 import styles from "./dialog.module.css";
 import { useDialog } from "./index";
 
@@ -47,40 +46,24 @@ export function Dialog({
 						>
 							{icon && <section className={styles.icon}>{icon}</section>}
 							<section className={styles.row}>
-								<div className={styles.headline}>
+								<div className={styles.rowLeading}>
 									<MdClose
 										className={styles.close}
 										onClick={handleClickClose}
 									/>
-									{headline && (
-										<h1 className={typography.headlineSmall}>{headline}</h1>
-									)}
+									{headline && <h1 className={styles.headline}>{headline}</h1>}
 								</div>
 								{actions && (
 									<div className={styles.headerActions}>{actions}</div>
 								)}
 							</section>
 							{supportingText && (
-								<section
-									className={classNames({
-										[typography.bodyMedium]: true,
-										[styles.supportingText]: true,
-									})}
-								>
+								<section className={styles.supportingText}>
 									{supportingText}
 								</section>
 							)}
 						</header>
-						{children && (
-							<div
-								className={classNames({
-									[typography.bodyMedium]: true,
-									[styles.body]: true,
-								})}
-							>
-								{children}
-							</div>
-						)}
+						{children && <div className={styles.body}>{children}</div>}
 						<footer
 							className={classNames({
 								[styles.footer]: true,

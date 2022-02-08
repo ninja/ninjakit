@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 
-import typography from "../typography/typography.module.css";
 import styles from "./article.module.css";
 
 export function Article({
@@ -16,10 +15,8 @@ export function Article({
 	header?: ReactNode;
 	floatingActionButton?: ReactNode;
 } & JSX.IntrinsicElements["article"]) {
-	const className = [styles.article, typography.bodyMedium].join(" ");
-
 	return (
-		<article className={className} {...props}>
+		<article className={styles.article} {...props}>
 			<>{header}</>
 			<div className={styles.body} role="presentation">
 				<>{children}</>

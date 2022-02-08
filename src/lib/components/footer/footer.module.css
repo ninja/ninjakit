@@ -1,6 +1,7 @@
 .footer {
-	align-items: center;
 	composes: nk from global;
+	composes: nkTypograhyBodyMedium from global;
+	align-items: center;
 	display: flex;
 	gap: 0.8rem;
 	grid-area: footer;

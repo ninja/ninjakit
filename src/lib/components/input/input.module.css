@@ -9,6 +9,7 @@
 }
 
 .field {
+	composes: nkTypographyLabelLarge from global;
 	display: flex;
 	flex-direction: column;
 }

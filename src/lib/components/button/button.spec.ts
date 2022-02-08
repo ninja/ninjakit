@@ -23,7 +23,7 @@ test.describe("Button", () => {
 		test("hover", async ({ page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await button.hover();
+			await button.hover({ force: true });
 
 			await expect(button).toHaveStyle("opacity", "0.08", "::before");
 		});
@@ -39,7 +39,7 @@ test.describe("Button", () => {
 		test("disabled", async ({ colors, page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await page.check("id=button-disabled-checkbox");
+			await page.check("id=button-disabled-checkbox", { force: true });
 
 			await expect(button).toHaveCSS("color", colors.onSurface);
 			await expect(button).toHaveStyle("opacity", "0.38");
@@ -56,8 +56,10 @@ test.describe("Button", () => {
 		test("default", async ({ colors, page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await page.click("id=button-appearance");
-			await page.click("id=button-appearance-menu >> button[value=elevated]");
+			await page.click("id=button-appearance", { force: true });
+			await page.click("id=button-appearance-menu >> button[value=elevated]", {
+				force: true,
+			});
 
 			await expect(button).toHaveCSS(
 				"boxShadow",
@@ -76,8 +78,10 @@ test.describe("Button", () => {
 		test("default", async ({ colors, page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await page.click("id=button-appearance");
-			await page.click("id=button-appearance-menu >> button[value=tonal]");
+			await page.click("id=button-appearance", { force: true });
+			await page.click("id=button-appearance-menu >> button[value=tonal]", {
+				force: true,
+			});
 
 			await expect(button).toHaveCSS(
 				"backgroundColor",
@@ -94,8 +98,10 @@ test.describe("Button", () => {
 
 	test.describe("outlined appearance", () => {
 		test.beforeEach(async ({ page }) => {
-			await page.click("id=button-appearance");
-			await page.click("id=button-appearance-menu >> button[value=outlined]");
+			await page.click("id=button-appearance", { force: true });
+			await page.click("id=button-appearance-menu >> button[value=outlined]", {
+				force: true,
+			});
 		});
 
 		test("default", async ({ colors, page }) => {
@@ -117,7 +123,7 @@ test.describe("Button", () => {
 		test("disabled", async ({ colors, page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await page.click("id=button-disabled-checkbox");
+			await page.click("id=button-disabled-checkbox", { force: true });
 
 			await expect(button).toHaveCSS("color", colors.onSurface);
 			await expect(button).toHaveStyle("opacity", "0.38");
@@ -128,8 +134,10 @@ test.describe("Button", () => {
 		test("default", async ({ colors, page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await page.click("id=button-appearance");
-			await page.click("id=button-appearance-menu >> button[value=text]");
+			await page.click("id=button-appearance", { force: true });
+			await page.click("id=button-appearance-menu >> button[value=text]", {
+				force: true,
+			});
 
 			await expect(button).toHaveCSS("color", colors.primary);
 		});
