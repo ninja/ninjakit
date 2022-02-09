@@ -1,5 +1,7 @@
 .card,
 .header,
+.title,
+.subhead,
 .body,
 .footer {
 	composes: nk from global;
@@ -7,6 +9,7 @@
 
 .card {
 	--md-card-padding: 1.6rem;
+	composes: nkTypographyBodyMedium from global;
 	border-radius: 1.2rem;
 	display: flex;
 	flex-direction: column;
@@ -20,9 +23,12 @@
 	padding-bottom: var(--md-card-padding);
 }
 
-.header h1,
-.header h2 {
-	margin: 0;
+.title {
+	composes: nkTypographyHeadlineSmall from global;
+}
+
+.subhead {
+	composes: nkTypographyBodySmall from global;
 }
 
 .header > section {

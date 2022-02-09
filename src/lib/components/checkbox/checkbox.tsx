@@ -9,11 +9,13 @@ export function Checkbox({
 	error,
 	helper,
 	id,
+	indeterminate,
 	label,
 	...props
 }: CheckboxProps) {
 	const { checkboxProps, inputProps } = useCheckbox({
 		error,
+		indeterminate,
 		...props,
 	});
 

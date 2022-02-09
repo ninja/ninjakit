@@ -1,6 +1,8 @@
+import { classNames } from "ninjakit";
 import { forwardRef } from "react";
 
-import { ButtonProps, useClassName } from ".";
+import { ButtonProps } from ".";
+import styles from "./button.module.css";
 
 export const Button = forwardRef<
 	HTMLButtonElement,
@@ -9,7 +11,7 @@ export const Button = forwardRef<
 	{
 		appearance = "filled",
 		children,
-		className: override,
+		className,
 		label,
 		leadingIcon,
 		trailingIcon,
@@ -18,17 +20,20 @@ export const Button = forwardRef<
 	},
 	ref
 ) {
-	const className = useClassName({
-		appearance,
-		children,
-		label,
-		leadingIcon,
-		override,
-		trailingIcon,
-	});
-
 	return (
-		<button className={className} ref={ref} type={type} {...props}>
+		<button
+			className={classNames({
+				[styles.button]: true,
+				[styles[appearance]]: true,
+				[styles.children]: !!children || !!label,
+				[styles.leadingIcon]: !!leadingIcon,
+				[styles.trailingIcon]: !!trailingIcon,
+				className,
+			})}
+			ref={ref}
+			type={type}
+			{...props}
+		>
 			<>{leadingIcon}</>
 			<>{label}</>
 			{children}

@@ -1,8 +1,8 @@
 .backdrop,
 .close,
 .dialog,
-.header,
 .row,
+.rowLeading,
 .headline,
 .supportingText,
 .footer {
@@ -54,14 +54,14 @@
 	padding-bottom: 1.6rem;
 }
 
-.headline {
+.rowLeading {
 	align-items: center;
 	display: flex;
 	gap: 1.6rem;
 }
 
-.headline > h1 {
-	margin: 0;
+.headline {
+	composes: nkTypographyHeadlineSmall from global;
 }
 
 .close {
@@ -71,11 +71,13 @@
 }
 
 .supportingText {
+	composes: nkTypographyBodyMedium from global;
 	color: var(--md-color-on-surface-variant);
 }
 
 .body {
-	composes: nk-overflow from global;
+	composes: nkOverflow from global;
+	composes: nkTypographyBodyMedium from global;
 	padding: var(--md-dialog-padding) 0;
 }
 

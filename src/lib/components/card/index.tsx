@@ -1,7 +1,6 @@
-import type { Appearance } from "ninjakit";
+import { Appearance, classNames } from "ninjakit";
 import { forwardRef, ReactNode } from "react";
 
-import typography from "../typography/typography.module.css";
 import styles from "./card.module.css";
 
 export const Card = forwardRef<
@@ -17,7 +16,7 @@ export const Card = forwardRef<
 >(function Card(
 	{
 		children,
-		className: classNameOverride,
+		className,
 		appearance = "filled",
 		error,
 		footer,
@@ -28,20 +27,21 @@ export const Card = forwardRef<
 	},
 	ref
 ) {
-	const className = [
-		styles.card,
-		styles[appearance],
-		typography.bodyMedium,
-		classNameOverride,
-	].join(" ");
-
 	return (
-		<div className={className} ref={ref} {...props}>
+		<div
+			className={classNames({
+				[styles.card]: true,
+				[styles[appearance]]: true,
+				className,
+			})}
+			ref={ref}
+			{...props}
+		>
 			{(header || title || subhead) && (
 				<header className={styles.header}>
 					<section>
-						{title && <h1 className={typography.headlineSmall}>{title}</h1>}
-						{subhead && <h2 className={typography.bodySmall}>{subhead}</h2>}
+						{title && <h1 className={styles.title}>{title}</h1>}
+						{subhead && <h2 className={styles.subhead}>{subhead}</h2>}
 					</section>
 					{header && <section>{header}</section>}
 				</header>

@@ -1,10 +1,12 @@
-import { Radio, RadiosetProps, useClassName } from ".";
+import { classNames } from "ninjakit";
+
+import { Radio, RadiosetProps } from ".";
 import styles from "./radioset.module.css";
 
 /** @see https://material.io/components/radio-buttons */
 export function Radioset<T extends string>({
 	children,
-	className: override,
+	className,
 	defaultValue,
 	disabled: allDisabled,
 	label,
@@ -14,10 +16,14 @@ export function Radioset<T extends string>({
 	ref,
 	...props
 }: RadiosetProps<T>) {
-	const className = useClassName(override);
-
 	return (
-		<fieldset className={className} {...props}>
+		<fieldset
+			className={classNames({
+				[styles.radioset]: true,
+				className,
+			})}
+			{...props}
+		>
 			{label && <legend>{label}</legend>}
 			{children}
 			{options.map((option, index) => {

@@ -1,5 +1,3 @@
-import styles from "./typography.module.css";
-
 export function Typography({
 	children,
 	appearance = "bodyMedium",
@@ -24,7 +22,12 @@ export function Typography({
 		| "bodySmall";
 }) {
 	return (
-		<span className={styles[appearance]} {...props}>
+		<span
+			className={`nkTypography${appearance
+				.charAt(0)
+				.toUpperCase()}${appearance.slice(1)}`}
+			{...props}
+		>
 			{children}
 		</span>
 	);

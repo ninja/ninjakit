@@ -1,15 +1,17 @@
+import { classNames } from "ninjakit";
+
 import styles from "./logo.module.css";
 
-export function Logo({
-	className: classNameOverride,
-	...props
-}: {
-	className?: string;
-} & JSX.IntrinsicElements["h1"]) {
-	const className = [styles.ninjaKit, classNameOverride].join(" ");
-
+export function Logo({ className, ...props }: JSX.IntrinsicElements["h1"]) {
 	return (
-		<h1 className={className} role="banner" {...props}>
+		<h1
+			className={classNames({
+				[styles.ninjaKit]: true,
+				className,
+			})}
+			role="banner"
+			{...props}
+		>
 			<strong>ninja</strong>Kit
 		</h1>
 	);

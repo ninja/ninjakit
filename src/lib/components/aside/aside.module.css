@@ -1,5 +1,6 @@
 .aside {
-	composes: nk-overflow from global;
+	composes: nkOverflow from global;
+	composes: nkTypographyBodyMedium from global;
 	display: flex;
 	flex-direction: column;
 	gap: 0.8rem;

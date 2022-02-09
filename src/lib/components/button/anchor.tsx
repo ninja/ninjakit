@@ -1,7 +1,9 @@
+import { classNames } from "ninjakit";
 import { Children, cloneElement, forwardRef, ReactElement } from "react";
 import { CgExternal } from "react-icons/cg";
 
-import { ButtonProps, useClassName } from ".";
+import { ButtonProps } from ".";
+import styles from "./button.module.css";
 
 export const AnchorButton = forwardRef<
 	HTMLAnchorElement,
@@ -10,7 +12,7 @@ export const AnchorButton = forwardRef<
 	{
 		appearance = "text",
 		children,
-		className: override,
+		className: classNameOverride,
 		label,
 		leadingIcon,
 		mergeWithChild,
@@ -20,14 +22,13 @@ export const AnchorButton = forwardRef<
 	},
 	ref
 ) {
-	const className = useClassName({
-		appearance,
-		children,
-		label,
-		leadingIcon,
-		override,
-		target,
-		trailingIcon,
+	const className = classNames({
+		[styles.button]: true,
+		[styles[appearance]]: true,
+		[styles.children]: !!children || !!label,
+		[styles.leadingIcon]: !!leadingIcon,
+		[styles.trailingIcon]: !!trailingIcon || target === "_blank",
+		classNameOverride,
 	});
 
 	if (mergeWithChild) {

@@ -1,6 +1,5 @@
 import { AnchorButton, Article, Card, Footer } from "ninjakit";
 import { MouseEventHandler, useCallback, useState } from "react";
-import { SiMaterialdesign, SiReact } from "react-icons/si";
 
 import { Logo } from "../../components/logo";
 import { Ninja } from "../../components/ninja";

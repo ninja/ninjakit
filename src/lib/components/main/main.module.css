@@ -9,7 +9,7 @@
 }
 
 .body {
-	composes: nk-overflow from global;
+	composes: nkOverflow from global;
 	display: flex;
 	flex-direction: column;
 	grid-area: body;

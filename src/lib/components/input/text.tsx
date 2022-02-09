@@ -1,6 +1,7 @@
+import { classNames } from "ninjakit";
 import { forwardRef } from "react";
 
-import { InputProps, useClassName } from ".";
+import { InputProps } from ".";
 import styles from "./input.module.css";
 
 export const TextInput = forwardRef<
@@ -8,10 +9,10 @@ export const TextInput = forwardRef<
 	InputProps & Omit<JSX.IntrinsicElements["input"], "id">
 >(function TextInput(
 	{
-		appearance,
+		appearance = "filled",
 		"aria-expanded": ariaExpanded,
 		"aria-invalid": ariaInvalid,
-		className: override,
+		className,
 		disabled,
 		error,
 		flex,
@@ -27,18 +28,20 @@ export const TextInput = forwardRef<
 	},
 	ref
 ) {
-	const className = useClassName({
-		appearance,
-		disabled,
-		error,
-		flex,
-		leadingIcon,
-		override,
-		trailingIcon,
-	});
-
 	return (
-		<div aria-expanded={ariaExpanded} className={className}>
+		<div
+			aria-expanded={ariaExpanded}
+			className={classNames({
+				[styles.field]: true,
+				[styles[appearance]]: true,
+				[styles.flex]: flex,
+				[styles.leadingIcon]: !!leadingIcon,
+				[styles.trailingIcon]: !!trailingIcon,
+				[styles.disabled]: disabled,
+				[styles.error]: !!error,
+				className,
+			})}
+		>
 			<div className={styles.row}>
 				{leadingIcon}
 				<input

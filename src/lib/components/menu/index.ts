@@ -4,6 +4,7 @@ import {
 	shift,
 	useFloating,
 } from "@floating-ui/react-dom";
+import { classNames } from "ninjakit";
 import { KeyboardEventHandler, ReactNode, useEffect, useState } from "react";
 
 import { firstHTMLElementChild } from "../../util";
@@ -23,22 +24,16 @@ export type Options<T extends string = string> = (
 )[];
 
 export function useMenu({
+	classNameOverride,
 	flex,
 	id,
 	input,
-	override,
 }: {
 	flex?: boolean;
 	id: string;
 	input?: true;
-	override?: string;
+	classNameOverride?: string;
 }) {
-	const className = [
-		styles.fieldset,
-		flex ? styles.flex : undefined,
-		input ? styles.input : styles.button,
-		override,
-	].join(" ");
 	const [expanded, setExpanded] = useState(false);
 	const { x, y, reference, floating, refs, strategy, update } = useFloating({
 		middleware: [flip(), shift()],
@@ -99,7 +94,12 @@ export function useMenu({
 	const menuId = `${id}-menu`;
 
 	return {
-		className,
+		className: classNames({
+			[styles.fieldset]: true,
+			[styles.flex]: flex,
+			[input ? styles.input : styles.button]: true,
+			classNameOverride,
+		}),
 		expanded,
 		handleClickControl,
 		handleKeyDownControl,

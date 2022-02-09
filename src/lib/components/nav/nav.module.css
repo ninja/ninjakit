@@ -1,5 +1,5 @@
 .nav {
-	composes: nk-overflow from global;
+	composes: nkOverflow from global;
 	background-color: var(--md-color-surface-variant);
 	border-left-color: transparent;
 	display: flex;
