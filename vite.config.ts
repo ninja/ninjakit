@@ -81,6 +81,6 @@ export default defineConfig(({ mode }) => {
 			}),
 		],
 		root: resolve(__dirname, "src/docs"),
-		server: { host: "0.0.0.0" },
+		server: { host: "0.0.0.0", port: 4173, strictPort: true },
 	};
 });

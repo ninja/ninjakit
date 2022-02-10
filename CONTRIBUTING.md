@@ -14,14 +14,13 @@ npm install
 
 ```zsh
 npm start
-http://localhost:3000
 ```
 
 ## Local Production
 
 ```zsh
-npm run start:production
-http://localhost:5000
+npx vite build
+npx vite preview
 ```
 
 ## Test

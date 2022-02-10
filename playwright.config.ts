@@ -112,10 +112,10 @@ const config: PlaywrightTestConfig = {
 	webServer: process.env.CI
 		? {
 				command: "vite preview",
-				port: 5000,
+				port: 4173,
 				reuseExistingServer: false,
 		  }
-		: { command: "vite", port: 3000, reuseExistingServer: true },
+		: { command: "vite", port: 4173, reuseExistingServer: true },
 };
 
 export default config;
