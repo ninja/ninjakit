@@ -1,7 +1,8 @@
 .ninjaKit {
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	font-weight: 400;
-	line-height: 1em;
+	line-height: 1.6rem;
+	margin: 0;
 }
 
 .ninjaKit > strong {

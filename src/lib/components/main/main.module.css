@@ -13,6 +13,8 @@
 	display: flex;
 	flex-direction: column;
 	grid-area: body;
+	padding-bottom: 8rem;
+	padding-top: 0.8rem;
 	position: relative;
 }
 
@@ -21,5 +23,10 @@
 		grid-template-areas: "header header" "nav body";
 		grid-template-columns: auto 1fr;
 		grid-template-rows: auto 1fr;
+	}
+
+	.body {
+		padding-bottom: unset;
+		padding-top: unset;
 	}
 }

@@ -1,4 +1,4 @@
-import { AnchorButton, Article, Card, Footer } from "ninjakit";
+import { Article, Card, Footer } from "ninjakit";
 import { MouseEventHandler, useCallback, useState } from "react";
 
 import { Logo } from "../../components/logo";
@@ -46,13 +46,6 @@ export function Overview({ year }: { year: number }) {
 			footer={
 				<Footer>
 					<section>&copy; {year} Jamie Hoover</section>
-					<AnchorButton
-						appearance="text"
-						href="https://github.com/ninja/ninjakit/blob/master/LICENSE.md"
-						target="_blank"
-					>
-						Apache 2.0 licensed
-					</AnchorButton>
 				</Footer>
 			}
 		>

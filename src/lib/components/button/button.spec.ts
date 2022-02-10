@@ -9,10 +9,10 @@ test.describe("Button", () => {
 
 			await expect(button).toHaveAttribute("type", "button");
 			await expect(button).toHaveText("Label");
-			await expect(button).toHaveCSS("appearance", "none");
-			await expect(button).toHaveCSS("backgroundColor", colors.primary);
-			await expect(button).toHaveCSS("color", colors.surface);
-			await expect(button).toHaveCSS("display", "flex");
+			await expect(button).toHaveStyle("appearance", "none");
+			await expect(button).toHaveStyle("backgroundColor", colors.primary);
+			await expect(button).toHaveStyle("color", colors.surface);
+			await expect(button).toHaveStyle("display", "flex");
 			await expect(button).toHaveStyle("borderRadius", "20px", "::before");
 			await expect(button).toHaveStyle("height", "40px", "::before");
 			await expect(button).toHaveStyle("inset", "0px", "::before");
@@ -41,7 +41,7 @@ test.describe("Button", () => {
 
 			await page.check("id=button-disabled-checkbox", { force: true });
 
-			await expect(button).toHaveCSS("color", colors.onSurface);
+			await expect(button).toHaveStyle("color", colors.onSurface);
 			await expect(button).toHaveStyle("opacity", "0.38");
 			await expect(button).toHaveStyle("opacity", "0.12", "::before");
 			await expect(button).toHaveStyle(
@@ -61,11 +61,11 @@ test.describe("Button", () => {
 				force: true,
 			});
 
-			await expect(button).toHaveCSS(
+			await expect(button).toHaveStyle(
 				"boxShadow",
 				`rgba(0, 0, 0, 0.2) 0px 1px 2px 1px`
 			);
-			await expect(button).toHaveCSS("color", colors.primary);
+			await expect(button).toHaveStyle("color", colors.primary);
 			await expect(button).toHaveStyle(
 				"backgroundColor",
 				colors.primary,
@@ -83,11 +83,11 @@ test.describe("Button", () => {
 				force: true,
 			});
 
-			await expect(button).toHaveCSS(
+			await expect(button).toHaveStyle(
 				"backgroundColor",
 				colors.primaryContainer
 			);
-			await expect(button).toHaveCSS("color", colors.onPrimaryContainer);
+			await expect(button).toHaveStyle("color", colors.onPrimaryContainer);
 			await expect(button).toHaveStyle(
 				"backgroundColor",
 				colors.onPrimaryContainer,
@@ -107,7 +107,7 @@ test.describe("Button", () => {
 		test("default", async ({ colors, page }) => {
 			const button = page.locator("id=button >> button:has-text('Label')");
 
-			await expect(button).toHaveCSS("color", colors.primary);
+			await expect(button).toHaveStyle("color", colors.primary);
 
 			await expect(button).toHaveStyle(
 				"borderColor",
@@ -125,7 +125,7 @@ test.describe("Button", () => {
 
 			await page.click("id=button-disabled-checkbox", { force: true });
 
-			await expect(button).toHaveCSS("color", colors.onSurface);
+			await expect(button).toHaveStyle("color", colors.onSurface);
 			await expect(button).toHaveStyle("opacity", "0.38");
 		});
 	});
@@ -139,7 +139,7 @@ test.describe("Button", () => {
 				force: true,
 			});
 
-			await expect(button).toHaveCSS("color", colors.primary);
+			await expect(button).toHaveStyle("color", colors.primary);
 		});
 	});
 });

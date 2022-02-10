@@ -3,18 +3,8 @@
 	composes: nkTypographyBodyMedium from global;
 }
 
-.body > * {
-	margin: 0 0.8rem;
-}
-
-.article > *:first-child,
-.body > *:first-child {
-	margin-top: 0.8rem;
-}
-
-.article > *:last-child,
-.body > *:last-child {
-	margin-bottom: 0.8rem;
+.body {
+	padding: 0 0.8rem;
 }
 
 .article {
@@ -29,10 +19,6 @@
 	row-gap: 0.8rem;
 }
 
-.body > footer {
-	display: none;
-}
-
 @media screen and (min-width: 600px) {
 	.article {
 		display: grid;
@@ -43,17 +29,11 @@
 		position: absolute;
 	}
 
-	.article > footer {
-		display: none;
-	}
-
 	.body {
 		grid-area: body;
 		overflow: auto;
+		padding-bottom: 8rem;
+		padding-top: 0.8rem;
 		position: relative;
-	}
-
-	.body > footer {
-		display: flex;
 	}
 }

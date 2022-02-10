@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 type Appearance = "elevated" | "filled" | "tonal" | "outlined" | "text";
 
-type ButtonProps = {
+type Props = {
 	appearance: Appearance;
 	disabled: boolean;
 	leadingIcon: boolean;
@@ -11,7 +11,7 @@ type ButtonProps = {
 };
 
 export function useButtonState() {
-	return useState<ButtonProps>({
+	return useState<Props>({
 		appearance: "filled",
 		disabled: false,
 		leadingIcon: false,
@@ -22,7 +22,7 @@ export function useButtonState() {
 export function ButtonState({
 	state: [, setState],
 }: {
-	state: [ButtonProps, Dispatch<SetStateAction<ButtonProps>>];
+	state: [Props, Dispatch<SetStateAction<Props>>];
 }) {
 	return (
 		<aside>

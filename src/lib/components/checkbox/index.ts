@@ -1,5 +1,5 @@
 import { classNames } from "ninjakit";
-import { MouseEventHandler, ReactNode, useEffect, useRef } from "react";
+import { MouseEventHandler, ReactNode, Ref, useEffect, useRef } from "react";
 
 import styles from "./checkbox.module.css";
 
@@ -17,7 +17,7 @@ export function useCheckbox({
 	indeterminate,
 	onClick,
 }: CheckboxProps) {
-	const ref = useRef<HTMLInputElement>(null);
+	const ref = useRef<HTMLInputElement | null>(null);
 
 	const handleClick: MouseEventHandler<HTMLInputElement> = (event) => {
 		if (onClick) return onClick(event);
@@ -47,10 +47,9 @@ export function useCheckbox({
 		className: styles.input,
 		disabled,
 		onClick: handleClick,
-		ref,
 	};
 
-	return { checkboxProps, inputProps };
+	return { checkboxProps, inputProps, ref };
 }
 
 export { Checkbox } from "./checkbox";

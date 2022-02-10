@@ -1,13 +1,14 @@
-import { TextInput } from "ninjakit";
+import { MenuOptions, TextInput } from "ninjakit";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { InputProps } from "../input";
-import { Options, useMenu } from ".";
+import { useMenu } from ".";
 import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
 export function InputMenu<T extends string>({
 	className: classNameOverride,
+	container,
 	flex,
 	id,
 	onChange,
@@ -16,8 +17,9 @@ export function InputMenu<T extends string>({
 	...props
 }: Omit<JSX.IntrinsicElements["input"], "onChange"> &
 	InputProps & {
+		container?: HTMLElement;
 		onChange: (value: T) => void;
-		options: Options<T>;
+		options: MenuOptions<T>;
 	}) {
 	const {
 		className,
@@ -50,7 +52,8 @@ export function InputMenu<T extends string>({
 			/>
 			{expanded && (
 				<Menu<T>
-					input
+					container={container}
+					controlId={id}
 					menuId={menuId}
 					onChange={onChange}
 					options={options}

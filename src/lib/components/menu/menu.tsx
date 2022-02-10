@@ -6,9 +6,10 @@ import {
 	MouseEventHandler,
 	ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 
 import { nextHTMLElementSibling, previousHTMLElementSibling } from "../../util";
-import { Options } from ".";
+import { MenuOptions } from ".";
 import styles from "./menu.module.css";
 
 declare module "react" {
@@ -19,26 +20,27 @@ declare module "react" {
 
 export const Menu = forwardRef(function Menu<T extends string>(
 	{
-		input,
+		container = document.body,
+		controlId,
 		menuId,
 		onChange,
 		options,
 		setExpanded,
 		...props
 	}: {
-		input?: boolean;
+		container?: HTMLElement;
+		controlId: string;
 		menuId: string;
 		onChange?: (value: T) => void;
-		options: Options<T>;
+		options: MenuOptions<T>;
 		setExpanded: (expanded: boolean) => void;
 	} & Omit<JSX.IntrinsicElements["div"], "onChange">,
 	ref: ForwardedRef<HTMLDivElement>
 ) {
-	const handleClickMenu: MouseEventHandler<HTMLDivElement> = (event) => {
-		const { previousElementSibling } = event.currentTarget;
-		const element = input
-			? (previousElementSibling?.querySelector("input") as HTMLInputElement)
-			: (previousElementSibling as HTMLButtonElement);
+	const handleClickMenu: MouseEventHandler<HTMLDivElement> = () => {
+		const element = document.getElementById(controlId) as
+			| HTMLButtonElement
+			| HTMLInputElement;
 
 		element.focus();
 
@@ -55,16 +57,11 @@ export const Menu = forwardRef(function Menu<T extends string>(
 	}) => {
 		if (onChange) onChange(event.currentTarget.value as T);
 
-		const element = input
-			? event.currentTarget.parentElement?.previousElementSibling?.querySelector(
-					"input"
-			  )
-			: (event.currentTarget.parentElement
-					?.previousElementSibling as HTMLButtonElement);
+		const element = document.getElementById(controlId) as
+			| HTMLButtonElement
+			| HTMLInputElement;
 
-		if (element) {
-			element.value = typeof label === "string" ? label : value;
-		}
+		element.value = typeof label === "string" ? label : value;
 	};
 	const handleKeyDownMenu: KeyboardEventHandler = ({ key }) =>
 		key === "Escape" && setExpanded(false);
@@ -80,9 +77,11 @@ export const Menu = forwardRef(function Menu<T extends string>(
 			case "Escape":
 				setExpanded(false);
 
-				return previousHTMLElementSibling(currentTarget.parentElement)?.focus();
+				return document.getElementById(controlId)?.focus();
 			case "ArrowDown":
 				event.preventDefault();
+
+				console.info("ArrowDown", nextHTMLElementSibling(currentTarget));
 
 				return nextHTMLElementSibling(currentTarget)?.focus();
 			case "ArrowUp":
@@ -92,7 +91,7 @@ export const Menu = forwardRef(function Menu<T extends string>(
 		}
 	};
 
-	return (
+	return createPortal(
 		<div
 			{...props}
 			className={styles.menu}
@@ -138,6 +137,7 @@ export const Menu = forwardRef(function Menu<T extends string>(
 					</button>
 				);
 			})}
-		</div>
+		</div>,
+		container
 	);
 });

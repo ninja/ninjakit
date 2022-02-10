@@ -3,15 +3,15 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 type Appearance = "elevated" | "filled" | "tonal" | "outlined" | "text";
 
-type ButtonProps = {
+type Props = {
 	appearance: Appearance;
 	external: boolean;
 	leadingIcon: boolean;
 	reactRouterLink: boolean;
 };
 
-export function useButtonState() {
-	return useState<ButtonProps>({
+export function useAnchorButtonState() {
+	return useState<Props>({
 		appearance: "text",
 		external: false,
 		leadingIcon: false,
@@ -19,10 +19,10 @@ export function useButtonState() {
 	});
 }
 
-export function ButtonState({
+export function AnchorButtonState({
 	state: [, setState],
 }: {
-	state: [ButtonProps, Dispatch<SetStateAction<ButtonProps>>];
+	state: [Props, Dispatch<SetStateAction<Props>>];
 }) {
 	return (
 		<aside>
@@ -30,7 +30,7 @@ export function ButtonState({
 				<InputMenu<Appearance>
 					defaultValue="Text"
 					flex
-					id="appearance"
+					id="anchor-button-appearance"
 					label="Appearance"
 					onChange={(value) => {
 						const appearance = value as Appearance;
