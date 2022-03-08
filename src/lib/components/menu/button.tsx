@@ -1,22 +1,24 @@
-import { Button } from "ninjakit";
+import { Button, MenuOptions } from "ninjakit";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { ButtonProps } from "../button";
-import { Options, useMenu } from ".";
+import { useMenu } from ".";
 import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
 export function ButtonMenu<T extends string>({
 	className: classNameOverride,
+	container,
 	id,
 	onChange,
 	options,
 	...props
 }: Omit<JSX.IntrinsicElements["button"], "id" | "onChange" | "value"> &
 	ButtonProps & {
+		container?: HTMLElement;
 		id: string;
 		onChange: (value: T) => void;
-		options: Options<T>;
+		options: MenuOptions<T>;
 	}) {
 	const {
 		className,
@@ -46,6 +48,8 @@ export function ButtonMenu<T extends string>({
 			/>
 			{expanded && (
 				<Menu<T>
+					container={container}
+					controlId={id}
 					menuId={menuId}
 					onChange={onChange}
 					options={options}

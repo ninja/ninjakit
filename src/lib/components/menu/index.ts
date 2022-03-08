@@ -10,7 +10,7 @@ import { KeyboardEventHandler, ReactNode, useEffect, useState } from "react";
 import { firstHTMLElementChild } from "../../util";
 import styles from "./menu.module.css";
 
-export type Options<T extends string = string> = (
+export type MenuOptions<T extends string = string> = (
 	| T
 	| {
 			disabled?: boolean;
@@ -37,6 +37,7 @@ export function useMenu({
 	const [expanded, setExpanded] = useState(false);
 	const { x, y, reference, floating, refs, strategy, update } = useFloating({
 		middleware: [flip(), shift()],
+		placement: "bottom-start",
 	});
 	useEffect(() => {
 		if (!refs.reference.current || !refs.floating.current) {
@@ -79,7 +80,9 @@ export function useMenu({
 				case "Tab":
 					if (element === null) return;
 					event.preventDefault();
-					return firstHTMLElementChild(element.nextElementSibling)?.focus();
+					return firstHTMLElementChild(
+						document.getElementById(menuId)
+					)?.focus();
 				default:
 					return;
 			}

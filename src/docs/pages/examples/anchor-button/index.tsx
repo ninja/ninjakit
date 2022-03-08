@@ -3,11 +3,11 @@ import { MdThumbUp } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 import styles from "../examples.module.css";
-import { ButtonState, useButtonState } from "./state";
+import { AnchorButtonState, useAnchorButtonState } from "./state";
 
 export function AnchorButtonExample() {
 	const hashRef = useHashRef<HTMLDivElement>({ id: "anchor-button" });
-	const state = useButtonState();
+	const state = useAnchorButtonState();
 	const [{ appearance, external, leadingIcon, reactRouterLink }] = state;
 
 	return (
@@ -30,7 +30,7 @@ export function AnchorButtonExample() {
 						{reactRouterLink && <Link to="." />}
 					</AnchorButton>
 				</section>
-				<ButtonState state={state} />
+				<AnchorButtonState state={state} />
 			</section>
 		</Card>
 	);

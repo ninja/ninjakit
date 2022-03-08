@@ -13,7 +13,7 @@
 }
 
 .card section {
-	align-items: flex-start;
+	align-items: center;
 	background-color: rgba(0, 0, 0, 0.25);
 	border-radius: 1.2rem;
 	color: white;
@@ -21,7 +21,7 @@
 	flex-direction: column;
 	gap: 2rem;
 	left: 0;
-	padding: 4rem;
+	padding: 4rem 2rem;
 	position: absolute;
 	top: 0;
 }
@@ -33,7 +33,7 @@
 }
 
 .card h1 {
-	font-size: 8rem;
+	font-size: 9rem;
 }
 
 .card h1 > strong {
@@ -43,10 +43,10 @@
 .card h2 {
 	align-items: center;
 	display: flex;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 	font-weight: 400;
-	gap: 0.8rem;
-	line-height: 1em;
+	line-height: 1.6rem;
+	margin-top: 4rem;
 }
 
 .ninja {
@@ -57,14 +57,4 @@
 	position: absolute;
 	right: 1rem;
 	top: 6rem;
-}
-
-@media screen and (min-width: 600px) {
-	.card h1 {
-		font-size: 10rem;
-	}
-
-	.card h2 {
-		font-size: 1.6rem;
-	}
 }

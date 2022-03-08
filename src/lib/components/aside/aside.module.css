@@ -8,16 +8,8 @@
 	overflow: unset;
 }
 
-.aside > * {
-	margin: 0 0.8rem;
-}
-
-.aside > *:first-child {
-	margin-top: 0.8rem;
-}
-
-.aside > *:last-child {
-	margin-bottom: 0.8rem;
+.aside {
+	padding: 0.8rem;
 }
 
 @media screen and (min-width: 600px) {

@@ -43,7 +43,7 @@ export const TextInput = forwardRef<
 			})}
 		>
 			<div className={styles.row}>
-				{leadingIcon}
+				{leadingIcon && <>{leadingIcon}</>}
 				<input
 					{...props}
 					aria-invalid={ariaInvalid || !!error}

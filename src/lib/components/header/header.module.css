@@ -1,5 +1,5 @@
 .header {
-	composes: nk from global;
+	composes: nkOverflow from global;
 	align-items: center;
 	background-color: var(--md-color-surface);
 	display: flex;

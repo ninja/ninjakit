@@ -7,24 +7,30 @@ import styles from "./button.module.css";
 
 export const AnchorButton = forwardRef<
 	HTMLAnchorElement,
-	ButtonProps & { mergeWithChild?: boolean } & JSX.IntrinsicElements["a"]
+	ButtonProps & {
+		drawerOpen?: boolean;
+		mergeWithChild?: boolean;
+		nav?: boolean;
+	} & JSX.IntrinsicElements["a"]
 >(function AnchorButton(
 	{
 		appearance = "text",
 		children,
 		className: classNameOverride,
+		drawerOpen = true,
 		label,
 		leadingIcon,
 		mergeWithChild,
+		nav,
 		target,
-		trailingIcon = target === "_blank" && <CgExternal />,
+		trailingIcon = drawerOpen && target === "_blank" && <CgExternal />,
 		...props
 	},
 	ref
 ) {
 	const className = classNames({
 		[styles.button]: true,
-		[styles[appearance]]: true,
+		[nav ? styles.nav : styles[appearance]]: true,
 		[styles.children]: !!children || !!label,
 		[styles.leadingIcon]: !!leadingIcon,
 		[styles.trailingIcon]: !!trailingIcon || target === "_blank",
