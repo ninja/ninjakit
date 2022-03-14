@@ -1,7 +1,0 @@
-{
-	"compilerOptions": {
-		"outDir": "./dist/color-scheme"
-	},
-	"extends": "./tsconfig.json",
-	"include": ["./src/lib/color-scheme"]
-}

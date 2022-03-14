@@ -1,6 +1,6 @@
 import {
 	flip,
-	getScrollParents,
+	getOverflowAncestors,
 	shift,
 	useFloating,
 } from "@floating-ui/react-dom";
@@ -40,14 +40,11 @@ export function useMenu({
 		placement: "bottom-start",
 	});
 	useEffect(() => {
-		if (!refs.reference.current || !refs.floating.current) {
+		if (!refs.floating.current) {
 			return;
 		}
 
-		const parents = [
-			...getScrollParents(refs.reference.current),
-			...getScrollParents(refs.floating.current),
-		];
+		const parents = [...getOverflowAncestors(refs.floating.current)];
 
 		parents.forEach((parent) => {
 			parent.addEventListener("scroll", update);
