@@ -24,7 +24,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Build Ninja Kit
-        run: npm run build
+        run: npm run build && npm run copy:color-schemes
 
       - name: Release Ninja Kit
         run: npx semantic-release
