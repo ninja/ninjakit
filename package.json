@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@floating-ui/react-dom": "0.4.3",
+		"@floating-ui/react-dom": "0.6.0",
 		"react-icons": "4.3.1"
 	},
 	"devDependencies": {
@@ -47,7 +47,6 @@
 			"import": "./dist/ninjakit.es.js",
 			"require": "./dist/ninjakit.umd.js"
 		},
-		"./color-scheme": "./dist/color-scheme/index.js",
 		"./color-scheme/default.css": "./dist/color-scheme/default.css",
 		"./color-scheme/enterprise.css": "./dist/color-scheme/enterprise.css",
 		"./style.css": "./dist/style.css"
@@ -98,7 +97,7 @@
 	"sideEffects": false,
 	"scripts": {
 		"build": "run-p build:**",
-		"build:color-scheme": "tsc --project tsconfig-color-scheme.json && cp src/lib/color-scheme/*.css dist/color-scheme",
+		"build:color-scheme": "mkdir -p dist/color-scheme && cp src/lib/color-scheme/*.css dist/color-scheme",
 		"build:lib": "vite build --mode=lib",
 		"build:types": "tsc --emitDeclarationOnly --project tsconfig-types.json",
 		"check": "run-p check:**",
