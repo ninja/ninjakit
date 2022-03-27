@@ -7,6 +7,7 @@ type CheckboxProps = {
 	helper: boolean;
 	indeterminate: boolean;
 	labelWithJSX: boolean;
+	warning: boolean;
 };
 
 export function useCheckboxState() {
@@ -18,6 +19,7 @@ export function useCheckboxState() {
 					helper: true,
 					indeterminate: true,
 					labelWithJSX: true,
+					warning: true,
 			  }
 			: {
 					disabled: false,
@@ -25,12 +27,16 @@ export function useCheckboxState() {
 					helper: false,
 					indeterminate: false,
 					labelWithJSX: false,
+					warning: false,
 			  }
 	);
 }
 
 export function CheckboxState({
-	state: [{ disabled, error, helper, indeterminate, labelWithJSX }, setState],
+	state: [
+		{ disabled, error, helper, indeterminate, labelWithJSX, warning },
+		setState,
+	],
 }: {
 	state: [CheckboxProps, Dispatch<SetStateAction<CheckboxProps>>];
 }) {
@@ -64,6 +70,16 @@ export function CheckboxState({
 						setState((state) => ({
 							...state,
 							helper: !helper,
+						}))
+					}
+				/>
+				<Checkbox
+					defaultChecked={warning}
+					label="Warning"
+					onClick={() =>
+						setState((state) => ({
+							...state,
+							warning: !warning,
 						}))
 					}
 				/>

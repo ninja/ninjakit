@@ -1,0 +1,26 @@
+.tooltip {
+	composes: nk from global;
+	align-items: center;
+	display: flex;
+	font-size: 1.2rem;
+	gap: 0.4rem;
+	min-height: 1.6rem;
+	margin-left: 1.6rem;
+	margin-top: 0.4rem;
+}
+
+.tooltip svg {
+	font-size: 2rem;
+}
+
+.tooltip.error {
+	color: var(--md-color-error);
+}
+
+.tooltip.warning {
+	color: var(--md-color-warning);
+}
+
+.tooltip.helper {
+	color: var(--md-color-on-surface);
+}

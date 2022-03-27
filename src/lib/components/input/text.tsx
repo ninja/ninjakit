@@ -1,6 +1,7 @@
 import { classNames } from "ninjakit";
 import { forwardRef } from "react";
 
+import { Tooltip } from "../tooltip.tsx";
 import { InputProps } from ".";
 import styles from "./input.module.css";
 
@@ -17,6 +18,7 @@ export const TextInput = forwardRef<
 		error,
 		flex,
 		helper,
+		hidden,
 		id,
 		label,
 		leadingIcon,
@@ -24,6 +26,7 @@ export const TextInput = forwardRef<
 		placeholder,
 		trailingIcon,
 		type = "text",
+		warning,
 		...props
 	},
 	ref
@@ -38,7 +41,9 @@ export const TextInput = forwardRef<
 				[styles.leadingIcon]: !!leadingIcon,
 				[styles.trailingIcon]: !!trailingIcon,
 				[styles.disabled]: disabled,
+				[styles.warning]: !!warning,
 				[styles.error]: !!error,
+				[styles.hidden]: !!hidden,
 				className,
 			})}
 		>
@@ -49,6 +54,7 @@ export const TextInput = forwardRef<
 					aria-invalid={ariaInvalid || !!error}
 					className={styles.input}
 					disabled={disabled}
+					hidden={hidden}
 					id={id}
 					placeholder={
 						placeholder || typeof label === "string"
@@ -71,16 +77,7 @@ export const TextInput = forwardRef<
 					</button>
 				)}
 			</div>
-			{error && (
-				<div className={styles.errorMessage} role="tooltip">
-					{error}
-				</div>
-			)}
-			{helper && (
-				<div className={styles.helperMessage} role="tooltip">
-					{helper}
-				</div>
-			)}
+			<Tooltip error={error} helper={helper} warning={warning} />
 		</div>
 	);
 });

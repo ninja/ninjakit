@@ -12,6 +12,7 @@
 	--md-color-tertiary-container: #6ff7f8;
 	--md-color-on-tertiary-container: #002021;
 	--md-color-error: #ba1b1b;
+	--md-color-warning: #ff8f00;
 	--md-color-error-container: #ffdad4;
 	--md-color-on-error: #ffffff;
 	--md-color-on-error-container: #410001;
@@ -40,6 +41,7 @@
 	--md-color-tertiary-container: #004f50;
 	--md-color-on-tertiary-container: #6ff7f8;
 	--md-color-error: #ffb4a9;
+	--md-color-warning: #ffe082;
 	--md-color-error-container: #930006;
 	--md-color-on-error: #680003;
 	--md-color-on-error-container: #ffdad4;

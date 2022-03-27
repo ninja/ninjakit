@@ -8,21 +8,35 @@ type PasswordInputProps = {
 	flex: boolean;
 	helper: boolean;
 	leadingIcon: boolean;
+	warning: boolean;
 };
 
 export function usePasswordInputState() {
-	return useState<PasswordInputProps>({
-		appearance: "filled",
-		disabled: false,
-		error: false,
-		flex: true,
-		helper: true,
-		leadingIcon: false,
-	});
+	return useState<PasswordInputProps>(
+		import.meta.env.DEV
+			? {
+					appearance: "filled",
+					disabled: false,
+					error: true,
+					flex: true,
+					helper: true,
+					leadingIcon: true,
+					warning: true,
+			  }
+			: {
+					appearance: "filled",
+					disabled: false,
+					error: false,
+					flex: true,
+					helper: true,
+					leadingIcon: false,
+					warning: false,
+			  }
+	);
 }
 
 export function PasswordInputState({
-	state: [{ flex, helper }, setState],
+	state: [{ disabled, error, flex, helper, leadingIcon, warning }, setState],
 }: {
 	state: [PasswordInputProps, Dispatch<SetStateAction<PasswordInputProps>>];
 }) {
@@ -54,12 +68,20 @@ export function PasswordInputState({
 					}
 				/>
 				<Checkbox
+					defaultChecked={leadingIcon}
 					label="Leading icon"
 					onClick={() =>
 						setState((state) => ({
 							...state,
 							leadingIcon: !state.leadingIcon,
 						}))
+					}
+				/>
+				<Checkbox
+					defaultChecked={warning}
+					label="Warning message"
+					onClick={() =>
+						setState((state) => ({ ...state, warning: !state.warning }))
 					}
 				/>
 				<Checkbox
@@ -70,12 +92,14 @@ export function PasswordInputState({
 					}
 				/>
 				<Checkbox
+					defaultChecked={error}
 					label="Error message"
 					onClick={() =>
 						setState((state) => ({ ...state, error: !state.error }))
 					}
 				/>
 				<Checkbox
+					defaultChecked={disabled}
 					label="Disabled"
 					onClick={() =>
 						setState((state) => ({ ...state, disabled: !state.disabled }))

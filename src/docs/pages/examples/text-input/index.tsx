@@ -10,7 +10,16 @@ export function TextInputExample() {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const state = useTextInputState();
 	const [
-		{ appearance, disabled, error, flex, helper, leadingIcon, trailingIcon },
+		{
+			appearance,
+			disabled,
+			error,
+			flex,
+			helper,
+			leadingIcon,
+			trailingIcon,
+			warning,
+		},
 	] = state;
 
 	return (
@@ -23,7 +32,7 @@ export function TextInputExample() {
 							disabled={disabled}
 							error={error === true && "Error message"}
 							flex={flex}
-							helper={helper === true ? "Helper message" : undefined}
+							helper={helper === true && "Helper message"}
 							id="text-input-example"
 							label="Label"
 							leadingIcon={leadingIcon && <MdFavorite />}
@@ -32,6 +41,7 @@ export function TextInputExample() {
 							}}
 							ref={inputRef}
 							trailingIcon={trailingIcon && <MdCancel />}
+							warning={warning === true && "Warning message"}
 						/>
 					</form>
 				</section>

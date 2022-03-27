@@ -1,9 +1,7 @@
 .checkbox,
 .check,
 .label,
-.input,
-.errorMessage,
-.helperMessage {
+.input {
 	composes: nk from global;
 }
 
@@ -117,20 +115,6 @@
 	opacity: 0;
 }
 
-.errorMessage,
-.helperMessage {
-	align-items: center;
-	display: flex;
-	font-size: 1.2rem;
-	min-height: 1.6rem;
-	margin-left: 4rem;
-	margin-top: 0.4rem;
-}
-
-.errorMessage {
-	color: var(--md-color-error);
-}
-
-.helperMessage {
-	color: var(--md-color-on-surface);
+.tooltip {
+	margin-left: 4rem !important;
 }
