@@ -8,6 +8,7 @@ export type CheckboxProps = {
 	helper?: ReactNode;
 	indeterminate?: boolean;
 	label?: ReactNode;
+	warning?: ReactNode;
 } & JSX.IntrinsicElements["input"];
 
 export function useCheckbox({
@@ -17,6 +18,7 @@ export function useCheckbox({
 	id,
 	indeterminate,
 	onClick,
+	warning,
 }: CheckboxProps) {
 	const ref = useRef<HTMLInputElement | null>(null);
 
@@ -40,6 +42,7 @@ export function useCheckbox({
 			[styles.checkbox]: true,
 			[styles.disabled]: !!disabled,
 			[styles.error]: !!error,
+			[styles.warning]: !!warning,
 			className,
 		}),
 	};

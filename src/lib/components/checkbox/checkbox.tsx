@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { MdCheck } from "react-icons/md";
 
+import { Tooltip } from "../tooltip.tsx";
 import { CheckboxProps, useCheckbox } from ".";
 import styles from "./checkbox.module.css";
 
@@ -9,12 +10,13 @@ export const Checkbox = forwardRef<
 	HTMLInputElement,
 	CheckboxProps & JSX.IntrinsicElements["input"]
 >(function Checkbox(
-	{ children, error, helper, id, indeterminate, label, ...props },
+	{ children, error, helper, id, indeterminate, label, warning, ...props },
 	externalRef
 ) {
 	const { checkboxProps, inputProps, labelProps, ref } = useCheckbox({
 		error,
 		indeterminate,
+		warning,
 		...props,
 	});
 
@@ -38,16 +40,12 @@ export const Checkbox = forwardRef<
 				</div>
 				<div className={styles.children}>{children || label}</div>
 			</label>
-			{error && (
-				<div className={styles.errorMessage} role="tooltip">
-					{error}
-				</div>
-			)}
-			{helper && (
-				<div className={styles.helperMessage} role="tooltip">
-					{helper}
-				</div>
-			)}
+			<Tooltip
+				className={styles.tooltip}
+				error={error}
+				helper={helper}
+				warning={warning}
+			/>
 		</div>
 	);
 });

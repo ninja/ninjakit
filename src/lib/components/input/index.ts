@@ -13,6 +13,7 @@ export type InputProps = {
 	leadingIcon?: ReactNode;
 	onClickTrailingIcon?: MouseEventHandler<HTMLButtonElement>;
 	trailingIcon?: ReactNode;
+	warning?: ReactNode;
 };
 
 export { PasswordInput } from "./password";

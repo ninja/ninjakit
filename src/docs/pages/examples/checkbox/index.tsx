@@ -7,7 +7,8 @@ import { CheckboxState, useCheckboxState } from "./state";
 export function CheckboxExample() {
 	const hashRef = useHashRef<HTMLDivElement>({ id: "checkbox" });
 	const state = useCheckboxState();
-	const [{ disabled, error, helper, indeterminate, labelWithJSX }] = state;
+	const [{ disabled, error, helper, indeterminate, labelWithJSX, warning }] =
+		state;
 
 	return (
 		<Card appearance="elevated" id="checkbox" ref={hashRef} title="Checkbox">
@@ -29,6 +30,7 @@ export function CheckboxExample() {
 								"Label"
 							)
 						}
+						warning={warning && "Warning message"}
 					/>
 				</section>
 				<CheckboxState state={state} />

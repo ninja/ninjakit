@@ -9,22 +9,40 @@ type TextInputProps = {
 	helper: boolean;
 	leadingIcon: boolean;
 	trailingIcon: boolean;
+	warning: boolean;
 };
 
 export function useTextInputState() {
-	return useState<TextInputProps>({
-		appearance: "filled",
-		disabled: false,
-		error: false,
-		flex: true,
-		helper: false,
-		leadingIcon: false,
-		trailingIcon: false,
-	});
+	return useState<TextInputProps>(
+		import.meta.env.DEV
+			? {
+					appearance: "filled",
+					disabled: false,
+					error: true,
+					flex: true,
+					helper: true,
+					leadingIcon: true,
+					trailingIcon: true,
+					warning: true,
+			  }
+			: {
+					appearance: "filled",
+					disabled: false,
+					error: false,
+					flex: true,
+					helper: false,
+					leadingIcon: false,
+					trailingIcon: false,
+					warning: false,
+			  }
+	);
 }
 
 export function TextInputState({
-	state: [{ flex }, setState],
+	state: [
+		{ disabled, error, flex, helper, leadingIcon, trailingIcon, warning },
+		setState,
+	],
 }: {
 	state: [TextInputProps, Dispatch<SetStateAction<TextInputProps>>];
 }) {
@@ -56,6 +74,7 @@ export function TextInputState({
 					}
 				/>
 				<Checkbox
+					defaultChecked={leadingIcon}
 					label="Leading icon"
 					onClick={() =>
 						setState((state) => ({
@@ -65,6 +84,7 @@ export function TextInputState({
 					}
 				/>
 				<Checkbox
+					defaultChecked={trailingIcon}
 					label="Trailing icon"
 					onClick={() =>
 						setState((state) => ({
@@ -74,18 +94,28 @@ export function TextInputState({
 					}
 				/>
 				<Checkbox
+					defaultChecked={helper}
 					label="Helper message"
 					onClick={() =>
 						setState((state) => ({ ...state, helper: !state.helper }))
 					}
 				/>
 				<Checkbox
+					defaultChecked={warning}
+					label="Warning message"
+					onClick={() =>
+						setState((state) => ({ ...state, warning: !state.warning }))
+					}
+				/>
+				<Checkbox
+					defaultChecked={error}
 					label="Error message"
 					onClick={() =>
 						setState((state) => ({ ...state, error: !state.error }))
 					}
 				/>
 				<Checkbox
+					defaultChecked={disabled}
 					label="Disabled"
 					onClick={() =>
 						setState((state) => ({ ...state, disabled: !state.disabled }))
