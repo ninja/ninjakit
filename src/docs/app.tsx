@@ -1,6 +1,6 @@
 import { Button, Header, Main, Nav, NavButton, useDrawerOpen } from "ninjakit";
 import { StrictMode } from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { FaToriiGate } from "react-icons/fa";
 import { GiKatana, GiStarShuriken } from "react-icons/gi";
 import { MdMenu, MdMenuOpen, MdShare } from "react-icons/md";
@@ -98,12 +98,13 @@ function App() {
 	);
 }
 
-render(
+const root = createRoot(document.getElementById("app") || document.body);
+
+root.render(
 	<StrictMode>
 		<BrowserRouter>
 			<App />
 		</BrowserRouter>
 		<ReloadPrompt />
-	</StrictMode>,
-	document.getElementById("app")
+	</StrictMode>
 );
