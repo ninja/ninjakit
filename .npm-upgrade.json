@@ -1,0 +1,12 @@
+{
+	"ignore": {
+		"react": {
+			"reason": "peer",
+			"versions": ">=18"
+		},
+		"react-dom": {
+			"reason": "peer",
+			"versions": ">=18"
+		}
+	}
+}
