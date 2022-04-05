@@ -13,7 +13,15 @@ export default defineConfig(({ mode }) => {
 		resolve: {
 			alias: {
 				ninjakit: resolve(__dirname, "src/lib"),
-				"react/jsx-runtime": "react/jsx-runtime.js",
+				// TEMPORARY work-a-round for: https://github.com/antfu/vite-plugin-pwa/issues/257
+				"react/jsx-dev-runtime.js": resolve(
+					__dirname,
+					"node_modules/react/jsx-dev-runtime.js"
+				),
+				"react/jsx-runtime.js": resolve(
+					__dirname,
+					"node_modules/react/jsx-runtime.js"
+				),
 			},
 		},
 	};
