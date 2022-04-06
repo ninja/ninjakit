@@ -14,7 +14,7 @@ export { Footer } from "./components/footer";
 export { Header } from "./components/header";
 export { PasswordInput, TextInput } from "./components/input";
 export { Main } from "./components/main";
-export type { MenuOptions } from "./components/menu";
+export type { MenuOption } from "./components/menu";
 export { ButtonMenu, InputMenu } from "./components/menu";
 export { Nav, NavButton } from "./components/nav";
 export { Radioset } from "./components/radioset";

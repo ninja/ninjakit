@@ -17,19 +17,18 @@ import {
 import { firstHTMLElementChild } from "../../util";
 import styles from "./menu.module.css";
 
-export type MenuOptions<T extends string = string> = (
-	| T
+export type MenuOption =
+	| string
 	| {
 			disabled?: boolean;
 			leadingIcon?: ReactNode;
 			onClick?: MouseEventHandler<HTMLButtonElement>;
 			separator?: boolean;
-			value?: T;
+			value?: string;
 	  }
 	| {
 			separator: true;
-	  }
-)[];
+	  };
 
 export function useMenu<T>({
 	classNameOverride,

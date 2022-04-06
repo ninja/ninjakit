@@ -1,3 +1,4 @@
+import { MenuOption } from "ninjakit";
 import { forwardRef, KeyboardEventHandler, MouseEventHandler } from "react";
 import { createPortal } from "react-dom";
 
@@ -6,7 +7,6 @@ import {
 	previousHTMLElementSibling,
 	setNativeValue,
 } from "../../util";
-import { MenuOptions } from ".";
 import styles from "./menu.module.css";
 
 export type ButtonChangeHandler = (event: {
@@ -20,7 +20,7 @@ export const Menu = forwardRef<
 		controlElement: HTMLInputElement | HTMLButtonElement | null;
 		menuId: string;
 		onClick?: MouseEventHandler<HTMLButtonElement>;
-		options: MenuOptions;
+		options: MenuOption[];
 		setExpanded: (expanded: boolean) => void;
 	} & Omit<JSX.IntrinsicElements["div"], "onClick">
 >(function Menu(

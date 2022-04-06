@@ -1,4 +1,4 @@
-import { MenuOptions, TextInput } from "ninjakit";
+import { MenuOption, TextInput } from "ninjakit";
 import { forwardRef } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
@@ -12,7 +12,7 @@ export const InputMenu = forwardRef<
 	JSX.IntrinsicElements["input"] &
 		InputProps & {
 			container?: HTMLElement;
-			options: MenuOptions;
+			options: MenuOption[];
 		}
 >(function InputMenu(
 	{
