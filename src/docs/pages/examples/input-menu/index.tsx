@@ -2,7 +2,7 @@ import { Card, InputMenu, useHashRef } from "ninjakit";
 import { MdFavorite } from "react-icons/md";
 
 import styles from "../examples.module.css";
-import { InputMenuState, options, useInputMenuState } from "./state";
+import { InputMenuState, useInputMenuState } from "./state";
 
 export function InputMenuExample() {
 	const hashRef = useHashRef<HTMLDivElement>({ id: "input-menu" });
@@ -25,7 +25,19 @@ export function InputMenuExample() {
 						onChange={({ currentTarget: { value } }) =>
 							console.info("InputMenu change:", value)
 						}
-						options={options}
+						options={[
+							"Item One",
+							"Item Two",
+							"Item Three",
+							{ separator: true },
+							"Item Four",
+							"Item Five",
+							{ disabled: true, value: "Item Six" },
+							"Item Seven",
+							{ leadingIcon: <MdFavorite />, value: "Item Eight" },
+							"Item Nine",
+							"Item Ten",
+						]}
 					/>
 				</section>
 				<InputMenuState state={state} />

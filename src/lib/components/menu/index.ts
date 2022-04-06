@@ -5,7 +5,14 @@ import {
 	useFloating,
 } from "@floating-ui/react-dom";
 import { classNames } from "ninjakit";
-import { KeyboardEventHandler, ReactNode, useEffect, useState } from "react";
+import {
+	KeyboardEventHandler,
+	MouseEventHandler,
+	ReactNode,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 
 import { firstHTMLElementChild } from "../../util";
 import styles from "./menu.module.css";
@@ -15,6 +22,7 @@ export type MenuOptions<T extends string = string> = (
 	| {
 			disabled?: boolean;
 			leadingIcon?: ReactNode;
+			onClick?: MouseEventHandler<HTMLButtonElement>;
 			separator?: boolean;
 			value?: T;
 	  }
@@ -23,18 +31,17 @@ export type MenuOptions<T extends string = string> = (
 	  }
 )[];
 
-export function useMenu({
+export function useMenu<T>({
 	classNameOverride,
 	flex,
 	id,
-	input,
 }: {
 	flex?: boolean;
 	id: string;
-	input?: true;
 	classNameOverride?: string;
 }) {
 	const [expanded, setExpanded] = useState(false);
+	const refControl = useRef<T | null>(null);
 	const { x, y, reference, floating, refs, strategy, update } = useFloating({
 		middleware: [flip(), shift()],
 		placement: "bottom-start",
@@ -60,10 +67,6 @@ export function useMenu({
 	}, [refs.reference, refs.floating, update]);
 	const handleClickControl = () => setExpanded(!expanded);
 	const handleKeyDownControl: KeyboardEventHandler = (event) => {
-		const element = input
-			? event.currentTarget.parentElement?.parentElement || null
-			: event.currentTarget;
-
 		if (expanded)
 			switch (event.key) {
 				case " ":
@@ -75,7 +78,6 @@ export function useMenu({
 					return event.preventDefault();
 				case "ArrowDown":
 				case "Tab":
-					if (element === null) return;
 					event.preventDefault();
 					return firstHTMLElementChild(
 						document.getElementById(menuId)
@@ -97,7 +99,8 @@ export function useMenu({
 		className: classNames({
 			[styles.fieldset]: true,
 			[styles.flex]: flex,
-			[input ? styles.input : styles.button]: true,
+			[refControl instanceof HTMLInputElement ? styles.input : styles.button]:
+				true,
 			classNameOverride,
 		}),
 		expanded,
@@ -109,6 +112,7 @@ export function useMenu({
 			top: y ?? "",
 		},
 		menuId,
+		refControl,
 		refFieldset: reference,
 		refMenu: floating,
 		setExpanded,
