@@ -1,4 +1,4 @@
-import { Button, MenuOptions } from "ninjakit";
+import { Button, MenuOption } from "ninjakit";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { ButtonProps } from "../button";
@@ -17,7 +17,7 @@ export function ButtonMenu({
 	ButtonProps & {
 		container?: HTMLElement;
 		id: string;
-		options: MenuOptions;
+		options: MenuOption[];
 	}) {
 	const {
 		className,
