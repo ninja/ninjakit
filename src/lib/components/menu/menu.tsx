@@ -9,20 +9,26 @@ import {
 import { MenuOptions } from ".";
 import styles from "./menu.module.css";
 
+export type ButtonChangeHandler = (event: {
+	currentTarget: { value: string };
+}) => void;
+
 export const Menu = forwardRef<
 	HTMLDivElement,
 	{
 		container?: HTMLElement;
 		controlElement: HTMLInputElement | HTMLButtonElement | null;
 		menuId: string;
+		onChange?: ButtonChangeHandler;
 		options: MenuOptions;
 		setExpanded: (expanded: boolean) => void;
-	} & JSX.IntrinsicElements["div"]
+	} & Omit<JSX.IntrinsicElements["div"], "onChange">
 >(function Menu(
 	{
 		container = document.body,
 		controlElement,
 		menuId,
+		onChange,
 		options,
 		setExpanded,
 		...props
@@ -35,6 +41,10 @@ export const Menu = forwardRef<
 		setExpanded(false);
 	};
 	const handleClickMenuItem = (value: string) => {
+		if (onChange) {
+			return onChange({ currentTarget: { value } });
+		}
+
 		if (controlElement) {
 			const event = new Event("change", { bubbles: true, cancelable: true });
 			setNativeValue(controlElement, value);

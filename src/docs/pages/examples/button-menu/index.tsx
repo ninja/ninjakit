@@ -24,6 +24,9 @@ export function ButtonMenuExample() {
 						id="button-menu-example"
 						label="Label"
 						leadingIcon={leadingIcon ? <MdMenu /> : undefined}
+						onChange={({ currentTarget: { value } }) =>
+							console.info("ButtonMenu change:", value)
+						}
 						options={options}
 					/>
 				</section>

@@ -22,6 +22,9 @@ export function InputMenuExample() {
 						id="input-menu-example"
 						label="Label"
 						leadingIcon={leadingIcon && <MdFavorite />}
+						onChange={({ currentTarget: { value } }) =>
+							console.info("InputMenu change:", value)
+						}
 						options={options}
 					/>
 				</section>
