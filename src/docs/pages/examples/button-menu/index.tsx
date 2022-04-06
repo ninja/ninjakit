@@ -1,8 +1,8 @@
 import { ButtonMenu, Card, useHashRef } from "ninjakit";
-import { MdMenu } from "react-icons/md";
+import { MdFavorite, MdMenu } from "react-icons/md";
 
 import styles from "../examples.module.css";
-import { InputMenuState, options, useButtonMenuState } from "./state";
+import { InputMenuState, useButtonMenuState } from "./state";
 
 export function ButtonMenuExample() {
 	const hashRef = useHashRef<HTMLDivElement>({ id: "button-menu" });
@@ -24,10 +24,26 @@ export function ButtonMenuExample() {
 						id="button-menu-example"
 						label="Label"
 						leadingIcon={leadingIcon ? <MdMenu /> : undefined}
-						onChange={({ currentTarget: { value } }) =>
-							console.info("ButtonMenu change:", value)
+						onClick={({ currentTarget: { value } }) =>
+							console.info("ButtonMenu click:", value)
 						}
-						options={options}
+						options={[
+							"Item One",
+							{
+								leadingIcon: <MdFavorite />,
+								onClick: () => console.info("Clicked: Item Two"),
+								value: "Item Two",
+							},
+							"Item Three",
+							{ separator: true },
+							"Item Four",
+							"Item Five",
+							{ disabled: true, value: "Item Six" },
+							"Item Seven",
+							"Item Eight",
+							"Item Nine",
+							"Item Ten",
+						]}
 					/>
 				</section>
 				<InputMenuState state={state} />

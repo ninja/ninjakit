@@ -1,24 +1,22 @@
 import { Button, MenuOptions } from "ninjakit";
-import { useRef } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { ButtonProps } from "../button";
 import { useMenu } from ".";
-import { ButtonChangeHandler, Menu } from "./menu";
+import { Menu } from "./menu";
 import styles from "./menu.module.css";
 
 export function ButtonMenu({
 	className: classNameOverride,
 	container,
 	id,
-	onChange,
+	onClick,
 	options,
 	...props
-}: Omit<JSX.IntrinsicElements["button"], "id" | "onChange"> &
+}: Omit<JSX.IntrinsicElements["button"], "id"> &
 	ButtonProps & {
 		container?: HTMLElement;
 		id: string;
-		onChange: ButtonChangeHandler;
 		options: MenuOptions;
 	}) {
 	const {
@@ -27,13 +25,12 @@ export function ButtonMenu({
 		handleClickControl,
 		handleKeyDownControl,
 		menuId,
+		refControl,
 		refFieldset,
 		refMenu,
 		style,
 		setExpanded,
-	} = useMenu({ classNameOverride, id });
-
-	const refControl = useRef<HTMLButtonElement | null>(null);
+	} = useMenu<HTMLButtonElement>({ classNameOverride, id });
 
 	return (
 		<fieldset className={className} ref={refFieldset}>
@@ -54,7 +51,7 @@ export function ButtonMenu({
 					container={container}
 					controlElement={refControl.current}
 					menuId={menuId}
-					onChange={onChange}
+					onClick={onClick}
 					options={options}
 					ref={refMenu}
 					setExpanded={setExpanded}

@@ -19,16 +19,16 @@ export const Menu = forwardRef<
 		container?: HTMLElement;
 		controlElement: HTMLInputElement | HTMLButtonElement | null;
 		menuId: string;
-		onChange?: ButtonChangeHandler;
+		onClick?: MouseEventHandler<HTMLButtonElement>;
 		options: MenuOptions;
 		setExpanded: (expanded: boolean) => void;
-	} & Omit<JSX.IntrinsicElements["div"], "onChange">
+	} & Omit<JSX.IntrinsicElements["div"], "onClick">
 >(function Menu(
 	{
 		container = document.body,
 		controlElement,
 		menuId,
-		onChange,
+		onClick,
 		options,
 		setExpanded,
 		...props
@@ -40,15 +40,15 @@ export const Menu = forwardRef<
 
 		setExpanded(false);
 	};
-	const handleClickMenuItem = (value: string) => {
-		if (onChange) {
-			return onChange({ currentTarget: { value } });
-		}
-
-		if (controlElement) {
-			const event = new Event("change", { bubbles: true, cancelable: true });
-			setNativeValue(controlElement, value);
-			controlElement.dispatchEvent(event);
+	const handleClickMenuItem: MouseEventHandler<HTMLButtonElement> = (event) => {
+		if (controlElement instanceof HTMLButtonElement && onClick) onClick(event);
+		if (controlElement instanceof HTMLInputElement) {
+			const changeEvent = new Event("change", {
+				bubbles: true,
+				cancelable: true,
+			});
+			setNativeValue(controlElement, event.currentTarget.value);
+			controlElement.dispatchEvent(changeEvent);
 		}
 	};
 	const handleKeyDownMenu: KeyboardEventHandler = ({ key }) =>
@@ -68,8 +68,6 @@ export const Menu = forwardRef<
 				return controlElement?.focus();
 			case "ArrowDown":
 				event.preventDefault();
-
-				console.info("ArrowDown", nextHTMLElementSibling(currentTarget));
 
 				return nextHTMLElementSibling(currentTarget)?.focus();
 			case "ArrowUp":
@@ -96,7 +94,7 @@ export const Menu = forwardRef<
 						<button
 							className={styles.option}
 							key={`${index}-${option}`}
-							onClick={() => handleClickMenuItem(option)}
+							onClick={handleClickMenuItem}
 							onKeyDown={handleKeyDownMenuItem}
 							value={option}
 						>
@@ -107,7 +105,7 @@ export const Menu = forwardRef<
 				if (option.separator)
 					return <hr aria-disabled className={styles.separator} key={index} />;
 
-				const { disabled, leadingIcon, value } = option;
+				const { disabled, leadingIcon, onClick, value } = option;
 
 				if (value === undefined) return null;
 
@@ -117,7 +115,10 @@ export const Menu = forwardRef<
 						className={styles.option}
 						disabled={disabled}
 						key={`${index}-${value}`}
-						onClick={() => handleClickMenuItem(value)}
+						onClick={(event) => {
+							if (onClick) onClick(event);
+							handleClickMenuItem(event);
+						}}
 						onKeyDown={handleKeyDownMenuItem}
 						value={value}
 					>

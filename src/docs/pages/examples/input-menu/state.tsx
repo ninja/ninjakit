@@ -1,6 +1,5 @@
 import { Checkbox, InputMenu } from "ninjakit";
 import { Dispatch, SetStateAction, useState } from "react";
-import { MdFavorite } from "react-icons/md";
 
 type Appearance = "filled" | "outlined";
 
@@ -87,17 +86,3 @@ export function InputMenuState({
 		</aside>
 	);
 }
-
-export const options = [
-	"Item One",
-	"Item Two",
-	"Item Three",
-	{ separator: true },
-	"Item Four",
-	"Item Five",
-	{ disabled: true, value: "Item Six" },
-	"Item Seven",
-	{ leadingIcon: <MdFavorite />, value: "Item Eight" },
-	"Item Nine",
-	"Item Ten",
-];

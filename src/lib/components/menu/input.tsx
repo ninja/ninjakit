@@ -1,5 +1,5 @@
 import { MenuOptions, TextInput } from "ninjakit";
-import { forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { InputProps } from "../input";
@@ -32,13 +32,12 @@ export const InputMenu = forwardRef<
 		handleClickControl,
 		handleKeyDownControl,
 		menuId,
+		refControl,
 		refFieldset,
 		refMenu,
 		setExpanded,
 		style,
-	} = useMenu({ classNameOverride, flex, id, input: true });
-
-	const refControl = useRef<HTMLInputElement | null>(null);
+	} = useMenu<HTMLInputElement>({ classNameOverride, flex, id });
 
 	return (
 		<fieldset className={className} ref={refFieldset}>

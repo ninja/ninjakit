@@ -61,17 +61,3 @@ export function InputMenuState({
 		</aside>
 	);
 }
-
-export const options = [
-	"Item One",
-	"Item Two",
-	"Item Three",
-	{ separator: true },
-	"Item Four",
-	"Item Five",
-	{ disabled: true, value: "Item Six" },
-	"Item Seven",
-	"Item Eight",
-	"Item Nine",
-	"Item Ten",
-];
