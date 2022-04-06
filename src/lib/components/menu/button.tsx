@@ -4,19 +4,21 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 
 import type { ButtonProps } from "../button";
 import { useMenu } from ".";
-import { Menu } from "./menu";
+import { ButtonChangeHandler, Menu } from "./menu";
 import styles from "./menu.module.css";
 
 export function ButtonMenu({
 	className: classNameOverride,
 	container,
 	id,
+	onChange,
 	options,
 	...props
-}: Omit<JSX.IntrinsicElements["button"], "id" | "onChange" | "value"> &
+}: Omit<JSX.IntrinsicElements["button"], "id" | "onChange"> &
 	ButtonProps & {
 		container?: HTMLElement;
 		id: string;
+		onChange: ButtonChangeHandler;
 		options: MenuOptions;
 	}) {
 	const {
@@ -52,6 +54,7 @@ export function ButtonMenu({
 					container={container}
 					controlElement={refControl.current}
 					menuId={menuId}
+					onChange={onChange}
 					options={options}
 					ref={refMenu}
 					setExpanded={setExpanded}
