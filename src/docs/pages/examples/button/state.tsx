@@ -27,23 +27,17 @@ export function ButtonState({
 	return (
 		<aside>
 			<form>
-				<InputMenu<Appearance>
-					defaultValue="Filled"
+				<InputMenu
+					defaultValue="filled"
 					flex
 					id="button-appearance"
 					label="Appearance"
-					onChange={(value) => {
-						const appearance = value as Appearance;
+					onChange={(event) => {
+						const appearance = event.currentTarget.value as Appearance;
 
 						setState((state) => ({ ...state, appearance }));
 					}}
-					options={[
-						{ label: "Elevated", value: "elevated" },
-						{ label: "Filled", value: "filled" },
-						{ label: "Tonal", value: "tonal" },
-						{ label: "Outlined", value: "outlined" },
-						{ label: "Text", value: "text" },
-					]}
+					options={["elevated", "filled", "tonal", "outlined", "text"]}
 				></InputMenu>
 				<Checkbox
 					id="button-leading-icon-checkbox"

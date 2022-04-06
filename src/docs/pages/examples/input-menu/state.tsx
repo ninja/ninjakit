@@ -1,5 +1,6 @@
 import { Checkbox, InputMenu } from "ninjakit";
 import { Dispatch, SetStateAction, useState } from "react";
+import { MdFavorite } from "react-icons/md";
 
 type Appearance = "filled" | "outlined";
 
@@ -31,19 +32,19 @@ export function InputMenuState({
 	return (
 		<aside>
 			<form>
-				<InputMenu<"filled" | "outlined">
-					defaultValue="Filled"
+				<InputMenu
+					defaultValue="filled"
 					flex
 					id="input-menu-appearance"
 					label="Appearance"
 					name="appearance"
-					onChange={(appearance) =>
-						setState((state) => ({ ...state, appearance }))
+					onChange={(event) =>
+						setState((state) => ({
+							...state,
+							appearance: event.currentTarget.value as Appearance,
+						}))
 					}
-					options={[
-						{ label: "Filled", value: "filled" },
-						{ label: "Outlined", value: "outlined" },
-					]}
+					options={["filled", "outlined"]}
 				/>
 				<Checkbox
 					defaultChecked={flex}
@@ -88,15 +89,15 @@ export function InputMenuState({
 }
 
 export const options = [
-	{ label: "Item One", value: "item-one" },
-	{ label: "Item Two", value: "item-two" },
-	{ label: "Item Three", value: "item-three" },
+	"Item One",
+	"Item Two",
+	"Item Three",
 	{ separator: true },
-	{ label: "Item Four", value: "item-four" },
-	{ label: "Item Five", value: "item-five" },
-	{ disabled: true, label: "Item Six", value: "item-six" },
-	{ label: "Item Seven", value: "item-seven" },
-	{ label: "Item Eight", value: "item-eight" },
-	{ label: "Item Nine", value: "item-nine" },
+	"Item Four",
+	"Item Five",
+	{ disabled: true, value: "Item Six" },
+	"Item Seven",
+	{ leadingIcon: <MdFavorite />, value: "Item Eight" },
+	"Item Nine",
 	"Item Ten",
 ];
