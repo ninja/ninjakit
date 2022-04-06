@@ -1,67 +1,45 @@
-import {
-	ForwardedRef,
-	forwardRef,
-	KeyboardEventHandler,
-	MouseEvent,
-	MouseEventHandler,
-	ReactNode,
-} from "react";
+import { forwardRef, KeyboardEventHandler, MouseEventHandler } from "react";
 import { createPortal } from "react-dom";
 
-import { nextHTMLElementSibling, previousHTMLElementSibling } from "../../util";
+import {
+	nextHTMLElementSibling,
+	previousHTMLElementSibling,
+	setNativeValue,
+} from "../../util";
 import { MenuOptions } from ".";
 import styles from "./menu.module.css";
 
-declare module "react" {
-	function forwardRef<T, P>(
-		render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
-	): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
-}
-
-export const Menu = forwardRef(function Menu<T extends string>(
+export const Menu = forwardRef<
+	HTMLDivElement,
+	{
+		container?: HTMLElement;
+		controlElement: HTMLInputElement | HTMLButtonElement | null;
+		menuId: string;
+		options: MenuOptions;
+		setExpanded: (expanded: boolean) => void;
+	} & JSX.IntrinsicElements["div"]
+>(function Menu(
 	{
 		container = document.body,
-		controlId,
+		controlElement,
 		menuId,
-		onChange,
 		options,
 		setExpanded,
 		...props
-	}: {
-		container?: HTMLElement;
-		controlId: string;
-		menuId: string;
-		onChange?: (value: T) => void;
-		options: MenuOptions<T>;
-		setExpanded: (expanded: boolean) => void;
-	} & Omit<JSX.IntrinsicElements["div"], "onChange">,
-	ref: ForwardedRef<HTMLDivElement>
+	},
+	ref
 ) {
 	const handleClickMenu: MouseEventHandler<HTMLDivElement> = () => {
-		const element = document.getElementById(controlId) as
-			| HTMLButtonElement
-			| HTMLInputElement;
-
-		element.focus();
+		controlElement?.focus();
 
 		setExpanded(false);
 	};
-	const handleClickMenuItem = ({
-		event,
-		label,
-		value,
-	}: {
-		event: MouseEvent<HTMLButtonElement>;
-		label?: ReactNode;
-		value: T;
-	}) => {
-		if (onChange) onChange(event.currentTarget.value as T);
-
-		const element = document.getElementById(controlId) as
-			| HTMLButtonElement
-			| HTMLInputElement;
-
-		element.value = typeof label === "string" ? label : value;
+	const handleClickMenuItem = (value: string) => {
+		if (controlElement) {
+			const event = new Event("change", { bubbles: true, cancelable: true });
+			setNativeValue(controlElement, value);
+			controlElement.dispatchEvent(event);
+		}
 	};
 	const handleKeyDownMenu: KeyboardEventHandler = ({ key }) =>
 		key === "Escape" && setExpanded(false);
@@ -77,7 +55,7 @@ export const Menu = forwardRef(function Menu<T extends string>(
 			case "Escape":
 				setExpanded(false);
 
-				return document.getElementById(controlId)?.focus();
+				return controlElement?.focus();
 			case "ArrowDown":
 				event.preventDefault();
 
@@ -108,7 +86,7 @@ export const Menu = forwardRef(function Menu<T extends string>(
 						<button
 							className={styles.option}
 							key={`${index}-${option}`}
-							onClick={(event) => handleClickMenuItem({ event, value: option })}
+							onClick={() => handleClickMenuItem(option)}
 							onKeyDown={handleKeyDownMenuItem}
 							value={option}
 						>
@@ -119,7 +97,7 @@ export const Menu = forwardRef(function Menu<T extends string>(
 				if (option.separator)
 					return <hr aria-disabled className={styles.separator} key={index} />;
 
-				const { disabled, label, value } = option;
+				const { disabled, leadingIcon, value } = option;
 
 				if (value === undefined) return null;
 
@@ -129,11 +107,12 @@ export const Menu = forwardRef(function Menu<T extends string>(
 						className={styles.option}
 						disabled={disabled}
 						key={`${index}-${value}`}
-						onClick={(event) => handleClickMenuItem({ event, label, value })}
+						onClick={() => handleClickMenuItem(value)}
 						onKeyDown={handleKeyDownMenuItem}
 						value={value}
 					>
-						{label || value}
+						<>{leadingIcon}</>
+						<>{value}</>
 					</button>
 				);
 			})}

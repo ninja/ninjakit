@@ -1,8 +1,10 @@
 import { Checkbox, InputMenu } from "ninjakit";
 import { Dispatch, SetStateAction, useState } from "react";
 
+type Appearance = "filled" | "outlined";
+
 type PasswordInputProps = {
-	appearance: "filled" | "outlined";
+	appearance: Appearance;
 	disabled: boolean;
 	error: boolean;
 	flex: boolean;
@@ -43,19 +45,19 @@ export function PasswordInputState({
 	return (
 		<aside>
 			<form>
-				<InputMenu<"filled" | "outlined">
-					defaultValue="Filled"
+				<InputMenu
+					defaultValue="filled"
 					flex
 					id="password-input-appearance"
 					label="Appearance"
 					name="appearance"
-					onChange={(appearance) =>
-						setState((state) => ({ ...state, appearance }))
+					onChange={(event) =>
+						setState((state) => ({
+							...state,
+							appearance: event.currentTarget.value as Appearance,
+						}))
 					}
-					options={[
-						{ label: "Filled", value: "filled" },
-						{ label: "Outlined", value: "outlined" },
-					]}
+					options={["filled", "outlined"]}
 				/>
 				<Checkbox
 					defaultChecked={flex}

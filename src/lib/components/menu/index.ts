@@ -14,7 +14,7 @@ export type MenuOptions<T extends string = string> = (
 	| T
 	| {
 			disabled?: boolean;
-			label?: ReactNode;
+			leadingIcon?: ReactNode;
 			separator?: boolean;
 			value?: T;
 	  }
@@ -109,7 +109,7 @@ export function useMenu({
 			top: y ?? "",
 		},
 		menuId,
-		refControl: reference,
+		refFieldset: reference,
 		refMenu: floating,
 		setExpanded,
 	};

@@ -32,7 +32,6 @@ export const Checkbox = forwardRef<
 							ref.current = node;
 
 							if (typeof externalRef === "function") return externalRef(node);
-							externalRef?.current === node;
 						}}
 						type="checkbox"
 					/>

@@ -25,22 +25,19 @@ export function InputMenuState({
 	return (
 		<aside>
 			<form>
-				<InputMenu<Appearance>
-					defaultValue="Filled"
+				<InputMenu
+					defaultValue="filled"
 					flex
 					id="button-menu-appearance"
 					label="Appearance"
 					name="appearance"
-					onChange={(appearance) =>
-						setState((state) => ({ ...state, appearance }))
+					onChange={(event) =>
+						setState((state) => ({
+							...state,
+							appearance: event.currentTarget.value as Appearance,
+						}))
 					}
-					options={[
-						{ label: "Elevated", value: "elevated" },
-						{ label: "Filled", value: "filled" },
-						{ label: "Tonal", value: "tonal" },
-						{ label: "Outlined", value: "outlined" },
-						{ label: "Text", value: "text" },
-					]}
+					options={["elevated", "filled", "tonal", "outlined", "text"]}
 				/>
 				<Checkbox
 					label="Leading icon"
@@ -66,15 +63,15 @@ export function InputMenuState({
 }
 
 export const options = [
-	{ label: "Item One", value: "item-one" },
-	{ label: "Item Two", value: "item-two" },
-	{ label: "Item Three", value: "item-three" },
+	"Item One",
+	"Item Two",
+	"Item Three",
 	{ separator: true },
-	{ label: "Item Four", value: "item-four" },
-	{ label: "Item Five", value: "item-five" },
-	{ disabled: true, label: "Item Six", value: "item-six" },
-	{ label: "Item Seven", value: "item-seven" },
-	{ label: "Item Eight", value: "item-eight" },
-	{ label: "Item Nine", value: "item-nine" },
+	"Item Four",
+	"Item Five",
+	{ disabled: true, value: "Item Six" },
+	"Item Seven",
+	"Item Eight",
+	"Item Nine",
 	"Item Ten",
 ];
