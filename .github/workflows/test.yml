@@ -30,7 +30,7 @@ jobs:
         run: npm test
       - name: Upload Test Artifacts
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: playwright-test-results
           path: test-results/
