@@ -1,4 +1,12 @@
-import { Button, Header, Main, Nav, NavButton, useDrawerOpen } from "ninjakit";
+import {
+	Alert,
+	Button,
+	Header,
+	Main,
+	Nav,
+	NavButton,
+	useDrawerOpen,
+} from "ninjakit";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { FaToriiGate } from "react-icons/fa";
@@ -103,7 +111,9 @@ const root = createRoot(document.getElementById("app") || document.body);
 root.render(
 	<StrictMode>
 		<BrowserRouter>
-			<App />
+			<Alert>
+				<App />
+			</Alert>
 		</BrowserRouter>
 		<ReloadPrompt />
 	</StrictMode>

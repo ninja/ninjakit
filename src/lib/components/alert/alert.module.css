@@ -1,0 +1,68 @@
+.alert {
+	composes: nk from global;
+	composes: nkTypographyBodyMedium from global;
+	--md-alert-padding: 2.4rem;
+	align-items: center;
+	align-self: center;
+	background-color: var(--md-color-surface);
+	border-radius: 1.4rem;
+	bottom: 9.8rem;
+	box-shadow: var(--md-shadow);
+	display: flex;
+	gap: 1.2rem;
+	justify-content: space-between;
+	left: 0;
+	max-height: 56rem;
+	max-width: 56rem;
+	min-width: 37.5rem;
+	opacity: 0;
+	padding: var(--md-alert-padding);
+	position: fixed;
+	transform: scale(0.8);
+	transition-duration: var(--nk-transition-duration);
+	transition-property: opacity, transform;
+	transition-timing-function: linear;
+	z-index: 1;
+}
+
+.alert.show {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.alert.translate {
+	transform: translate(calc(50vw - 50%));
+}
+
+.message {
+	align-items: center;
+	display: flex;
+	gap: 1.2rem;
+}
+
+.icon {
+	font-size: 2.4rem;
+}
+
+.icon.info {
+	fill: var(--md-color-info);
+}
+.icon.success {
+	fill: var(--md-color-success);
+}
+.icon.warning {
+	fill: var(--md-color-warning);
+}
+.icon.error {
+	fill: var(--md-color-error);
+}
+
+.action {
+	align-self: flex-end;
+}
+
+@media screen and (min-width: 600px) {
+	.alert {
+		bottom: 1.8rem;
+	}
+}

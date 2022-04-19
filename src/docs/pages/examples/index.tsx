@@ -11,6 +11,7 @@ import { MdEdit } from "react-icons/md";
 import { SiNetlify } from "react-icons/si";
 import { useLocation } from "react-router";
 
+import { AlertExample } from "./alert";
 import { AnchorButtonExample } from "./anchor-button";
 import { ButtonExample } from "./button";
 import { ButtonMenuExample } from "./button-menu";
@@ -38,6 +39,7 @@ export function Examples({ year }: { year: number }) {
 				<Aside>
 					<ColorSchemeExample />
 					<Card appearance="filled" title="Contents">
+						<AnchorButton href="#alert" label="Alert" />
 						<AnchorButton href="#anchor-button" label="AnchorButton" />
 						<AnchorButton href="#button" label="Button" />
 						<AnchorButton href="#button-menu" label="ButtonMenu" />
@@ -70,6 +72,7 @@ export function Examples({ year }: { year: number }) {
 				</Footer>
 			}
 		>
+			<AlertExample />
 			<AnchorButtonExample />
 			<ButtonExample />
 			<ButtonMenuExample />
