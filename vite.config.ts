@@ -10,20 +10,7 @@ export default defineConfig(({ mode }) => {
 			emptyOutDir: true,
 			outDir: resolve(__dirname, "dist"),
 		},
-		resolve: {
-			alias: {
-				ninjakit: resolve(__dirname, "src/lib"),
-				// TEMPORARY work-a-round for: https://github.com/antfu/vite-plugin-pwa/issues/257
-				"react/jsx-dev-runtime.js": resolve(
-					__dirname,
-					"node_modules/react/jsx-dev-runtime.js"
-				),
-				"react/jsx-runtime.js": resolve(
-					__dirname,
-					"node_modules/react/jsx-runtime.js"
-				),
-			},
-		},
+		resolve: { alias: { ninjakit: resolve(__dirname, "src/lib") } },
 	};
 
 	if (mode === "lib") {
