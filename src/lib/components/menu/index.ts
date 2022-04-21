@@ -32,12 +32,14 @@ export type MenuOption =
 
 export function useMenu<T>({
 	classNameOverride,
+	element,
 	flex,
 	id,
 }: {
 	flex?: boolean;
 	id: string;
 	classNameOverride?: string;
+	element: "Button" | "Input";
 }) {
 	const [expanded, setExpanded] = useState(false);
 	const refControl = useRef<T | null>(null);
@@ -98,8 +100,7 @@ export function useMenu<T>({
 		className: classNames({
 			[styles.fieldset]: true,
 			[styles.flex]: flex,
-			[refControl instanceof HTMLInputElement ? styles.input : styles.button]:
-				true,
+			[element === "Button" ? styles.button : styles.input]: true,
 			classNameOverride,
 		}),
 		expanded,
