@@ -37,7 +37,12 @@ export const InputMenu = forwardRef<
 		refMenu,
 		setExpanded,
 		style,
-	} = useMenu<HTMLInputElement>({ classNameOverride, flex, id });
+	} = useMenu<HTMLInputElement>({
+		classNameOverride,
+		element: "Input",
+		flex,
+		id,
+	});
 
 	return (
 		<fieldset className={className} ref={refFieldset}>

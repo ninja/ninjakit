@@ -30,7 +30,7 @@ export function ButtonMenu({
 		refMenu,
 		style,
 		setExpanded,
-	} = useMenu<HTMLButtonElement>({ classNameOverride, id });
+	} = useMenu<HTMLButtonElement>({ classNameOverride, element: "Button", id });
 
 	return (
 		<fieldset className={className} ref={refFieldset}>
