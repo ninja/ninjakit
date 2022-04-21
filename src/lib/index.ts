@@ -3,6 +3,7 @@ import "./style.css";
 export type Appearance = "elevated" | "filled" | "tonal" | "outlined" | "text";
 export type ColorScheme = "dark" | "light" | "system";
 export { colorScheme } from "./color-scheme";
+export { Alert, useAlert } from "./components/alert";
 export { Article } from "./components/article";
 export { Aside } from "./components/aside";
 export { AnchorButton, Button } from "./components/button";
