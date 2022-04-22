@@ -11,7 +11,7 @@ export function Alert({
 	children,
 	className,
 	closeAfter,
-	container = document.body,
+	container,
 	...props
 }: {
 	closeAfter?: number;
@@ -59,7 +59,7 @@ export function Alert({
 								<ProgressBar progress={progress} />
 							)}
 						</div>,
-						container
+						container ? container : document.body
 				  )
 				: null}
 		</AlertContext.Provider>
