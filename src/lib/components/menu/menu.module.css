@@ -24,6 +24,7 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 0.2rem;
+	z-index: 3;
 }
 
 .menu.input {
@@ -103,8 +104,4 @@
 
 .separator {
 	border-top: 0.1rem solid var(--md-color-outline);
-}
-
-.control[aria-expanded="true"] {
-	z-index: 3;
 }
