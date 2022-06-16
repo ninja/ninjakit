@@ -4,7 +4,6 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import type { ButtonProps } from "../button";
 import { useMenu } from ".";
 import { Menu } from "./menu";
-import styles from "./menu.module.css";
 
 export function ButtonMenu({
 	className: classNameOverride,
@@ -38,7 +37,6 @@ export function ButtonMenu({
 				aria-controls={menuId}
 				aria-expanded={expanded}
 				aria-haspopup="menu"
-				className={styles.control}
 				id={id}
 				onClick={handleClickControl}
 				onKeyDown={handleKeyDownControl}

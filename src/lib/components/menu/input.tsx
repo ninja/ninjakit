@@ -5,7 +5,6 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import type { InputProps } from "../input";
 import { useMenu } from ".";
 import { Menu } from "./menu";
-import styles from "./menu.module.css";
 
 export const InputMenu = forwardRef<
 	HTMLInputElement,
@@ -50,7 +49,6 @@ export const InputMenu = forwardRef<
 				aria-controls={menuId}
 				aria-expanded={expanded}
 				aria-haspopup="menu"
-				className={styles.control}
 				flex={flex}
 				id={id}
 				onClick={handleClickControl}
