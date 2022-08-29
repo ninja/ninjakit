@@ -4,7 +4,7 @@
 		"react-icons": "4.4.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "17.1.1",
+		"@commitlint/cli": "17.1.2",
 		"@commitlint/config-conventional": "17.1.0",
 		"@fontsource/roboto": "4.5.8",
 		"@playwright/test": "1.25.1",
