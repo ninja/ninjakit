@@ -1,7 +1,7 @@
 {
 	"dependencies": {
 		"@floating-ui/react-dom": "1.0.0",
-		"react-icons": "4.4.0"
+		"react-icons": "4.6.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "17.1.2",
