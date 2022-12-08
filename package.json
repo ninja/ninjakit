@@ -8,7 +8,7 @@
 		"@commitlint/config-conventional": "17.3.0",
 		"@fontsource/roboto": "4.5.8",
 		"@playwright/test": "1.28.1",
-		"@types/node": "18.11.9",
+		"@types/node": "18.11.11",
 		"@types/react": "18.0.25",
 		"@types/react-dom": "18.0.9",
 		"@typescript-eslint/eslint-plugin": "5.45.1",
