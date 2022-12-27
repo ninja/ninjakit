@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@floating-ui/react-dom": "1.0.1",
+		"@floating-ui/react-dom": "1.1.0",
 		"react-icons": "4.7.1"
 	},
 	"devDependencies": {
